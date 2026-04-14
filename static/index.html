@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Verktygskistan | GPT-4 & AI-verktyg för svenska företag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="AI-Verktygskistan – Jämför GPT-4, Claude, Copilot och 40+ AI-verktyg anpassade för svenska företag. GDPR-checklista, prisguide och EU AI Act-analys ingår.">
+    <meta name="keywords" content="gpt 4, gpt-4 svenska, ai verktyg, ai för företag, gdpr ai, chatgpt sverige, copilot microsoft, ai act sverige">
+    <link rel="canonical" href="https://ai-verktygskistan.se/">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-Verktygskistan | GPT-4 & AI-verktyg för svenska företag">
+    <meta property="og:description" content="Jämför GPT-4, Claude, Copilot och 40+ AI-verktyg. GDPR-klart. Gratis guide för svenska SME.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ai-verktygskistan.se/">
+    <meta property="og:locale" content="sv_SE">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" src="/static/schema.json"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "AI-Verktygskistan",
+      "url": "https://ai-verktygskistan.se",
+      "description": "Sveriges mest kompletta guide till AI-verktyg för företag – GPT-4, GDPR-efterlevnad och svenska affärsprocesser.",
+      "inLanguage": "sv-SE"
+    }
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .tag-gdpr { background: #dcfce7; color: #166534; }
+        .tag-paid { background: #fef3c7; color: #92400e; }
+        .tag-free { background: #dbeafe; color: #1e40af; }
+        .tag-risk { background: #fee2e2; color: #991b1b; }
+        .sticky-nav { backdrop-filter: blur(12px); background: rgba(255,255,255,0.9); }
+        .progress-bar { animation: fillBar 1.2s ease-out forwards; }
+        @keyframes fillBar { from { width: 0; } }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Sticky Nav -->
+    <nav class="sticky top-0 z-50 sticky-nav border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">
+                AI<span class="text-indigo-600">-Verktygskistan</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="#verktyg" class="hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="#gdpr" class="hover:text-indigo-600 transition-colors">GDPR-guide</a>
+                <a href="#ai-act" class="hover:text-indigo-600 transition-colors">AI Act</a>
+                <a href="#priser" class="hover:text-indigo-600 transition-colors">Priser</a>
+                <a href="#faq" class="hover:text-indigo-600 transition-colors">FAQ</a>
+            </div>
+            <a href="#nyhetsbrev" class="bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">
+                Gratis guide →
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="py-24 px-6 max-w-7xl mx-auto text-center fade-in">
+        <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
+            <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
+            Uppdaterad april 2026 · EU AI Act · GDPR-guide
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+            GPT-4 och AI-verktyg<br>för <span class="gradient-text">svenska företag</span>
+        </h1>
+        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Vi kartlägger, jämför och GDPR-granskar de viktigaste AI-verktygen på marknaden.
+            Sluta gissa – här är vad som faktiskt fungerar och är lagligt i Sverige.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16" id="nyhetsbrev">
+            <input type="email" placeholder="din@epost.se" class="px-6 py-4 rounded-xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-80 text-base">
+            <button class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all text-base shadow-lg shadow-indigo-200">
+                Få gratis AI-guide
+            </button>
+        </div>
+
+        <!-- Trust signals -->
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                40+ verktyg granskade
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                GDPR-status för varje verktyg
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Priser i SEK
+            </div>
+            <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                EU AI Act-analys
+            </div>
+        </div>
+    </header>
+
+    <!-- GPT-4 Spotlight Section -->
+    <section class="bg-gradient-to-br from-indigo-50 to-violet-50 py-20 px-6 border-y border-indigo-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">GPT-4 för svenska företag – allt du behöver veta</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">OpenAIs flaggskeppsmodell dominerar marknaden. Här är den fullständiga svenska guiden.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-xl font-bold mb-3">Vad är GPT-4?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">GPT-4o är OpenAIs nuvarande toppmodell (april 2026). Den hanterar text, bild och kod. Tillgänglig via ChatGPT, API och Microsoft Copilot. GPT-4 Turbo ersattes av GPT-4o med lägre latens och pris.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100">
+                        <div class="flex justify-between text-xs text-slate-500 mb-1"><span>Kapacitet</span><span>98/100</span></div>
+                        <div class="w-full bg-slate-100 rounded-full h-1.5"><div class="bg-indigo-500 h-1.5 rounded-full progress-bar" style="width:98%"></div></div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3">GPT-4 & GDPR</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">OpenAI erbjuder DPA (Data Processing Agreement) för API-kunder. ChatGPT Teams inkluderar DPA automatiskt. <strong>Viktigt:</strong> undvik att skicka personnummer, känsliga uppgifter eller kunddata utan DPA och rättslig grund.</p>
+                    <div class="mt-4 flex gap-2 flex-wrap">
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full tag-gdpr">DPA tillgänglig</span>
+                        <span class="text-xs font-semibold px-3 py-1 rounded-full tag-free">EU-region (Azure)</span>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-3">Vad kostar GPT-4?</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">GPT-4o via API: $2,50/M input-tokens, $10/M output-tokens. ChatGPT Plus: 20 USD/mån. ChatGPT Teams: 25 USD/användare/mån (DPA ingår). Azure OpenAI: EU-lagring, enterprise-villkor.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                        50 användare ≈ <strong class="text-slate-800">1 250–2 500 USD/mån</strong> (Teams)
+                    </div>
+                </div>
+            </div>
+
+            <!-- GPT-4 vs alternatives -->
+            <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                <div class="p-8 border-b border-slate-100">
+                    <h3 class="text-2xl font-bold">GPT-4 vs konkurrenter – snabbjämförelse</h3>
+                    <p class="text-slate-500 text-sm mt-1">Uppdaterad april 2026</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-slate-50 text-slate-500 text-xs uppercase tracking-wide">
+                            <tr>
+                                <th class="text-left p-4 font-semibold">Verktyg</th>
+                                <th class="text-left p-4 font-semibold">Modell</th>
+                                <th class="text-left p-4 font-semibold">GDPR-status</th>
+                                <th class="text-left p-4 font-semibold">Pris (USD/mån)</th>
+                                <th class="text-left p-4 font-semibold">Bäst för</th>
+                                <th class="text-left p-4 font-semibold">Betyg</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-indigo-50/30 transition-colors">
+                                <td class="p-4 font-bold text-indigo-700">ChatGPT Teams</td>
+                                <td class="p-4 text-slate-600">GPT-4o</td>
+                                <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">DPA ingår</span></td>
+                                <td class="p-4">25/user</td>
+                                <td class="p-4 text-slate-600">SME, dagligt bruk</td>
+                                <td class="p-4 font-bold text-emerald-600">9.2/10</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50/30 transition-colors">
+                                <td class="p-4 font-bold">Microsoft Copilot 365</td>
+                                <td class="p-4 text-slate-600">GPT-4o</td>
+                                <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">EU-data</span></td>
+                                <td class="p-4">30/user</td>
+                                <td class="p-4 text-slate-600">M365-kunder</td>
+                                <td class="p-4 font-bold text-emerald-600">9.0/10</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50/30 transition-colors">
+                                <td class="p-4 font-bold">Claude (Anthropic)</td>
+                                <td class="p-4 text-slate-600">Claude Sonnet 4.6</td>
+                                <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">AWS EU-region</span></td>
+                                <td class="p-4">20–25/user</td>
+                                <td class="p-4 text-slate-600">Analys, juridik</td>
+                                <td class="p-4 font-bold text-emerald-600">8.8/10</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50/30 transition-colors">
+                                <td class="p-4 font-bold">Azure OpenAI</td>
+                                <td class="p-4 text-slate-600">GPT-4o</td>
+                                <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">Enterprise</span></td>
+                                <td class="p-4">Pay-per-use</td>
+                                <td class="p-4 text-slate-600">Enterprise, dev</td>
+                                <td class="p-4 font-bold text-emerald-600">9.1/10</td>
+                            </tr>
+                            <tr class="hover:bg-indigo-50/30 transition-colors">
+                                <td class="p-4 font-bold text-slate-500">Gemini Advanced</td>
+                                <td class="p-4 text-slate-600">Gemini 1.5 Pro</td>
+                                <td class="p-4"><span class="tag-paid text-xs font-semibold px-2 py-1 rounded-full">Begränsad DPA</span></td>
+                                <td class="p-4">19.99/user</td>
+                                <td class="p-4 text-slate-600">Google Workspace</td>
+                                <td class="p-4 font-bold text-amber-600">7.5/10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Directory -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" id="verktyg">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">AI-verktyg för svenska företag</h2>
+            <p class="text-slate-600 text-lg">Sorterat efter kategori – alla med GDPR-status och svensk prisguide</p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12">
+            <button onclick="filterTools('all')" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white transition-all">Alla</button>
+            <button onclick="filterTools('text')" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Text & Innehåll</button>
+            <button onclick="filterTools('kod')" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Kod & Dev</button>
+            <button onclick="filterTools('bild')" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Bild & Design</button>
+            <button onclick="filterTools('affar')" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Affär & CRM</button>
+            <button onclick="filterTools('juridik')" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Juridik & HR</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+            <!-- Text & Innehåll -->
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="text">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-2xl">🤖</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">GDPR-klar</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">ChatGPT Teams</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">OpenAIs GPT-4o med DPA inkluderat. Bästa valet för SME som vill ha GPT-4 med juridisk trygghet. Data tränar inte modellen.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">GPT-4o</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Teamfunktioner</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Plugins</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">25 USD / mån / user</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 9.2/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="text">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center text-2xl">✦</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">GDPR-klar</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Claude (Anthropic)</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">Stark på analys, långa dokument och juridisk text. Claude Sonnet 4.6 via AWS Bedrock EU-region – fullt GDPR-kompatibelt för enterprise.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">200K context</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Dokument</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">AWS EU</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">20 USD / mån</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 8.8/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="affar">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">🪟</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">EU-data</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Microsoft Copilot 365</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">GPT-4o inbyggt i Word, Excel, Teams och Outlook. Perfekt om du redan betalar för M365. Datalagring i EU-region. GDPR via Microsofts DPA.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">M365-integration</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Teams</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Excel AI</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">30 USD / mån / user</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 9.0/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="text">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-violet-100 rounded-2xl flex items-center justify-center text-2xl">✍️</div>
+                    <span class="tag-paid text-xs font-bold px-3 py-1 rounded-full">Begränsad DPA</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Jasper AI</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">Specialiserat innehållsverktyg för marknadsföring. Mönster och templates för annonser, bloggar och e-post. DPA krävs separat – rekommenderas ej för känslig data.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Marketing</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Templates</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Brand voice</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">49 USD / mån</span>
+                    <span class="text-xs text-amber-600 font-semibold">★ 7.4/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="kod">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center text-2xl">💻</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">GDPR-klar</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">GitHub Copilot</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI-kodassistent inbyggd i VS Code och JetBrains. GPT-4o och Claude-modeller. Enterprise-plan med GDPR-avtal och datalagring utan träning.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">VS Code</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Autocomplete</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Chat</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">10–19 USD / mån</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 9.3/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="bild">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-2xl">🎨</div>
+                    <span class="tag-paid text-xs font-bold px-3 py-1 rounded-full">Begränsad DPA</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Midjourney</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">Marknadsledande bildgenerering. Kraftfull men saknar DPA – undvik att inkludera klientdata i prompts. Bra för marknadsföringsmaterial utan personuppgifter.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Bildgenerering</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Discord</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Varumärke</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">10–60 USD / mån</span>
+                    <span class="text-xs text-amber-600 font-semibold">★ 8.2/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="juridik">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-teal-100 rounded-2xl flex items-center justify-center text-2xl">⚖️</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">GDPR-klar</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Visma Compact AI</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">AI-funktioner i Vismas redovisningsprogram – specifikt byggt för svenska SME. Datalagring i Sverige. Bokföring, fakturor och lönehantering med AI-stöd.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Bokföring</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Fakturaläsning</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">SV-data</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">399 kr / mån</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 8.5/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="affar">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center text-2xl">📊</div>
+                    <span class="tag-gdpr text-xs font-bold px-3 py-1 rounded-full">GDPR-klar</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">HubSpot AI</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">CRM med inbyggd AI för försäljning och marknadsföring. AI-mejl, lead-scoring och konversationsanalys. Serverhosting i EU. Gratis-plan tillgänglig.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">CRM</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">E-post</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Lead scoring</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">0–800 USD / mån</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 8.6/10</span>
+                </div>
+            </article>
+
+            <article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="juridik">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="w-12 h-12 bg-red-100 rounded-2xl flex items-center justify-center text-2xl">📋</div>
+                    <span class="tag-free text-xs font-bold px-3 py-1 rounded-full">SE-baserat</span>
+                </div>
+                <h3 class="text-lg font-bold mb-2">Avtal24 AI</h3>
+                <p class="text-slate-500 text-sm mb-4 leading-relaxed">Svenskt juridikverktyg med AI-granskning av avtal. Baserat på svensk rätt. Genomgår standardavtal, NDA:er och hyreskontrakt – på svenska.</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Avtalsanalys</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">NDA</span>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-3 py-1 rounded-full">Svensk rätt</span>
+                </div>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span class="text-sm font-bold">490 kr / mån</span>
+                    <span class="text-xs text-emerald-600 font-semibold">★ 8.1/10</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- GDPR Guide -->
+    <section class="bg-gradient-to-br from-emerald-50 to-teal-50 py-20 px-6 border-y border-emerald-100" id="gdpr">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">GDPR & AI – den svenska checklistan</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">IMY (Integritetsskyddsmyndigheten) granskar AI-användning. Här är vad du faktiskt behöver ha på plats.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-emerald-800 mb-6">Obligatoriska åtgärder</h3>
+                    <div class="bg-white rounded-2xl p-6 border border-emerald-100 flex gap-4">
+                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">1</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Teckna DPA med AI-leverantören</h4>
+                            <p class="text-slate-500 text-sm">Data Processing Agreement krävs enligt GDPR Art. 28 om du behandlar personuppgifter. OpenAI, Microsoft och Anthropic erbjuder DPA för business-planer.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-emerald-100 flex gap-4">
+                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">2</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Dokumentera i behandlingsregistret</h4>
+                            <p class="text-slate-500 text-sm">Alla AI-verktyg som hanterar personuppgifter ska finnas i er registerförteckning med ändamål, rättslig grund och dataskydd.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-emerald-100 flex gap-4">
+                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">3</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Genomföra konsekvensbedömning (DPIA)</h4>
+                            <p class="text-slate-500 text-sm">Krävs om AI-systemet innebär hög risk – t.ex. profilering av anställda, känslig hälsodata eller automatiserade beslut som rör individer.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-6 border border-emerald-100 flex gap-4">
+                        <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 mt-0.5">4</div>
+                        <div>
+                            <h4 class="font-bold mb-1">Informera dina användare och anställda</h4>
+                            <p class="text-slate-500 text-sm">Integritetspolicyn ska uppdateras med hur AI används. Anställda ska informeras om AI-bevakning i enlighet med GDPR Art. 13–14.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-red-700 mb-6">Undvik dessa misstag</h3>
+                    <div class="space-y-3">
+                        <div class="bg-white border border-red-100 rounded-2xl p-5 flex gap-3">
+                            <span class="text-red-500 text-lg flex-shrink-0">✗</span>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Klistra in personnummer i ChatGPT</h4>
+                                <p class="text-slate-500 text-xs">Personnummer är personuppgifter. Utan DPA och rättslig grund bryter du mot GDPR. Använd ChatGPT Teams eller Azure OpenAI.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-red-100 rounded-2xl p-5 flex gap-3">
+                            <span class="text-red-500 text-lg flex-shrink-0">✗</span>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Använda gratisversioner för kunddata</h4>
+                                <p class="text-slate-500 text-xs">ChatGPT Free, Gemini Basic m.fl. tränar på dina konversationer utan DPA. Aldrig kunddata i gratisversioner.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-red-100 rounded-2xl p-5 flex gap-3">
+                            <span class="text-red-500 text-lg flex-shrink-0">✗</span>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Automatiserade anställningsbeslut utan mänsklig granskning</h4>
+                                <p class="text-slate-500 text-xs">GDPR Art. 22 ger individer rätt att inte bli föremål för enbart automatiserade beslut. Kräver alltid mänskligt övervägande.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-red-100 rounded-2xl p-5 flex gap-3">
+                            <span class="text-red-500 text-lg flex-shrink-0">✗</span>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Overifierade AI-svar i juridiska dokument</h4>
+                                <p class="text-slate-500 text-xs">AI kan hallucina – sätt aldrig ett juridiskt dokument utan mänsklig granskning. Avtalsansvar följer er som organisation.</p>
+                            </div>
+                        </div>
+                        <div class="bg-white border border-red-100 rounded-2xl p-5 flex gap-3">
+                            <span class="text-red-500 text-lg flex-shrink-0">✗</span>
+                            <div>
+                                <h4 class="font-semibold text-sm mb-1">Glömma datalagring utanför EU</h4>
+                                <p class="text-slate-500 text-xs">Många AI-verktyg lagrar data i USA. Kontrollera att dataöverföring sker under Adequacy Decision eller Standard Contractual Clauses (SCC).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EU AI Act -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" id="ai-act">
+        <div class="text-center mb-12">
+            <h2 class="text="4xl font-extrabold mb-4">EU AI Act – vad gäller i Sverige 2026?</h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto">EU:s AI-lag trädde i kraft 2024. Tillämpas gradvis – här är vad svenska företag behöver veta nu.</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-red-50 border border-red-200 p-7 rounded-3xl">
+                <div class="text-3xl mb-4">🚫</div>
+                <h3 class="text-lg font-bold text-red-800 mb-3">Förbjudna system</h3>
+                <p class="text-sm text-red-700 mb-4">Förbjudet sedan feb 2025</p>
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li class="flex gap-2"><span class="text-red-400">•</span>Social scoring (betygsätta medborgare)</li>
+                    <li class="flex gap-2"><span class="text-red-400">•</span>Subliminal manipulation</li>
+                    <li class="flex gap-2"><span class="text-red-400">•</span>Biometrisk fjärridentifiering i realtid</li>
+                    <li class="flex gap-2"><span class="text-red-400">•</span>Emotionsövervakning på arbetsplatser</li>
+                </ul>
+            </div>
+            <div class="bg-orange-50 border border-orange-200 p-7 rounded-3xl">
+                <div class="text-3xl mb-4">⚠️</div>
+                <h3 class="text-lg font-bold text-orange-800 mb-3">Högrisk-AI</h3>
+                <p class="text-sm text-orange-700 mb-4">Strängast reglerat</p>
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li class="flex gap-2"><span class="text-orange-400">•</span>AI i rekryteringsprocesser</li>
+                    <li class="flex gap-2"><span class="text-orange-400">•</span>Kreditbedömning</li>
+                    <li class="flex gap-2"><span class="text-orange-400">•</span>Sjukvård och diagnostik</li>
+                    <li class="flex gap-2"><span class="text-orange-400">•</span>Kritisk infrastruktur</li>
+                </ul>
+            </div>
+            <div class="bg-yellow-50 border border-yellow-200 p-7 rounded-3xl">
+                <div class="text-3xl mb-4">📢</div>
+                <h3 class="text-lg font-bold text-yellow-800 mb-3">Transparenskrav</h3>
+                <p class="text-sm text-yellow-700 mb-4">Informationsskyldighet</p>
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li class="flex gap-2"><span class="text-yellow-500">•</span>Chatbotar ska identifiera sig som AI</li>
+                    <li class="flex gap-2"><span class="text-yellow-500">•</span>Deepfakes kräver märkning</li>
+                    <li class="flex gap-2"><span class="text-yellow-500">•</span>AI-genererat innehåll ska märkas</li>
+                </ul>
+            </div>
+            <div class="bg-green-50 border border-green-200 p-7 rounded-3xl">
+                <div class="text-3xl mb-4">✅</div>
+                <h3 class="text-lg font-bold text-green-800 mb-3">Minimal risk</h3>
+                <p class="text-sm text-green-700 mb-4">Inga extra krav</p>
+                <ul class="text-sm text-slate-600 space-y-2">
+                    <li class="flex gap-2"><span class="text-green-500">•</span>Spamfilter och rekommendationer</li>
+                    <li class="flex gap-2"><span class="text-green-500">•</span>AI-texthjälp (Copilot, ChatGPT)</li>
+                    <li class="flex gap-2"><span class="text-green-500">•</span>Bildgenerering för marknadsföring</li>
+                    <li class="flex gap-2"><span class="text-green-500">•</span>De flesta affärsverktyg</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing section -->
+    <section class="bg-slate-900 text-white py-20 px-6" id="priser">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">Vad kostar AI egentligen?</h2>
+                <p class="text-slate-400 text-lg">Totalkostnadsanalys för svenska företag 2026</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700">
+                    <h3 class="text-xl font-bold mb-2">Soloföretagare</h3>
+                    <div class="text-4xl font-extrabold text-indigo-400 mb-1">~500 kr</div>
+                    <div class="text-slate-400 text-sm mb-6">per månad</div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>ChatGPT Plus: 218 kr/mån</li>
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>Canva AI: 149 kr/mån</li>
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>Notion AI: 100 kr/mån</li>
+                        <li class="flex gap-2 text-amber-300"><span>⚠</span>Ingen DPA – inte för kunddata</li>
+                    </ul>
+                </div>
+                <div class="bg-indigo-600 rounded-3xl p-8 border border-indigo-500 relative">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-400 text-amber-900 text-xs font-bold px-4 py-1.5 rounded-full">POPULÄRAST</div>
+                    <h3 class="text-xl font-bold mb-2">SME (10–50 anst.)</h3>
+                    <div class="text-4xl font-extrabold text-white mb-1">~4 000 kr</div>
+                    <div class="text-indigo-200 text-sm mb-6">per månad (20 users)</div>
+                    <ul class="space-y-3 text-sm text-indigo-100">
+                        <li class="flex gap-2"><span class="text-white">→</span>ChatGPT Teams: 20×250 kr = 5 000 kr</li>
+                        <li class="flex gap-2"><span class="text-white">→</span>Eller M365 Copilot: add-on</li>
+                        <li class="flex gap-2"><span class="text-white">→</span>DPA ingår automatiskt</li>
+                        <li class="flex gap-2 text-emerald-300"><span>✓</span>GDPR-kompatibelt</li>
+                    </ul>
+                </div>
+                <div class="bg-slate-800 rounded-3xl p-8 border border-slate-700">
+                    <h3 class="text-xl font-bold mb-2">Enterprise (100+ anst.)</h3>
+                    <div class="text-4xl font-extrabold text-indigo-400 mb-1">Custom</div>
+                    <div class="text-slate-400 text-sm mb-6">förhandlas direkt</div>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>Azure OpenAI Service</li>
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>Microsoft Copilot Enterprise</li>
+                        <li class="flex gap-2"><span class="text-indigo-400">→</span>Privat driftsättning möjlig</li>
+                        <li class="flex gap-2 text-emerald-300"><span>✓</span>Full GDPR-kontroll</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 px-6 max-w-4xl mx-auto" id="faq">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">Vanliga frågor om AI i Sverige</h2>
+        </div>
+        <div class="space-y-4" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <button class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle" onclick="toggleFaq(this)">
+                    <span itemprop="name">Är GPT-4 GDPR-kompatibelt i Sverige?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">GPT-4 via OpenAI API kan användas GDPR-kompatibelt om du tecknar ett DPA med OpenAI, väljer Azure OpenAI Service (EU-datalagring) och undviker att skicka personuppgifter utan rättslig grund. IMY kräver att du dokumenterar ändamål och rättslig grund i din behandlingsregister. ChatGPT Teams inkluderar DPA automatiskt och är det enklaste alternativet för SME.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <button class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle" onclick="toggleFaq(this)">
+                    <span itemprop="name">Vad kostar GPT-4 för svenska företag?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">GPT-4o via API kostar $2,50 per miljon input-tokens och $10 per miljon output-tokens (april 2026). ChatGPT Plus kostar $20/mån (~218 kr). ChatGPT Teams kostar $25/användare/mån (~273 kr) och inkluderar DPA. Azure OpenAI har liknande prissättning men med EU-datalagring och enterprise-villkor.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <button class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle" onclick="toggleFaq(this)">
+                    <span itemprop="name">Vilka svenska AI-lagar gäller från 2026?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">EU AI-akten tillämpas fullt ut från 2026. Förbjudna system var olagliga från februari 2025. Högrisk-AI kräver konformitetsbedömning, teknisk dokumentation och registrering i EU-databas. Generativ AI (som GPT-4) klassas som "general purpose AI" och lyder under transparenskrav. IMY och Konsumentverket ansvarar för tillsyn i Sverige.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <button class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle" onclick="toggleFaq(this)">
+                    <span itemprop="name">GPT-4 eller Claude – vilket är bäst för svenska företag?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">Beror på användningsfall. GPT-4o (ChatGPT) är bäst för dagligt bruk, plugins och bred funktionalitet. Claude Sonnet 4.6 är överlägset för långa dokument, juridisk analys och nyanserat skrivande. Båda är GDPR-kompatibla via respektive DPA. Claude via AWS Bedrock ger EU-region. Om du redan betalar för Microsoft 365 är Copilot det ekonomiskt smartaste valet.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <button class="w-full text-left p-6 font-semibold text-lg flex justify-between items-center hover:bg-slate-50 transition-colors faq-toggle" onclick="toggleFaq(this)">
+                    <span itemprop="name">Kan jag använda AI för HR och rekrytering i Sverige?</span>
+                    <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">Ja, men med strikta krav. AI i rekrytering klassas som högrisk-AI under EU AI Act. Du behöver: DPA med verktyget, DPIA (konsekvensanalys), mänsklig granskning av alla beslut, och information till sökande om AI-användning. Automatiserade avvisningsbeslut utan mänskligt övervägande är förbjudna enligt GDPR Art. 22.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Nyhetsbrev -->
+    <section class="bg-indigo-600 py-20 px-6 text-center text-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-4">Håll dig uppdaterad om AI i Sverige</h2>
+            <p class="text-indigo-200 text-lg mb-8">Nya verktyg, lagändringar och GDPR-uppdateringar – direkt i din inkorg. Ingen spam.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input type="email" placeholder="din@epost.se" class="px-6 py-4 rounded-xl text-slate-900 font-medium outline-none w-full focus:ring-2 focus:ring-white">
+                <button class="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all whitespace-nowrap">Prenumerera gratis</button>
+            </div>
+            <p class="text-indigo-300 text-xs mt-4">Avregistrera när som helst. Vi lagrar din e-post i enlighet med GDPR.</p>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-slate-200 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygskistan</span></div>
+                <p class="text-xs">© 2026 Adviseo · Oberoende guide till AI för svenska företag</p>
+            </div>
+            <div class="flex gap-6 text-xs">
+                <a href="#" class="hover:text-indigo-600">Integritetspolicy</a>
+                <a href="#" class="hover:text-indigo-600">Cookie-inställningar</a>
+                <a href="#" class="hover:text-indigo-600">Kontakt</a>
+                <a href="#" class="hover:text-indigo-600">Om oss</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            answer.classList.toggle('hidden');
+            icon.style.transform = answer.classList.contains('hidden') ? '' : 'rotate(180deg)';
+        }
+
+        function filterTools(cat) {
+            document.querySelectorAll('.tool-card').forEach(card => {
+                if (cat === 'all' || card.dataset.cat === cat) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-indigo-600', 'text-white');
+                btn.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+            });
+            event.target.classList.add('bg-indigo-600', 'text-white');
+            event.target.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
