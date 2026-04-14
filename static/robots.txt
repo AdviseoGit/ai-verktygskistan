@@ -7,4 +7,4 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: https://ai-verktygskistan.se/sitemap.xml
+Sitemap: https://aiverktygsladan.se/sitemap.xml
