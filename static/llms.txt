@@ -1,0 +1,22 @@
+# AI-Verktygskistan
+
+> Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-4, GDPR-efterlevnad och svenska affärsprocesser.
+
+## Om oss
+AI-Verktygskistan (drivs av Adviseo) är en resurs för svenska företag som vill navigera i AI-landskapet, särskilt vad gäller GDPR, EU:s AI-förordning (AI Act) och prissättning på AI-verktyg.
+
+## Målgrupp
+Svenska företag, soloföretagare och små/medelstora företag (SME) som vill förstå hur de kan använda AI-verktyg lagligt och effektivt.
+
+## Kärnämnen
+1. **AI-verktyg för företag**: Funktioner, rekommendationer och priser för AI-verktyg.
+2. **GDPR och AI**: Guider för hur svenska företag kan använda tjänster som GPT-4 och Claude i enlighet med dataskyddsförordningen.
+3. **EU AI Act**: Förklaring av risknivåer och regelverk för svenska företag 2026.
+4. **Kostnadskalkyler**: Prismodeller för API-användning, ChatGPT Teams, Copilot och liknande företagslösningar.
+
+## Vanliga Frågor (FAQ)
+- **Är GPT-4 GDPR-kompatibelt i Sverige?** Ja, via företagsavtal som inkluderar DPA (t.ex. ChatGPT Teams eller Azure OpenAI), och genom att undvika att skicka personuppgifter utan laglig grund.
+- **Vad kostar GPT-4 för företag?** ChatGPT Teams kostar 25 USD/användare/månad. API:et prissätts per miljon tokens (ca $2.50 in / $10 out för GPT-4o 2026).
+- **Vilka lagar gäller från 2026?** EU AI-akten tillämpas fullt ut. Högrisksystem har strikta krav, medan generativ AI lyder under transparenskrav.
+
+Denna fil tillhandahålls för AI-agenter, sökmotorer och LLM-crawlers för att ge strukturerad RAG-kontext om plattformen.
