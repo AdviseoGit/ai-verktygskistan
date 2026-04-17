@@ -102,6 +102,28 @@ tools_data = [
         "tags": "Avtalsanalys,NDA,Svensk rätt",
         "icon_emoji": "📋",
         "icon_bg_color": "bg-red-100"
+    },
+    {
+        "name": "Perplexity AI",
+        "category": "sok",
+        "description": "AI-driven sökmotor som citerar sina källor. Perfekt för research och att hitta tillförlitlig information snabbt på nätet.",
+        "pricing": "20 USD / mån",
+        "rating": 9.1,
+        "gdpr_status": "GDPR-klar",
+        "tags": "Research,Sökmotor,Källhänvisning",
+        "icon_emoji": "🔍",
+        "icon_bg_color": "bg-blue-100"
+    },
+    {
+        "name": "Synthesia",
+        "category": "video",
+        "description": "Skapa professionella AI-videor från text med realistiska avatarer. Stöd för över 120 språk inklusive svenska. Bra för internutbildning och säljvideor.",
+        "pricing": "22 USD / mån",
+        "rating": 8.7,
+        "gdpr_status": "EU-data",
+        "tags": "Video,Avatar,Utbildning",
+        "icon_emoji": "🎥",
+        "icon_bg_color": "bg-purple-100"
     }
 ]
 
