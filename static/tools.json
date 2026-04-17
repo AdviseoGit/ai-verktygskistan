@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ChatGPT Teams",
+    "category": "text",
+    "description": "OpenAIs GPT-4o med DPA inkluderat.",
+    "gdpr_ready": true
+  },
+  {
+    "name": "Microsoft 365 Copilot",
+    "category": "text",
+    "description": "Integrerad i Word/Excel. GDPR-säkert inom tenant.",
+    "gdpr_ready": true
+  }
+]

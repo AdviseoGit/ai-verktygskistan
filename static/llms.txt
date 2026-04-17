@@ -20,3 +20,7 @@ Svenska företag, soloföretagare och små/medelstora företag (SME) som vill f�
 - **Vilka lagar gäller från 2026?** EU AI-akten tillämpas fullt ut. Högrisksystem har strikta krav, medan generativ AI lyder under transparenskrav.
 
 Denna fil tillhandahålls för AI-agenter, sökmotorer och LLM-crawlers för att ge strukturerad RAG-kontext om plattformen.
+
+## AdSense & Compliance
+- Integritetspolicy implemented.
+- Schema.json is actively referenced in index.html for GEI (Generative Engine Indexing).
