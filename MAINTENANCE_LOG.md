@@ -18,3 +18,12 @@
 - Expanded `integritetspolicy.html` with comprehensive AdSense requirements (third-party vendors, Google AdSense opt-outs).
 - Ensured schema.json and llms.txt remain highly optimized for Generative Engine Indexing (GEI).
 - Committed and pushed to origin main.
+
+## 2026-04-17 (Database Upgrade)
+- Transitioned AI-verktygskistan from a static SEO page to a real dynamic directory.
+- Built an SQLite database and SQLAlchemy models (`database.py`, `models.py`).
+- Seeded the database with 9 verified AI tools (GPT-4, Claude, Copilot, etc.).
+- Added `/api/tools` endpoint to `main.py`.
+- Implemented frontend `tools.js` to dynamically fetch and render database entries, effectively replacing hardcoded HTML.
+- Fulfills the roadmap goal of "Directory and educational hub. Build real database entries, not just SEO landing pages."
+

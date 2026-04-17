@@ -1,12 +1,24 @@
 import os
-from fastapi import FastAPI
+from fastapi import FastAPI, Depends
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
+from sqlalchemy.orm import Session
 import uvicorn
+
+from database import get_db, engine, Base
+from models import Tool
+
+# Ensure tables are created
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AI-Verktygskistan")
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/api/tools")
+def get_tools(db: Session = Depends(get_db)):
+    tools = db.query(Tool).all()
+    return tools
 
 @app.get("/", response_class=HTMLResponse)
 async def index():
