@@ -5,13 +5,13 @@ Base.metadata.create_all(bind=engine)
 
 tools_data = [
     {
-        "name": "ChatGPT Teams",
+        "name": "OpenAI / ChatGPT",
         "category": "text",
-        "description": "OpenAIs GPT-4o med DPA inkluderat. Bästa valet för SME som vill ha GPT-4 med juridisk trygghet. Data tränar inte modellen.",
-        "pricing": "25 USD / mån / user",
-        "rating": 9.2,
-        "gdpr_status": "GDPR-klar",
-        "tags": "GPT-4o,Teamfunktioner,Plugins",
+        "description": "Marknadsledande språkmodeller. GPT-4o är den senaste och mest kraftfulla modellen, tillgänglig i både gratis- och betalversioner (Plus, Team, Enterprise). Erbjuder avancerad textförståelse, bildanalys och logiskt resonemang. Enterprise-versionen är GDPR-säkrad med DPA.",
+        "pricing": "Från 20 USD / mån",
+        "rating": 9.5,
+        "gdpr_status": "GDPR-klar (Enterprise)",
+        "tags": "GPT-4o,Allround,API",
         "icon_emoji": "🤖",
         "icon_bg_color": "bg-indigo-100"
     },
