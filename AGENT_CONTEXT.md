@@ -1,39 +1,24 @@
-# AI-Verktygskistan – Agent Context
+# Agent Mission: AI-verktygslådan Growth
 
-## Project identity
-- **Name:** AI-Verktygskistan
-- **URL (target):** ai-verktygskistan.se
-- **Brand parent:** Adviseo
-- **Created:** 2026-04-09
-- **Stack:** FastAPI + static HTML (Tailwind CDN) — same pattern as proptech-guide-se
+## 1. Mål (Goal)
+- Etablera AI-verktygslådan som en go-to resurs för svenska användare som vill hitta och jämföra AI-verktyg.
+- Driva organisk trafik och generera affiliatintäkter.
 
-## Mission
-Swedish-language AI tools directory and compliance portal. Information arbitrage: bridge the gap between English-only AI resources and Swedish business users who need GDPR/AI Act guidance.
+## 2. Mätbara KPI:er (Key Performance Indicators)
+- Nå topp 5 på Google för minst 20 olika söktermer relaterade till specifika AI-verktyg (t.ex. "bästa ai bildgenerator", "chatgpt alternativ") inom 6 månader.
+- Öka organisk trafik med 25% per månad.
+- Generera 100 affiliate-klick per vecka.
 
-## Primary SEO target
-- **Keyword:** gpt 4 (Vol 2400 SE)
-- **Cluster:** gpt-4 svenska, gpt 4 pris, chatgpt gdpr, ai verktyg företag, ai act sverige
+## 3. Strategi & Taktik (Execution)
+- **Content:** Varje torsdag, lägg till och recensera 3-5 nya, relevanta AI-verktyg. Uppdatera befintliga recensioner om verktygen har fått stora uppdateringar.
+- **SEO:** Fokusera på "long-tail"-sökord och recensions-schema (structured data) för att få rika resultat i Google.
+- **Monetization:** Identifiera och implementera nya affiliate-program. A/B-testa placering och utformning av affiliate-länkar för att maximera klickfrekvens (CTR).
+- **Rapportering:** Varje fredag, sammanställ en rapport med veckans åtgärder, trafik- och klickdata.
 
-## Content pillars
-1. **Tool directory** – 40+ AI tools, each with GDPR status, price in SEK, use case
-2. **GDPR guide** – IMY-focused checklist for using AI legally in Sweden
-3. **EU AI Act explainer** – 4 risk levels, what applies to Swedish SME
-4. **Pricing calculator** – total cost for soloföretagare / SME / enterprise
+## 4. Gränser & Ramverk (Boundaries)
+- Alla recensioner måste vara ärliga och transparenta. Nackdelar med ett verktyg ska belysas lika väl som fördelar.
+- Markera tydligt ut affiliatelänkar.
+- Ändra inte den visuella profilen utan manuellt godkännande.
 
-## Information arbitrage angles
-- Most AI GDPR content is in English → Swedish translation of key concepts
-- Confusing regulation → clear checklist format
-- USD pricing → converted to SEK with context
-- Generic AI hype → "what's actually legal here"
-
-## Deployment
-- Same Railway/Fly.io pattern as other Adviseo projects
-- PORT env var for dynamic port binding
-- Static files served from /static
-
-## Next features (backlog)
-- [ ] Tool comparison wizard (2-3 tools side by side)
-- [ ] GDPR self-assessment quiz → email lead capture
-- [ ] Weekly newsletter ("AI i Sverige den här veckan")
-- [ ] Swedish-specific tools section (Visma, Fortnox AI, etc.)
-- [ ] Sitemap.xml generation
+## 5. Teknisk Info
+- (Lägg till Railway-info här när det är applicerbart)
