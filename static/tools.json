@@ -10,5 +10,11 @@
     "category": "text",
     "description": "Integrerad i Word/Excel. GDPR-säkert inom tenant.",
     "gdpr_ready": true
+  },
+  {
+    "name": "Canva AI",
+    "category": "bild",
+    "description": "Designverktyg med AI-funktioner för att skapa bilder, presentationer och marknadsföringsmaterial. Canva har ett DPA och är GDPR-kompatibelt.",
+    "gdpr_ready": true
   }
 ]
