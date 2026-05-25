@@ -142,5 +142,17 @@
     "category": "bild",
     "description": "Designverktyg med AI-funktioner för att skapa bilder, presentationer och marknadsföringsmaterial. Canva har ett DPA och är GDPR-kompatibelt.",
     "gdpr_ready": true
+  },
+  {
+    "id": 12,
+    "name": "ElevenLabs",
+    "category": "ljud",
+    "description": "Marknadsledande för AI-röstgenerering och text-till-tal (TTS). Exceptionellt bra på svenska röster. Perfekt för video voiceovers, poddar och utbildningsmaterial.",
+    "pricing": "5 USD / mån (Free tier finns)",
+    "rating": 9.0,
+    "gdpr_status": "DPA finns",
+    "tags": "TTS,Röstkloning,Svenska",
+    "icon_emoji": "🎙️",
+    "icon_bg_color": "bg-cyan-100"
   }
 ]
