@@ -191,4 +191,17 @@
     "icon_emoji": "🎵",
     "icon_bg_color": "bg-green-100"
   }
+,
+  {
+    "id": 17,
+    "name": "Whisper (OpenAI)",
+    "category": "ljud",
+    "description": "Marknadsledande transkriberingstjänst från OpenAI. Konverterar ljud- och videofiler till text med hög precision, även för svenska. API-tillgång för utvecklare och via tredjepartsappar.",
+    "pricing": "API, betala per minut",
+    "rating": 9.2,
+    "gdpr_status": "GDPR-klar",
+    "tags": "Transkribering,Ljud-till-text,API",
+    "icon_emoji": "🎧",
+    "icon_bg_color": "bg-gray-100"
+  }
 ]
