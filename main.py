@@ -36,6 +36,10 @@ async def sitemap():
 async def favicon():
     return FileResponse("static/favicon.svg")
 
+@app.get("/{page_name}.html", response_class=HTMLResponse)
+async def serve_static_html(page_name: str):
+    return FileResponse(f"static/{page_name}.html")
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     uvicorn.run(app, host="0.0.0.0", port=port)
