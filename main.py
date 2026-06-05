@@ -9,6 +9,7 @@ from database import get_db, engine, Base
 from models import Tool
 
 # Ensure tables are created
+# Force rebuild
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AI-Verktygskistan")
