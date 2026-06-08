@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, BackgroundTasks
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
@@ -13,6 +13,35 @@ from models import Tool
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="AI-Verktygskistan")
+
+from pydantic import BaseModel, EmailStr
+
+
+class LeadIn(BaseModel):
+    email: EmailStr
+
+
+def _deliver_aiv(email: str):
+    import mailer
+    import report_aiv
+    pdf = None
+    try:
+        pdf = report_aiv.build_guide_pdf()
+    except Exception as e:
+        print(f"[aiv] guide pdf failed: {e}")
+    atts = [("AI-GDPR-checklista.pdf", pdf, "application/pdf")] if pdf else None
+    mailer.send_email(email, "Din GDPR-checklista for AI-verktyg",
+                      report_aiv.user_email_html(), attachments=atts,
+                      from_name="AI-Verktygskistan")
+    mailer.notify_owner("Ny lead - AI-Verktygskistan",
+                        f"<p>Ny lead: <b>{email}</b></p>", reply_to=email,
+                        from_name="AI-Verktygskistan")
+
+
+@app.post("/api/lead")
+async def capture_lead(lead: LeadIn, background: BackgroundTasks):
+    background.add_task(_deliver_aiv, lead.email)
+    return {"status": "success"}
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
