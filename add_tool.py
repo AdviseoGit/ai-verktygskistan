@@ -1,21 +1,21 @@
-
 import sqlite3
+import argparse
 
-def add_new_tool():
+def add_new_tool(name, category, description, pricing, rating, gdpr_status, tags, icon_emoji, icon_bg_color):
     try:
         conn = sqlite3.connect('tools.db')
         cursor = conn.cursor()
 
         new_tool = (
-            "Suno AI",
-            "musik",
-            "Suno AI är en banbrytande AI-tjänst som kan skapa realistisk musik, kompletta med sång och instrument, baserat på en enkel textprompt. Användare kan specificera genre, stil och text för att generera unika låtar på sekunder.",
-            "Freemium",
-            4.7,
-            "Oklart",
-            "musikgenerering, AI-låtar, text-till-musik",
-            "🎵",
-            "#FFD700"  # Gold
+            name,
+            category,
+            description,
+            pricing,
+            rating,
+            gdpr_status,
+            tags,
+            icon_emoji,
+            icon_bg_color
         )
 
         cursor.execute("""
@@ -24,7 +24,7 @@ def add_new_tool():
         """, new_tool)
 
         conn.commit()
-        print("Successfully added 'Suno AI' to the database.")
+        print(f"Successfully added '{name}' to the database.")
 
     except sqlite3.Error as e:
         print(f"Database error: {e}")
@@ -33,4 +33,27 @@ def add_new_tool():
             conn.close()
 
 if __name__ == "__main__":
-    add_new_tool()
+    parser = argparse.ArgumentParser(description="Add a new tool to the AI Verktygskistan database.")
+    parser.add_argument("--name", required=True)
+    parser.add_argument("--category", required=True)
+    parser.add_argument("--description", required=True)
+    parser.add_argument("--pricing", required=True)
+    parser.add_argument("--rating", type=float, required=True)
+    parser.add_argument("--gdpr_status", required=True)
+    parser.add_argument("--tags", required=True)
+    parser.add_argument("--icon_emoji", required=True)
+    parser.add_argument("--icon_bg_color", required=True)
+    
+    args = parser.parse_args()
+    
+    add_new_tool(
+        args.name,
+        args.category,
+        args.description,
+        args.pricing,
+        args.rating,
+        args.gdpr_status,
+        args.tags,
+        args.icon_emoji,
+        args.icon_bg_color
+    )
