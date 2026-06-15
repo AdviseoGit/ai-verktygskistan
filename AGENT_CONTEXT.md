@@ -45,11 +45,11 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 - [ ] Uppdatera **både** tools.json OCH index.html om modellnamnet nämns där.
 - [ ] Uppdatera "Uppdaterad [månad] [år]"-märket i index.html hero-sektionen.
 
-### 5c. Modeller att bevaka (maj 2026)
+### 5c. Modeller att bevaka (juni 2026)
 | Leverantör | Aktuell flagship | Senaste uppdatering |
 |-----------|-----------------|---------------------|
 | OpenAI    | GPT-5.5         | April 23, 2026      |
-| Anthropic | Claude Opus 4.7 | April 16, 2026      |
+| Anthropic | Claude Fable 5 / Opus 4.8 | Juni 2026  |
 | Google    | Gemini 3.1 Ultra| Maj 2026            |
 | Microsoft | Copilot (GPT-5.5)| April 2026         |
 | Meta      | Llama 4         | April 2026          |
