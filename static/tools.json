@@ -130,5 +130,29 @@
         "tags": "musikgenerering, AI-låtar, text-till-musik",
         "icon_emoji": "🎵",
         "icon_bg_color": "#FFD700"
+    },
+    {
+        "id": 13,
+        "name": "Claude Fable 5",
+        "category": "text",
+        "description": "Anthropics blixtsnabba \"arbetshäst\". Perfekt för storskaliga automationer, snabb innehållsproduktion och dynamiskt webbinnehåll till låg kostnad.",
+        "pricing": "Freemium / API",
+        "rating": 4.8,
+        "gdpr_status": "DPA via AWS EU",
+        "tags": "Fable 5, Automation, Låg kostnad, Snabbt",
+        "icon_emoji": "⚡",
+        "icon_bg_color": "bg-orange-100"
+    },
+    {
+        "id": 14,
+        "name": "Claude Opus 4.8",
+        "category": "text",
+        "description": "Anthropics flaggskeppsmodell för extrem precision, strategiskt tänkande och komplex kodarkitektur. Överlägsen \"context window\" och minimala hallucinationer.",
+        "pricing": "Prenumeration / API",
+        "rating": 4.9,
+        "gdpr_status": "DPA via AWS EU",
+        "tags": "Opus 4.8, 200K context, Komplext, Kodning",
+        "icon_emoji": "🧠",
+        "icon_bg_color": "bg-purple-100"
     }
 ]
