@@ -6,9 +6,18 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 ## Milstolpar
 - [x] Daglig nyhetspipeline etablerad: varje pass börjar med nyhetssvep (web_search) → viktiga lanseringar publiceras/uppdateras samma pass
 - [x] Katalogen växer med 1–3 kvalitetsposter per pass
+- [x] gratis-ai-verktyg.html rebuilt to full on-brand design system (juni 2026) — competing for "gratis AI verktyg"
 - [ ] Hela sajten håller design-nordstjärnan (sammanhållet designsystem, mobil-först)
 - [ ] #1 på Google för "AI verktyg"
 
 ## AKUT INNEHÅLLSSKULD
 - [x] Artikeln om Claude Opus 4.7 vs GPT-5.5 är UTDATERAD: Anthropic har lanserat Claude Opus 4.8 och den nya modellen Claude Fable 5. Uppdaterad.
 - [x] Granska övriga artiklar/poster för gamla modellnamn och versionsnummer — utdaterat är en bugg. Uppdaterat i verktygsdatabasen.
+- [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
+
+## ROADMAP (nästa prioriteringar)
+- [ ] Lägg till 5+ nya verktyg i tools.json — katalogen har 13 men hävdar "40+ granskade" (trovärdighetsrisk)
+- [ ] Lägg in mobilnavigation (hamburger-meny) — nav är hidden på < md
+- [ ] gratis-ai-verktyg.html: lägg till Adobe Firefly, Udio (musik-alternativ), Canva AI gratis
+- [ ] Ny artikel: "AI för HR-avdelningen – GDPR-säkra verktyg" (hög sökvolym)
+- [ ] Sitemap.xml: uppdatera lastmod-datum för gratis-ai-verktyg.html
