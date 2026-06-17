@@ -16,8 +16,12 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
 
 ## ROADMAP (nästa prioriteringar)
-- [ ] Lägg till 5+ nya verktyg i tools.json — katalogen har 13 men hävdar "40+ granskade" (trovärdighetsrisk)
+- [x] Lägg till 6 nya verktyg i tools.json (Notion AI, Canva AI, Otter.ai, Gamma, Adobe Firefly, ElevenLabs) — katalogen 14→20 verktyg (juni 2026)
+- [x] "40+ granskade"-kravet fixat → "20 granskade" (ärlig siffra) i index.html + meta tags
+- [x] Uppdaterat GPT-5.5 i ChatGPT Teams och Copilot 365 beskrivningar (GPT-4o var stale)
 - [ ] Lägg in mobilnavigation (hamburger-meny) — nav är hidden på < md
-- [ ] gratis-ai-verktyg.html: lägg till Adobe Firefly, Udio (musik-alternativ), Canva AI gratis
+- [ ] gratis-ai-verktyg.html: Udio (musik-alternativ) kvar att lägga till
 - [ ] Ny artikel: "AI för HR-avdelningen – GDPR-säkra verktyg" (hög sökvolym)
-- [ ] Sitemap.xml: uppdatera lastmod-datum för gratis-ai-verktyg.html
+- [ ] Sitemap.xml: uppdatera lastmod-datum för gratis-ai-verktyg.html och tools-sidor
+- [ ] Mobilnavigation: hamburger-meny för < md viewport (UX-kritisk)
+- [ ] Katalog: väx mot 30+ genuint granskade verktyg (Zapier AI, Grammarly, Copy.ai, Fireflies.ai)
