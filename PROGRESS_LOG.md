@@ -1,0 +1,15 @@
+2026-06-18 | DESIGN/TILLVÄXT | Fixat mobilmeny, lagt till Udio + 5 nya verktyg | UX-lyft + katalog 20->26 | nästa: Ny artikel HR-avdelningen GDPR
+# PROGRESS_LOG.md
+
+2026-06-17 katalog: utöka från 14 till 20 verktyg, fixa GPT-5.5 och rätta '40+ granskade' till '20 granskade'
+2026-06-16 feat: bygg om gratis-ai-verktyg.html med fullständigt designsystem och 10 verktyg
+2026-06-15 fix: rensa kvarvarande Opus 4.7-referenser (artikel + AGENT_CONTEXT) -> Opus 4.8/Fable 5
+2026-06-15 chore: force trigger railway deploy via empty commit
+2026-06-15 fix: Lägg in Claude Fable 5 och Opus 4.8 ordentligt i databasen och JSON
+2026-06-15 fix: Uppdatera sitemap med nya URL:er
+2026-06-15 feat: Uppdatera databas och statisk JSON för Claude Fable 5 och Opus 4.8
+2026-06-15 feat: Uppdatera till Claude Fable 5 och Opus 4.8, uppdatera artiklar, index och databas
+2026-06-11 docs: seed SITE_VISION with Sims design/freshness priorities (north star, 2026-06-11)
+2026-06-11 fix: pin Python 3.12 (Railpack/mise cannot install 3.13.14 - no precompiled binary, broke builds)
+2026-06-09 feat: Lägg till artikel om Claude Opus 4.7 vs GPT-5.5 och uppdatera startsidan
+2026-06-08 feat(leads): real /api/lead endpoint + GDPR-AI checklista (PDF) email + owner notify; wire forms (was fake)

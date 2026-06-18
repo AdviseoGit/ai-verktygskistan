@@ -226,5 +226,77 @@
         "tags": "Röstsyntes,Svenska,Voiceover",
         "icon_emoji": "🔊",
         "icon_bg_color": "bg-sky-100"
+    },
+    {
+        "id": 21,
+        "name": "Udio",
+        "category": "ljud",
+        "description": "Revolutionerande AI-musikgenerator som skapar högkvalitativa låtar med sång och instrument från textbeskrivningar. Ett fantastiskt gratisalternativ för kreativt ljudskapande.",
+        "pricing": "Freemium (gratis för 10 låtar/dag)",
+        "rating": 8.8,
+        "gdpr_status": "Varning",
+        "tags": "Musik,Sång,Gratis",
+        "icon_emoji": "🎵",
+        "icon_bg_color": "bg-yellow-100"
+    },
+    {
+        "name": "Zapier AI",
+        "category": "affar",
+        "description": "Automatisera arbetsflöden med AI. Zapier kopplar ihop dina appar och låter AI bygga dina automatiseringar. Kraftfullt för att spara tid och minska manuellt arbete.",
+        "pricing": "Freemium (från 20 USD/mån)",
+        "rating": 8.9,
+        "gdpr_status": "GDPR-klar",
+        "tags": "Automatisering,Integrationer,Produktivitet",
+        "icon_emoji": "⚡",
+        "icon_bg_color": "bg-blue-100",
+        "id": 22
+    },
+    {
+        "name": "Grammarly",
+        "category": "text",
+        "description": "Grammarlys AI-assistent hjälper dig inte bara med stavning utan skriver om meningar, anpassar tonfall och genererar text. Mycket populärt och användarvänligt.",
+        "pricing": "Freemium (från 12 USD/mån)",
+        "rating": 8.7,
+        "gdpr_status": "Varning",
+        "tags": "Rättstavning,Skrivande,Engelska",
+        "icon_emoji": "📝",
+        "icon_bg_color": "bg-green-100",
+        "id": 23
+    },
+    {
+        "name": "Copy.ai",
+        "category": "text",
+        "description": "Skapad specifikt för marknadsförare och säljare. Genererar blogginlägg, annonstexter och e-postkampanjer snabbt och effektivt. Har arbetsflödesfunktioner för team.",
+        "pricing": "Freemium (från 36 USD/mån)",
+        "rating": 8.5,
+        "gdpr_status": "Varning",
+        "tags": "Marknadsföring,Copywriting,Sälj",
+        "icon_emoji": "✍️",
+        "icon_bg_color": "bg-orange-100",
+        "id": 24
+    },
+    {
+        "name": "Fireflies.ai",
+        "category": "ljud",
+        "description": "AI-antecknare som spelar in, transkriberar och sammanfattar dina möten (Zoom, Teams, Meet). Kan extrahera action items och söka genom tidigare möteshistorik.",
+        "pricing": "Freemium (från 10 USD/mån)",
+        "rating": 8.8,
+        "gdpr_status": "GDPR-klar",
+        "tags": "Möten,Transkribering,Sammanfattning",
+        "icon_emoji": "🔥",
+        "icon_bg_color": "bg-purple-100",
+        "id": 25
+    },
+    {
+        "name": "Beautiful.ai",
+        "category": "design",
+        "description": "Skapar fantastiska presentationer på nolltid. AI designar slides automatiskt baserat på ditt innehåll och dina uppmaningar. En dröm för alla som avskyr PowerPoint.",
+        "pricing": "12 USD/mån",
+        "rating": 8.6,
+        "gdpr_status": "Varning",
+        "tags": "Presentationer,Design,Slides",
+        "icon_emoji": "📊",
+        "icon_bg_color": "bg-pink-100",
+        "id": 26
     }
 ]

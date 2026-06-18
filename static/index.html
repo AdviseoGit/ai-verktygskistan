@@ -85,6 +85,15 @@
                 Gratis guide →
             </a>
         </div>
+                <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4">
+            <a href="#verktyg" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Verktyg</a>
+            <a href="#gdpr" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">GDPR-guide</a>
+            <a href="#ai-act" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">AI Act</a>
+            <a href="#priser" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Priser</a>
+            <a href="#faq" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">FAQ</a>
+        </div>
     </nav>
 
     <!-- Hero -->
@@ -643,6 +652,16 @@
             if (!localStorage.getItem('cookieConsent')) {
                 setTimeout(showCookieBanner, 1000);
             }
+        });
+    </script>
+<script>
+        document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+        document.querySelectorAll(".mobile-nav-link").forEach(link => {
+            link.addEventListener("click", () => {
+                document.getElementById("mobile-menu").classList.add("hidden");
+            });
         });
     </script>
 </body>
