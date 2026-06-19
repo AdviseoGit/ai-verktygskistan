@@ -1,3 +1,4 @@
+2026-06-19 | SEO/TILLVÄXT | Ny artikel om GDPR-säkra AI-verktyg för HR | Fånga sökvolym på 'AI HR' | nästa: Fånga original-data/kalkylator
 2026-06-18 | DESIGN/TILLVÄXT | Fixat mobilmeny, lagt till Udio + 5 nya verktyg | UX-lyft + katalog 20->26 | nästa: Ny artikel HR-avdelningen GDPR
 # PROGRESS_LOG.md
 
