@@ -12,39 +12,125 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integritetspolicy & Cookies | AI-Verktygskistan</title>
+    <title>Integritetspolicy | AI-Verktygskistan</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+
+    <!-- SEO -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://aiverktygsladan.se/integritetspolicy.html">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .sticky-nav { backdrop-filter: blur(12px); background: rgba(255,255,255,0.9); }
+        .prose h2 { font-size: 1.875rem; font-weight: 800; margin-top: 2.5em; margin-bottom: 1em; }
+        .prose h3 { font-size: 1.5rem; font-weight: 700; margin-top: 2em; margin-bottom: 0.8em; }
+        .prose p { line-height: 1.75; margin-bottom: 1.25em; }
+        .prose a { color: #4f46e5; text-decoration: underline; font-weight: 600; }
+        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.25em; }
+        .prose li { margin-bottom: 0.5em; }
+    </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
-    <header class="py-12 text-center bg-white border-b border-slate-200">
-        <h1 class="text-4xl font-extrabold text-slate-900">Integritetspolicy & Cookies</h1>
-        <p class="mt-4 text-slate-600">Senast uppdaterad: April 2026</p>
-    </header>
-    <main class="max-w-3xl mx-auto py-12 px-6 prose prose-slate prose-indigo">
-        <h2>1. Insamling av information och cookies</h2>
-        <p>Vi respekterar din integritet. På AI-Verktygskistan använder vi cookies för att anpassa innehåll och annonser (ex. Google AdSense), erbjuda funktioner i sociala medier och analysera vår trafik. Vi delar också information om din användning av vår webbplats med våra partners inom sociala medier, annonsering och analys.</p>
-        
-        <h2>2. Google AdSense och tredjepartsannonsering</h2>
-        <p>Denna webbplats använder Google AdSense för att visa annonser. Detta innebär att:</p>
-        <ul>
-            <li>Tredjepartsleverantörer, inklusive Google, använder cookies för att visa annonser baserat på dina tidigare besök på vår eller andra webbplatser.</li>
-            <li>Googles användning av annonscookies gör det möjligt för Google och dess partners att visa annonser för våra användare baserat på deras besök på våra och/eller andra webbplatser på internet.</li>
-            <li>Du kan när som helst välja bort personligt anpassad annonsering genom att besöka <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Google Annonsinställningar</a>. Alternativt kan du välja bort en tredjepartsleverantörs användning av cookies för personligt anpassad annonsering genom att besöka <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">www.aboutads.info</a>.</li>
-        </ul>
 
-        <h2>3. Dina rättigheter</h2>
-        <p>Enligt GDPR har du rätt att begära ett utdrag av de uppgifter vi har om dig, få uppgifter rättade eller raderade. Om du har accepterat cookies via vår banner kan du när som helst återkalla ditt samtycke genom att rensa cookies i din webbläsares inställningar.</p>
-        
-        <h2>4. Kontakt</h2>
-        <p>Om du har frågor angående denna integritetspolicy är du välkommen att kontakta oss via vår huvudplattform.</p>
-
-        <div class="mt-12 pt-8 border-t border-slate-200">
-            <a href="/" class="inline-flex items-center gap-2 text-indigo-600 font-bold hover:text-indigo-700 transition-colors">
-                &larr; Tillbaka till startsidan
+    <!-- Sticky Nav -->
+    <nav class="sticky top-0 z-50 sticky-nav border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">
+                AI<span class="text-indigo-600">-Verktygskistan</span>
             </a>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="/#verktyg" class="hover:text-indigo-600 transition-colors">Alla verktyg</a>
+                <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Gratis AI-verktyg</a>
+                <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Stor guide</a>
+                <a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-indigo-600 transition-colors">Claude vs GPT-5.5</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
         </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6">
+            <a href="/#verktyg" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Alla verktyg</a>
+            <a href="/gratis-ai-verktyg.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Gratis AI-verktyg</a>
+            <a href="/ai-verktyg.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Stor guide</a>
+            <a href="/claude-fable-5-vs-gpt-5.5.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Claude vs GPT-5.5</a>
+        </div>
+    </nav>
+
+    <main class="py-16 px-6 max-w-4xl mx-auto">
+        <article class="prose lg:prose-xl max-w-none">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight leading-tight">Integritetspolicy</h1>
+            
+            <p>Senast uppdaterad: Juni 2026</p>
+            
+            <h2>1. Vilka vi är</h2>
+            <p>Denna webbplats (aiverktygsladan.se) drivs av Adviseo. Vi värnar om din integritet och hanterar dina personuppgifter i enlighet med dataskyddsförordningen (GDPR).</p>
+
+            <h2>2. Uppgifter vi samlar in</h2>
+            <ul>
+                <li><strong>Nyhetsbrev & Guider:</strong> Om du anmäler dig till vårt nyhetsbrev eller laddar ner en guide sparar vi din e-postadress. Syftet är att skicka det begärda materialet och relevanta uppdateringar om AI-verktyg.</li>
+                <li><strong>Analysdata:</strong> Vi använder Google Analytics (GA4) för att förstå hur sajten används. Denna data är anonymiserad och kan inte kopplas till dig som individ.</li>
+            </ul>
+
+            <h2>3. Hur vi använder dina uppgifter</h2>
+            <p>Din e-postadress används enbart för att skicka vårt nyhetsbrev och information relaterad till AI-verktyg. Vi säljer, hyr ut eller delar aldrig din e-postadress med tredje part för marknadsföringssyften.</p>
+
+            <h2>4. Dina rättigheter (GDPR)</h2>
+            <p>Du har rätt att:</p>
+            <ul>
+                <li>Begära ett utdrag av de uppgifter vi har om dig.</li>
+                <li>Begära att vi rättar felaktiga uppgifter.</li>
+                <li>Begära att vi raderar dina uppgifter (rätten att bli glömd).</li>
+                <li>När som helst återkalla ditt samtycke till nyhetsbrevet (via länk i botten på varje mail).</li>
+            </ul>
+
+            <h2>5. Cookies</h2>
+            <p>Vi använder cookies för att analysera trafik och för eventuell annonsering. Du kan när som helst ändra dina cookie-inställningar via din webbläsare eller genom att rensa dina cookies för denna webbplats.</p>
+
+            <h2>6. Kontakt</h2>
+            <p>Om du har frågor om hur vi hanterar dina personuppgifter, vänligen kontakta oss på: <a href="mailto:kontakt@ai-verktygskistan.se">kontakt@ai-verktygskistan.se</a>.</p>
+        </article>
     </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 px-6 mt-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-wrap justify-between gap-8 mb-8">
+                <div>
+                    <div class="text-white font-extrabold text-xl mb-3">AI<span class="text-indigo-400">-Verktygskistan</span></div>
+                    <p class="text-sm max-w-xs">Sveriges guide till AI-verktyg för svenska företag – GDPR-genomlyst, ärliga recensioner.</p>
+                </div>
+                <div class="flex flex-wrap gap-8 text-sm">
+                    <div>
+                        <div class="text-white font-semibold mb-3">Guider</div>
+                        <ul class="space-y-2">
+                            <li><a href="/" class="hover:text-white transition-colors">Startsida</a></li>
+                            <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">Alla AI-verktyg</a></li>
+                            <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI-verktyg</a></li>
+                            <li><a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-white transition-colors">Claude vs GPT-5.5</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="text-white font-semibold mb-3">Om oss</div>
+                        <ul class="space-y-2">
+                            <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om AI-Verktygskistan</a></li>
+                            <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between text-xs gap-4">
+                <div>© 2026 AI-Verktygskistan. Sidan innehåller affiliatelänkar — vi tjänar en provision utan extra kostnad för dig.</div>
+                <div class="font-semibold text-slate-300">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
 </body>
 </html>
