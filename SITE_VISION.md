@@ -24,4 +24,5 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Ny artikel: "AI för HR-avdelningen – GDPR-säkra verktyg" (hög sökvolym)
 - [x] Katalog: väx mot 30+ genuint granskade verktyg (Zapier AI, Grammarly, Copy.ai, Fireflies.ai) (18 live i DB för tillfället, 5 nya tillagda)
 - [x] Design: ai-verktyg.html, vad-ar-ai-verktyg.html, om-sajten.html och integritetspolicy.html uppdaterade till nya sammanhållna designsystemet (Plus Jakarta Sans, gradienter, mobil-meny).
-- [ ] Skapa datainsamling (Data Moat) och publicera en original-data-rapport ("Svenska företags AI-användning 2026" eller "Kostnad för AI-verktyg per bransch").
+- [x] Skapa datainsamling (Data Moat) (kalkylator)
+- [ ] Publicera original-data-rapport ("Svenska företags AI-potential 2026")

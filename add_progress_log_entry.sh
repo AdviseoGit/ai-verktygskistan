@@ -1,7 +1,7 @@
 #!/bin/bash
 DATE=$(date +%Y-%m-%d)
-ENTRY="$DATE | SEO/TILLVÄXT | Ny artikel om GDPR-säkra AI-verktyg för HR | Fånga sökvolym på 'AI HR' | nästa: Fånga original-data/kalkylator"
-TMP_FILE=$(mktemp)
-echo "$ENTRY" > "$TMP_FILE"
-cat /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md >> "$TMP_FILE"
-mv "$TMP_FILE" /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md
+ENTRY="$DATE | TILLVÄXT/DATA | Byggt interaktiv AI-Kalkylator för ROI | Fångar unik företagsdata (Data Moat) | nästa: Publicera original-data-rapport"
+TEMP_FILE=$(mktemp)
+echo "$ENTRY" > "$TEMP_FILE"
+cat /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md >> "$TEMP_FILE"
+mv "$TEMP_FILE" /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md

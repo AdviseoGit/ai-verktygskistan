@@ -43,6 +43,25 @@ async def capture_lead(lead: LeadIn, background: BackgroundTasks):
     background.add_task(_deliver_aiv, lead.email)
     return {"status": "success"}
 
+
+class CalcDataIn(BaseModel):
+    employees: int
+    salary: int
+    industry: str
+    saved_value: int
+
+@app.post("/api/calc-data")
+async def capture_calc_data(data: CalcDataIn):
+    import os
+    # Log to a simple file for now to build the data moat
+    file_path = "data_moat_calc.csv"
+    if not os.path.exists(file_path):
+        with open(file_path, "w") as f:
+            f.write("employees,salary,industry,saved_value\n")
+    with open(file_path, "a") as f:
+        f.write(f"{data.employees},{data.salary},{data.industry},{data.saved_value}\n")
+    return {"status": "success"}
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/api/tools")

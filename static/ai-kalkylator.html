@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0VZV9RE3PN');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Kalkylatorn 2026: Hur mycket kan ditt företag spara?</title>
+    <meta name="description" content="Räkna ut exakt hur mycket tid och pengar ditt företag kan spara genom att införa AI-verktyg. Baserat på aktuell data och snittlöner.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 selection:bg-indigo-100 selection:text-indigo-900">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">
+                AI<span class="text-indigo-600">-Verktygskistan</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
+                <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Gratis AI</a>
+                <a href="/ai-kalkylator.html" class="text-indigo-600 transition-colors">AI-Kalkylatorn</a>
+                <a href="/vad-ar-ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Guide</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg">
+             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Alla Verktyg</a>
+             <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Gratis AI-verktyg</a>
+             <a href="/ai-kalkylator.html" class="text-indigo-600 transition-colors font-medium">AI-Kalkylatorn</a>
+             <a href="/vad-ar-ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Vad är AI-verktyg?</a>
+        </div>
+    </nav>
+
+    <main class="py-12 md:py-20 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full mb-4">Interaktiv Kalkylator</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Hur mycket kan ni spara med AI?</h1>
+            <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">
+                Fyll i företagets uppgifter nedan för att se er potentiella tids- och kostnadsbesparing per år. Vi bygger en rapport om svenska företags AI-användning baserat på anonymiserad data från denna kalkylator.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                <h2 class="text-xl font-bold mb-6 text-slate-800">Företagets uppgifter</h2>
+                <form id="calc-form" class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Antal tjänstemän (kontorsanställda)</label>
+                        <input type="number" id="employees" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none" placeholder="T.ex. 25" required min="1">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Snittlön (SEK/mån innan skatt)</label>
+                        <input type="number" id="salary" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none" value="45000" required min="20000">
+                        <p class="text-xs text-slate-500 mt-1">Vi räknar med 31.42% arbetsgivaravgift automatiskt.</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Vilken bransch?</label>
+                        <select id="industry" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent outline-none" required>
+                            <option value="">Välj bransch...</option>
+                            <option value="IT/Tech">IT / Tech</option>
+                            <option value="Marknadsföring">Marknadsföring / Media</option>
+                            <option value="HR/Admin">HR / Administration</option>
+                            <option value="Sälj">Försäljning / Kundtjänst</option>
+                            <option value="Ekonomi">Ekonomi / Finans</option>
+                            <option value="Annat">Annat</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold py-3 px-4 rounded-xl hover:bg-indigo-700 transition-colors shadow-md">
+                        Beräkna Besparing
+                    </button>
+                </form>
+            </div>
+
+            <div class="bg-indigo-50 p-8 rounded-2xl border border-indigo-100 flex flex-col justify-center">
+                <div id="result-placeholder" class="text-center">
+                    <svg class="w-16 h-16 text-indigo-200 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <h3 class="text-xl font-bold text-slate-700 mb-2">Fyll i uppgifterna</h3>
+                    <p class="text-slate-500 text-sm">Din kalkyl visas här och är baserad på en genomsnittlig produktivitetsökning på 15-25% för rutinuppgifter (enligt studier från MIT och Harvard).</p>
+                </div>
+
+                <div id="result-box" class="hidden">
+                    <h3 class="text-xl font-bold text-slate-800 mb-6 border-b border-indigo-200 pb-2">Er potential:</h3>
+                    
+                    <div class="mb-4">
+                        <div class="text-sm text-slate-500 font-semibold mb-1">Frigjord tid per vecka</div>
+                        <div class="text-3xl font-extrabold text-indigo-700" id="res-hours">0 timmar</div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <div class="text-sm text-slate-500 font-semibold mb-1">Värde av frigjord tid (per år)</div>
+                        <div class="text-4xl font-extrabold text-emerald-600" id="res-money">0 kr</div>
+                    </div>
+
+                    <div class="bg-white/60 p-4 rounded-xl text-sm text-slate-700 mb-6">
+                        <p class="font-semibold mb-1">Nästa steg:</p>
+                        <p>Låt inte denna tid gå till spillo. Investera i <a href="/ai-verktyg.html" class="text-indigo-600 font-semibold underline">rätt AI-verktyg för ert team</a> och omsätt tiden i ökad försäljning och bättre kundvärde.</p>
+                    </div>
+
+                    <div class="border-t border-indigo-200 pt-4">
+                        <p class="text-xs text-slate-500 text-center">Tack! Er data sparas anonymt och hjälper oss bygga rapporten "Svenska Företags AI-potential 2026".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-slate-200 text-slate-500 text-sm mt-12 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygskistan</span></div>
+                <p class="text-xs mb-2">© 2026 Adviseo</p>
+                <p class="text-xs font-semibold text-slate-600 mt-2">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-indigo-600">Om sajten</a></p>
+            </div>
+            <div class="flex gap-6 text-xs">
+                <a href="/integritetspolicy.html" class="hover:text-indigo-600">Integritetspolicy</a>
+                <a href="mailto:kontakt@ai-verktygskistan.se" class="hover:text-indigo-600">Kontakt</a>
+                <a href="/om-sajten.html" class="hover:text-indigo-600">Om sajten</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+
+        document.getElementById("calc-form").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const employees = parseInt(document.getElementById("employees").value);
+            const salary = parseInt(document.getElementById("salary").value);
+            const industry = document.getElementById("industry").value;
+
+            // Productivity gain assumption: 20% on 40% of tasks = 8% overall time saved
+            const timeSavedPct = 0.08;
+            const hoursPerWeek = 40;
+            const totalHoursSaved = Math.round(employees * hoursPerWeek * timeSavedPct);
+
+            const employerCostFactor = 1.3142; // Arbetsgivaravgift
+            const monthlyCostPerEmp = salary * employerCostFactor;
+            const yearlyCostPerEmp = monthlyCostPerEmp * 12;
+            const totalYearlyValueSaved = Math.round(employees * yearlyCostPerEmp * timeSavedPct);
+
+            document.getElementById("res-hours").innerText = totalHoursSaved + " timmar";
+            document.getElementById("res-money").innerText = totalYearlyValueSaved.toLocaleString("sv-SE") + " kr";
+
+            document.getElementById("result-placeholder").classList.add("hidden");
+            document.getElementById("result-box").classList.remove("hidden");
+
+            // Send data to our data moat
+            fetch('/api/calc-data', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    employees: employees,
+                    salary: salary,
+                    industry: industry,
+                    saved_value: totalYearlyValueSaved
+                })
+            }).catch(() => {});
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calculator_used', {
+                    event_category: 'engagement',
+                    value: totalYearlyValueSaved
+                });
+            }
+        });
+    </script>
+</body>
+</html>
