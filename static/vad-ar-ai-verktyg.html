@@ -40,24 +40,26 @@
 <body class="bg-slate-50 text-slate-900">
 
     <!-- Sticky Nav -->
-    <nav class="sticky top-0 z-50 sticky-nav border-b border-slate-200/60 py-4 px-6">
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="text-xl font-extrabold tracking-tight">
-                AI<span class="text-indigo-600">-Verktygskistan</span>
+                AI-<span class="text-indigo-600">Verktygskistan</span>
             </a>
-            <div class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
-                <a href="/#verktyg" class="hover:text-indigo-600 transition-colors">Alla verktyg</a>
-                <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Gratis AI-verktyg</a>
-                <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors">Stor guide</a>
-                <a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-indigo-600 transition-colors">Claude vs GPT-5.5</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Alla Verktyg</a>
+                <a href="/gratis-ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Gratis AI-verktyg</a>
+                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
+                <a href="/ai-svenska-foretag-rapport.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Rapport 2026</a>
+                <a href="/vad-ar-ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är AI-verktyg?</a>
             </div>
             <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6">
-            <a href="/#verktyg" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Alla verktyg</a>
-            <a href="/gratis-ai-verktyg.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Gratis AI-verktyg</a>
-            <a href="/ai-verktyg.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Stor guide</a>
-            <a href="/claude-fable-5-vs-gpt-5.5.html" class="mobile-nav-link text-slate-600 font-semibold hover:text-indigo-600">Claude vs GPT-5.5</a>
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg">
+             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Alla Verktyg</a>
+             <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Gratis AI-verktyg</a>
+             <a href="/ai-kalkylator.html" class="hover:text-indigo-600 transition-colors font-medium">AI-Kalkylatorn</a>
+             <a href="/ai-svenska-foretag-rapport.html" class="hover:text-indigo-600 transition-colors font-medium">Rapport 2026</a>
+             <a href="/vad-ar-ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Vad är AI-verktyg?</a>
         </div>
     </nav>
 
