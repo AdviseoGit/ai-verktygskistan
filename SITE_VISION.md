@@ -25,4 +25,4 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Katalog: väx mot 30+ genuint granskade verktyg (Zapier AI, Grammarly, Copy.ai, Fireflies.ai) (18 live i DB för tillfället, 5 nya tillagda)
 - [x] Design: ai-verktyg.html, vad-ar-ai-verktyg.html, om-sajten.html och integritetspolicy.html uppdaterade till nya sammanhållna designsystemet (Plus Jakarta Sans, gradienter, mobil-meny).
 - [x] Skapa datainsamling (Data Moat) (kalkylator)
-- [ ] Publicera original-data-rapport ("Svenska företags AI-potential 2026")
+- [x] Publicera original-data-rapport ("Svenska företags AI-potential 2026")
