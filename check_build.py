@@ -1,11 +1,20 @@
-import requests
+import urllib.request
 import time
 
-url = "https://aiverktygsladan.se/ai-svenska-foretag-rapport.html"
-for _ in range(10):
-    r = requests.get(url)
-    if r.status_code == 200:
-        print("Success! 200 OK")
+def check_url(url):
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        response = urllib.request.urlopen(req)
+        return response.getcode()
+    except Exception as e:
+        return str(e)
+
+print("Checking deploy status...")
+time.sleep(5)
+for i in range(10):
+    status = check_url("https://aiverktygsladan.se/lar-dig-ai.html")
+    print(f"Attempt {i+1}: {status}")
+    if status == 200:
+        print("Success! The page is live.")
         break
-    print(f"Status: {r.status_code}")
-    time.sleep(5)
+    time.sleep(10)
