@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lär dig AI: Komplett Guide till Artificiell Intelligens 2026</title>
+    <meta name="description" content="Lär dig AI från grunden. En komplett guide till hur du använder AI-verktyg, förstår prompt engineering och implementerar artificiell intelligens i din vardag och på jobbet.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text { background: linear-gradient(to right, #4f46e5, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-gradient { background: linear-gradient(135deg, #f3f4f6 0%, #ffffff 100%); }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="/" class="flex-shrink-0 flex items-center gap-2">
+                        <span class="text-2xl">⚡</span>
+                        <span class="font-bold text-xl tracking-tight">AI-Verktygskistan</span>
+                    </a>
+                    <div class="hidden md:ml-10 md:flex md:space-x-8">
+                        <a href="/ai-verktyg.html" class="border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Verktyg</a>
+                        <a href="/gratis-ai-verktyg.html" class="border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Gratis AI</a>
+                        <a href="/ai-program.html" class="border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">AI Program</a>
+                        <a href="/lar-dig-ai.html" class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Lär dig AI</a>
+                        <a href="/vad-ar-ai-verktyg.html" class="border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Guider</a>
+                        <a href="/ai-kalkylator.html" class="border-transparent text-gray-500 hover:text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">ROI Kalkylator</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Öppna huvudmenyn</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="/ai-verktyg.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Verktyg</a>
+                <a href="/gratis-ai-verktyg.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Gratis AI</a>
+                <a href="/ai-program.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">AI Program</a>
+                <a href="/lar-dig-ai.html" class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Lär dig AI</a>
+                <a href="/vad-ar-ai-verktyg.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Guider</a>
+                <a href="/ai-kalkylator.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">ROI Kalkylator</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <div class="bg-white border-b border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="inline-block py-1 px-3 rounded-full bg-indigo-50 text-indigo-600 text-sm font-semibold mb-4 border border-indigo-100">Utbildningshub 2026</span>
+                    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6">
+                        <span class="gradient-text">Lär dig AI</span> från grunden
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                        Att förstå och använda artificiell intelligens är vår tids viktigaste kompetens. 
+                        Här har vi samlat guider, resurser och verktyg för att ta dig från nybörjare till avancerad användare.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <!-- Kunskapsnivåer -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Steg 1: Nybörjare -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.984 3.984 0 01-3.143-1.547l-1.293.97a1 1 0 01-1.128 0l-1.293-.97A3.984 3.984 0 015 15a3.989 3.989 0 01-2.666-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1zm-5.824 8.128l-1.272 3.971A2.001 2.001 0 005 13a2.001 2.001 0 003.824-1.128L5.42 7.744l-1.244 4.134zM11 7.744l-3.405 4.128A2.001 2.001 0 0011 13a2.001 2.001 0 003.405-1.128L11 7.744zm4.58 4.128l-1.244-4.134 3.405 4.128A2.001 2.001 0 0015 13a2.001 2.001 0 00-1.272-1.128l-1.272-3.971z"></path></svg>
+                    </div>
+                    <div class="h-12 w-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 z-10 relative">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Nybörjare</h3>
+                    <p class="text-gray-600 mb-6 min-h-[80px]">Förstå grunderna i vad AI är och hur du kommer igång säkert med ditt första verktyg.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/vad-ar-ai-verktyg.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Vad är egentligen AI-verktyg?</a>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/gratis-ai-verktyg.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">De bästa gratisverktygen att starta med</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Steg 2: Användare -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow relative overflow-hidden ring-1 ring-indigo-500">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <svg class="w-24 h-24 text-indigo-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-indigo-500 to-pink-500"></div>
+                    <div class="h-12 w-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6 z-10 relative">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Produktiv Användare</h3>
+                    <p class="text-gray-600 mb-6 min-h-[80px]">Automatisera ditt arbete, skriv bättre prompts och integrera AI i dina dagliga processer.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/ai-program.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Topplistan: Bästa AI programmen för jobbet</a>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-indigo-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/claude-fable-5-vs-gpt-5.5.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Claude vs ChatGPT: Vilken är bäst just nu?</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Steg 3: Strateg -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 hover:shadow-md transition-shadow relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <svg class="w-24 h-24" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="h-12 w-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6 z-10 relative">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">AI-Strateg</h3>
+                    <p class="text-gray-600 mb-6 min-h-[80px]">Beräkna ROI, hantera GDPR, och implementera AI-strategier på bolagsnivå.</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/ai-for-hr.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">GDPR-säkra verktyg (Guide för HR & Ledning)</a>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-5 w-5 text-purple-500 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <a href="/ai-kalkylator.html" class="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Kalkylator: Beräkna ROI av AI-införande</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Huvudartikel / Guide-innehåll -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 lg:p-12 mb-16">
+                <div class="prose prose-lg max-w-none text-gray-700">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Hur man lär sig AI effektivt</h2>
+                    
+                    <p class="mb-6">Att "lära sig AI" betyder idag oftast inte att lära sig programmera neurala nätverk. För de allra flesta handlar det om <strong>tillämpad AI</strong> – att förstå vilka verktyg som finns, hur man pratar med dem (prompt engineering), och när man ska använda vad.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+                        <div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Grundläggande koncept</h3>
+                            <ul class="space-y-4">
+                                <li>
+                                    <strong>LLM (Large Language Model)</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Den underliggande motorn i verktyg som ChatGPT och Claude. Tränad på enorma mängder text för att förstå och generera människoliknande svar.</p>
+                                </li>
+                                <li>
+                                    <strong>Prompt Engineering</strong>
+                                    <p class="text-sm text-gray-600 mt-1">Konsten att skriva instruktioner till AI:n. Bättre prompts ger exponentiellt mycket bättre resultat.</p>
+                                </li>
+                                <li>
+                                    <strong>Hallucinationer</strong>
+                                    <p class="text-sm text-gray-600 mt-1">När AI:n hittar på fakta med hög självsäkerhet. Att lära sig identifiera detta är avgörande för säker användning.</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="bg-indigo-50 rounded-xl p-6 border border-indigo-100">
+                                <h3 class="text-xl font-bold text-indigo-900 mb-4">Vår rekommenderade läroplan:</h3>
+                                <ol class="list-decimal pl-5 space-y-3 text-indigo-800">
+                                    <li>Börja med text: Lär dig mastera <a href="/ai-program.html" class="underline font-medium">ChatGPT eller Claude</a>.</li>
+                                    <li>Lär dig formulera kontextrika prompts (ROLL + UPPGIFT + FORMAT).</li>
+                                    <li>Gå vidare till specialiserade verktyg för ditt yrke (t.ex. GitHub Copilot för kod, eller Canva AI för design).</li>
+                                    <li>Utbilda dig kring dataintegritet och GDPR i AI-sammanhang.</li>
+                                    <li>Börja automatisera arbetsflöden med Zapier AI eller liknande.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lead Capture Section -->
+            <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-3xl p-8 md:p-12 text-white shadow-xl relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+                <div class="relative z-10 max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-4">Få vår kompletta AI-utbildningsPDF</h2>
+                    <p class="text-lg text-indigo-200 mb-8">Vi har sammanställt de 50 viktigaste promptsen och strategierna för 2026 i en nedladdningsbar guide. Ange din e-post så skickar vi den direkt.</p>
+                    
+                    <form id="leadForm" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                        <input type="email" id="emailInput" required placeholder="Din e-postadress" class="flex-1 px-5 py-3 rounded-xl text-gray-900 focus:ring-2 focus:ring-pink-500 focus:outline-none border-0">
+                        <button type="submit" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg hover:shadow-xl flex items-center justify-center">
+                            Skicka Guiden
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="hidden mt-4 text-green-300 font-medium">
+                        Tack! Kolla din inkorg om en minut.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 mt-auto">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-xl font-bold tracking-tight text-gray-900 flex items-center gap-2 mb-4">
+                        <span>⚡</span> AI-Verktygskistan
+                    </span>
+                    <p class="text-gray-500 text-sm mb-4 max-w-md">
+                        Sveriges mest aktuella katalog för AI-verktyg och guider. Vi hjälper individer och företag att navigera i AI-revolutionen.
+                    </p>
+                    <p class="text-xs text-gray-400">
+                        Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="hover:text-indigo-600 underline">Om sajten</a>
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Kategorier</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-verktyg.html" class="text-gray-500 hover:text-indigo-600">Alla AI-verktyg</a></li>
+                        <li><a href="/gratis-ai-verktyg.html" class="text-gray-500 hover:text-indigo-600">Gratis AI-verktyg</a></li>
+                        <li><a href="/ai-program.html" class="text-gray-500 hover:text-indigo-600">Bästa AI Programmen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Guider & Info</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai.html" class="text-gray-500 hover:text-indigo-600">Lär dig AI</a></li>
+                        <li><a href="/vad-ar-ai-verktyg.html" class="text-gray-500 hover:text-indigo-600">Vad är AI-verktyg?</a></li>
+                        <li><a href="/ai-kalkylator.html" class="text-gray-500 hover:text-indigo-600">AI ROI Kalkylator</a></li>
+                        <li><a href="/integritetspolicy.html" class="text-gray-500 hover:text-indigo-600">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-200 pt-8 flex items-center justify-between">
+                <p class="text-base text-gray-400">
+                    &copy; 2026 AI-Verktygskistan.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Skickar...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({email: email})
+                });
+                if(res.ok) {
+                    e.target.style.display = 'none';
+                    document.getElementById('formSuccess').classList.remove('hidden');
+                } else {
+                    btn.innerText = 'Ett fel uppstod';
+                    setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 2000);
+                }
+            } catch(err) {
+                btn.innerText = 'Nätverksfel';
+                setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>

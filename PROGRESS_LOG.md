@@ -1,3 +1,5 @@
+2026-06-24 | SEO/TILLVÄXT | Ny dedikerad landningssida för 'AI Program' | Fånga sökintention & volym | nästa: Bygg SEO-sidor för 'Lär dig AI' & 'Bygg med AI'
+2026-06-24 | SEO/TILLVÄXT | Ny landningssida 'Lär dig AI' (utbildningshub) | Fånga sökintention & volym | nästa: Bygg SEO-sida för 'Bygg med AI' eller utöka datamoat
 2026-06-23 | SEO/TILLVÄXT | Ny dedikerad landningssida för 'AI Program' | Fånga sökintention & volym | nästa: Bygg SEO-sidor för 'Lär dig AI' & 'Bygg med AI'
 2026-06-22 | TILLVÄXT/DATA | Publicera original-data-rapport från kalkylatorn | Originaldata rankar #1 och bygger auktoritet | nästa: Bygg SEO-sidor för fler sökintentioner
 2026-06-21 | TILLVÄXT/DATA | Byggt interaktiv AI-Kalkylator för ROI | Fångar unik företagsdata (Data Moat) | nästa: Publicera original-data-rapport
