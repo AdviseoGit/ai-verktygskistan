@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bygg med AI: Skapa egna verktyg & appar (Guide 2026) | AI-Verktygskistan</title>
+    <meta name="description" content="Lär dig hur du bygger egna AI-verktyg, agenter och appar 2026. Guide för både utvecklare (API:er) och icke-tekniska (no-code).">
+    
+    <!-- Design System -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="canonical" href="https://aiverktygsladan.se/bygg-med-ai.html">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        indigo: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background-color: #ffffff;
+            background-image: radial-gradient(at 40% 20%, hsla(228,100%,74%,0.15) 0px, transparent 50%),
+                              radial-gradient(at 80% 0%, hsla(189,100%,56%,0.15) 0px, transparent 50%),
+                              radial-gradient(at 0% 50%, hsla(355,100%,93%,0.15) 0px, transparent 50%);
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-slate-200" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="text-xl font-extrabold tracking-tight">
+                    AI-<span class="text-indigo-600">Verktygskistan</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Alla Verktyg</a>
+                    <a href="/ai-program.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI Program</a>
+                    <a href="/gratis-ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Gratis AI-verktyg</a>
+                    <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
+                    <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
+                    <a href="/bygg-med-ai.html" class="text-sm font-medium text-indigo-600 transition-colors">Bygg med AI</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium py-2">Alla Verktyg</a>
+             <a href="/ai-program.html" class="hover:text-indigo-600 transition-colors font-medium py-2">AI Program</a>
+             <a href="/gratis-ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium py-2">Gratis AI-verktyg</a>
+             <a href="/ai-kalkylator.html" class="hover:text-indigo-600 transition-colors font-medium py-2">AI-Kalkylatorn</a>
+             <a href="/lar-dig-ai.html" class="hover:text-indigo-600 transition-colors font-medium py-2">Lär dig AI</a>
+             <a href="/bygg-med-ai.html" class="text-indigo-600 transition-colors font-medium py-2">Bygg med AI</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 hero-bg border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-700 font-semibold text-sm mb-6 border border-indigo-200">
+                Utvecklarguide 2026
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                <span class="gradient-text">Bygg med AI:</span> Från idé till app
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                Du behöver inte vara forskare för att bygga AI-produkter. Idag finns API:er och no-code plattformar som gör att vem som helst kan bygga egna AI-agenter och verktyg. Här är din startguide.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <article class="prose prose-lg prose-indigo max-w-none">
+            
+            <h2>Vad innebär det att "bygga med AI"?</h2>
+            <p>
+                Att bygga med AI år 2026 handlar sällan om att träna egna modeller från grunden. Istället handlar det om att bygga gränssnitt och agenter som <em>pratar</em> med existerande, superkraftfulla modeller (som OpenAI's GPT-5.5 eller Anthropics Claude Fable 5) via ett <strong>API</strong> (Application Programming Interface).
+            </p>
+
+            <h2>Väg 1: No-code & Low-code (För icke-utvecklare)</h2>
+            <p>
+                Du behöver inte skriva en rad kod för att skapa kraftfulla AI-flöden. Genom att använda plattformar som kopplar samman tjänster kan du automatisera ditt arbete eller bygga enkla appar.
+            </p>
+            <ul>
+                <li><strong>Make (tidigare Integromat) eller Zapier:</strong> Koppla ihop ChatGPT eller Claude med din inkorg, ditt CRM eller ditt kalkylark. Ett vanligt exempel är att låta AI automatiskt kategorisera och sammanfatta inkommande supportmail.</li>
+                <li><strong>Custom GPTs & Claude Projects:</strong> Inuti ChatGPT Plus och Claude Pro kan du skapa egna "agenter" med specifika instruktioner och uppladdade dokument (kunskapsbas). Detta är det snabbaste sättet att bygga ett internt verktyg för ditt företag.</li>
+                <li><strong>Bubble + AI-plugins:</strong> Om du vill bygga en visuell app (SaaS) som användare kan logga in på, är Bubble en ledande no-code plattform som är lätt att integrera med AI-API:er.</li>
+            </ul>
+
+            <h2>Väg 2: Kod & API (För utvecklare)</h2>
+            <p>
+                Om du kan lite Python eller JavaScript öppnar sig en helt ny värld. Genom att anropa AI-modellernas API:er kan du bygga skräddarsydda applikationer.
+            </p>
+            <h3>De två viktigaste API:erna 2026:</h3>
+            <ol>
+                <li>
+                    <strong>OpenAI API:</strong> Ge din app tillgång till GPT-5.5, röstgenerering (TTS) och bildskapande (DALL-E 3). Det är industristandarden och enklast att komma igång med.
+                </li>
+                <li>
+                    <strong>Anthropic API:</strong> Claude Fable 5 och Opus 4.8 via API. Anthropics modeller är överlägsna på att läsa och koda enorma mängder text, och deras API är känt för att vara robust för kodningsuppgifter.
+                </li>
+            </ol>
+
+            <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-8 my-10">
+                <h3 class="text-indigo-900 mt-0">Kom igång med Python (Exempel)</h3>
+                <p class="text-indigo-800 mb-4">
+                    Så här enkelt är det att prata med OpenAI:s API i Python 2026 (förutsätter att du installerat paketet `openai` och har en API-nyckel).
+                </p>
+                <pre class="bg-slate-900 text-slate-300 p-4 rounded-lg overflow-x-auto text-sm"><code>import openai
+import os
+
+client = openai.OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+response = client.chat.completions.create(
+    model="gpt-5.5-turbo",
+    messages=[
+        {"role": "system", "content": "Du är en AI-expert."},
+        {"role": "user", "content": "Vad är RAG?"}
+    ]
+)
+
+print(response.choices[0].message.content)</code></pre>
+            </div>
+
+            <h2>Nästa stora steg: RAG (Retrieval-Augmented Generation)</h2>
+            <p>
+                Det hetaste mönstret när man bygger med AI är <strong>RAG</strong>. En standard-AI vet inte vad som står i dina interna PDF-dokument eller i företagets databas. Med RAG bygger du ett system som först "söker upp" rätt information i din egen data, och sedan skickar med den informationen i prompten till AI:n (t.ex. Claude Fable 5), som då kan svara perfekt på frågan <em>baserat på dina dokument</em>. Det är så man bygger en säker och pålitlig intern AI-assistent.
+            </p>
+
+        </article>
+        
+        <!-- Lead Capture Section -->
+        <div class="mt-16 bg-gradient-to-r from-slate-900 to-indigo-900 rounded-3xl p-8 md:p-12 text-white shadow-xl relative overflow-hidden">
+            <div class="relative z-10 max-w-2xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-4">Vill du börja bygga? Få vår kodmall!</h3>
+                <p class="text-indigo-200 mb-8">Vi har tagit fram en färdig Python-mall (med RAG-exempel och API-setup) för att du snabbt ska komma igång med OpenAI och Anthropic API. Ange din e-post så skickar vi koden direkt.</p>
+                
+                <form id="leadFormBuild" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" id="emailInputBuild" required placeholder="Din e-postadress" class="flex-1 px-5 py-3 rounded-xl text-slate-900 focus:ring-2 focus:ring-indigo-400 focus:outline-none border-0">
+                    <button type="submit" class="bg-indigo-500 hover:bg-indigo-400 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg flex items-center justify-center">
+                        Skicka Mallen
+                    </button>
+                </form>
+                <div id="formSuccessBuild" class="hidden mt-4 text-green-300 font-medium">
+                    Tack! Kolla din inkorg.
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">AI-Verktygskistan</h3>
+                    <p class="text-sm">Din guide till de bästa AI-verktygen för svenska företag och kreatörer.</p>
+                    <p class="text-xs font-semibold text-slate-500 mt-4">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-indigo-400">Om sajten</a></p>
+                </div>
+                <div class="flex flex-col md:items-end space-y-2 text-sm">
+                    <a href="/ai-verktyg.html" class="hover:text-indigo-400 transition-colors">Alla AI-verktyg</a>
+                    <a href="/ai-program.html" class="hover:text-indigo-400 transition-colors">AI Program</a>
+                    <a href="/lar-dig-ai.html" class="hover:text-indigo-400 transition-colors">Lär dig AI</a>
+                    <a href="/bygg-med-ai.html" class="hover:text-indigo-400 transition-colors">Bygg med AI</a>
+                    <a href="/integritetspolicy.html" class="hover:text-indigo-400 transition-colors">Integritetspolicy</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 mt-8 pt-8 text-center text-xs">
+                &copy; 2026 AI-Verktygskistan. Alla rättigheter förbehållna. Sidan kan innehålla affiliatelänkar.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            var iconPath = document.getElementById('menu-icon-path');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                iconPath.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                menu.classList.add('hidden');
+                iconPath.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+
+        // Lead Form
+        document.getElementById('leadFormBuild').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('emailInputBuild').value;
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = 'Skickar...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/lead', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({email: email})
+                });
+                if(res.ok) {
+                    e.target.style.display = 'none';
+                    document.getElementById('formSuccessBuild').classList.remove('hidden');
+                } else {
+                    btn.innerText = 'Ett fel uppstod';
+                    setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 2000);
+                }
+            } catch(err) {
+                btn.innerText = 'Nätverksfel';
+                setTimeout(() => { btn.innerText = originalText; btn.disabled = false; }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
