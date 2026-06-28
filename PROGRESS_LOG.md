@@ -6,6 +6,7 @@
 2026-06-19 | SEO/TILLVÄXT | Ny artikel om GDPR-säkra AI-verktyg för HR | Fånga sökvolym på 'AI HR' | nästa: Fånga original-data/kalkylator
 2026-06-18 | DESIGN/TILLVÄXT | Fixat mobilmeny, lagt till Udio + 5 nya verktyg | UX-lyft + katalog 20->26 | nästa: Ny artikel HR-avdelningen GDPR
 # PROGRESS_LOG.md
+2026-06-28 | LEADFLOW | Konverterat ai-verktyg.html och ai-program.html till dynamiska kataloger | Högre engagemang och bounce-minskning på SEO-sidorna | nästa: Skapa jämför-funktion
 2026-06-27 | SEO/TILLVÄXT | Ny landningssida 'Bygg med AI' (Utvecklarguide) | Fånga sökintention & volym | nästa: Bygg SEO-sidor för fler sökintentioner eller utöka katalog
 
 2026-06-17 katalog: utöka från 14 till 20 verktyg, fixa GPT-5.5 och rätta '40+ granskade' till '20 granskade'

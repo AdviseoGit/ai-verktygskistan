@@ -49,7 +49,13 @@
                               radial-gradient(at 0% 50%, hsla(355,100%,93%,0.15) 0px, transparent 50%);
         }
     </style>
-</head>
+<script src="/static/js/tools.js"></script>
+
+    <style>
+        .tool-card { transition: all 0.2s ease-in-out; }
+        .card-hover:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+    </style>
+    </head>
 <body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
 
     <!-- Navbar -->
@@ -154,7 +160,31 @@
                 Det populäraste programmet för detta är <strong>Ollama</strong> (finns för Mac, Windows och Linux). Genom Ollama kan du ladda ner öppna AI-modeller som Metas Llama 3 och köra dem direkt på din maskin. Detta kräver dock en relativt kraftfull dator, särskilt när det gäller grafikkortets minne (VRAM).
             </p>
 
-        </article>
+        
+    </article>
+    
+    <!-- Tool Directory -->
+    <section class="py-20 max-w-7xl mx-auto" id="verktyg">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">Svenska Företagens AI-Verktygskatalog 2026</h2>
+            <p class="text-slate-600 text-lg">Hela vår databas med de bästa AI-verktygen – filtrera på kategori för att hitta rätt AI-program för dig.</p>
+        </div>
+
+        <!-- Category filters -->
+        <div class="flex flex-wrap gap-3 justify-center mb-12" id="cat-filter">
+            <button data-cat="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white transition-all">Alla</button>
+            <button data-cat="text" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Text & Innehåll</button>
+            <button data-cat="kod" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Kod & Dev</button>
+            <button data-cat="bild" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Bild & Design</button>
+            <button data-cat="affar" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Affär & CRM</button>
+            <button data-cat="juridik" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Juridik & HR</button>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+            <!-- Tools loaded dynamically by tools.js -->
+        </div>
+    </section>
+    
         
         <div class="mt-16 text-center">
             <a href="/ai-verktyg.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-indigo-600 rounded-xl hover:bg-indigo-700 transition-transform hover:-translate-y-1 shadow-lg shadow-indigo-200">

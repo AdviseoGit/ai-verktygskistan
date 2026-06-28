@@ -15,15 +15,9 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Granska övriga artiklar/poster för gamla modellnamn och versionsnummer — utdaterat är en bugg. Uppdaterat i verktygsdatabasen.
 - [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
 
+
 ## ROADMAP (nästa prioriteringar)
-- [x] Lägg till 6 nya verktyg i tools.json (Notion AI, Canva AI, Otter.ai, Gamma, Adobe Firefly, ElevenLabs) — katalogen 14→20 verktyg (juni 2026)
-- [x] "40+ granskade"-kravet fixat → "20 granskade" (ärlig siffra) i index.html + meta tags
-- [x] Uppdaterat GPT-5.5 i ChatGPT Teams och Copilot 365 beskrivningar (GPT-4o var stale)
-- [x] Lägg in mobilnavigation (hamburger-meny) — nav är hidden på < md
-- [x] gratis-ai-verktyg.html: Udio (musik-alternativ) kvar att lägga till
-- [x] Ny artikel: "AI för HR-avdelningen – GDPR-säkra verktyg" (hög sökvolym)
-- [x] Katalog: väx mot 30+ genuint granskade verktyg (Zapier AI, Grammarly, Copy.ai, Fireflies.ai) (18 live i DB för tillfället, 5 nya tillagda)
-- [x] Design: ai-verktyg.html, vad-ar-ai-verktyg.html, om-sajten.html och integritetspolicy.html uppdaterade till nya sammanhållna designsystemet (Plus Jakarta Sans, gradienter, mobil-meny).
-- [x] Skapa datainsamling (Data Moat) (kalkylator)
-- [x] Publicera original-data-rapport ("Svenska företags AI-potential 2026")
-- [x] Bygg SEO-sidor för de tre starkaste sökintentionerna: "AI program", "Lär dig AI", "Bygg med AI"
+- [x] Konvertera "AI verktyg" och "AI program" från statiska artiklar till dynamiska katalogsidor (tools.js integration för att matcha sökintentionen)
+- [ ] Utöka katalogen till 35+ verktyg (särskilt inom 'juridik & HR' och 'kod & dev')
+- [ ] Skapa en "Jämför"-funktion för verktyg så man kan se skillnaden mellan t.ex. ChatGPT och Claude side-by-side
+- [ ] Fånga fler leads: en "GDPR-checklista för AI" lead magnet i PDF-format som skickas vid sign-up

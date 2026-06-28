@@ -13,7 +13,7 @@ async function loadTools() {
             const filtered = cat === 'all' ? tools : tools.filter(t => t.category === cat);
             grid.innerHTML = filtered.map(t => {
                 const gdpr = t.gdpr_ready ? '<span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">GDPR-redo</span>' : '';
-                const url = t.url ? `<a href="${t.url}" target="_blank" rel="noopener" class="text-indigo-600 text-sm font-medium hover:underline">BesÃ¶k â†’</a>` : '';
+                const url = t.url ? `<a href="${t.url}" target="_blank" rel="noopener" class="text-indigo-600 text-sm font-medium hover:underline">Besök →</a>` : '';
                 return `<article class="tool-card bg-white p-7 rounded-3xl border border-slate-100 shadow-sm card-hover" data-cat="${t.category||''}">
                     <div class="flex items-center justify-between mb-4">
                         <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">${t.category||''}</span>
