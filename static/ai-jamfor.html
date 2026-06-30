@@ -115,6 +115,19 @@
                     </tbody>
                 </table>
             </div>
+            <div class="mt-12 bg-indigo-50 border border-indigo-100 rounded-3xl p-8 text-center max-w-3xl mx-auto shadow-sm">
+                <h3 class="text-2xl font-bold mb-4 text-slate-900">Vilket verktyg är rätt för ditt företag?</h3>
+                <p class="text-slate-600 mb-6 max-w-lg mx-auto">Skriv upp dig för vår GDPR-checklista för AI-verktyg (PDF) så hjälper vi dig undvika fällorna.</p>
+                <form id="lead-form-hero" class="flex flex-col sm:flex-row justify-center gap-3 w-full max-w-lg mx-auto">
+                    <input type="email" id="hero-email" placeholder="din@epost.se" required class="flex-1 px-4 py-3 rounded-xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-indigo-500 outline-none text-base">
+                    <button type="submit" class="bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-all text-base shadow-sm">
+                        Skicka PDF
+                    </button>
+                </form>
+                <div id="hero-success" class="hidden text-emerald-600 font-bold bg-emerald-100/50 border border-emerald-200 px-6 py-3 rounded-xl w-full max-w-lg mx-auto mt-4">
+                    ✓ PDF:en är skickad till din e-post!
+                </div>
+            </div>
         </div>
 
     </main>
@@ -247,6 +260,18 @@
         });
 
         document.addEventListener('DOMContentLoaded', initCompare);
+
+        // Lead Forms Logic
+        const heroForm = document.getElementById('lead-form-hero');
+        if(heroForm) {
+            heroForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('hero-email').value;
+                fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+                this.style.display = 'none';
+                document.getElementById('hero-success').classList.remove('hidden');
+            });
+        }
     </script>
 </body>
 </html>

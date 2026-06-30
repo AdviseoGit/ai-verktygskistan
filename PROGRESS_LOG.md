@@ -1,3 +1,4 @@
+2026-06-30 | LEADFLOW | Lade till GDPR-checklista PDF-lead capture i ai-jamfor.html | Ökar leads konvertering på verktygssida | nästa: Fånga fler leads (PDF) från index
 2026-06-29 | SEO/TILLVÄXT | Ny interaktiv Jämför-funktion för AI-verktyg | Stärker 'AI Verktyg' intent & UX | nästa: Fånga fler leads (PDF)
 2026-06-24 | SEO/TILLVÄXT | Ny dedikerad landningssida för 'AI Program' | Fånga sökintention & volym | nästa: Bygg SEO-sidor för 'Lär dig AI' & 'Bygg med AI'
 2026-06-24 | SEO/TILLVÄXT | Ny landningssida 'Lär dig AI' (utbildningshub) | Fånga sökintention & volym | nästa: Bygg SEO-sida för 'Bygg med AI' eller utöka datamoat
