@@ -1,3 +1,4 @@
+2026-07-02 | DATA | Implementerat databas-lagring för leads och kalkylator | Säkerställer data-moat långsiktigt | nästa: Publicera rapport
 2026-07-01 | LEADFLOW | Konverterat nyhetsbrev till GDPR-checklista (PDF) capture på index | Fångar leads mer effektivt | nästa: Publicera rapport från AI-kalkylatorn
 2026-06-30 | LEADFLOW | Lade till GDPR-checklista PDF-lead capture i ai-jamfor.html | Ökar leads konvertering på verktygssida | nästa: Fånga fler leads (PDF) från index
 2026-06-29 | SEO/TILLVÄXT | Ny interaktiv Jämför-funktion för AI-verktyg | Stärker 'AI Verktyg' intent & UX | nästa: Fånga fler leads (PDF)
