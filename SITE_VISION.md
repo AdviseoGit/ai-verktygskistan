@@ -15,11 +15,11 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Granska övriga artiklar/poster för gamla modellnamn och versionsnummer — utdaterat är en bugg. Uppdaterat i verktygsdatabasen.
 - [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
 
-
 ## ROADMAP (nästa prioriteringar)
 - [x] Konvertera "AI verktyg" och "AI program" från statiska artiklar till dynamiska katalogsidor (tools.js integration för att matcha sökintentionen)
 - [x] Utöka katalogen till 35+ verktyg (särskilt inom 'juridik & HR' och 'kod & dev')
 - [x] Skapa en "Jämför"-funktion för verktyg så man kan se skillnaden mellan t.ex. ChatGPT och Claude side-by-side
 - [x] Fånga fler leads: en "GDPR-checklista för AI" lead magnet i PDF-format som skickas vid sign-up (klar på index, ai-jamfor)
 - [x] Implementera databas-lagring för leads i main.py (och admin route för export)
-- [ ] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
+- [x] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
+- [ ] Implementera en AI Ordlista (Sökmotorer älskar definitioner)

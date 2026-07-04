@@ -1,3 +1,4 @@
+2026-07-04 | LEADFLOW | Fixade 405 Method Not Allowed på /api/lead | Formulär funkar nu | nästa: Bygg ny innehållspelare
 2026-07-03 | TILLVÄXT/DATA | Utökade katalogen med 9 nya AI-verktyg (Dev & HR) | Katalog 25->34, stärker SEO & intent | nästa: Publicera AI rapport
 2026-07-02 | DATA | Implementerat databas-lagring för leads och kalkylator | Säkerställer data-moat långsiktigt | nästa: Publicera rapport
 2026-07-01 | LEADFLOW | Konverterat nyhetsbrev till GDPR-checklista (PDF) capture på index | Fångar leads mer effektivt | nästa: Publicera rapport från AI-kalkylatorn
