@@ -38,6 +38,7 @@ def _deliver_aiv(email: str):
                         from_name="AI-Verktygskistan")
 
 
+@app.post("/api/lead/")
 @app.post("/api/lead")
 async def capture_lead(lead: LeadIn, background: BackgroundTasks, db: Session = Depends(get_db)):
     from models import Lead
