@@ -22,4 +22,5 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Fånga fler leads: en "GDPR-checklista för AI" lead magnet i PDF-format som skickas vid sign-up (klar på index, ai-jamfor)
 - [x] Implementera databas-lagring för leads i main.py (och admin route för export)
 - [x] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
-- [ ] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
+- [x] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
+- [ ] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.

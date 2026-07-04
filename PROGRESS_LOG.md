@@ -1,3 +1,4 @@
+2026-07-04 | SEO/TILLVÄXT | Byggde AI-Ordlista (/ai-ordlista.html) | Fångar sökningar på AI-termer, driver utbildnings-intent | nästa: Fånga fler verktyg eller data-moat
 2026-07-04 | LEADFLOW | Fixade 405 Method Not Allowed på /api/lead | Formulär funkar nu | nästa: Bygg ny innehållspelare
 2026-07-03 | TILLVÄXT/DATA | Utökade katalogen med 9 nya AI-verktyg (Dev & HR) | Katalog 25->34, stärker SEO & intent | nästa: Publicera AI rapport
 2026-07-02 | DATA | Implementerat databas-lagring för leads och kalkylator | Säkerställer data-moat långsiktigt | nästa: Publicera rapport
