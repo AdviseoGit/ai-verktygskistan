@@ -23,4 +23,4 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Implementera databas-lagring för leads i main.py (och admin route för export)
 - [x] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
 - [x] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
-- [ ] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
+- [x] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
