@@ -1,3 +1,4 @@
+2026-07-06 | TILLVÄXT/DATA | Utökade katalogen med 4 tunga AI-verktyg (Gemini 3.1, Sora, Sonnet 4.5, Krea) | Katalog 34->38, starkare sökordsintent för flaggskeppsmodeller | nästa: Fånga fler leads eller ny intent-sida
 2026-07-05 | SEO/TILLVÄXT | Lade till schema.org FAQ-markup på Lär dig AI och AI-ordlista | Skapar förutsättningar för utvald snippet (Rich Results) i SERP | nästa: Fånga fler verktyg eller data-moat
 2026-07-04 | SEO/TILLVÄXT | Byggde AI-Ordlista (/ai-ordlista.html) | Fångar sökningar på AI-termer, driver utbildnings-intent | nästa: Fånga fler verktyg eller data-moat
 2026-07-04 | LEADFLOW | Fixade 405 Method Not Allowed på /api/lead | Formulär funkar nu | nästa: Bygg ny innehållspelare
