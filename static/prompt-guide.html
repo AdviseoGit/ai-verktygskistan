@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="sv" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Guide: Så pratar du med AI | AI-Verktygskistan</title>
+    <meta name="description" content="Lär dig skriva effektiva prompts för ChatGPT, Claude och Gemini. Praktisk guide med ramverk och exempel för att få ut maximalt värde ur dina AI-verktyg.">
+    <meta property="og:title" content="Prompt Guide: Så pratar du med AI | AI-Verktygskistan">
+    <meta property="og:description" content="Lär dig skriva effektiva prompts för ChatGPT, Claude och Gemini. Praktisk guide med ramverk och exempel för att få ut maximalt värde ur dina AI-verktyg.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/prompt-guide.html">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GA4 Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-800 bg-slate-50 flex flex-col min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="text-xl font-bold text-brand-900 tracking-tight flex items-center gap-2">
+                        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        AI-Verktygskistan
+                    </a>
+                </div>
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/ai-verktyg.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Alla Verktyg</a>
+                    <a href="/gratis-ai-verktyg.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Gratis Verktyg</a>
+                    <a href="/ai-jamfor.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Jämför</a>
+                    <a href="/lar-dig-ai.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Lär dig AI</a>
+                </nav>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/ai-verktyg.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Alla Verktyg</a>
+                <a href="/gratis-ai-verktyg.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Gratis Verktyg</a>
+                <a href="/ai-jamfor.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Jämför</a>
+                <a href="/lar-dig-ai.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Lär dig AI</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <div class="bg-brand-900 text-white py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="inline-block px-3 py-1 bg-brand-600/30 text-brand-100 text-xs font-semibold rounded-full mb-4 border border-brand-600/50">UTBILDNING</span>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">Prompt Guide: Så pratar du med AI</h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto">Att få ut det mesta av AI handlar inte om vilken modell du använder, utan <em>hur</em> du pratar med den. Lär dig ramverken som skiljer amatörer från proffs.</p>
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Article Content -->
+            <article class="prose prose-slate prose-lg max-w-none">
+                <p class="lead">En prompt är den instruktion du ger till en AI-modell som ChatGPT, Claude eller Gemini. Skillnaden mellan en dålig och en bra prompt är skillnaden mellan ett generiskt, oanvändbart svar och ett briljant utkast som sparar dig timmar.</p>
+                
+                <h2>Varför de flesta misslyckas med AI</h2>
+                <p>Det vanligaste misstaget nya användare gör är att behandla AI som Google. De skriver en kort sökfråga:</p>
+                <div class="bg-red-50 border-l-4 border-red-500 p-4 my-4 rounded-r">
+                    <p class="text-red-800 m-0 font-medium">❌ Dålig prompt: "Skriv ett mejl till kunder om våra nya öppettider."</p>
+                </div>
+                <p>Resultatet blir ofta styltigt, opersonligt och kräver mycket redigering. AI:n tvingas gissa vilken ton du vill ha, vilka dina kunder är och hur de nya öppettiderna ser ut.</p>
+
+                <h2>RTF-ramverket: Den perfekta prompten</h2>
+                <p>För att få bra resultat bör du använda ett beprövat ramverk. Det enklaste och mest effektiva är <strong>RTF-ramverket (Roll, Task, Format)</strong>. Ibland lägger man även till Kontext (C) för ännu bättre styrning.</p>
+                
+                <h3>1. Roll (Role)</h3>
+                <p>Börja med att ge AI:n en identitet eller expertis. Detta ställer in "temperaturen" och språkbruket i modellen.</p>
+                <ul>
+                    <li>"Du är en erfaren copywriter..."</li>
+                    <li>"Agera som en senior affärsjurist..."</li>
+                    <li>"Du är en pedagogisk lärare..."</li>
+                </ul>
+
+                <h3>2. Uppgift + Kontext (Task)</h3>
+                <p>Vad ska göras, och varför? Ge AI:n den information den behöver för att lösa uppgiften.</p>
+                <ul>
+                    <li>"Skriv ett nyhetsbrev om att vi byter till sommartider."</li>
+                    <li>"Förklara skillnaden mellan aktiebolag och enskild firma."</li>
+                </ul>
+
+                <h3>3. Format (Format)</h3>
+                <p>Hur vill du ha svaret presenterat? Detta är ofta det viktigaste steget för att slippa omarbeta texten.</p>
+                <ul>
+                    <li>"Svara i form av en tabell med för- och nackdelar."</li>
+                    <li>"Max 200 ord. Använd punktlistor. En vänlig och professionell ton."</li>
+                </ul>
+
+                <div class="bg-green-50 border-l-4 border-green-500 p-4 my-6 rounded-r">
+                    <p class="text-green-800 mt-0 mb-2 font-bold">✅ Bra prompt (RTF-exempel):</p>
+                    <p class="text-green-900 m-0 italic">"Du är en erfaren och trevlig kundtjänstmedarbetare (Roll). Skriv ett mejl till våra befintliga kunder och informera om att vi byter till sommartider (öppet 08-16 istället för 08-17) från 1 juli. Kontext: vi vill att de ska känna att vi fortfarande finns där för dem (Uppgift). Skriv det som ett kort, personligt mejlutkast med en tydlig ämnesrad (Format)."</p>
+                </div>
+
+                <h2>Avancerade tekniker</h2>
+                
+                <h3>Few-Shot Prompting (Visa exempel)</h3>
+                <p>Istället för att bara beskriva vad du vill ha, visa ett par exempel (shots). Det är det absolut snabbaste sättet att få AI:n att förstå en specifik stil eller format.</p>
+                <div class="bg-slate-100 p-4 rounded mb-6 text-sm font-mono">
+                    Klassificera följande kundrecensioner som Positiv, Negativ eller Neutral.<br><br>
+                    Exempel 1:<br>
+                    Recension: "Fantastisk service och snabb leverans!"<br>
+                    Svar: Positiv<br><br>
+                    Exempel 2:<br>
+                    Recension: "Paketet var trasigt när det kom."<br>
+                    Svar: Negativ<br><br>
+                    Nu är det din tur:<br>
+                    Recension: "Produkten är okej, men för dyr för vad man får."<br>
+                    Svar: 
+                </div>
+
+                <h3>Kedjeprompting (Chain of Thought)</h3>
+                <p>För komplexa problem, be AI:n tänka steg-för-steg. Genom att tvinga modellen att "tänka högt" minskar du risken för fel drastiskt.</p>
+                <p>Lägg helt enkelt till: <em>"Tänk steg för steg och förklara din logik innan du ger det slutgiltiga svaret."</em></p>
+
+                <h2>Checklista för felsökning</h2>
+                <p>När du får ett dåligt svar, ställ dig dessa frågor:</p>
+                <ul>
+                    <li>Gav jag AI:n en tydlig roll?</li>
+                    <li>Finns det utrymme för tolkning som jag borde ha stängt?</li>
+                    <li>Satte jag gränser för formatet (längd, struktur)?</li>
+                    <li>Behöver AI:n mer kontext för att svara rätt?</li>
+                </ul>
+            </article>
+
+            <!-- Lead Capture Section -->
+            <div class="mt-16 bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-center">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4">Ladda ner vår stora Prompt-samling (PDF)</h3>
+                <p class="text-slate-600 mb-8 max-w-2xl mx-auto">Få 50 färdiga, beprövade prompts för marknadsföring, försäljning, HR och ledarskap direkt till din inkorg.</p>
+                <form id="lead-form" class="max-w-md mx-auto flex flex-col gap-4">
+                    <input type="email" id="email-input" required placeholder="Din e-postadress" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-colors">
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg transition-colors flex justify-center items-center gap-2">
+                        <span>Ladda ner guiden gratis</span>
+                    </button>
+                    <p id="form-message" class="text-sm mt-2 hidden"></p>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <span class="text-xl font-bold text-white tracking-tight flex items-center gap-2 mb-4">
+                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        AI-Verktygskistan
+                    </span>
+                    <p class="text-slate-400 text-sm max-w-md">Din guide i AI-djungeln. Vi hjälper svenska företag och privatpersoner att hitta, jämföra och förstå de bästa AI-verktygen på marknaden.</p>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Innehåll</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">AI Verktyg</a></li>
+                        <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI Verktyg</a></li>
+                        <li><a href="/ai-program.html" class="hover:text-white transition-colors">AI Program</a></li>
+                        <li><a href="/ai-jamfor.html" class="hover:text-white transition-colors">Jämför AI</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Guider & Info</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai.html" class="hover:text-white transition-colors">Lär dig AI</a></li>
+                        <li><a href="/bygg-med-ai.html" class="hover:text-white transition-colors">Bygg med AI</a></li>
+                        <li><a href="/ai-ordlista.html" class="hover:text-white transition-colors">AI Ordlista</a></li>
+                        <li><a href="/prompt-guide.html" class="hover:text-white transition-colors">Prompt Guide</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om AI-Verktygskistan</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 AI-Verktygskistan. Alla rättigheter förbehållna.</p>
+                <div class="mt-4 md:mt-0 space-x-4">
+                    <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-xs font-semibold text-slate-500">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-slate-300">Om sajten</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Lead Form Handling
+        const form = document.getElementById('lead-form');
+        const msg = document.getElementById('form-message');
+        
+        if(form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email-input').value;
+                const btn = form.querySelector('button');
+                const origText = btn.innerHTML;
+                
+                btn.disabled = true;
+                btn.innerHTML = '<svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="4" class="opacity-25"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> Bearbetar...';
+                
+                try {
+                    const res = await fetch('/api/lead', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email: email })
+                    });
+                    
+                    if(res.ok) {
+                        msg.textContent = "✅ Guiden är skickad till din e-post!";
+                        msg.className = "text-sm mt-2 text-green-600 font-medium block";
+                        form.reset();
+                    } else {
+                        msg.textContent = "❌ Något gick fel. Försök igen senare.";
+                        msg.className = "text-sm mt-2 text-red-600 font-medium block";
+                    }
+                } catch(err) {
+                    msg.textContent = "❌ Nätverksfel. Kontrollera din uppkoppling.";
+                    msg.className = "text-sm mt-2 text-red-600 font-medium block";
+                } finally {
+                    btn.disabled = false;
+                    btn.innerHTML = origText;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
