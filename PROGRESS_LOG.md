@@ -1,3 +1,4 @@
+2026-07-09 | TILLVÄXT/LEADFLOW | Byggde "Skapa med AI" guiden (/skapa-med-ai.html) + Lead capture | Fångar sök på bild/video-generering + fler leads | nästa: Fånga fler leads eller ny intent-sida
 2026-07-08 | TILLVÄXT/LEADFLOW | Byggde Prompt Guide (/prompt-guide.html) + Lead capture | Fångar sök på prompt engineering + fler leads | nästa: Bygg SEO-sidor för fler sökintentioner
 2026-07-06 | TILLVÄXT/DATA | Utökade katalogen med 4 tunga AI-verktyg (Gemini 3.1, Sora, Sonnet 4.5, Krea) | Katalog 34->38, starkare sökordsintent för flaggskeppsmodeller | nästa: Fånga fler leads eller ny intent-sida
 2026-07-05 | SEO/TILLVÄXT | Lade till schema.org FAQ-markup på Lär dig AI och AI-ordlista | Skapar förutsättningar för utvald snippet (Rich Results) i SERP | nästa: Fånga fler verktyg eller data-moat

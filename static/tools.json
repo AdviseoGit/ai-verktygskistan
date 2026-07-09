@@ -406,5 +406,29 @@
         "tags": "Juridik,Research,Enterprise",
         "icon_emoji": "\ud83c\udfdb\ufe0f",
         "icon_bg_color": "bg-slate-700"
+    },
+    {
+        "id": 36,
+        "name": "Runway Gen-3 Alpha",
+        "category": "video",
+        "description": "Ledande AI-verktyg f\u00f6r videogenerering och redigering. Skapa hyperrealistiska videor fr\u00e5n text, bilder eller andra videor. Revolutionerar filmskapande och marknadsf\u00f6ring.",
+        "pricing": "Freemium (fr\u00e5n 12$/m\u00e5n)",
+        "rating": 4.9,
+        "gdpr_status": "Varning",
+        "tags": "Video,Generering,Gen-3",
+        "icon_emoji": "\ud83c\udfac",
+        "icon_bg_color": "bg-indigo-200"
+    },
+    {
+        "id": 37,
+        "name": "HeyGen",
+        "category": "video",
+        "description": "Skapa professionella videor med AI-avatarer och r\u00f6stkloning p\u00e5 minuter. Perfekt f\u00f6r marknadsf\u00f6ring, e-learning och internkommunikation utan att beh\u00f6va en kamera.",
+        "pricing": "Freemium (fr\u00e5n 24$/m\u00e5n)",
+        "rating": 4.8,
+        "gdpr_status": "DPA tillg\u00e4nglig",
+        "tags": "Avatar,Video,Voice",
+        "icon_emoji": "\ud83d\udc64",
+        "icon_bg_color": "bg-emerald-100"
     }
 ]
