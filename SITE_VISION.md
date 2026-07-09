@@ -16,6 +16,7 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
 
 ## ROADMAP (nästa prioriteringar)
+- [x] Bygga en "Skapa med AI" sida för att fånga utbildnings-intent inom bild/video
 - [x] Konvertera "AI verktyg" och "AI program" från statiska artiklar till dynamiska katalogsidor (tools.js integration för att matcha sökintentionen)
 - [x] Utöka katalogen till 35+ verktyg (särskilt inom 'juridik & HR' och 'kod & dev')
 - [x] Skapa en "Jämför"-funktion för verktyg så man kan se skillnaden mellan t.ex. ChatGPT och Claude side-by-side
