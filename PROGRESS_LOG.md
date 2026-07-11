@@ -1,3 +1,4 @@
+2026-07-11 | TILLVÄXT/DATA | Lade till Gamma, ElevenLabs och Suno AI i katalogen | Katalog 38->41, breddar content-skapar intent | nästa: Fånga mer sökintent med ny sida eller verktyg
 -e 2026-07-10 | DESIGN/UX | Skapade enhetlighet för title-taggar, lagt in AI-transparens i alla footers | Standardiserar sajtens design och säkerställer policy-compliance | nästa: Fånga mer sökintent med ny sida eller verktyg
 2026-07-09 | TILLVÄXT/LEADFLOW | Byggde "Skapa med AI" guiden (/skapa-med-ai.html) + Lead capture | Fångar sök på bild/video-generering + fler leads | nästa: Fånga fler leads eller ny intent-sida
 2026-07-08 | TILLVÄXT/LEADFLOW | Byggde Prompt Guide (/prompt-guide.html) + Lead capture | Fångar sök på prompt engineering + fler leads | nästa: Bygg SEO-sidor för fler sökintentioner
