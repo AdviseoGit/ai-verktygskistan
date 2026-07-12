@@ -2,7 +2,9 @@
 <html lang="sv">
 <head>
     <!-- Structured Data FAQ -->
-    <script type="application/ld+json" src="/static/ai-ordlista-faq.json"></script>
+    <script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vad \u00e4r en LLM (Large Language Model)?", "acceptedAnswer": {"@type": "Answer", "text": "LLM (Stor spr\u00e5kmodell) \u00e4r en typ av AI som tr\u00e4nats p\u00e5 enorma m\u00e4ngder textdata f\u00f6r att f\u00f6rst\u00e5, generera och interagera med m\u00e4nskligt spr\u00e5k. Exempel inkluderar GPT-4 och Claude."}}, {"@type": "Question", "name": "Vad betyder Prompt Engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt Engineering \u00e4r f\u00f6rm\u00e5gan att skriva tydliga och effektiva instruktioner (prompts) till en AI-modell f\u00f6r att f\u00e5 exakt det resultat du vill ha."}}, {"@type": "Question", "name": "Vad \u00e4r Hallucination inom AI?", "acceptedAnswer": {"@type": "Answer", "text": "N\u00e4r en AI-modell sj\u00e4lvs\u00e4kert presenterar falsk eller p\u00e5hittad information som fakta kallas det f\u00f6r en hallucination. Det sker n\u00e4r modellen saknar kunskap men f\u00f6rs\u00f6ker gissa sig till ett svar."}}, {"@type": "Question", "name": "Vad \u00e4r RAG (Retrieval-Augmented Generation)?", "acceptedAnswer": {"@type": "Answer", "text": "RAG \u00e4r en teknik d\u00e4r AI-modellen f\u00f6rst s\u00f6ker upp relevant, specifik och ofta intern data (t.ex. f\u00f6retagets dokument) och sedan anv\u00e4nder den informationen f\u00f6r att generera ett mer exakt svar."}}]}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
 <script>
@@ -40,6 +42,7 @@
                 <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Alla Verktyg</a>
                 <a href="/ai-program.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI Program</a>
                 <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför Verktyg</a>
+                <a href="/hitta-ratt-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Hitta rätt AI</a>
                 <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
                 <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
             </div>
@@ -157,7 +160,8 @@
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-800 text-sm text-center">
-            <p>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></p>
+            <p>Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a>
+                <a href="/hitta-ratt-ai.html" class="hover:text-white transition-colors">Hitta rätt AI</a></p>
             <p class="mt-2 text-slate-500">&copy; 2026 AI-Verktygskistan</p>
         </div>
     </footer>
