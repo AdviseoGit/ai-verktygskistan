@@ -1,5 +1,3 @@
 #!/bin/bash
 DATE=$(date +%Y-%m-%d)
-echo "$DATE | TILLVÄXT/DATA | Utökade katalogen med 9 nya AI-verktyg (Dev & HR) | Katalog 25->34, stärker SEO & intent | nästa: Publicera AI rapport" > temp_progress.txt
-cat /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md >> temp_progress.txt
-mv temp_progress.txt /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md
+sed -i "1i$DATE | TILLVÄXT/DATA | Lade till Perplexity AI och GitHub Copilot i katalogen | Katalog 41->43, breddar research och dev intent | nästa: Bygg mer data-capture" /data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md

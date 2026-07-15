@@ -7,7 +7,7 @@
     "pricing": "25 USD / mån / user",
     "rating": 9.2,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "GPT-4o,Teamfunktioner,Plugins",
     "icon_emoji": "🤖",
     "icon_bg_color": "bg-indigo-100"
   },
@@ -19,7 +19,7 @@
     "pricing": "30 USD / mån / user",
     "rating": 9.0,
     "gdpr_status": "EU-data",
-    "tags": [],
+    "tags": "M365-integration,Teams,Excel AI",
     "icon_emoji": "🪟",
     "icon_bg_color": "bg-blue-100"
   },
@@ -31,7 +31,7 @@
     "pricing": "49 USD / mån",
     "rating": 7.4,
     "gdpr_status": "Begränsad DPA",
-    "tags": [],
+    "tags": "Marketing,Templates,Brand voice",
     "icon_emoji": "✍️",
     "icon_bg_color": "bg-violet-100"
   },
@@ -43,7 +43,7 @@
     "pricing": "10–19 USD / mån",
     "rating": 9.3,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "VS Code,Autocomplete,Chat",
     "icon_emoji": "💻",
     "icon_bg_color": "bg-gray-100"
   },
@@ -55,7 +55,7 @@
     "pricing": "10–60 USD / mån",
     "rating": 8.2,
     "gdpr_status": "Begränsad DPA",
-    "tags": [],
+    "tags": "Bildgenerering,Discord,Varumärke",
     "icon_emoji": "🎨",
     "icon_bg_color": "bg-pink-100"
   },
@@ -67,7 +67,7 @@
     "pricing": "399 kr / mån",
     "rating": 8.5,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Bokföring,Fakturaläsning,SV-data",
     "icon_emoji": "⚖️",
     "icon_bg_color": "bg-teal-100"
   },
@@ -79,7 +79,7 @@
     "pricing": "0–800 USD / mån",
     "rating": 8.6,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "CRM,E-post,Lead scoring",
     "icon_emoji": "📊",
     "icon_bg_color": "bg-amber-100"
   },
@@ -91,7 +91,7 @@
     "pricing": "490 kr / mån",
     "rating": 8.1,
     "gdpr_status": "SE-baserat",
-    "tags": [],
+    "tags": "Avtalsanalys,NDA,Svensk rätt",
     "icon_emoji": "📋",
     "icon_bg_color": "bg-red-100"
   },
@@ -103,7 +103,7 @@
     "pricing": "20 USD / mån",
     "rating": 9.1,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Research,Sökmotor,Källhänvisning",
     "icon_emoji": "🔍",
     "icon_bg_color": "bg-blue-100"
   },
@@ -115,7 +115,7 @@
     "pricing": "22 USD / mån",
     "rating": 8.7,
     "gdpr_status": "EU-data",
-    "tags": [],
+    "tags": "Video,Avatar,Utbildning",
     "icon_emoji": "🎥",
     "icon_bg_color": "bg-purple-100"
   },
@@ -127,7 +127,7 @@
     "pricing": "Freemium",
     "rating": 4.7,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "musikgenerering, AI-låtar, text-till-musik",
     "icon_emoji": "🎵",
     "icon_bg_color": "#FFD700"
   },
@@ -139,7 +139,7 @@
     "pricing": "Freemium / API",
     "rating": 4.8,
     "gdpr_status": "DPA via AWS EU",
-    "tags": [],
+    "tags": "Fable 5, Automation, Låg kostnad, Snabbt",
     "icon_emoji": "⚡",
     "icon_bg_color": "bg-orange-100"
   },
@@ -151,7 +151,7 @@
     "pricing": "Prenumeration / API",
     "rating": 4.9,
     "gdpr_status": "DPA via AWS EU",
-    "tags": [],
+    "tags": "Opus 4.8, 200K context, Komplext, Kodning",
     "icon_emoji": "🧠",
     "icon_bg_color": "bg-purple-100"
   },
@@ -163,7 +163,7 @@
     "pricing": "Freemium (från 20 USD/mån)",
     "rating": 8.9,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Automatisering,Integrationer,Produktivitet",
     "icon_emoji": "⚡",
     "icon_bg_color": "bg-blue-100"
   },
@@ -175,7 +175,7 @@
     "pricing": "Freemium (från 12 USD/mån)",
     "rating": 8.7,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Rättstavning,Skrivande,Engelska",
     "icon_emoji": "📝",
     "icon_bg_color": "bg-green-100"
   },
@@ -187,7 +187,7 @@
     "pricing": "Freemium (från 36 USD/mån)",
     "rating": 8.5,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Marknadsföring,Copywriting,Sälj",
     "icon_emoji": "✍️",
     "icon_bg_color": "bg-orange-100"
   },
@@ -199,7 +199,7 @@
     "pricing": "Freemium (från 10 USD/mån)",
     "rating": 8.8,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Möten,Transkribering,Sammanfattning",
     "icon_emoji": "🔥",
     "icon_bg_color": "bg-purple-100"
   },
@@ -211,7 +211,7 @@
     "pricing": "12 USD/mån",
     "rating": 8.6,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Presentationer,Design,Slides",
     "icon_emoji": "📊",
     "icon_bg_color": "bg-pink-100"
   },
@@ -223,7 +223,7 @@
     "pricing": "Freemium (från 20 USD/mån)",
     "rating": 8.9,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Automatisering,Integrationer,Produktivitet",
     "icon_emoji": "⚡",
     "icon_bg_color": "bg-blue-100"
   },
@@ -235,7 +235,7 @@
     "pricing": "Freemium (från 12 USD/mån)",
     "rating": 8.7,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Rättstavning,Skrivande,Engelska",
     "icon_emoji": "📝",
     "icon_bg_color": "bg-green-100"
   },
@@ -247,7 +247,7 @@
     "pricing": "Freemium (från 36 USD/mån)",
     "rating": 8.5,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Marknadsföring,Copywriting,Sälj",
     "icon_emoji": "✍️",
     "icon_bg_color": "bg-orange-100"
   },
@@ -259,7 +259,7 @@
     "pricing": "Freemium (från 10 USD/mån)",
     "rating": 8.8,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Möten,Transkribering,Sammanfattning",
     "icon_emoji": "🔥",
     "icon_bg_color": "bg-purple-100"
   },
@@ -271,7 +271,7 @@
     "pricing": "12 USD/mån",
     "rating": 8.6,
     "gdpr_status": "Varning",
-    "tags": [],
+    "tags": "Presentationer,Design,Slides",
     "icon_emoji": "📊",
     "icon_bg_color": "bg-pink-100"
   },
@@ -283,7 +283,7 @@
     "pricing": "Freemium (från 8$/mån)",
     "rating": 4.8,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "Presentation,Design,AI,Snabbt",
     "icon_emoji": "✨",
     "icon_bg_color": "bg-purple-100"
   },
@@ -295,7 +295,7 @@
     "pricing": "Freemium (från 12$/mån)",
     "rating": 4.9,
     "gdpr_status": "DPA tillgänglig",
-    "tags": [],
+    "tags": "Podd,Video,Redigering,Transkribering",
     "icon_emoji": "🎙️",
     "icon_bg_color": "bg-indigo-100"
   },
@@ -307,7 +307,7 @@
     "pricing": "Gratis plan / $20/mån",
     "rating": 4.9,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "Kod,Utveckling,AI,Editor",
     "icon_emoji": "⚡",
     "icon_bg_color": "bg-slate-800"
   },
@@ -319,7 +319,7 @@
     "pricing": "Gratis plan / Premium",
     "rating": 4.8,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "UI,React,Tailwind,Design",
     "icon_emoji": "📐",
     "icon_bg_color": "bg-zinc-900"
   },
@@ -331,7 +331,7 @@
     "pricing": "Offert",
     "rating": 4.5,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Juridik,Kontrakt,Granskning",
     "icon_emoji": "⚖️",
     "icon_bg_color": "bg-blue-900"
   },
@@ -343,7 +343,7 @@
     "pricing": "Offert",
     "rating": 4.6,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Juridik,Avtal,HR",
     "icon_emoji": "📝",
     "icon_bg_color": "bg-indigo-800"
   },
@@ -355,7 +355,7 @@
     "pricing": "Offert",
     "rating": 4.8,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "HR,Lärande,Kunskap,Enterprise",
     "icon_emoji": "🧠",
     "icon_bg_color": "bg-purple-600"
   },
@@ -367,7 +367,7 @@
     "pricing": "Prenumeration",
     "rating": 4.7,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Juridik,Avtal,Svenskt",
     "icon_emoji": "💼",
     "icon_bg_color": "bg-emerald-700"
   },
@@ -379,7 +379,7 @@
     "pricing": "Offert",
     "rating": 4.8,
     "gdpr_status": "Enterprise DPA",
-    "tags": [],
+    "tags": "Sök,Enterprise,Produktivitet",
     "icon_emoji": "🔍",
     "icon_bg_color": "bg-rose-500"
   },
@@ -391,7 +391,7 @@
     "pricing": "Tidig åtkomst",
     "rating": 4.6,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "Agent,Kod,Autonom",
     "icon_emoji": "🤖",
     "icon_bg_color": "bg-teal-700"
   },
@@ -403,7 +403,7 @@
     "pricing": "Enterprise",
     "rating": 4.7,
     "gdpr_status": "GDPR-klar",
-    "tags": [],
+    "tags": "Juridik,Research,Enterprise",
     "icon_emoji": "🏛️",
     "icon_bg_color": "bg-slate-700"
   },
@@ -415,7 +415,7 @@
     "pricing": "Gratis / $20/mån (Advanced)",
     "rating": 4.8,
     "gdpr_status": "Enterprise DPA tillgänglig",
-    "tags": [],
+    "tags": "Google,Multimodal,Text,Kod,Bild",
     "icon_emoji": "✨",
     "icon_bg_color": "bg-blue-600"
   },
@@ -427,7 +427,7 @@
     "pricing": "Pris på förfrågan / Enterprise",
     "rating": 4.9,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "Video,OpenAI,Generativ",
     "icon_emoji": "🎥",
     "icon_bg_color": "bg-purple-600"
   },
@@ -439,7 +439,7 @@
     "pricing": "Gratis / $20/mån",
     "rating": 4.8,
     "gdpr_status": "B2B DPA",
-    "tags": [],
+    "tags": "Anthropic,Kod,Text",
     "icon_emoji": "🧠",
     "icon_bg_color": "bg-orange-500"
   },
@@ -451,40 +451,8 @@
     "pricing": "Gratis / $30/mån",
     "rating": 4.7,
     "gdpr_status": "Oklart",
-    "tags": [],
+    "tags": "Bild,Design,Real-time",
     "icon_emoji": "🎨",
     "icon_bg_color": "bg-pink-600"
-  },
-  {
-    "id": 40,
-    "name": "Gamma",
-    "category": "presentation",
-    "description": "Skapa snygga presentationer, dokument och webbsidor snabbt med AI. Perfekt för pitchdeck och rapporter. Svenska stöds.",
-    "pricing": "Freemium",
-    "rating": 4.8,
-    "gdpr_status": "Oklart",
-    "tags": [
-      "Presentation",
-      "Design",
-      "Dokument"
-    ],
-    "icon_emoji": "📊",
-    "icon_bg_color": "bg-pink-100 text-pink-600"
-  },
-  {
-    "id": 41,
-    "name": "ElevenLabs",
-    "category": "ljud",
-    "description": "Marknadsledande AI-röstkloning och text-till-tal. Generera extremt realistiska röster på svenska och andra språk.",
-    "pricing": "Freemium",
-    "rating": 4.9,
-    "gdpr_status": "Nej",
-    "tags": [
-      "Röst",
-      "Ljud",
-      "Text-till-tal"
-    ],
-    "icon_emoji": "🎙️",
-    "icon_bg_color": "bg-indigo-100 text-indigo-600"
   }
 ]
