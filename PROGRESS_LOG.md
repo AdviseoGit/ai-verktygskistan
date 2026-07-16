@@ -1,3 +1,4 @@
+2026-07-16 | TILLVÄXT/DATA | Lade till Luma Dream Machine och Runway Gen-3 i katalogen | Katalog 41->43, starkare sökordsintent för video-AI | nästa: Optimera SEO för AI Svenska Företag Rapport
 2026-07-15 | TILLVÄXT/DATA | Lade till Perplexity AI och GitHub Copilot i katalogen | Katalog 41->43, breddar research och dev intent | nästa: Bygg mer data-capture
 2026-07-12 | TILLVÄXT/DATA | Lade till Gamma, ElevenLabs och Suno AI i katalogen | Katalog 38->41, breddar content-skapar intent | nästa: Fånga mer sökintent med ny sida eller verktyg
 2026-07-11 | TILLVÄXT/DATA | Lade till Gamma, ElevenLabs och Suno AI i katalogen | Katalog 38->41, breddar content-skapar intent | nästa: Fånga mer sökintent med ny sida eller verktyg
