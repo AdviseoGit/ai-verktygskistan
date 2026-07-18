@@ -108,16 +108,16 @@
         "icon_bg_color": "bg-blue-100"
     },
     {
-        "id": 11,
+        "id": 54,
         "name": "Synthesia",
         "category": "video",
-        "description": "Skapa professionella AI-videor från text med realistiska avatarer. Stöd för över 120 språk inklusive svenska. Bra för internutbildning och säljvideor.",
-        "pricing": "22 USD / mån",
-        "rating": 8.7,
-        "gdpr_status": "EU-data",
-        "tags": "Video,Avatar,Utbildning",
-        "icon_emoji": "🎥",
-        "icon_bg_color": "bg-purple-100"
+        "description": "Ledande plattform för AI-avatarer. Skapa professionella utbildnings- och marknadsföringsvideor genom att bara skriva text. Stödjer över 120 språk.",
+        "pricing": "Från $22/mån",
+        "rating": 4.8,
+        "gdpr_status": "GDPR-klar",
+        "tags": "video,avatar,utbildning,presentation",
+        "icon_emoji": "👤",
+        "icon_bg_color": "bg-blue-500"
     },
     {
         "id": 12,
@@ -502,5 +502,65 @@
         "tags": "text,kodning,europeisk,llm",
         "icon_emoji": "🌪️",
         "icon_bg_color": "bg-orange-600"
+    },
+    {
+        "id": 50,
+        "name": "Kling AI",
+        "category": "video",
+        "description": "Kinas svar på Sora, tillgänglig globalt via webbinterface. Skapar hyperrealistiska 1080p videor på upp till 120 sekunder med fysiskt korrekta simulationer.",
+        "pricing": "Freemium (dagliga krediter)",
+        "rating": 4.8,
+        "gdpr_status": "Varning",
+        "tags": "video,text-till-video,kling",
+        "icon_emoji": "🎬",
+        "icon_bg_color": "bg-red-600"
+    },
+    {
+        "id": 51,
+        "name": "Napkin AI",
+        "category": "design",
+        "description": "Konverterar text automatiskt till diagram, grafer och mindmaps. Otroligt användbart för presentationer och strategidokument.",
+        "pricing": "Freemium",
+        "rating": 4.6,
+        "gdpr_status": "Granskning",
+        "tags": "design,mindmap,presentation,diagram",
+        "icon_emoji": "📊",
+        "icon_bg_color": "bg-yellow-500"
+    },
+    {
+        "id": 52,
+        "name": "ElevenLabs Reader",
+        "category": "ljud",
+        "description": "Lyssningsapp som läser upp artiklar, PDF:er och e-böcker med ElevenLabs hyperrealistiska AI-röster. Perfekt för on-the-go lärande.",
+        "pricing": "Gratis (App)",
+        "rating": 4.9,
+        "gdpr_status": "Granskning",
+        "tags": "ljud,tts,mobilapp,text-till-tal",
+        "icon_emoji": "🎧",
+        "icon_bg_color": "bg-blue-900"
+    },
+    {
+        "id": 53,
+        "name": "Figma AI",
+        "category": "design",
+        "description": "Figma's inbyggda AI-verktyg som låter dig generera UI-designer från text, hitta liknande komponenter och automatisera repetitiva uppgifter i designprocessen.",
+        "pricing": "Ingår i Figma Pro",
+        "rating": 4.7,
+        "gdpr_status": "GDPR-klar",
+        "tags": "design,ui,ux,wireframe",
+        "icon_emoji": "🎨",
+        "icon_bg_color": "bg-purple-600"
+    },
+    {
+        "id": 55,
+        "name": "Apple Intelligence",
+        "category": "produktivitet",
+        "description": "Apples djupt integrerade AI-system i iOS 18 och macOS Sequoia. Genererar text och bilder, förstår personlig kontext och förbättrar Siri kraftigt, med starkt fokus på on-device privacy.",
+        "pricing": "Gratis (på kompatibla enheter)",
+        "rating": 4.5,
+        "gdpr_status": "GDPR-klar",
+        "tags": "produktivitet,apple,ios,assistent",
+        "icon_emoji": "🍎",
+        "icon_bg_color": "bg-gray-800"
     }
 ]
