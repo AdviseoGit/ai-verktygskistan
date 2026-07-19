@@ -1,15 +1,8 @@
-import datetime
-
-log_file = "/data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md"
-date_str = datetime.datetime.now().strftime("%Y-%m-%d")
-
-new_entry = f"{date_str} | TILLVÄXT/DATA | Lade till Gamma, ElevenLabs och Suno AI i katalogen | Katalog 38->41, breddar content-skapar intent | nästa: Fånga mer sökintent med ny sida eller verktyg\n"
-
-with open(log_file, "r") as f:
+with open("/data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md", "r") as f:
     lines = f.readlines()
 
-with open(log_file, "w") as f:
-    f.write(new_entry)
-    for line in lines:
-        f.write(line)
-print("Updated PROGRESS_LOG.md")
+new_line = "2026-07-19 | TILLVÄXT/DATA | Lade till 16 nya AI-verktyg och fixade 40 JSON-fel | Katalog 54->70, massivt lyft för sökintent | nästa: Optimera leads-flöde\n"
+lines.insert(1, new_line)
+
+with open("/data/workspace/projects/ai-verktygskistan/PROGRESS_LOG.md", "w") as f:
+    f.writelines(lines)

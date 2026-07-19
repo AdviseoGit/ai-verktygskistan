@@ -1,4 +1,5 @@
 2026-07-18 | TILLVÄXT/DATA | Lade till 6 nya AI-verktyg i katalogen | Katalog 48->54, breddar för nya trender | nästa: Bygga ny intent-sida eller optimera konvertering
+2026-07-19 | TILLVÄXT/DATA | Lade till 16 nya AI-verktyg och fixade 40 JSON-fel | Katalog 54->70, massivt lyft för sökintent | nästa: Optimera leads-flöde
 -e 2026-07-17 | TILLVÄXT/DATA | Lade till v0, Cursor, Replicate, Mistral, MJ v6 | Katalog 43->48, starkare intent för devs och designers | nästa: Fånga leads från nya besökare
 2026-07-16 | TILLVÄXT/DATA | Lade till Luma Dream Machine och Runway Gen-3 i katalogen | Katalog 41->43, starkare sökordsintent för video-AI | nästa: Optimera SEO för AI Svenska Företag Rapport
 2026-07-15 | TILLVÄXT/DATA | Lade till Perplexity AI och GitHub Copilot i katalogen | Katalog 41->43, breddar research och dev intent | nästa: Bygg mer data-capture

@@ -1,14 +1,12 @@
-import re
-
-with open('/data/workspace/projects/ai-verktygskistan/INDEXING_LOG.md', 'r') as f:
+with open("/data/workspace/projects/ai-verktygskistan/INDEXING_LOG.md", "r") as f:
     lines = f.readlines()
 
-new_lines = []
-for line in lines:
-    if "hitta-ratt-ai.html" in line:
-        new_lines.append(line.replace("2026-07-12", "2026-07-15").replace("Länkad i topnav + sitemap", "Länkad i topnav + sitemap. Behöver indexeras manuellt av Sim."))
-    else:
-        new_lines.append(line)
+for i, line in enumerate(lines):
+    if "URL is unknown to Google" in line:
+        parts = line.split("|")
+        if len(parts) >= 3:
+            parts[2] = " 2026-07-19 "
+            lines[i] = "|".join(parts)
 
-with open('/data/workspace/projects/ai-verktygskistan/INDEXING_LOG.md', 'w') as f:
-    f.writelines(new_lines)
+with open("/data/workspace/projects/ai-verktygskistan/INDEXING_LOG.md", "w") as f:
+    f.writelines(lines)
