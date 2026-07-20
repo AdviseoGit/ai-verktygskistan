@@ -480,6 +480,25 @@
     "icon_bg_color": "bg-rose-500"
   },
   {
+    "id": 72,
+    "name": "Google NotebookLM",
+    "category": "produktivitet",
+    "description": "Ett AI-drivet anteckningsverktyg från Google som låter dig ladda upp källor (PDF:er, Google Docs) och sedan ställa frågor, skapa sammanfattningar eller generera insikter baserat enbart på ditt material.",
+    "pricing": "Gratis",
+    "rating": 4.6,
+    "gdpr_status": "Oklart",
+    "tags": [
+      "anteckningar",
+      "sammanfattning",
+      "research",
+      "google",
+      "studenter",
+      "forskning"
+    ],
+    "icon_emoji": "📓",
+    "icon_bg_color": "bg-blue-100"
+  },
+  {
     "id": 16,
     "name": "Grammarly",
     "category": "text",
@@ -543,6 +562,24 @@
     ],
     "icon_emoji": "🏛️",
     "icon_bg_color": "bg-slate-700"
+  },
+  {
+    "id": 73,
+    "name": "HeyGen",
+    "category": "ljud_och_video",
+    "description": "Ledande plattform för att skapa AI-videor med realistiska avatarer. Låter dig skriva ett manus och omedelbart få en video med en AI-presentatör, inklusive stöd för röstkloning och översättning.",
+    "pricing": "Freemium",
+    "rating": 4.7,
+    "gdpr_status": "GDPR-klar",
+    "tags": [
+      "video",
+      "avatar",
+      "presentation",
+      "marknadsföring",
+      "röstkloning"
+    ],
+    "icon_emoji": "👤",
+    "icon_bg_color": "bg-indigo-100"
   },
   {
     "id": 8,
@@ -869,6 +906,24 @@
     ],
     "icon_emoji": "🔍",
     "icon_bg_color": "bg-blue-100"
+  },
+  {
+    "id": 74,
+    "name": "Phind",
+    "category": "kod",
+    "description": "En AI-sökmotor byggd specifikt för utvecklare och tekniska frågor. Söker på webben och genererar kodexempel och förklaringar baserat på den senaste dokumentationen.",
+    "pricing": "Freemium",
+    "rating": 4.5,
+    "gdpr_status": "Oklart",
+    "tags": [
+      "kod",
+      "utvecklare",
+      "sökmotor",
+      "programmering",
+      "felsökning"
+    ],
+    "icon_emoji": "🔍",
+    "icon_bg_color": "bg-slate-100"
   },
   {
     "id": 32,
