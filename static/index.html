@@ -611,7 +611,7 @@
         document.getElementById('lead-form-hero').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('hero-email').value;
-            fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+            fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
             this.style.display = 'none';
             document.getElementById('hero-success').classList.remove('hidden');
         });
@@ -619,7 +619,7 @@
         document.getElementById('lead-form-footer').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = document.getElementById('footer-email').value;
-            fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+            fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
             this.style.display = 'none';
             document.getElementById('footer-success').classList.remove('hidden');
         });

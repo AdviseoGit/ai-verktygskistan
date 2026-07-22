@@ -1,3 +1,4 @@
+2026-07-22 | TILLVÄXT/DATA | Utökade katalogen med 3 heta verktyg + fixade formulär | Katalog 86->89, fångar API leads via trailing slash | nästa: Optimera leads-flöde eller ny SEO-sida
 2026-07-21 | TILLVÄXT/DATA | Lade till 9 nya verktyg (Zapier Central, HeyGen, m.fl) | Katalog 73->82, breddar automation & video | nästa: Optimera leads-flöde eller ny SEO-sida
 2026-07-20 | TILLVÄXT/DATA | Lade till 3 nya verktyg (NotebookLM, Phind, Beautiful.ai) | Katalog 70->73, breddar intent | nästa: Fånga fler leads eller skapa nytt verktyg
 2026-07-18 | TILLVÄXT/DATA | Lade till 6 nya AI-verktyg i katalogen | Katalog 48->54, breddar för nya trender | nästa: Bygga ny intent-sida eller optimera konvertering

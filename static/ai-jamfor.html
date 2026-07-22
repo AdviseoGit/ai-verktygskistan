@@ -267,7 +267,7 @@
             heroForm.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const email = document.getElementById('hero-email').value;
-                fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+                fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
                 this.style.display = 'none';
                 document.getElementById('hero-success').classList.remove('hidden');
             });
