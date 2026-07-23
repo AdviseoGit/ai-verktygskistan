@@ -1,5 +1,5 @@
 import os
-from fastapi import FastAPI, Depends, BackgroundTasks
+from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
@@ -115,7 +115,10 @@ async def favicon():
 
 @app.get("/{page_name}.html", response_class=HTMLResponse)
 async def serve_static_html(page_name: str):
-    return FileResponse(f"static/{page_name}.html")
+    path = f"static/{page_name}.html"
+    if not os.path.isfile(path):
+        raise HTTPException(status_code=404)
+    return FileResponse(path)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
