@@ -1449,5 +1449,113 @@
         "rating": 4.9,
         "isGDPRCompliant": true,
         "gdprNote": "Perplexity Enterprise Pro är SOC2-certifierade och GDPR-kompatibla. De tränar inte modeller på Pro/Enterprise-användares data."
+    },
+    {
+        "name": "Google VideoFX",
+        "category": "video",
+        "description": "Googles kraftfulla AI-videogenerator driven av Veo-modellen. Låter användare skapa högkvalitativa 1080p-videor från textprompter, utöka existerande videor och byta ut element (inpainting). Konkurrerar med Sora och Runway Gen-3.",
+        "url": "https://aitestkitchen.withgoogle.com/tools/video-fx",
+        "pricing": "Gratis under testperioden",
+        "gdpr_status": "Oklart",
+        "tags": "videogenerering, ai video, google, veo, inpainting",
+        "rating": "9.0",
+        "icon_emoji": "🎬"
+    },
+    {
+        "name": "Hedra",
+        "category": "video",
+        "description": "AI-verktyg för karaktärsgenerering och läppsynk. Skapar mycket uttrycksfulla avatarer och ansiktsanimationer från ljud och text med en av de mest avancerade läppsynk-modellerna (Character-1) på marknaden just nu.",
+        "url": "https://www.hedra.com/",
+        "pricing": "Freemium",
+        "gdpr_status": "Oklart",
+        "tags": "avatar, läppsynk, karaktär, ai video",
+        "rating": "8.5",
+        "icon_emoji": "🗣️"
+    },
+    {
+        "name": "Ideogram 2.0",
+        "category": "bild",
+        "description": "Avancerad AI-bildgenerator känd för att vara exceptionellt bra på att rendera text och typografi inuti bilder (vilket Midjourney ofta har svårt med). Släppte precis version 2.0 som klår konkurrenterna på fotorealism och text-rendering.",
+        "url": "https://ideogram.ai/",
+        "pricing": "Freemium",
+        "gdpr_status": "Oklart",
+        "tags": "bildgenerering, text-i-bild, typografi, ai bild",
+        "rating": "9.2",
+        "icon_emoji": "🎨"
+    },
+    {
+        "id": "tavus",
+        "name": "Tavus",
+        "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
+        "category": "Video",
+        "price": "Freemium / Från $89/mån",
+        "url": "https://www.tavus.io/",
+        "tags": [
+            "video",
+            "marknadsföring",
+            "sälj",
+            "AI-avatar",
+            "generativ-AI",
+            "personalisering"
+        ],
+        "rating": 4.6,
+        "isGDPRCompliant": true,
+        "gdprNote": "Erbjuder DPA och GDPR-compliance för företagskunder. Data krypteras i vila och under överföring."
+    },
+    {
+        "id": "heygen",
+        "name": "HeyGen",
+        "description": "Kraftfull plattform för AI-avatarer och videoskapande. Skapa professionella videor med fotorealistiska avatarer och röster på över 40 språk utan kamera eller studio.",
+        "category": "Video",
+        "price": "Freemium / Från $29/mån",
+        "url": "https://www.heygen.com/",
+        "tags": [
+            "video",
+            "AI-avatar",
+            "generativ-AI",
+            "text-till-video",
+            "röstkloning",
+            "översättning"
+        ],
+        "rating": 4.8,
+        "isGDPRCompliant": true,
+        "gdprNote": "HeyGen är GDPR-kompatibla och erbjuder ett Data Processing Agreement (DPA) för europeiska kunder."
+    },
+    {
+        "id": "fireflies",
+        "name": "Fireflies.ai",
+        "description": "AI-assistent för möten som automatiskt spelar in, transkriberar, och sammanfattar videomöten (Teams, Zoom, Google Meet). Genererar action items och gör möten sökbara.",
+        "category": "Produktivitet",
+        "price": "Freemium / Från $10/mån",
+        "url": "https://fireflies.ai/",
+        "tags": [
+            "möten",
+            "transkribering",
+            "sammanfattning",
+            "produktivitet",
+            "team",
+            "integration"
+        ],
+        "rating": 4.7,
+        "isGDPRCompliant": true,
+        "gdprNote": "GDPR-kompatibla med servrar i USA (AWS). EU-baserade företag kan begära DPA och specifik datalagring."
+    },
+    {
+        "id": "zapier-central",
+        "name": "Zapier Central",
+        "description": "Experimentell AI-arbetsyta från Zapier där du kan lära botar att utföra uppgifter över 6000+ appar via chatt. Som ChatGPT, men med direkt åtkomst till hela din mjukvarustack.",
+        "category": "Automation",
+        "price": "Gratis under beta / Ingår i Zapier",
+        "url": "https://zapier.com/central",
+        "tags": [
+            "automation",
+            "AI-agent",
+            "integration",
+            "arbetsflöden",
+            "produktivitet"
+        ],
+        "rating": 4.5,
+        "isGDPRCompliant": true,
+        "gdprNote": "Följer Zapiers övergripande GDPR-policy med DPA tillgängligt för företag."
     }
 ]
