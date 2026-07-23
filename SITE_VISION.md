@@ -25,3 +25,4 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
 - [x] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
 - [x] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
+- [x] Implementera schema.org för övriga guider (Prompt, Skapa, Jämför) och AI-kalkylator (SoftwareApplication)
