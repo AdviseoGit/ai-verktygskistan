@@ -86,12 +86,21 @@
                     </a>
                 </div>
                 <!-- Desktop Nav -->
-                <nav class="hidden md:flex space-x-8">
-                    <a href="/ai-verktyg.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Alla Verktyg</a>
-                    <a href="/gratis-ai-verktyg.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Gratis Verktyg</a>
-                    <a href="/ai-jamfor.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Jämför</a>
-                    <a href="/lar-dig-ai.html" class="text-slate-600 hover:text-brand-600 px-3 py-2 text-sm font-medium transition-colors">Lär dig AI</a>
-                </nav>
+                <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">
+                AI-<span class="text-indigo-600">Verktygskistan</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
+                <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
+                <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
+                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+    </nav>
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2">
@@ -103,17 +112,13 @@
             </div>
         </div>
         <!-- Mobile Nav -->
-                <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
+                                <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Verktyg</a>
-            <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför Verktyg</a>
-            <a href="/hitta-ratt-ai.html" class="hover:text-indigo-600 transition-colors font-medium">Hitta rätt AI</a>
-            <div class="border-t border-slate-100 pt-2 mt-2">
-                <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Guider</span>
-                <a href="/lar-dig-ai.html" class="block mt-2 hover:text-indigo-600 transition-colors">Lär dig AI</a>
-                <a href="/bygg-med-ai.html" class="block mt-2 hover:text-indigo-600 transition-colors">Bygg med AI</a>
-                <a href="/skapa-med-ai.html" class="block mt-2 hover:text-indigo-600 transition-colors">Skapa med AI</a>
-                <a href="/prompt-guide.html" class="block mt-2 hover:text-indigo-600 transition-colors">Prompt Guide</a>
-            </div>
+            <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför</a>
+            <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 transition-colors">Lär dig AI</a>
+            <a href="/skapa-med-ai.html" class="block hover:text-indigo-600 transition-colors">Skapa</a>
+            <a href="/ai-kalkylator.html" class="block hover:text-indigo-600 transition-colors">Kalkylator</a>
+        </div>
             <div class="border-t border-slate-100 pt-2 mt-2">
                 <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data & ROI</span>
                 <a href="/ai-kalkylator.html" class="block mt-2 hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
