@@ -1,3 +1,4 @@
+2026-07-24 | TILLVÄXT/DATA | Lade till Framer AI i katalogen (utökar kod/marknadsföring intent) | Katalog +1 | nästa: Bygga ny SEO-sida eller kalkylator
 2026-07-24 | DESIGN | Åtgärdade menybloat med dropdowns och fixade cdn-cgi email-länkar | QA-skan: 0 HARD-fynd | nästa: Bygg SEO-sida eller optimera leadflow
 2026-07-23 | TILLVÄXT/DATA | Lade till 4 nya verktyg (Tavus, HeyGen, Fireflies, Zapier Central) igen | Katalog 89->93 | nästa: Optimera leads eller bygga vidare på intent
 2026-07-23 | SEO | Lade till schema.org på guider & kalkylator | Stärker förutsättningar för Rich Results (FAQ/Software) | nästa: Optimera leads eller verktyg
