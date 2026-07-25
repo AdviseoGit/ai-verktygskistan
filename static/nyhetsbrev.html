@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0VZV9RE3PN');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veckans AI-verktyg – nyhetsbrev för svenska företag | AI-Verktygskistan</title>
+    <meta name="description" content="Ett granskat AI-verktyg i veckan, med pris, svenskt språkstöd och GDPR-läge. Gratis nyhetsbrev för svenska företag och entreprenörer.">
+    <link rel="canonical" href="https://aiverktygsladan.se/nyhetsbrev.html">
+    <meta property="og:title" content="Veckans AI-verktyg – nyhetsbrev för svenska företag">
+    <meta property="og:description" content="Ett granskat AI-verktyg i veckan, med pris, svenskt språkstöd och GDPR-läge.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiverktygsladan.se/nyhetsbrev.html">
+    <meta property="og:locale" content="sv_SE">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">AI-<span class="text-indigo-600">Verktygskistan</span></a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
+                <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
+                <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
+                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none" aria-label="Meny"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-4 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/ai-verktyg.html" class="block hover:text-indigo-600 font-medium">Verktyg</a>
+        <a href="/ai-stackar.html" class="block hover:text-indigo-600 font-medium">AI-stackar</a>
+        <a href="/ai-jamfor.html" class="block hover:text-indigo-600 font-medium">Jämför</a>
+        <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 font-medium">Lär dig AI</a>
+        <a href="/ai-kalkylator.html" class="block hover:text-indigo-600 font-medium">Kalkylator</a>
+    </div>
+
+    <header class="py-20 px-6 max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
+            <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
+            Varje torsdag · Gratis
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Veckans AI-verktyg</h1>
+        <p class="text-xl text-slate-600 leading-relaxed mb-10">
+            Ett verktyg i veckan. Vad det gör, vad det kostar, hur det klarar svenska
+            och om ni kan använda det utan att bryta mot GDPR. Inga nyhetssvep, inga
+            trendspaningar – ett verktyg, ordentligt genomgånget.
+        </p>
+
+        <form id="newsletter-main" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <label class="sr-only" for="nl-email">E-postadress</label>
+            <input id="nl-email" type="email" required placeholder="din@epost.se"
+                   class="flex-grow px-5 py-4 rounded-xl border border-slate-200 shadow-sm outline-none focus:ring-2 focus:ring-indigo-500 text-base">
+            <label class="sr-only" for="nl-role">Din roll</label>
+            <select id="nl-role" class="px-4 py-4 rounded-xl border border-slate-200 shadow-sm outline-none focus:ring-2 focus:ring-indigo-500 bg-white text-base">
+                <option value="">Din roll…</option>
+                <option value="maklare">Mäklare</option>
+                <option value="fastighetsforvaltare">Fastighetsförvaltare</option>
+                <option value="hr">HR</option>
+                <option value="copywriter">Copywriter / marknad</option>
+                <option value="ekonomi">Ekonomi</option>
+                <option value="juridik">Juridik</option>
+                <option value="annat">Annat</option>
+            </select>
+            <button type="submit" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200 whitespace-nowrap">Prenumerera</button>
+        </form>
+        <p id="newsletter-success" class="hidden text-emerald-600 font-bold mt-6">✓ Tack! Du får nästa utskick på torsdag.</p>
+        <p class="text-slate-400 text-xs mt-5 max-w-md mx-auto">
+            Vi använder din adress enbart för utskicket och delar den aldrig vidare.
+            Rollen används för att skicka det som är relevant för dig. Avregistrera när du vill.
+            Läs mer i vår <a href="/integritetspolicy.html" class="underline hover:text-indigo-600">integritetspolicy</a>.
+        </p>
+    </header>
+
+    <section class="px-6 max-w-4xl mx-auto pb-20">
+        <h2 class="text-3xl font-extrabold mb-8 text-center">Vad du får</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-7 rounded-3xl border border-slate-100 card-hover">
+                <div class="text-3xl mb-4" aria-hidden="true">🔍</div>
+                <h3 class="font-bold text-lg mb-2">Ett verktyg, ordentligt testat</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Vi provar verktyget på svenskt material innan vi skriver om det, och skriver ut vad det inte klarar.</p>
+            </div>
+            <div class="bg-white p-7 rounded-3xl border border-slate-100 card-hover">
+                <div class="text-3xl mb-4" aria-hidden="true">🔒</div>
+                <h3 class="font-bold text-lg mb-2">GDPR-läget rakt ut</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Finns DPA? Var lagras data? Går det att använda med personuppgifter? Frågorna som avgör om ni får använda verktyget alls.</p>
+            </div>
+            <div class="bg-white p-7 rounded-3xl border border-slate-100 card-hover">
+                <div class="text-3xl mb-4" aria-hidden="true">💸</div>
+                <h3 class="font-bold text-lg mb-2">Vad det faktiskt kostar</h3>
+                <p class="text-slate-500 text-sm leading-relaxed">Riktigt pris i kronor för ett svenskt bolag – inte lockpriset på förstasidan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 max-w-3xl mx-auto pb-20">
+        <div class="bg-white rounded-3xl border border-slate-100 p-8">
+            <h2 class="text-2xl font-extrabold mb-4">Så här tjänar vi pengar</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">
+                Nyhetsbrevet är gratis. Vi finansierar det genom affiliatelänkar och genom
+                sponsrade inlägg från mjukvarubolag. Sponsrat innehåll märks alltid tydligt
+                som sponsrat, och vi skriver aldrig något positivt om ett verktyg för att vi
+                fått betalt – vår trovärdighet är hela affären.
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+                Vill ni synas i utskicket? <a href="/annonsera.html" class="text-indigo-600 font-semibold hover:underline">Läs mer om annonsering</a>.
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-slate-200 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygskistan</span></div>
+                <p class="text-xs">© 2026 Adviseo · Oberoende guide till AI för svenska företag</p>
+            </div>
+            <div class="flex gap-6 text-xs">
+                <a href="/integritetspolicy.html" class="hover:text-indigo-600">Integritetspolicy</a>
+                <a href="/annonsera.html" class="hover:text-indigo-600">Annonsera</a>
+                <a href="/om-sajten.html" class="hover:text-indigo-600">Om sajten</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.getElementById('newsletter-main').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var form = this;
+            fetch('/api/newsletter', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: document.getElementById('nl-email').value,
+                    role: document.getElementById('nl-role').value || null,
+                    source: 'nyhetsbrev-sida'
+                })
+            }).catch(function () {});
+            form.classList.add('hidden');
+            document.getElementById('newsletter-success').classList.remove('hidden');
+            if (typeof gtag === 'function') {
+                gtag('event', 'newsletter_signup', { source: 'nyhetsbrev-sida' });
+            }
+        });
+    </script>
+</body>
+</html>

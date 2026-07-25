@@ -50,3 +50,49 @@
 2026-06-11 fix: pin Python 3.12 (Railpack/mise cannot install 3.13.14 - no precompiled binary, broke builds)
 2026-06-09 feat: Lägg till artikel om Claude Opus 4.7 vs GPT-5.5 och uppdatera startsidan
 2026-06-08 feat(leads): real /api/lead endpoint + GDPR-AI checklista (PDF) email + owner notify; wire forms (was fake)
+
+## 2026-07-25 – Strategisk omställning + akuta buggfixar
+
+### Kritiska fel som hittades och åtgärdades
+- **Verktygsgriden var helt osynlig** på index.html, ai-verktyg.html och
+  ai-program.html. `tools.js` anropade `t.tags.split(',')` medan `tags` var en
+  lista i tools.json, vilket kastade TypeError inne i renderingsloopen. Felet
+  fångades av ett yttre try/catch och loggades bara till konsolen – griden
+  förblev tom. En katalogsajt utan synlig katalog.
+- **static/sitemap.xml var 0 bytes** efter commit f248daf. Alla 18 URL:er var
+  borta ur sitemapen.
+- **AI-Kompassen kunde aldrig visa resultat.** `showStep('results')` letade efter
+  `#step-results` men diven hette `#results` → TypeError på null.classList.
+- **Kompassens filtrering var trasig** även bortsett från det: den matchade
+  `gdpr_status.toLowerCase() === 'ja'`, ett värde som inte fanns i datan, och
+  kraschade på poster som saknade `pricing`.
+- **Fel domän i og:url och schema.org** (ai-verktygskistan.se i stället för
+  aiverktygsladan.se) på startsidan.
+- **Öppna admin-endpoints** som listade e-postadresser utan autentisering.
+
+### Katalogen
+Normaliserad från 75 till 64 poster: 11 dubbletter och utdaterade modellposter
+bort (Claude 3 Opus, Claude 3.5 Sonnet, ChatGPT 4o mini, Gamma AI, Kling AI,
+Midjourney V6, Google NotebookLM, Gen-3 Alpha, Perplexity Pro m.fl.).
+23 kategorivarianter → 10 kanoniska. 16 GDPR-statussträngar → 5 värden.
+Betygsskalan enhetlig 0–5 (tidigare blandat 4.8 och 9.2). Alla 64 poster har nu
+url, och nya fält: `swedish`, `swedish_note`, `price_tier`, `affiliate`,
+`featured`, `roles`. `validate_catalog.py` tillagd som spärr.
+
+### Modellinformation (verifierad mot källor 2026-07-25)
+GPT-5.6 (9 juli), Claude Opus 5 (24 juli), Gemini 3.6 Flash (21 juli),
+Midjourney V8.1, Runway Gen-4.5, Kling 3.0, Llama 4. Utdaterade namn borta ur
+alla sidor, tools.json, schema.json, llms.txt och ai-ordlista-faq.json.
+
+### Geminis strategiska inriktning – implementerad
+1. Filter för svenskt språkstöd, GDPR och pris i katalogen, plus fritextsök och
+   delbara filterlänkar (#kategori=juridik).
+2. Sex AI-stackar per yrkesroll + hubbsida, genererade av `build_stacks.py`.
+3. "Veckans AI-verktyg" med `/api/newsletter` och rollsegmentering.
+4. Monetariseringsplumbing: affiliate-flagga med rel="sponsored",
+   featured listings, `/api/lead/b2b` och annonsera.html.
+
+### Nya underhållsskript
+`validate_catalog.py`, `build_stacks.py`, `build_sitemap.py` – kör alla tre
+efter varje katalogändring. Rotens tools.json borttagen (låg ur synk med
+static/tools.json, 87 vs 75 poster).

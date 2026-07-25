@@ -24,6 +24,33 @@ class Lead(Base):
     source = Column(String)
     created_at = Column(DateTime, default=datetime.datetime.utcnow)
 
+class NewsletterSubscriber(Base):
+    """Prenumeranter på "Veckans AI-verktyg"."""
+    __tablename__ = "newsletter_subscribers"
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String, unique=True, index=True)
+    role = Column(String)       # vilken yrkesroll de valt, för segmentering
+    source = Column(String)     # vilken sida anmälan kom från
+    confirmed = Column(Integer, default=0)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+
+
+class B2BLead(Base):
+    """Företag som vill ha hjälp att införa AI – säljs vidare eller följs upp."""
+    __tablename__ = "b2b_leads"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String)
+    email = Column(String, index=True)
+    company = Column(String)
+    role = Column(String)
+    employees = Column(String)
+    need = Column(Text)
+    source = Column(String)
+    created_at = Column(DateTime, default=datetime.datetime.utcnow)
+
+
 class CalcData(Base):
     __tablename__ = "calc_data"
 

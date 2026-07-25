@@ -3,15 +3,15 @@
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://ai-verktygskistan.se/#website",
-      "url": "https://ai-verktygskistan.se",
+      "@id": "https://aiverktygsladan.se/#website",
+      "url": "https://aiverktygsladan.se",
       "name": "AI-Verktygskistan",
-      "description": "Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-4, GDPR-efterlevnad och svenska affärsprocesser.",
+      "description": "Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-5.6, Claude, GDPR-efterlevnad och svenska affärsprocesser.",
       "inLanguage": "sv-SE",
       "publisher": {
         "@type": "Organization",
         "name": "Adviseo",
-        "url": "https://ai-verktygskistan.se"
+        "url": "https://aiverktygsladan.se"
       }
     },
     {
@@ -19,18 +19,18 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Är GPT-4 GDPR-kompatibelt i Sverige?",
+          "name": "Är ChatGPT GDPR-kompatibelt i Sverige?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "GPT-4 via OpenAI API kan användas GDPR-kompatibelt om du tecknar ett Data Processing Agreement (DPA) med OpenAI, använder Azure OpenAI Service (med EU-datalagring) och undviker att skicka personuppgifter utan rättslig grund. IMY (Integritetsskyddsmyndigheten) kräver att du dokumenterar ändamål och rättslig grund i din behandlingsregister."
+            "text": "Ja, om du använder en företagsplan. ChatGPT Teams och Enterprise omfattas av ett personuppgiftsbiträdesavtal (DPA) och tränar inte på er data. Alternativet är Azure OpenAI Service med EU-datalagring. Gratisversionen saknar DPA och bör inte matas med personuppgifter. Oavsett väg måste ni dokumentera ändamål och rättslig grund i behandlingsregistret – det är vad IMY efterfrågar vid tillsyn."
           }
         },
         {
           "@type": "Question",
-          "name": "Vad kostar GPT-4 för svenska företag?",
+          "name": "Vad kostar ChatGPT för svenska företag?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "GPT-4o kostar $2.50 per miljon input-tokens och $10 per miljon output-tokens (april 2026). Ett medelstort företag med 50 användare betalar typiskt 500–2 000 kr/månad via API. ChatGPT Teams kostar 25 USD/användare/månad och inkluderar GDPR-skyddat DPA."
+            "text": "ChatGPT Teams kostar 25 USD per användare och månad och inkluderar DPA. Microsoft Copilot 365 kostar 30 USD per användare och månad, vilket ofta blir billigare i praktiken om ni redan betalar för Microsoft 365. Bygger ni egen integration betalar ni per token via API:et i stället, vilket för de flesta mindre bolag landar under en licenskostnad."
           }
         },
         {
@@ -46,7 +46,7 @@
           "name": "Vilket AI-verktyg är bäst för svenska SME-företag?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "För de flesta svenska SME rekommenderar vi: ChatGPT Teams (GDPR-klart, lättanvänt), Microsoft Copilot 365 (integreras med befintlig M365-licens), eller Claude via AWS Bedrock (EU-region). Välj baserat på om du redan betalar för Microsoft 365 eller föredrar ett fristående verktyg."
+            "text": "För de flesta svenska SME är valet mellan ChatGPT Teams, Microsoft Copilot 365 och Claude. Alla tre skriver god svenska och har DPA på företagsplan. Kör ni redan Microsoft 365 är Copilot den minsta förändringen; behöver ni arbeta med långa dokument och avtal står sig Claude bäst. Börja med ett verktyg och lägg till automation först när grunden sitter."
           }
         }
       ]

@@ -51,15 +51,15 @@
           "name": "Vad är skillnaden mellan ChatGPT och Claude?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Claude är ofta bättre på att skriva naturlig text och hantera stora dokument (upp till 200K tokens), medan ChatGPT (GPT-4) är bättre på kodning, webbsökning och dataanalys med inbyggda verktyg."
+            "text": "Claude är ofta bättre på att skriva naturlig text och hantera stora dokument (upp till 200K tokens), medan ChatGPT (GPT-5.6 Sol) är bättre på kodning, webbsökning och dataanalys med inbyggda verktyg."
           }
         },
         {
           "@type": "Question",
-          "name": "Vilket är bäst av Midjourney och DALL-E 3?",
+          "name": "Vilket är bäst av Midjourney och OpenAI:s bildgenerering?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Midjourney ger överlägsen konstnärlig kvalitet och fotorealism, men kräver Discord. DALL-E 3 är mycket lättare att använda (inbyggt i ChatGPT) och följer instruktioner bättre för att skapa exakta scener."
+            "text": "Midjourney ger överlägsen konstnärlig kvalitet och fotorealism, och version 8.1 genererar 2K-bilder direkt utan uppskalning. OpenAI:s bildgenerering är enklare att använda eftersom den är inbyggd i ChatGPT och följer detaljerade instruktioner bättre när du behöver en exakt scen."
           }
         },
         {
@@ -85,6 +85,7 @@
             </a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
                 <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
                 <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
                 <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
@@ -95,6 +96,7 @@
     </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Verktyg</a>
+            <a href="/ai-stackar.html" class="block hover:text-indigo-600 transition-colors font-medium">AI-stackar</a>
             <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför</a>
             <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 transition-colors">Lär dig AI</a>
             <a href="/skapa-med-ai.html" class="block hover:text-indigo-600 transition-colors">Skapa</a>
@@ -192,7 +194,9 @@
                         <div class="text-white font-semibold mb-3">Om oss</div>
                         <ul class="space-y-2">
                             <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om AI-Verktygskistan</a></li>
-                            <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                            <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a>
+                <a href="/annonsera.html" class="hover:text-white transition-colors">Annonsera</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -276,9 +280,34 @@
                 { label: 'Kategori', key: 'category' },
                 { label: 'Beskrivning', key: 'description' },
                 { label: 'Pris', key: 'pricing' },
-                { label: 'GDPR-status', key: 'gdpr_status', format: val => val === 'GDPR-klar' ? '<span class="text-xs bg-green-100 text-green-700 px-3 py-1 rounded-full font-bold">GDPR-klar ✅</span>' : '<span class="text-xs bg-amber-100 text-amber-700 px-3 py-1 rounded-full font-bold">Oklart ⚠️</span>' },
-                { label: 'Betyg', key: 'rating', format: val => val ? `<span class="font-bold">⭐ ${val} / 10</span>` : '-' },
-                { label: 'Taggar', key: 'tags', format: val => val ? val.split(',').map(tag => `<span class="inline-block text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-200 m-1">${tag.trim()}</span>`).join('') : '-' },
+                { label: 'GDPR-status', key: 'gdpr', format: val => {
+                    const map = {
+                        gdpr_klar: ['bg-green-100 text-green-700', 'GDPR-klar ✅'],
+                        lokal: ['bg-violet-100 text-violet-700', 'Kan köras lokalt 🔒'],
+                        dpa: ['bg-sky-100 text-sky-700', 'DPA krävs 📄'],
+                        oklart: ['bg-slate-100 text-slate-600', 'Oklart läge ⚠️'],
+                        varning: ['bg-rose-100 text-rose-700', 'Var försiktig 🚫']
+                    };
+                    const [cls, text] = map[val] || map.oklart;
+                    return `<span class="text-xs ${cls} px-3 py-1 rounded-full font-bold">${text}</span>`;
+                } },
+                { label: 'GDPR i praktiken', key: 'gdpr_note' },
+                { label: 'Svenska', key: 'swedish', format: val => {
+                    const map = {
+                        bra: ['bg-blue-100 text-blue-700', 'Bra på svenska 🇸🇪'],
+                        delvis: ['bg-slate-100 text-slate-600', 'Delvis svenska'],
+                        svagt: ['bg-amber-100 text-amber-700', 'Svagt på svenska']
+                    };
+                    const [cls, text] = map[val] || map.delvis;
+                    return `<span class="text-xs ${cls} px-3 py-1 rounded-full font-bold">${text}</span>`;
+                } },
+                { label: 'Betyg', key: 'rating', format: val => val ? `<span class="font-bold">⭐ ${val} / 5</span>` : '-' },
+                { label: 'Taggar', key: 'tags', format: val => {
+                    const tags = Array.isArray(val) ? val : (val ? String(val).split(',') : []);
+                    return tags.length
+                        ? tags.map(tag => `<span class="inline-block text-[10px] bg-slate-100 text-slate-600 px-2 py-1 rounded border border-slate-200 m-1">${tag.trim()}</span>`).join('')
+                        : '-';
+                } },
                 { label: 'Länk', key: 'url', format: val => val ? `<a href="${val}" target="_blank" class="bg-indigo-50 text-indigo-700 hover:bg-indigo-100 px-4 py-2 rounded-lg text-sm font-bold inline-block transition-colors">Besök verktyg →</a>` : '-' }
             ];
             

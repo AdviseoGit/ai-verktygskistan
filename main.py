@@ -1,5 +1,6 @@
 import os
-from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
+import secrets
+from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException, Header
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
@@ -15,6 +16,18 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="AI-Verktygskistan")
 
 from pydantic import BaseModel, EmailStr
+
+
+def require_admin(x_admin_token: str = Header(default="")):
+    """Skyddar endpoints som lämnar ut personuppgifter.
+
+    Sätt ADMIN_TOKEN i Railway och skicka den som X-Admin-Token-header.
+    Saknas variabeln är exporterna helt stängda – en sajt som säljer sig på
+    GDPR ska inte ha öppna endpoints som listar e-postadresser.
+    """
+    expected = os.environ.get("ADMIN_TOKEN", "")
+    if not expected or not secrets.compare_digest(x_admin_token, expected):
+        raise HTTPException(status_code=404)
 
 
 class LeadIn(BaseModel):
@@ -54,11 +67,119 @@ async def capture_lead(lead: LeadIn, background: BackgroundTasks, db: Session = 
     return {"status": "success"}
 
 @app.get("/api/admin/leads")
-async def get_leads(db: Session = Depends(get_db)):
-    # Basic protection could be added, but keeping it simple for data moat aggregation internally
+async def get_leads(db: Session = Depends(get_db), _=Depends(require_admin)):
     from models import Lead
     leads = db.query(Lead).order_by(Lead.created_at.desc()).all()
     return [{"id": l.id, "email": l.email, "source": l.source, "created_at": l.created_at} for l in leads]
+
+
+class NewsletterIn(BaseModel):
+    email: EmailStr
+    role: str | None = None
+    source: str | None = None
+
+
+@app.post("/api/newsletter")
+async def subscribe_newsletter(data: NewsletterIn, background: BackgroundTasks,
+                               db: Session = Depends(get_db)):
+    """Anmälan till "Veckans AI-verktyg"."""
+    from models import NewsletterSubscriber
+
+    existing = db.query(NewsletterSubscriber).filter(
+        NewsletterSubscriber.email == data.email).first()
+
+    if existing:
+        # Uppdatera rollen om prenumeranten anmäler sig igen från en annan sida.
+        if data.role and existing.role != data.role:
+            existing.role = data.role
+            db.commit()
+        return {"status": "success", "already_subscribed": True}
+
+    db.add(NewsletterSubscriber(
+        email=data.email,
+        role=data.role,
+        source=data.source or "web_form",
+    ))
+    db.commit()
+
+    background.add_task(_notify_newsletter, data.email, data.role, data.source)
+    return {"status": "success", "already_subscribed": False}
+
+
+def _notify_newsletter(email: str, role: str | None, source: str | None):
+    import mailer
+    try:
+        mailer.notify_owner(
+            "Ny nyhetsbrevsprenumerant - AI-Verktygskistan",
+            f"<p><b>{email}</b></p><p>Roll: {role or '-'}<br>Källa: {source or '-'}</p>",
+            reply_to=email, from_name="AI-Verktygskistan")
+    except Exception as e:
+        print(f"[aiv] newsletter notify failed: {e}")
+
+
+class B2BLeadIn(BaseModel):
+    name: str
+    email: EmailStr
+    company: str
+    role: str | None = None
+    employees: str | None = None
+    need: str | None = None
+    source: str | None = None
+
+
+@app.post("/api/lead/b2b")
+async def capture_b2b_lead(data: B2BLeadIn, background: BackgroundTasks,
+                           db: Session = Depends(get_db)):
+    """Företag som vill ha hjälp att införa AI i organisationen."""
+    from models import B2BLead
+
+    lead = B2BLead(
+        name=data.name, email=data.email, company=data.company,
+        role=data.role, employees=data.employees, need=data.need,
+        source=data.source or "web_form",
+    )
+    db.add(lead)
+    db.commit()
+
+    background.add_task(_notify_b2b, data)
+    return {"status": "success"}
+
+
+def _notify_b2b(data: "B2BLeadIn"):
+    import mailer
+    body = (
+        f"<h3>Ny B2B-förfrågan</h3>"
+        f"<p><b>{data.name}</b> ({data.email})<br>"
+        f"Företag: {data.company}<br>"
+        f"Roll: {data.role or '-'}<br>"
+        f"Antal anställda: {data.employees or '-'}<br>"
+        f"Källa: {data.source or '-'}</p>"
+        f"<p><b>Behov:</b><br>{data.need or '-'}</p>"
+    )
+    try:
+        mailer.notify_owner("Ny B2B-lead - AI-Verktygskistan", body,
+                            reply_to=data.email, from_name="AI-Verktygskistan")
+    except Exception as e:
+        print(f"[aiv] b2b notify failed: {e}")
+
+
+@app.get("/api/admin/newsletter")
+async def get_subscribers(db: Session = Depends(get_db), _=Depends(require_admin)):
+    from models import NewsletterSubscriber
+    rows = db.query(NewsletterSubscriber).order_by(
+        NewsletterSubscriber.created_at.desc()).all()
+    return [{"id": r.id, "email": r.email, "role": r.role,
+             "source": r.source, "created_at": r.created_at} for r in rows]
+
+
+@app.get("/api/admin/b2b-leads")
+async def get_b2b_leads(db: Session = Depends(get_db), _=Depends(require_admin)):
+    from models import B2BLead
+    rows = db.query(B2BLead).order_by(B2BLead.created_at.desc()).all()
+    return [{"id": r.id, "name": r.name, "email": r.email,
+             "company": r.company, "role": r.role, "employees": r.employees,
+             "need": r.need, "source": r.source, "created_at": r.created_at}
+            for r in rows]
 
 
 class CalcDataIn(BaseModel):
