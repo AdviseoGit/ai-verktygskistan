@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Verktygskistan | Claude Fable 5 & AI-verktyg för svenska företag</title>
+    <title>AI-verktyg för svenska företag – hitta rätt på 30 sekunder | AI-Verktygskistan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +21,13 @@
     <!-- SEO -->
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="AI-Verktygskistan – Jämför Claude Fable 5, Claude Opus 5, GPT-5.6 och 64 granskade AI-verktyg för svenska företag. GDPR-checklista, prisguide och EU AI Act-analys ingår.">
+    <meta name="description" content="Vilka AI-verktyg passar ert företag? Svara på tre frågor och få förslag, eller filtrera bland 64 granskade verktyg på svenskt språkstöd, GDPR-status och pris.">
     <meta name="keywords" content="gpt 5.6, chatgpt, claude opus 5, ai verktyg, ai för företag, gdpr ai, chatgpt sverige, copilot microsoft, ai act sverige">
     <link rel="canonical" href="https://aiverktygsladan.se/">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="AI-Verktygskistan | Claude Fable 5 & AI-verktyg för svenska företag">
-    <meta property="og:description" content="Jämför Claude Fable 5, Claude Opus 5, GPT-5.6 och 64 granskade AI-verktyg. Filtrera på svenskt språkstöd och GDPR.">
+    <meta property="og:title" content="Vilka AI-verktyg ska ert företag använda?">
+    <meta property="og:description" content="Svara på tre frågor och få förslag, eller filtrera bland 64 granskade AI-verktyg på svenskt språkstöd, GDPR-status och pris.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aiverktygsladan.se/">
     <meta property="og:locale" content="sv_SE">
@@ -40,7 +40,7 @@
       "@type": "WebSite",
       "name": "AI-Verktygskistan",
       "url": "https://aiverktygsladan.se",
-      "description": "Sveriges mest kompletta guide till AI-verktyg för företag – Claude Fable 5, GDPR-efterlevnad och svenska affärsprocesser.",
+      "description": "Hjälper svenska företag att hitta AI-verktyg som fungerar på svenska och är förenliga med GDPR.",
       "inLanguage": "sv-SE"
     }
     </script>
@@ -101,95 +101,234 @@
         </div>
 
     <!-- Hero -->
-    <header class="py-24 px-6 max-w-7xl mx-auto text-center fade-in">
+    <header class="py-20 px-6 max-w-5xl mx-auto text-center fade-in">
         <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
             <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
-            Uppdaterad juli 2026 · EU AI Act · GDPR-guide
+            64 verktyg granskade · Uppdaterad juli 2026
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-            Claude Fable 5 och AI-verktyg<br>för <span class="gradient-text">svenska företag</span>
+            Vilka AI-verktyg ska <span class="gradient-text">ert företag</span> använda?
         </h1>
-        <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Vi kartlägger, jämför och GDPR-granskar de viktigaste AI-verktygen på marknaden.
-            Sluta gissa – här är vad som faktiskt fungerar och är lagligt i Sverige.
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+            Svara på tre frågor så föreslår vi verktyg som passar er bransch, er budget
+            och era krav på GDPR. Gratis, och utan att du lämnar din e-postadress.
         </p>
-        <div class="flex flex-col items-center justify-center gap-4 mb-16" id="nyhetsbrev">
-            <div class="w-full max-w-lg mx-auto text-center mb-2">
-                <p class="text-sm font-bold text-slate-800 mb-2">Ladda ner vår GDPR-checklista för AI-verktyg (PDF)</p>
-            </div>
-            <form id="lead-form-hero" class="flex flex-col sm:flex-row w-full justify-center gap-4">
-                <input type="email" id="hero-email" placeholder="din@epost.se" required class="px-6 py-4 rounded-xl border border-slate-200 shadow-sm focus:ring-2 focus:ring-indigo-500 outline-none w-full sm:w-80 text-base">
-                <button type="submit" class="bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-indigo-700 transition-all text-base shadow-lg shadow-indigo-200 whitespace-nowrap">
-                    Skicka checklista (PDF)
-                </button>
-            </form>
-            <div id="hero-success" class="hidden text-emerald-600 font-bold bg-emerald-50 px-6 py-4 rounded-xl w-full max-w-md mx-auto">
-                ✓ Checklistan är skickad till din e-post!
-            </div>
-        </div>
+
+        <a href="/hitta-ratt-ai.html" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:-translate-y-0.5">
+            Hitta våra rekommendationer
+            <span aria-hidden="true">→</span>
+        </a>
+        <p class="text-sm text-slate-400 mt-4">Tar ungefär 30 sekunder</p>
 
         <!-- Trust signals -->
-        <div class="flex flex-wrap justify-center gap-8 text-sm text-slate-500">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-500 mt-14 pt-10 border-t border-slate-200">
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                20 verktyg granskade
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Testade på svenska
             </div>
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
                 GDPR-status för varje verktyg
             </div>
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                Priser i SEK
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Priser i kronor
             </div>
             <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                EU AI Act-analys
+                <svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                Ingen inloggning
             </div>
         </div>
     </header>
+
+    <!-- Ingångar -->
+    <section class="bg-white py-20 px-6 border-y border-slate-200" id="borja">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">Var vill ni börja?</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Tre vägar in, beroende på hur långt ni redan kommit.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/hitta-ratt-ai.html" class="group bg-indigo-600 text-white p-8 rounded-3xl card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">🧭</div>
+                    <h3 class="text-2xl font-bold mb-3">Vi vet inte var vi ska börja</h3>
+                    <p class="text-indigo-100 text-sm leading-relaxed mb-6 flex-grow">Svara på tre frågor om vad ni vill göra, vad ni får kosta på er och om verktyget ska hantera personuppgifter. Ni får tre konkreta förslag.</p>
+                    <span class="font-bold inline-flex items-center gap-2">Starta AI-Kompassen <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+                <a href="/ai-stackar.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">👔</div>
+                    <h3 class="text-2xl font-bold mb-3">Visa vad som gäller i vår bransch</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Färdiga uppsättningar för mäklare, fastighetsförvaltare, HR, ekonomi, jurister och copywriters – med arbetsflöde och juridiska fallgropar.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Se AI-stackarna <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+                <a href="/ai-verktyg.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">🔍</div>
+                    <h3 class="text-2xl font-bold mb-3">Vi vet vad vi söker</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Hela katalogen med 64 verktyg. Filtrera på kategori, svenskt språkstöd, GDPR-läge och pris tills bara relevanta alternativ är kvar.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Öppna katalogen <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+            </div>
+
+            <div class="mt-10 bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
+                <p class="text-slate-600 text-sm">
+                    <strong class="text-slate-900">Vill ni bara veta vad det kostar?</strong>
+                    Vi har räknat på tre bolagsstorlekar –
+                    <a href="#priser" class="text-indigo-600 font-semibold hover:underline">soloföretagare, 10–50 anställda och 100+</a>,
+                    eller testa <a href="/ai-kalkylator.html" class="text-indigo-600 font-semibold hover:underline">kalkylatorn</a> med era egna siffror.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-stackar per yrkesroll -->
+    <section class="bg-white py-20 px-6 border-y border-slate-200" id="stackar">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-extrabold mb-4">Färdiga uppsättningar för <span class="gradient-text">er bransch</span></h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">En lista med 64 verktyg hjälper ingen att komma igång. Varje stack visar vilka som är värda att lära sig i just den rollen, i vilken ordning – och var GDPR sätter stopp.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
+                <a href="/ai-stack-maklare.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">🏠</div>
+                    <div class="font-bold text-sm">Mäklare</div>
+                </a>
+                <a href="/ai-stack-fastighetsforvaltare.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">🏢</div>
+                    <div class="font-bold text-sm">Förvaltare</div>
+                </a>
+                <a href="/ai-stack-hr.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">👥</div>
+                    <div class="font-bold text-sm">HR</div>
+                </a>
+                <a href="/ai-stack-copywriter.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">✍️</div>
+                    <div class="font-bold text-sm">Copywriter</div>
+                </a>
+                <a href="/ai-stack-ekonomi.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">📊</div>
+                    <div class="font-bold text-sm">Ekonomi</div>
+                </a>
+                <a href="/ai-stack-jurist.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
+                    <div class="text-3xl mb-2" aria-hidden="true">⚖️</div>
+                    <div class="font-bold text-sm">Jurist</div>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="/ai-stackar.html" class="inline-block px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-colors">Se alla AI-stackar →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Directory -->
+    <section class="py-20 px-6 max-w-7xl mx-auto" id="verktyg">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">Hela katalogen – 64 verktyg</h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto">Filtrera på det som faktiskt avgör för ett svenskt bolag: fungerar det på svenska, och får ni använda det enligt GDPR?</p>
+        </div>
+
+        <!-- Filterpanel renderas av /static/js/tools.js -->
+        <div class="mb-12 max-w-4xl mx-auto" id="tool-filters"></div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+            <!-- Tools loaded dynamically by tools.js -->
+        </div>
+
+        <div class="mt-12 text-center bg-slate-50 border border-slate-200 rounded-3xl p-8">
+            <p class="text-lg font-bold mb-2">Hittar ni inte rätt?</p>
+            <p class="text-slate-600 mb-6 max-w-lg mx-auto">Låt AI-Kompassen fråga er om behov, budget och GDPR-krav och föreslå tre verktyg som passar.</p>
+            <a href="/hitta-ratt-ai.html" class="inline-block bg-indigo-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-200">Starta AI-Kompassen →</a>
+        </div>
+    </section>
+
+    <!-- Veckans AI-verktyg -->
+    <section class="py-20 px-6 bg-slate-900 text-white" id="veckans">
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-indigo-400 font-semibold uppercase tracking-wider text-xs mb-3">Veckans AI-verktyg</p>
+            <h2 class="text-4xl font-extrabold mb-4">Ett verktyg i veckan – testat på svenska</h2>
+            <p class="text-slate-300 text-lg mb-8">Varje torsdag skickar vi ett granskat AI-verktyg: vad det gör, vad det kostar i kronor, hur det klarar svenska och om ni får använda det enligt GDPR. Inget annat.</p>
+            <form id="newsletter-index" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <label class="sr-only" for="nl-index-email">E-postadress</label>
+                <input id="nl-index-email" type="email" required placeholder="din@epost.se" class="flex-grow px-5 py-4 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-indigo-400">
+                <button type="submit" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-500 transition-colors whitespace-nowrap">Prenumerera</button>
+            </form>
+            <p id="newsletter-index-success" class="hidden text-emerald-400 font-bold mt-5">✓ Tack! Du får nästa utskick på torsdag.</p>
+            <p class="text-slate-500 text-xs mt-5">Gratis. Avregistrera när du vill. <a href="/nyhetsbrev.html" class="underline hover:text-slate-300">Läs mer om nyhetsbrevet</a>.</p>
+        </div>
+    </section>
+
+    <!-- B2B: hjälp att införa AI -->
+    <section class="py-20 px-6 bg-white border-t border-slate-200" id="hjalp">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-extrabold mb-4">Fastnar ni i genomförandet?</h2>
+                <p class="text-slate-600 text-lg">Att välja verktyg är den enkla delen. Att få hela organisationen att faktiskt använda dem – med rutiner, utbildning och ett GDPR-läge som håller – är den svåra. Beskriv ert läge, så matchar vi er med en svensk AI-konsult som gjort det förut.</p>
+            </div>
+            <form id="b2b-form" class="grid sm:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-200">
+                <div><label class="block text-sm font-semibold mb-1" for="b2b-name">Namn</label>
+                    <input id="b2b-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
+                <div><label class="block text-sm font-semibold mb-1" for="b2b-email">E-post</label>
+                    <input id="b2b-email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
+                <div><label class="block text-sm font-semibold mb-1" for="b2b-company">Företag</label>
+                    <input id="b2b-company" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
+                <div><label class="block text-sm font-semibold mb-1" for="b2b-employees">Antal anställda</label>
+                    <select id="b2b-employees" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                        <option value="1-9">1–9</option><option value="10-49">10–49</option>
+                        <option value="50-199">50–199</option><option value="200+">200+</option>
+                    </select></div>
+                <div class="sm:col-span-2"><label class="block text-sm font-semibold mb-1" for="b2b-need">Vad vill ni lösa?</label>
+                    <textarea id="b2b-need" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea></div>
+                <div class="sm:col-span-2">
+                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors">Skicka förfrågan</button>
+                    <p class="text-xs text-slate-400 mt-3">Vi förmedlar din förfrågan till en eller flera partners och kan få ersättning för det. Du binder dig inte till något.</p>
+                </div>
+            </form>
+            <p id="b2b-success" class="hidden text-center text-emerald-600 font-bold mt-6">✓ Tack! Vi hör av oss inom ett par arbetsdagar.</p>
+        </div>
+    </section>
 
     <!-- Modell-spotlight -->
     <section class="bg-gradient-to-br from-indigo-50 to-violet-50 py-20 px-6 border-y border-indigo-100">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold mb-4">ChatGPT (Claude Fable 5) för svenska företag – allt du behöver veta</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">OpenAIs flaggskeppsmodell dominerar marknaden. Här är den fullständiga svenska guiden.</p>
+                <h2 class="text-4xl font-extrabold mb-4">Vilken språkmodell ska ni välja?</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">De tre stora släppte nya modeller i juli 2026. Här är vad som faktiskt skiljer dem åt för ett svenskt bolag.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-6 mb-12">
                 <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-bold mb-3">Vad är Claude Fable 5?</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Claude Fable 5 är OpenAIs nuvarande toppmodell (lanserad 23 april 2026). 60% färre hallucinationer och överlägsen på agentarbetsflöden. Tillgänglig via ChatGPT Plus, Business, Pro och Microsoft Copilot.</p>
-                    <div class="mt-4 pt-4 border-t border-slate-100">
-                        <div class="flex justify-between text-xs text-slate-500 mb-1"><span>Kapacitet</span><span>98/100</span></div>
-                        <div class="w-full bg-slate-100 rounded-full h-1.5"><div class="bg-indigo-500 h-1.5 rounded-full progress-bar" style="width:98%"></div></div>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
-                    <div class="text-4xl mb-4">🔒</div>
-                    <h3 class="text-xl font-bold mb-3">ChatGPT & GDPR</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">OpenAI erbjuder DPA (Data Processing Agreement) för API-kunder. ChatGPT Teams inkluderar DPA automatiskt. <strong>Viktigt:</strong> undvik att skicka personnummer, känsliga uppgifter eller kunddata utan DPA och rättslig grund.</p>
-                    <div class="mt-4 flex gap-2 flex-wrap">
-                        <span class="text-xs font-semibold px-3 py-1 rounded-full tag-gdpr">DPA tillgänglig</span>
-                        <span class="text-xs font-semibold px-3 py-1 rounded-full tag-free">EU-region (Azure)</span>
-                    </div>
-                </div>
-                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
-                    <div class="text-4xl mb-4">💰</div>
-                    <h3 class="text-xl font-bold mb-3">Vad kostar ChatGPT?</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">ChatGPT Plus: 20 USD/mån (Claude Fable 5 inkluderat). ChatGPT Business: 25–30 USD/user/mån (DPA ingår). Pro: 100–200 USD/mån. Azure OpenAI: EU-lagring, enterprise-villkor.</p>
+                    <div class="text-4xl mb-4" aria-hidden="true">🧠</div>
+                    <h3 class="text-xl font-bold mb-3">OpenAI: GPT-5.6</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Allmänt tillgänglig sedan 9 juli 2026 i tre varianter: <strong>Luna</strong> (snabb och billig), <strong>Terra</strong> och <strong>Sol</strong> (flaggskeppet för resonemang och kod). Bredast ekosystem och de flesta integrationerna. Skriver mycket god svenska.</p>
                     <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
-                        50 användare ≈ <strong class="text-slate-800">1 250–1 500 USD/mån</strong> (Business)
+                        Bäst för: <strong class="text-slate-800">dagligt bruk och bredd</strong>
                     </div>
                 </div>
+                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
+                    <div class="text-4xl mb-4" aria-hidden="true">📚</div>
+                    <h3 class="text-xl font-bold mb-3">Anthropic: Fable 5 &amp; Opus 5</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Fable 5</strong> är den mest kapabla modellen. <strong>Opus 5</strong> kom 24 juli 2026 och ligger nära den till halva priset. Starkast på långa dokument, avtal och analys – och bland de bästa på svensk text.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                        Bäst för: <strong class="text-slate-800">avtal, dokument, juridik</strong>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-indigo-100 shadow-sm card-hover">
+                    <div class="text-4xl mb-4" aria-hidden="true">🔗</div>
+                    <h3 class="text-xl font-bold mb-3">Google: Gemini 3.1 Pro</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Extremt långt kontextfönster och djup integration mot Workspace. I juli 2026 kom även <strong>Gemini 3.6 Flash</strong> som billigare arbetshäst för volymuppgifter. Bra på att sammanfatta svenska dokument.</p>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-500">
+                        Bäst för: <strong class="text-slate-800">Workspace-kunder</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-12 max-w-3xl mx-auto">
+                <p class="text-amber-900 text-sm leading-relaxed"><strong>Kort svar för de flesta svenska SME:</strong> kör ni redan Microsoft 365 är Copilot den minsta förändringen och ofta billigast totalt. Arbetar ni mycket med avtal och långa dokument står sig Claude bäst. Behöver ni ett fristående allroundverktyg är ChatGPT Teams tryggast. Alla tre har personuppgiftsbiträdesavtal på företagsplan – gratisversionerna har det inte.</p>
             </div>
 
             <!-- Modelljämförelse -->
             <div class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
                 <div class="p-8 border-b border-slate-100">
-                    <h3 class="text-2xl font-bold">ChatGPT vs konkurrenter – snabbjämförelse</h3>
-                    <p class="text-slate-500 text-sm mt-1">Uppdaterad maj 2026</p>
+                    <h3 class="text-2xl font-bold">Snabbjämförelse för företag</h3>
+                    <p class="text-slate-500 text-sm mt-1">Uppdaterad juli 2026 · betyg på samma 0–5-skala som katalogen</p>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm">
@@ -205,36 +344,36 @@
                         </thead>
                         <tbody class="divide-y divide-slate-100">
                             <tr class="hover:bg-indigo-50/30 transition-colors">
-                                <td class="p-4 font-bold text-indigo-700">ChatGPT Business</td>
-                                <td class="p-4 text-slate-600">Claude Fable 5</td>
+                                <td class="p-4 font-bold text-indigo-700">ChatGPT Teams</td>
+                                <td class="p-4 text-slate-600">GPT-5.6 (Sol / Terra / Luna)</td>
                                 <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">DPA ingår</span></td>
                                 <td class="p-4">25/user</td>
                                 <td class="p-4 text-slate-600">SME, dagligt bruk</td>
-                                <td class="p-4 font-bold text-emerald-600">9.2/10</td>
+                                <td class="p-4 font-bold text-emerald-600">4.8 / 5</td>
                             </tr>
                             <tr class="hover:bg-indigo-50/30 transition-colors">
                                 <td class="p-4 font-bold">Microsoft Copilot 365</td>
-                                <td class="p-4 text-slate-600">Claude Fable 5</td>
+                                <td class="p-4 text-slate-600">GPT-5.6</td>
                                 <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">EU-data</span></td>
                                 <td class="p-4">30/user</td>
                                 <td class="p-4 text-slate-600">M365-kunder</td>
-                                <td class="p-4 font-bold text-emerald-600">9.0/10</td>
+                                <td class="p-4 font-bold text-emerald-600">4.6 / 5</td>
                             </tr>
                             <tr class="hover:bg-indigo-50/30 transition-colors">
                                 <td class="p-4 font-bold">Claude (Anthropic)</td>
-                                <td class="p-4 text-slate-600">Claude Fable 5 & Opus 5</td>
+                                <td class="p-4 text-slate-600">Claude Fable 5 &amp; Opus 5</td>
                                 <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">AWS EU-region</span></td>
                                 <td class="p-4">20–25/user</td>
-                                <td class="p-4 text-slate-600">Analys, juridik</td>
-                                <td class="p-4 font-bold text-emerald-600">8.8/10</td>
+                                <td class="p-4 text-slate-600">Avtal, långa dokument</td>
+                                <td class="p-4 font-bold text-emerald-600">4.9 / 5</td>
                             </tr>
                             <tr class="hover:bg-indigo-50/30 transition-colors">
                                 <td class="p-4 font-bold">Azure OpenAI</td>
-                                <td class="p-4 text-slate-600">Claude Fable 5</td>
+                                <td class="p-4 text-slate-600">GPT-5.6 (EU-region)</td>
                                 <td class="p-4"><span class="tag-gdpr text-xs font-semibold px-2 py-1 rounded-full">Enterprise</span></td>
                                 <td class="p-4">Pay-per-use</td>
                                 <td class="p-4 text-slate-600">Enterprise, dev</td>
-                                <td class="p-4 font-bold text-emerald-600">9.1/10</td>
+                                <td class="p-4 font-bold text-emerald-600">4.7 / 5</td>
                             </tr>
                             <tr class="hover:bg-indigo-50/30 transition-colors">
                                 <td class="p-4 font-bold text-slate-500">Gemini Advanced</td>
@@ -242,7 +381,7 @@
                                 <td class="p-4"><span class="tag-paid text-xs font-semibold px-2 py-1 rounded-full">Begränsad DPA</span></td>
                                 <td class="p-4">19.99/user</td>
                                 <td class="p-4 text-slate-600">Google Workspace</td>
-                                <td class="p-4 font-bold text-amber-600">7.5/10</td>
+                                <td class="p-4 font-bold text-amber-600">4.2 / 5</td>
                             </tr>
                         </tbody>
                     </table>
@@ -278,60 +417,6 @@
                 <p class="text-slate-600 mb-4">En samling av de bästa kostnadsfria AI-tjänsterna just nu.</p>
                 <span class="font-bold text-indigo-600">Läs guiden →</span>
             </a>
-        </div>
-    </section>
-
-    <!-- Tool Directory -->
-    <section class="py-20 px-6 max-w-7xl mx-auto" id="verktyg">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-extrabold mb-4">AI-verktyg för svenska företag</h2>
-            <p class="text-slate-600 text-lg max-w-2xl mx-auto">Filtrera på det som faktiskt avgör: fungerar det på svenska, och får ni använda det enligt GDPR?</p>
-        </div>
-
-        <!-- Filterpanel renderas av /static/js/tools.js -->
-        <div class="mb-12 max-w-4xl mx-auto" id="tool-filters"></div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
-            <!-- Tools loaded dynamically by tools.js -->
-        </div>
-    </section>
-
-    <!-- AI-stackar per yrkesroll -->
-    <section class="bg-white py-20 px-6 border-y border-slate-200" id="stackar">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold mb-4">Vilka verktyg passar <span class="gradient-text">ditt jobb</span>?</h2>
-                <p class="text-slate-600 text-lg max-w-2xl mx-auto">En katalog med 64 verktyg hjälper ingen att komma igång. Våra AI-stackar visar vilka fem som är värda att lära sig i din roll – och i vilken ordning.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-10">
-                <a href="/ai-stack-maklare.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">🏠</div>
-                    <div class="font-bold text-sm">Mäklare</div>
-                </a>
-                <a href="/ai-stack-fastighetsforvaltare.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">🏢</div>
-                    <div class="font-bold text-sm">Förvaltare</div>
-                </a>
-                <a href="/ai-stack-hr.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">👥</div>
-                    <div class="font-bold text-sm">HR</div>
-                </a>
-                <a href="/ai-stack-copywriter.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">✍️</div>
-                    <div class="font-bold text-sm">Copywriter</div>
-                </a>
-                <a href="/ai-stack-ekonomi.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">📊</div>
-                    <div class="font-bold text-sm">Ekonomi</div>
-                </a>
-                <a href="/ai-stack-jurist.html" class="bg-slate-50 p-6 rounded-2xl border border-slate-100 card-hover text-center">
-                    <div class="text-3xl mb-2" aria-hidden="true">⚖️</div>
-                    <div class="font-bold text-sm">Jurist</div>
-                </a>
-            </div>
-            <div class="text-center">
-                <a href="/ai-stackar.html" class="inline-block px-8 py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-colors">Se alla AI-stackar →</a>
-            </div>
         </div>
     </section>
 
@@ -415,6 +500,24 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA / Nyhetsbrev -->
+    <section class="bg-indigo-600 py-20 px-6 text-center text-white">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-4">Ladda ner vår GDPR-checklista för AI</h2>
+            <p class="text-indigo-200 text-lg mb-8">Vi har sammanställt en PDF med allt du behöver tänka på innan du implementerar AI-verktyg i ditt företag. Helt gratis.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <form id="lead-form-footer" class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                    <input type="email" id="footer-email" placeholder="din@epost.se" required class="px-6 py-4 rounded-xl text-slate-900 font-medium outline-none w-full focus:ring-2 focus:ring-white">
+                    <button type="submit" class="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all whitespace-nowrap">Skicka PDF</button>
+                </form>
+            </div>
+            <div id="footer-success" class="hidden text-emerald-300 font-bold mt-4">
+                ✓ Checklistan är skickad!
+            </div>
+            <p class="text-indigo-300 text-xs mt-4">Genom att ladda ner godkänner du vår integritetspolicy. Vi spammar inte.</p>
         </div>
     </section>
 
@@ -529,7 +632,7 @@
                     <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="text-slate-600 leading-relaxed" itemprop="text">ChatGPT (Claude Fable 5) kan användas GDPR-kompatibelt om du tecknar ett DPA med OpenAI, väljer Azure OpenAI Service (EU-datalagring) och undviker att skicka personuppgifter utan rättslig grund. IMY kräver att du dokumenterar ändamål och rättslig grund i din behandlingsregister. ChatGPT Business inkluderar DPA automatiskt och är det enklaste alternativet för SME.</p>
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">Ja, om ni använder en företagsplan. ChatGPT Teams och Enterprise omfattas av ett personuppgiftsbiträdesavtal (DPA) och tränar inte på er data. Alternativet är Azure OpenAI Service med EU-datalagring. Gratisversionen saknar DPA och bör inte matas med personuppgifter. Oavsett väg måste ni dokumentera ändamål och rättslig grund i behandlingsregistret – det är vad IMY efterfrågar vid tillsyn.</p>
                 </div>
             </div>
             <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -538,7 +641,7 @@
                     <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="text-slate-600 leading-relaxed" itemprop="text">ChatGPT Plus kostar 20 USD/mån (~218 kr) och inkluderar Claude Fable 5. ChatGPT Business kostar 25–30 USD/user/mån (~273–327 kr) och inkluderar DPA. Pro kostar 100–200 USD/mån med utökade gränser. Azure OpenAI har pay-per-token med EU-datalagring och enterprise-villkor.</p>
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">ChatGPT Plus kostar 20 USD/mån (~215 kr) för en enskild användare. ChatGPT Teams kostar 25 USD per användare och månad (~270 kr) och är den billigaste nivån som inkluderar DPA – det är den ni behöver om personuppgifter är inblandade. Microsoft Copilot 365 kostar 30 USD per användare och månad, men blir ofta billigast totalt om ni redan betalar för Microsoft 365. Bygger ni egen integration betalar ni per token via API:et, vilket för mindre bolag oftast understiger en licenskostnad.</p>
                 </div>
             </div>
             <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -556,7 +659,7 @@
                     <svg class="w-5 h-5 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div class="hidden px-6 pb-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                    <p class="text-slate-600 leading-relaxed" itemprop="text">Beror på användningsfall. GPT-5.6 (ChatGPT) är bäst för dagligt bruk och agentflöden. Claude Fable 5 och Opus 5 är starkast för kodning, långa dokument och juridisk analys. Båda är GDPR-kompatibla via respektive DPA. Claude via AWS Bedrock ger EU-region. Om du redan betalar för Microsoft 365 är Copilot det ekonomiskt smartaste valet.</p>
+                    <p class="text-slate-600 leading-relaxed" itemprop="text">Beror på användningsfallet. GPT-5.6 i ChatGPT är bredast och bäst för dagligt bruk och agentflöden. Claude Fable 5 och Opus 5 är starkast på långa dokument, avtal och analys. Båda skriver mycket god svenska och båda har DPA på företagsplan – Claude via AWS Bedrock ger dessutom EU-region. Betalar ni redan för Microsoft 365 är Copilot oftast det ekonomiskt smartaste valet, eftersom ni slipper en licens till.</p>
                 </div>
             </div>
             <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
@@ -568,70 +671,6 @@
                     <p class="text-slate-600 leading-relaxed" itemprop="text">Ja, men med strikta krav. AI i rekrytering klassas som högrisk-AI under EU AI Act. Du behöver: DPA med verktyget, DPIA (konsekvensanalys), mänsklig granskning av alla beslut, och information till sökande om AI-användning. Automatiserade avvisningsbeslut utan mänskligt övervägande är förbjudna enligt GDPR Art. 22.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA / Nyhetsbrev -->
-    <section class="bg-indigo-600 py-20 px-6 text-center text-white">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-extrabold mb-4">Ladda ner vår GDPR-checklista för AI</h2>
-            <p class="text-indigo-200 text-lg mb-8">Vi har sammanställt en PDF med allt du behöver tänka på innan du implementerar AI-verktyg i ditt företag. Helt gratis.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <form id="lead-form-footer" class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                    <input type="email" id="footer-email" placeholder="din@epost.se" required class="px-6 py-4 rounded-xl text-slate-900 font-medium outline-none w-full focus:ring-2 focus:ring-white">
-                    <button type="submit" class="bg-white text-indigo-700 font-bold px-8 py-4 rounded-xl hover:bg-indigo-50 transition-all whitespace-nowrap">Skicka PDF</button>
-                </form>
-            </div>
-            <div id="footer-success" class="hidden text-emerald-300 font-bold mt-4">
-                ✓ Checklistan är skickad!
-            </div>
-            <p class="text-indigo-300 text-xs mt-4">Genom att ladda ner godkänner du vår integritetspolicy. Vi spammar inte.</p>
-        </div>
-    </section>
-
-    <!-- Veckans AI-verktyg -->
-    <section class="py-20 px-6 bg-slate-900 text-white" id="veckans">
-        <div class="max-w-2xl mx-auto text-center">
-            <p class="text-indigo-400 font-semibold uppercase tracking-wider text-xs mb-3">Veckans AI-verktyg</p>
-            <h2 class="text-4xl font-extrabold mb-4">Ett verktyg i veckan – testat på svenska</h2>
-            <p class="text-slate-300 text-lg mb-8">Varje torsdag skickar vi ett granskat AI-verktyg: vad det gör, vad det kostar i kronor, hur det klarar svenska och om ni får använda det enligt GDPR. Inget annat.</p>
-            <form id="newsletter-index" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <label class="sr-only" for="nl-index-email">E-postadress</label>
-                <input id="nl-index-email" type="email" required placeholder="din@epost.se" class="flex-grow px-5 py-4 rounded-xl text-slate-900 outline-none focus:ring-2 focus:ring-indigo-400">
-                <button type="submit" class="bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-500 transition-colors whitespace-nowrap">Prenumerera</button>
-            </form>
-            <p id="newsletter-index-success" class="hidden text-emerald-400 font-bold mt-5">✓ Tack! Du får nästa utskick på torsdag.</p>
-            <p class="text-slate-500 text-xs mt-5">Gratis. Avregistrera när du vill. <a href="/nyhetsbrev.html" class="underline hover:text-slate-300">Läs mer om nyhetsbrevet</a>.</p>
-        </div>
-    </section>
-
-    <!-- B2B: hjälp att införa AI -->
-    <section class="py-20 px-6 bg-white border-t border-slate-200" id="hjalp">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl font-extrabold mb-4">Behöver ni hjälp att komma igång?</h2>
-                <p class="text-slate-600 text-lg">Att välja verktyg är den enkla delen. Att få en organisation att faktiskt använda dem är den svåra. Beskriv ert läge så matchar vi er med en svensk AI-konsult som arbetat med liknande uppdrag.</p>
-            </div>
-            <form id="b2b-form" class="grid sm:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-name">Namn</label>
-                    <input id="b2b-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-email">E-post</label>
-                    <input id="b2b-email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-company">Företag</label>
-                    <input id="b2b-company" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-employees">Antal anställda</label>
-                    <select id="b2b-employees" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-                        <option value="1-9">1–9</option><option value="10-49">10–49</option>
-                        <option value="50-199">50–199</option><option value="200+">200+</option>
-                    </select></div>
-                <div class="sm:col-span-2"><label class="block text-sm font-semibold mb-1" for="b2b-need">Vad vill ni lösa?</label>
-                    <textarea id="b2b-need" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea></div>
-                <div class="sm:col-span-2">
-                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors">Skicka förfrågan</button>
-                    <p class="text-xs text-slate-400 mt-3">Vi förmedlar din förfrågan till en eller flera partners och kan få ersättning för det. Du binder dig inte till något.</p>
-                </div>
-            </form>
-            <p id="b2b-success" class="hidden text-center text-emerald-600 font-bold mt-6">✓ Tack! Vi hör av oss inom ett par arbetsdagar.</p>
         </div>
     </section>
 
@@ -671,21 +710,18 @@
         });
 
         // Lead Forms Logic
-        document.getElementById('lead-form-hero').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('hero-email').value;
-            fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
-            this.style.display = 'none';
-            document.getElementById('hero-success').classList.remove('hidden');
-        });
-
-        document.getElementById('lead-form-footer').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('footer-email').value;
-            fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
-            this.style.display = 'none';
-            document.getElementById('footer-success').classList.remove('hidden');
-        });
+        // Hämtas defensivt: heron har inget formulär längre, och en null-referens
+        // här skulle stoppa alla efterföljande skript på sidan.
+        var leadFormFooter = document.getElementById('lead-form-footer');
+        if (leadFormFooter) {
+            leadFormFooter.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('footer-email').value;
+                fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
+                this.style.display = 'none';
+                document.getElementById('footer-success').classList.remove('hidden');
+            });
+        }
 
         // Veckans AI-verktyg
         document.getElementById('newsletter-index').addEventListener('submit', function(e) {
