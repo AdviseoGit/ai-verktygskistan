@@ -66,6 +66,7 @@
             </a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
                 <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
                 <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
                 <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
@@ -76,6 +77,7 @@
     </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Verktyg</a>
+            <a href="/ai-stackar.html" class="block hover:text-indigo-600 transition-colors font-medium">AI-stackar</a>
             <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför</a>
             <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 transition-colors">Lär dig AI</a>
             <a href="/skapa-med-ai.html" class="block hover:text-indigo-600 transition-colors">Skapa</a>
@@ -118,8 +120,8 @@
                 När det gäller att skriva, programmera och analysera data finns det idag flera starka AI-program som du kan installera lokalt.
             </p>
             <ul>
-                <li><strong>Claude Desktop (Anthropic):</strong> Lanserades nyligen som en dedikerad applikation för Mac och Windows. Med <a href="/claude-fable-5-vs-gpt-5.5.html" class="text-indigo-600 hover:underline">Claude Fable 5 och Opus 4.8</a> integrerat får du oöverträffad kontextförståelse. Det är det bästa AI-programmet för komplex kod och djupgående analys just nu.</li>
-                <li><strong>ChatGPT Desktop (OpenAI):</strong> Den officiella appen för macOS (och Windows) integrerar sömlöst med ditt operativsystem och gör det möjligt att använda röstkommunikation och skärmdelning direkt med GPT-5.5.</li>
+                <li><strong>Claude Desktop (Anthropic):</strong> Lanserades nyligen som en dedikerad applikation för Mac och Windows. Med <a href="/claude-fable-5-vs-gpt-5.5.html" class="text-indigo-600 hover:underline">Claude Fable 5 och Opus 5</a> integrerat får du oöverträffad kontextförståelse. Det är det bästa AI-programmet för komplex kod och djupgående analys just nu.</li>
+                <li><strong>ChatGPT Desktop (OpenAI):</strong> Den officiella appen för macOS (och Windows) integrerar sömlöst med ditt operativsystem och gör det möjligt att använda röstkommunikation och skärmdelning direkt med GPT-5.6.</li>
                 <li><strong>GitHub Copilot:</strong> Inte en fristående app, men ett ovärderligt AI-program som integreras direkt i din kodredigerare (som VS Code) och fungerar som en AI-programmerare vid din sida.</li>
             </ul>
 
@@ -145,7 +147,7 @@
                 För den mer tekniske användaren är det hetaste inom AI-program just nu att köra modellerna <em>lokalt</em> på sin egen dator. Det innebär att du laddar ner själva AI:n och kör den utan internetuppkoppling. Detta garanterar 100% integritet (ingen data skickas till molnet) och är helt gratis.
             </p>
             <p>
-                Det populäraste programmet för detta är <strong>Ollama</strong> (finns för Mac, Windows och Linux). Genom Ollama kan du ladda ner öppna AI-modeller som Metas Llama 3 och köra dem direkt på din maskin. Detta kräver dock en relativt kraftfull dator, särskilt när det gäller grafikkortets minne (VRAM).
+                Det populäraste programmet för detta är <strong>Ollama</strong> (finns för Mac, Windows och Linux). Genom Ollama kan du ladda ner öppna AI-modeller som Metas Llama 4 och köra dem direkt på din maskin. Detta kräver dock en relativt kraftfull dator, särskilt när det gäller grafikkortets minne (VRAM).
             </p>
 
         
@@ -158,15 +160,8 @@
             <p class="text-slate-600 text-lg">Hela vår databas med de bästa AI-verktygen – filtrera på kategori för att hitta rätt AI-program för dig.</p>
         </div>
 
-        <!-- Category filters -->
-        <div class="flex flex-wrap gap-3 justify-center mb-12" id="cat-filter">
-            <button data-cat="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white transition-all">Alla</button>
-            <button data-cat="text" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Text & Innehåll</button>
-            <button data-cat="kod" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Kod & Dev</button>
-            <button data-cat="bild" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Bild & Design</button>
-            <button data-cat="affar" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Affär & CRM</button>
-            <button data-cat="juridik" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Juridik & HR</button>
-        </div>
+        <!-- Filterpanel renderas av /static/js/tools.js -->
+        <div class="mb-12 max-w-4xl mx-auto" id="tool-filters"></div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
             <!-- Tools loaded dynamically by tools.js -->
@@ -195,7 +190,9 @@
                     <a href="/ai-program.html" class="hover:text-indigo-400 transition-colors">AI Program</a>
                     <a href="/ai-kalkylator.html" class="hover:text-indigo-400 transition-colors">AI-Kalkylatorn</a>
                     <a href="/ai-svenska-foretag-rapport.html" class="hover:text-indigo-400 transition-colors">Rapport 2026</a>
-                    <a href="/integritetspolicy.html" class="hover:text-indigo-400 transition-colors">Integritetspolicy</a>
+                    <a href="/nyhetsbrev.html" class="hover:text-indigo-400 transition-colors">Nyhetsbrev</a>
+                <a href="/annonsera.html" class="hover:text-indigo-400 transition-colors">Annonsera</a>
+                <a href="/integritetspolicy.html" class="hover:text-indigo-400 transition-colors">Integritetspolicy</a>
                     <a href="/om-sajten.html" class="hover:text-indigo-400 transition-colors">Om AI-Verktygskistan</a>
                 </div>
             </div>

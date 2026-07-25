@@ -1,6 +1,6 @@
 # AI-Verktygskistan
 
-> Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-4, GDPR-efterlevnad och svenska affärsprocesser.
+> Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-5.6, Claude, GDPR-efterlevnad och svenska affärsprocesser.
 
 ## Om oss
 AI-Verktygskistan (drivs av Adviseo) är en resurs för svenska företag som vill navigera i AI-landskapet, särskilt vad gäller GDPR, EU:s AI-förordning (AI Act) och prissättning på AI-verktyg.
@@ -10,16 +10,32 @@ Svenska företag, soloföretagare och små/medelstora företag (SME) som vill f�
 
 ## Kärnämnen
 1. **AI-verktyg för företag**: Funktioner, rekommendationer och priser för AI-verktyg.
-2. **GDPR och AI**: Guider för hur svenska företag kan använda tjänster som GPT-4 och Claude i enlighet med dataskyddsförordningen.
+2. **GDPR och AI**: Guider för hur svenska företag kan använda tjänster som GPT-5.6 och Claude i enlighet med dataskyddsförordningen.
 3. **EU AI Act**: Förklaring av risknivåer och regelverk för svenska företag 2026.
 4. **Kostnadskalkyler**: Prismodeller för API-användning, ChatGPT Teams, Copilot och liknande företagslösningar.
 
 ## Vanliga Frågor (FAQ)
-- **Är GPT-4 GDPR-kompatibelt i Sverige?** Ja, via företagsavtal som inkluderar DPA (t.ex. ChatGPT Teams eller Azure OpenAI), och genom att undvika att skicka personuppgifter utan laglig grund.
-- **Vad kostar GPT-4 för företag?** ChatGPT Teams kostar 25 USD/användare/månad. API:et prissätts per miljon tokens (ca $2.50 in / $10 out för GPT-4o 2026).
+- **Är GPT-5.6 GDPR-kompatibelt i Sverige?** Ja, via företagsavtal som inkluderar DPA (t.ex. ChatGPT Teams eller Azure OpenAI), och genom att undvika att skicka personuppgifter utan laglig grund.
+- **Vad kostar ChatGPT för företag?** ChatGPT Teams kostar 25 USD/användare/månad och inkluderar DPA. Microsoft Copilot 365 kostar 30 USD/användare/månad. API:et prissätts per token och blir för mindre bolag oftast billigare än en licens.
 - **Vilka lagar gäller från 2026?** EU AI-akten tillämpas fullt ut. Högrisksystem har strikta krav, medan generativ AI lyder under transparenskrav.
 
 Denna fil tillhandahålls för AI-agenter, sökmotorer och LLM-crawlers för att ge strukturerad RAG-kontext om plattformen.
+
+## Aktuella modeller (juli 2026)
+- **OpenAI**: GPT-5.6 (varianterna Luna, Terra och Sol), allmänt tillgänglig 9 juli 2026.
+- **Anthropic**: Claude Fable 5 är den mest kapabla modellen. Claude Opus 5 lanserades 24 juli 2026 och ligger nära Fable 5 till halva priset.
+- **Google**: Gemini 3.1 Pro som flaggskepp, Gemini 3.6 Flash (21 juli 2026) som billigare arbetshäst.
+- **Meta**: Llama 4 med öppna vikter (Scout, Maverick, Behemoth).
+
+## Struktur
+- `/ai-verktyg.html` – hela katalogen med filter på kategori, svenskt språkstöd, GDPR-status och pris.
+- `/ai-stackar.html` – färdiga verktygsuppsättningar per yrkesroll (mäklare, fastighetsförvaltare, HR, copywriter, ekonomi, jurist).
+- `/ai-jamfor.html` – jämför upp till tre verktyg sida vid sida.
+- `/hitta-ratt-ai.html` – guidad frågeväg till en rekommendation.
+- `/nyhetsbrev.html` – "Veckans AI-verktyg", ett granskat verktyg per vecka.
+
+## Bedömningsmodell
+Varje verktyg i katalogen bedöms på svenskt språkstöd (bra/delvis/svagt), GDPR-läge (GDPR-klar/DPA krävs/kan köras lokalt/oklart/var försiktig) och prisnivå (gratis/freemium/betald). Bedömningen är redaktionell och gjord av oss, inte en certifiering från leverantören.
 
 ## AdSense & Compliance
 - Integritetspolicy implemented.

@@ -58,6 +58,7 @@
             </a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
                 <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
                 <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
                 <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
@@ -68,6 +69,7 @@
     </nav>
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-slate-100 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
             <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Verktyg</a>
+            <a href="/ai-stackar.html" class="block hover:text-indigo-600 transition-colors font-medium">AI-stackar</a>
             <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför</a>
             <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 transition-colors">Lär dig AI</a>
             <a href="/skapa-med-ai.html" class="block hover:text-indigo-600 transition-colors">Skapa</a>
@@ -98,8 +100,8 @@
                     <h3 class="mt-0 text-2xl">AI för Text och Skrivande</h3>
                     <p class="text-base text-slate-600">Dessa verktyg hjälper dig att skapa allt från blogginlägg och marknadsföringstexter till e-post och rapporter. De kan hjälpa till med grammatik, stil och till och med generera hela texter från en enkel instruktion.</p>
                     <ul class="text-base">
-                        <li><strong>ChatGPT (OpenAI):</strong> Kungen av textgenerering (kör GPT-5.5). Perfekt för brainstorming, sammanfattningar och att skapa utkast.</li>
-                        <li><strong>Claude (Anthropic):</strong> Bäst på analys och långa texter (kör Claude Fable 5 och Opus 4.8). <a href="/claude-fable-5-vs-gpt-5.5.html">Läs vår jämförelse med ChatGPT.</a></li>
+                        <li><strong>ChatGPT (OpenAI):</strong> Kungen av textgenerering (kör GPT-5.6). Perfekt för brainstorming, sammanfattningar och att skapa utkast.</li>
+                        <li><strong>Claude (Anthropic):</strong> Bäst på analys och långa texter (kör Claude Fable 5 och Opus 5). <a href="/claude-fable-5-vs-gpt-5.5.html">Läs vår jämförelse med ChatGPT.</a></li>
                         <li><strong>Copy.ai / Jasper:</strong> Populära val för marknadsförare med fokus på säljande copy och SEO-anpassat innehåll.</li>
                     </ul>
                 </div>
@@ -109,7 +111,7 @@
                     <p class="text-base text-slate-600">Skapa fantastiska bilder, illustrationer och konstverk från en textbeskrivning. Dessa AI-verktyg förvandlar ord till visuella mästerverk.</p>
                     <ul class="text-base">
                         <li><strong>Midjourney:</strong> Känd för sina konstnärliga och högkvalitativa bilder. Används ofta för konceptkonst och unika illustrationer.</li>
-                        <li><strong>DALL-E 3 (OpenAI):</strong> Integrerad med ChatGPT Plus, enkel att använda och fantastisk på att följa komplexa instruktioner.</li>
+                        <li><strong>OpenAI:s bildgenerering:</strong> Integrerad direkt i ChatGPT, enkel att använda och stark på att följa komplexa instruktioner.</li>
                         <li><strong>Leonardo.AI:</strong> Ett generöst <a href="/gratis-ai-verktyg.html">gratisalternativ</a> som ger högkvalitativa bilder med många inställningsmöjligheter.</li>
                     </ul>
                 </div>
@@ -149,15 +151,8 @@
             <p class="text-slate-600 text-lg">Hela vår databas med de bästa AI-verktygen – filtrera på kategori för att hitta rätt AI-program för dig.</p>
         </div>
 
-        <!-- Category filters -->
-        <div class="flex flex-wrap gap-3 justify-center mb-12" id="cat-filter">
-            <button data-cat="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold bg-indigo-600 text-white transition-all">Alla</button>
-            <button data-cat="text" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Text & Innehåll</button>
-            <button data-cat="kod" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Kod & Dev</button>
-            <button data-cat="bild" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Bild & Design</button>
-            <button data-cat="affar" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Affär & CRM</button>
-            <button data-cat="juridik" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:border-indigo-300 transition-all">Juridik & HR</button>
-        </div>
+        <!-- Filterpanel renderas av /static/js/tools.js -->
+        <div class="mb-12 max-w-4xl mx-auto" id="tool-filters"></div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
             <!-- Tools loaded dynamically by tools.js -->
@@ -183,14 +178,16 @@
                             <li><a href="/ai-program.html" class="hover:text-white transition-colors">AI Program</a></li>
                             <li><a href="/ai-jamfor.html" class="hover:text-white transition-colors">Jämför Verktyg</a></li>
                             <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI-verktyg</a></li>
-                            <li><a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-white transition-colors">Claude vs GPT-5.5</a></li>
+                            <li><a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-white transition-colors">Claude vs GPT-5.6</a></li>
                         </ul>
                     </div>
                     <div>
                         <div class="text-white font-semibold mb-3">Om oss</div>
                         <ul class="space-y-2">
                             <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om AI-Verktygskistan</a></li>
-                            <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                            <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a>
+                <a href="/annonsera.html" class="hover:text-white transition-colors">Annonsera</a>
+                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
                         </ul>
                     </div>
                 </div>

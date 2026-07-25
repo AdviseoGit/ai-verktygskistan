@@ -8,6 +8,10 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Katalogen växer med 1–3 kvalitetsposter per pass
 - [x] gratis-ai-verktyg.html rebuilt to full on-brand design system (juni 2026)
 - [x] Hela sajten håller design-nordstjärnan (sammanhållet designsystem, mobil-först) (2026-06-20)
+- [x] Katalogen normaliserad till ett kanoniskt schema med validator (2026-07-25)
+- [x] Directory-filter för svenskt språkstöd, GDPR-status och pris (2026-07-25)
+- [x] AI-stackar per yrkesroll: 6 rollsidor + hubb (2026-07-25)
+- [x] "Veckans AI-verktyg"-nyhetsbrev med segmentering på roll (2026-07-25)
 - [ ] #1 på Google för "AI verktyg"
 
 ## AKUT INNEHÅLLSSKULD
@@ -26,3 +30,29 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
 - [x] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
 - [x] Implementera schema.org för övriga guider (Prompt, Skapa, Jämför) och AI-kalkylator (SoftwareApplication)
+
+## STRATEGISK INRIKTNING (juli 2026)
+Positionen är inte "ännu en AI-verktygslista" utan **den svenska filtret**: av
+alla verktyg som finns, vilka fungerar faktiskt på svenska och vilka får ett
+svenskt bolag använda enligt GDPR. Det är den frågan besökarna har och den som
+de internationella katalogerna inte besvarar.
+
+Tre bärande delar:
+1. **Katalogen som filter** – varje verktyg har svenskt språkstöd, GDPR-läge och
+   prisnivå som strukturerade fält, filtrerbara i gränssnittet.
+2. **AI-stackar per yrkesroll** – en katalog konverterar inte, en färdig
+   uppsättning för "mäklare" gör det. Rollsidorna är också den naturliga
+   ingången för internlänkning mot portföljens övriga sajter.
+3. **Nyhetsbrevet som tillgång** – e-postlistan är den enda kanalen som inte kan
+   tas ifrån oss av en algoritmändring. Roll fångas vid anmälan för segmentering.
+
+### Nästa steg
+- [ ] Ansöka till affiliateprogram och fylla `url` + `affiliate: true` för de
+      verktyg som har program. Plumbingen finns, avtalen saknas.
+- [ ] Fylla `partners` i stacks.json med portföljsajterna när domänerna är spikade.
+- [ ] Sätta `ADMIN_TOKEN` i Railway så leadexporten går att använda.
+- [ ] Bygga faktiskt utskicksflöde för nyhetsbrevet (i dag lagras prenumeranter,
+      utskicket är manuellt).
+- [ ] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
+      vilka skript som faktiskt används (validate_catalog, build_stacks,
+      build_sitemap, seed, mailer, report_aiv).

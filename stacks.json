@@ -1,0 +1,248 @@
+{
+  "partners": [],
+  "_partners_kommentar": "Fyll på med portföljsajterna när domänerna är spikade, format: {\"name\": \"Proptechguiden\", \"url\": \"https://...\", \"description\": \"...\", \"roles\": [\"maklare\"]}. Tom lista döljer partnersektionen helt.",
+  "roles": [
+    {
+      "slug": "maklare",
+      "role": "maklare",
+      "name": "Mäklare",
+      "title": "AI-stacken för mäklare 2026 – objektbeskrivningar, research och uppföljning",
+      "meta": "Den kompletta AI-stacken för svenska mäklare: verktyg för objektbeskrivningar, bildbearbetning, marknadsanalys och kundvård. GDPR-genomlyst och testat på svenska.",
+      "emoji": "🏠",
+      "intro": "Mäklaryrket är till stor del textproduktion under tidspress. En objektbeskrivning, tio varianter för olika kanaler, en marknadsanalys till säljaren och femton uppföljningsmejl i veckan. Det är precis den typen av arbete språkmodeller gör bra – förutsatt att du behåller kontrollen över fakta och personuppgifter.",
+      "warning": "Bostadsaffärer innehåller personuppgifter om både säljare och spekulanter. Lägg aldrig in budgivarlistor eller personnummer i ett verktyg utan personuppgiftsbiträdesavtal. Faktauppgifter om objektet – yta, avgift, driftkostnad – ska alltid kontrolleras mot originalkällan innan publicering.",
+      "workflow": [
+        {
+          "step": "Objektbeskrivningen",
+          "text": "Mata in de rena fakta du redan har – planlösning, yta, läge, skick – och be modellen skriva tre varianter i olika tonlägen. Den snabbaste vinsten i hela stacken, men läs alltid igenom: modellen hittar gärna på en \"nyrenoverad balkong\" som inte finns."
+        },
+        {
+          "step": "Bild och presentation",
+          "text": "Rensa upp exponeringar och skapa planlösningsgrafik. Var uppmärksam på gränsen mot vilseledande marknadsföring – retuschera inte bort fukt eller sprickor."
+        },
+        {
+          "step": "Marknadsanalysen",
+          "text": "Låt ett sökverktyg med källhänvisning sammanställa områdesstatistik och pågående försäljningar. Kravet på källor är själva poängen: du ska kunna verifiera varje siffra du visar en säljare."
+        },
+        {
+          "step": "Uppföljningen",
+          "text": "Automatisera flödet från visning till uppföljningsmejl. Här ligger den största tidsvinsten över ett helt år, och det är arbete som annars faller bort när det är hektiskt."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Får jag lägga in spekulantlistor i ChatGPT?",
+          "a": "Inte i gratisversionen. Spekulantlistor är personuppgifter och kräver ett personuppgiftsbiträdesavtal (DPA) med leverantören, vilket du får via ChatGPT Teams, Copilot 365 eller motsvarande företagsplan. Med gratisversionen saknas rättslig grund och uppgifterna kan dessutom användas för träning."
+        },
+        {
+          "q": "Kan AI skriva objektbeskrivningar som håller juridiskt?",
+          "a": "AI kan skriva utkastet, men ansvaret enligt fastighetsmäklarlagen ligger kvar hos dig. Marknadsföringen får inte vara vilseledande, och en språkmodell som fyller i luckor med sannolika formuleringar är en verklig risk. Behandla texten som ett förslag från en praktikant – inte som färdig produkt."
+        },
+        {
+          "q": "Vilket verktyg är bäst om jag bara vill ha ett?",
+          "a": "ChatGPT Teams eller Claude. Båda skriver mycket god svenska, båda har DPA på företagsplan, och de täcker beskrivningar, mejl och analys i samma gränssnitt. Lägg till ett automationsverktyg först när grunden sitter."
+        }
+      ],
+      "headline": "mäklare"
+    },
+    {
+      "slug": "fastighetsforvaltare",
+      "role": "fastighetsforvaltare",
+      "name": "Fastighetsförvaltare",
+      "title": "AI-stacken för fastighetsförvaltare 2026 – avtal, felanmälan och dokumentation",
+      "meta": "AI-verktyg för fastighetsförvaltning: hyresavtal, felanmälningar, underhållsplaner och intern kunskapssökning. Med GDPR-status och svenskt språkstöd.",
+      "emoji": "🏢",
+      "intro": "Fastighetsförvaltning är dokumenthantering i industriell skala. Hyresavtal, besiktningsprotokoll, entreprenadavtal, underhållsplaner och en aldrig sinande ström av felanmälningar. Det mesta av det arbetet handlar om att hitta rätt information i material man redan äger – och där är AI som söker i era egna dokument betydligt mer användbar än en modell som svarar ur minnet.",
+      "warning": "Hyresgästuppgifter är personuppgifter, och felanmälningar innehåller ofta uppgifter om hälsa eller hemförhållanden som kräver extra försiktighet. Välj verktyg som antingen är GDPR-klara eller kan köras i er egen miljö. Ett automatiserat beslut som påverkar en hyresgäst rättsligt kräver dessutom mänsklig granskning enligt GDPR art. 22.",
+      "workflow": [
+        {
+          "step": "Avtal och protokoll",
+          "text": "Ladda upp beståndets avtal i ett verktyg som svarar med källhänvisning i dokumentet. Frågan \"vilka av våra hyresavtal har indexuppräkning kopplad till KPI?\" tar minuter i stället för dagar."
+        },
+        {
+          "step": "Felanmälningar",
+          "text": "Låt ett automationsflöde kategorisera inkommande ärenden och dirigera dem till rätt entreprenör. Håll ett mänskligt steg kvar innan något skickas vidare till en hyresgäst."
+        },
+        {
+          "step": "Intern kunskap",
+          "text": "En intern sökmotor som ärver behörigheter från era befintliga system gör att rätt person hittar rätt rutin – utan att alla ser allt."
+        },
+        {
+          "step": "Instruktioner till personal",
+          "text": "Spela in en rutin en gång och låt AI göra en textad instruktionsvideo på svenska. Effektivt för drifttekniker och nyanställda."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kan vi låta AI svara direkt till hyresgäster?",
+          "a": "Tekniskt ja, men vi avråder från helt obemannade svar i första läget. Felanmälningar innehåller ofta uppgifter om hälsa eller boendesituation, och ett felaktigt automatsvar i ett fuktärende kan bli dyrt. Låt AI föreslå svaret och en människa godkänna det."
+        },
+        {
+          "q": "Var lagras våra hyresavtal om vi använder ett AI-verktyg?",
+          "a": "Det beror helt på verktyget, och det är den fråga ni ska ställa först. GDPR-klara alternativ erbjuder EU-datalagring och personuppgiftsbiträdesavtal. Vill ni inte att avtalen lämnar huset alls finns öppna modeller som kan köras på egen server."
+        }
+      ],
+      "headline": "fastighetsförvaltare"
+    },
+    {
+      "slug": "hr",
+      "role": "hr",
+      "name": "HR-chef",
+      "title": "AI-stacken för HR 2026 – rekrytering, onboarding och internkommunikation",
+      "meta": "AI-verktyg för HR-avdelningen: rekrytering, onboarding, utbildning och policyarbete. Med genomgång av EU AI Act, GDPR och vad som faktiskt är tillåtet.",
+      "emoji": "👥",
+      "intro": "HR är det område där AI ger mest nytta och samtidigt har hårdast regler. Rekrytering klassas som högrisk under EU AI Act, och beslut som rör anställda faller under GDPR:s striktaste bestämmelser. Den här stacken är därför byggd med tyngdpunkt på det som är oproblematiskt – internt material, utbildning och kommunikation – och med tydliga varningar där det inte är det.",
+      "warning": "AI-stödd rekrytering är ett högrisksystem enligt EU AI Act och kräver konsekvensbedömning (DPIA), mänsklig granskning av varje beslut och information till de sökande. Helt automatiserade avslag utan mänskligt övervägande är förbjudna enligt GDPR art. 22. Screena aldrig kandidater i ett verktyg utan personuppgiftsbiträdesavtal.",
+      "workflow": [
+        {
+          "step": "Annonser och kravprofiler",
+          "text": "Helt oproblematiskt och en direkt tidsvinst. Låt modellen skriva annonsen och be den särskilt granska formuleringar som riskerar att sålla bort sökande i onödan."
+        },
+        {
+          "step": "Onboarding och utbildning",
+          "text": "Bygg utbildningsmaterial från era egna rutiner och policys. Här ligger den största och säkraste vinsten för HR."
+        },
+        {
+          "step": "Policy och handbok",
+          "text": "Låt ett dokumentverktyg svara på \"vad säger vår resepolicy om detta?\" med hänvisning till rätt stycke. Sparar en förvånande mängd HR-tid."
+        },
+        {
+          "step": "Möten och uppföljning",
+          "text": "Transkribering av möten fungerar bra på svenska. Informera alltid deltagarna innan inspelning – det är både ett GDPR-krav och en förtroendefråga."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Får vi använda AI för att gallra bland CV:n?",
+          "a": "Bara med betydande försiktighet. Rekrytering är ett högrisksystem under EU AI Act, vilket innebär krav på konsekvensbedömning, dokumentation och mänsklig granskning. Ett helt automatiserat avslag är dessutom förbjudet enligt GDPR art. 22. AI får hjälpa dig sortera och sammanfatta – den får inte fatta beslutet."
+        },
+        {
+          "q": "Måste vi berätta för anställda att vi använder AI?",
+          "a": "Ja. Behandlingen ska framgå av er information enligt GDPR art. 13–14, och rör det bevakning eller utvärdering av anställda gäller dessutom förhandlingsskyldighet enligt MBL. Uppdatera integritetsinformationen innan verktyget rullas ut, inte efter."
+        },
+        {
+          "q": "Vilket verktyg passar bäst för svensk HR?",
+          "a": "För internt kunskapsarbete är svenska leverantörer starka eftersom språkstödet är förstklassigt och data ligger inom EU. För allmänt skrivarbete räcker en företagsplan hos någon av de stora modellerna."
+        }
+      ],
+      "headline": "HR-avdelningen"
+    },
+    {
+      "slug": "copywriter",
+      "role": "copywriter",
+      "name": "Copywriter",
+      "title": "AI-stacken för copywriters 2026 – text, bild, video och research",
+      "meta": "AI-verktygen som faktiskt fungerar för svenska copywriters: textmodeller med bra svenska, bildgenerering, videoklippning och research med källor.",
+      "emoji": "✍️",
+      "intro": "För copywriters har diskussionen flyttat sig från om AI ska användas till var i processen den hör hemma. Kort svar: den är utmärkt på research, struktur, varianter och tråkiga format – och medioker på röst, rytm och det som gör en text värd att läsa. Stacken nedan är byggd för att låta dig lägga tiden på det sista.",
+      "warning": "Två saker att hålla ordning på. Kundmaterial under sekretess ska inte in i verktyg utan personuppgiftsbiträdesavtal. Och upphovsrätten till AI-genererat material är fortfarande oprövad i EU – för material som ska varumärkesskyddas, kontrollera villkoren hos leverantören först.",
+      "workflow": [
+        {
+          "step": "Research med källor",
+          "text": "Börja i ett sökverktyg som svarar med referenser. Skillnaden mot att fråga en språkmodell rakt ut är att du kan verifiera påståendena – vilket du kommer att behöva göra."
+        },
+        {
+          "step": "Struktur och varianter",
+          "text": "Låt modellen ta fram disposition och tio rubrikförslag. Rubriker är ett av få områden där volym faktiskt slår omsorg, eftersom du ändå väljer en."
+        },
+        {
+          "step": "Bild och grafik",
+          "text": "Konceptbilder och illustrationer. Prompta på engelska även när texten är svensk – bildmodellerna är märkbart bättre på det."
+        },
+        {
+          "step": "Video och ljud",
+          "text": "Klipp långt material till korta format och lägg svenskt speakerljud. De svenska AI-rösterna har blivit anmärkningsvärt bra."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Vilken modell skriver bäst svenska?",
+          "a": "Claude och ChatGPT ligger i topp och skiljer sig mest i temperament – Claude tenderar att skriva mer sammanhållen längre text, ChatGPT är smidigare att styra mot ett givet format. Testa båda på din egen ton; skillnaden är smaksak snarare än kvalitet. Undvik verktyg som marknadsför sig på engelska mallar, där sjunker svenskan snabbt."
+        },
+        {
+          "q": "Måste jag märka ut AI-genererat innehåll?",
+          "a": "För text finns inget generellt krav, men EU AI Act ställer transparenskrav på syntetiskt ljud, bild och video som kan förväxlas med verkligt material. Deepfake-liknande innehåll ska märkas. Många uppdragsgivare har dessutom egna riktlinjer – fråga innan, inte efter."
+        }
+      ],
+      "headline": "copywriters"
+    },
+    {
+      "slug": "ekonomi",
+      "role": "ekonomi",
+      "name": "Ekonomiavdelningen",
+      "title": "AI-stacken för ekonomiavdelningen 2026 – bokslut, analys och rapportering",
+      "meta": "AI-verktyg för ekonomi och redovisning: automatiserad fakturahantering, analys i Excel, rapportunderlag och månadsbokslut. Svenska system och GDPR-läget.",
+      "emoji": "📊",
+      "intro": "Ekonomiavdelningens AI-nytta ligger sällan i de spektakulära användningsfallen utan i att korta ledtiden i återkommande processer: fakturaflöden, avstämningar, rapportunderlag och den eviga jakten på vad som egentligen ligger bakom en avvikelse. Notera att svenska leverantörer väger tungt här, eftersom regelverket är svenskt.",
+      "warning": "Bokföringsmaterial omfattas av bokföringslagens arkiveringskrav – ett AI-verktyg får hjälpa till att tolka underlaget, men originalen ska bevaras enligt lag. Låt heller aldrig en språkmodell räkna ut siffror som ska in i ett bokslut; den ska hämta och sammanställa, inte kalkylera.",
+      "workflow": [
+        {
+          "step": "Fakturaflödet",
+          "text": "Automatisera vägen från inkommande faktura till attest. Här ligger de mätbara timmarna, och det är ett av få AI-projekt som brukar räkna hem sig inom kvartalet."
+        },
+        {
+          "step": "Analys och avstämning",
+          "text": "AI i kalkylbladet hjälper till med formler och att hitta avvikelser i stora underlag. Kontrollräkna alltid – språkmodeller är opålitliga på aritmetik."
+        },
+        {
+          "step": "Rapportunderlag",
+          "text": "Låt ett dokumentverktyg sammanfatta månadens avvikelser mot budget med hänvisning till källan i materialet."
+        },
+        {
+          "step": "Presentation till styrelsen",
+          "text": "Gör om analysen till en läsbar dragning. Ett av få moment där AI-genererad grafik faktiskt sparar riktig tid."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kan AI göra bokslutet?",
+          "a": "Nej, och det bör den inte heller. AI kan förbereda underlag, hitta avvikelser och sammanfatta – men ansvaret enligt bokföringslagen ligger på er, och språkmodeller räknar fel tillräckligt ofta för att det ska vara en dålig idé att lita på dem med siffror. Använd dem för att hitta vad som ska granskas, inte för att avgöra vad som är rätt."
+        },
+        {
+          "q": "Vilka svenska ekonomisystem har AI inbyggt?",
+          "a": "De stora nordiska leverantörerna har rullat ut AI-funktioner för tolkning av fakturor och kontering. Fördelen är att de är byggda för svenska regelverk och håller data inom EU – kontrollera alltid vad som ingår i just er licens innan ni köper till något separat."
+        }
+      ],
+      "headline": "ekonomiavdelningen"
+    },
+    {
+      "slug": "jurist",
+      "role": "juridik",
+      "name": "Jurist & avtalsansvarig",
+      "title": "AI-stacken för jurister 2026 – avtalsgranskning, research och due diligence",
+      "meta": "AI-verktyg för svenska jurister och avtalsansvariga: avtalsgranskning, dokumentanalys och research. Med tydlig genomgång av vad som fungerar på svensk rätt.",
+      "emoji": "⚖️",
+      "intro": "Juridik är på pappret ett perfekt AI-område – stora textmängder, återkommande mönster, tydliga strukturer. I praktiken finns en betydande hake: de flesta juridiska AI-verktyg är tränade på anglosaxisk rätt. För svensk avtalsrätt är skillnaden mellan ett svenskt verktyg och ett amerikanskt större än skillnaden mellan två modellgenerationer.",
+      "warning": "En språkmodell som inte hittar rätt rättskälla hittar gärna på en. Fabricerade rättsfallshänvisningar har lett till sanktioner mot advokater i flera länder. Kontrollera varje hänvisning mot originalkällan. AI-verktyg ersätter inte juridisk bedömning – de kortar ned tiden fram till den.",
+      "workflow": [
+        {
+          "step": "Första granskningen",
+          "text": "Låt AI markera avvikelser mot er standardmall och flagga klausuler som saknas. Utmärkt som första sållning, aldrig som sista."
+        },
+        {
+          "step": "Svenska avtalsmallar",
+          "text": "För standardavtal, NDA:er och hyreskontrakt under svensk rätt är svenskbyggda verktyg klart bättre än de internationella alternativen."
+        },
+        {
+          "step": "Dokumentanalys vid due diligence",
+          "text": "Ladda upp datarummet och ställ frågor till materialet. Kravet är att verktyget svarar med hänvisning till var i dokumentet svaret står – annars är det oanvändbart för ändamålet."
+        },
+        {
+          "step": "Utkast och sammanfattningar",
+          "text": "Sammanfattningar till klient och interna promemorior. Låg risk, hög tidsvinst."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Kan AI granska avtal enligt svensk rätt?",
+          "a": "Delvis. Verktyg byggda på svensk rätt klarar standardavtal och vanliga klausuler bra. De stora internationella plattformarna är tränade främst på anglosaxiskt material och missar svenska särdrag – de kan hjälpa till med struktur och språk, men bedömningen enligt svensk rätt måste du göra själv."
+        },
+        {
+          "q": "Är det förenligt med advokatsekretessen att använda AI?",
+          "a": "Det kräver att leverantören inte tränar på ert material och att ni har personuppgiftsbiträdesavtal på plats. Flera verktyg erbjuder ett läge där ingenting sparas. Kontrollera också var data behandlas geografiskt – och stäm av mot Advokatsamfundets vägledning innan klientmaterial läggs in."
+        }
+      ],
+      "headline": "jurister och avtalsansvariga"
+    }
+  ]
+}

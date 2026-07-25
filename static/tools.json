@@ -1,1247 +1,1758 @@
 [
-    {
-        "id": 71,
-        "name": "Adobe Firefly",
-        "category": "bild",
-        "description": "Adobes familj av generativa AI-modeller för bildskapande. Unik för att den är tränad helt på licensierat innehåll, vilket gör den helt säker för kommersiellt bruk.",
-        "pricing": "Ingår i Creative Cloud / Freemium",
-        "rating": 4.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "bild",
-            "design",
-            "kommersiell-säker",
-            "adobe"
-        ],
-        "icon_emoji": "🦋",
-        "icon_bg_color": "bg-red-500"
-    },
-    {
-        "id": 55,
-        "name": "Apple Intelligence",
-        "category": "produktivitet",
-        "description": "Apples djupt integrerade AI-system i iOS 18 och macOS Sequoia. Genererar text och bilder, förstår personlig kontext och förbättrar Siri kraftigt, med starkt fokus på on-device privacy.",
-        "pricing": "Gratis (på kompatibla enheter)",
-        "rating": 4.5,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "produktivitet",
-            "apple",
-            "ios",
-            "assistent"
-        ],
-        "icon_emoji": "🍎",
-        "icon_bg_color": "bg-gray-800"
-    },
-    {
-        "id": 9,
-        "name": "Avtal24 AI",
-        "category": "juridik",
-        "description": "Svenskt juridikverktyg med AI-granskning av avtal. Baserat på svensk rätt. Genomgår standardavtal, NDA:er och hyreskontrakt – på svenska.",
-        "pricing": "490 kr / mån",
-        "rating": 8.1,
-        "gdpr_status": "SE-baserat",
-        "tags": [
-            "Avtalsanalys",
-            "NDA",
-            "Svensk rätt"
-        ],
-        "icon_emoji": "📋",
-        "icon_bg_color": "bg-red-100"
-    },
-    {
-        "id": 19,
-        "name": "Beautiful.ai",
-        "category": "design",
-        "description": "Skapar fantastiska presentationer på nolltid. AI designar slides automatiskt baserat på ditt innehåll och dina uppmaningar. En dröm för alla som avskyr PowerPoint.",
-        "pricing": "12 USD/mån",
-        "rating": 8.6,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Presentationer",
-            "Design",
-            "Slides"
-        ],
-        "icon_emoji": "📊",
-        "icon_bg_color": "bg-pink-100"
-    },
-    {
-        "id": 69,
-        "name": "Canva Magic Studio",
-        "category": "design",
-        "description": "Canvas inbyggda AI-svit. Innehåller allt från AI-bildgenerering och borttagning av bakgrunder till automatiskt genererade presentationer och texter.",
-        "pricing": "Ingår i Canva Pro",
-        "rating": 4.9,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "design",
-            "presentation",
-            "bild",
-            "allt-i-ett"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-cyan-500"
-    },
-    {
-        "id": 57,
-        "name": "ChatGPT 4o mini",
-        "category": "text",
-        "description": "OpenAI's nya snabba, kostnadseffektiva och extremt kapabla lilla modell (lanserat juli 2026). Slår de flesta äldre stora modeller i prestanda men kostar en bråkdel.",
-        "pricing": "Gratis / API $0.15/1M tokens",
-        "rating": 4.9,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "text",
-            "llm",
-            "snabb",
-            "openai"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-green-500"
-    },
-    {
-        "id": 1,
-        "name": "ChatGPT Teams",
-        "category": "text",
-        "description": "OpenAIs GPT-4o med DPA inkluderat. Bästa valet för SME som vill ha GPT-4 med juridisk trygghet. Data tränar inte modellen.",
-        "pricing": "25 USD / mån / user",
-        "rating": 9.2,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "GPT-4o",
-            "Teamfunktioner",
-            "Plugins"
-        ],
-        "icon_emoji": "🤖",
-        "icon_bg_color": "bg-indigo-100"
-    },
-    {
-        "id": 13,
-        "name": "Claude Fable 5",
-        "category": "text",
-        "description": "Anthropics blixtsnabba \"arbetshäst\". Perfekt för storskaliga automationer, snabb innehållsproduktion och dynamiskt webbinnehåll till låg kostnad.",
-        "pricing": "Freemium / API",
-        "rating": 4.8,
-        "gdpr_status": "DPA via AWS EU",
-        "tags": [
-            "Fable 5",
-            "Automation",
-            "Låg kostnad",
-            "Snabbt"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-orange-100"
-    },
-    {
-        "id": 14,
-        "name": "Claude 3 Opus",
-        "category": "text",
-        "description": "Anthropics flaggskeppsmodell för extrem precision, strategiskt tänkande och komplex kodarkitektur. Överlägsen \"context window\" och minimala hallucinationer.",
-        "pricing": "Prenumeration / API",
-        "rating": 4.9,
-        "gdpr_status": "DPA via AWS EU",
-        "tags": [
-            "Opus 4.8",
-            "200K context",
-            "Komplext",
-            "Kodning"
-        ],
-        "icon_emoji": "🧠",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 38,
-        "name": "Claude 3.5 Sonnet",
-        "category": "text",
-        "description": "Anthropics extremt snabba och kapabla modell. Perfekt balans mellan hastighet och intelligens. Utmärkt för kodning, textgenerering och analys av långa dokument.",
-        "pricing": "Gratis / $20/mån",
-        "rating": 4.8,
-        "gdpr_status": "B2B DPA",
-        "tags": [
-            "Anthropic",
-            "Kod",
-            "Text"
-        ],
-        "icon_emoji": "🧠",
-        "icon_bg_color": "bg-orange-500"
-    },
-    {
-        "id": 17,
-        "name": "Copy.ai",
-        "category": "text",
-        "description": "Skapad specifikt för marknadsförare och säljare. Genererar blogginlägg, annonstexter och e-postkampanjer snabbt och effektivt. Har arbetsflödesfunktioner för team.",
-        "pricing": "Freemium (från 36 USD/mån)",
-        "rating": 8.5,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Marknadsföring",
-            "Copywriting",
-            "Sälj"
-        ],
-        "icon_emoji": "✍️",
-        "icon_bg_color": "bg-orange-100"
-    },
-    {
-        "id": 27,
-        "name": "Cursor",
-        "category": "kod & dev",
-        "description": "Den AI-första kodredigeraren. Byggd på VS Code, men med djupt integrerad AI (Claude 3.5 Sonnet, GPT-4o) som förstår hela din kodbas och kan skriva, refaktorera och debugga kod åt dig.",
-        "pricing": "Gratis plan / $20/mån",
-        "rating": 4.9,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Kod",
-            "Utveckling",
-            "AI",
-            "Editor"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-slate-800"
-    },
-    {
-        "id": 26,
-        "name": "Descript",
-        "category": "Video & Ljud",
-        "description": "Redigera video och poddar genom att redigera text (transkribering). Inkluderar Overdub för att skapa en AI-klon av din röst.",
-        "pricing": "Freemium (från 12$/mån)",
-        "rating": 4.9,
-        "gdpr_status": "DPA tillgänglig",
-        "tags": [
-            "Podd",
-            "Video",
-            "Redigering",
-            "Transkribering"
-        ],
-        "icon_emoji": "🎙️",
-        "icon_bg_color": "bg-indigo-100"
-    },
-    {
-        "id": 34,
-        "name": "Devin",
-        "category": "kod & dev",
-        "description": "Världens första helt autonoma AI-mjukvaruingenjör. Kan planera och utföra komplexa kodningsprojekt, hitta och fixa buggar, och lära sig nya teknologier på egen hand.",
-        "pricing": "Tidig åtkomst",
-        "rating": 4.6,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Agent",
-            "Kod",
-            "Autonom"
-        ],
-        "icon_emoji": "🤖",
-        "icon_bg_color": "bg-teal-700"
-    },
-    {
-        "id": 41,
-        "name": "ElevenLabs",
-        "category": "ljud",
-        "description": "Marknadsledande AI-röstkloning och text-till-tal. Generera extremt realistiska röster på svenska och andra språk.",
-        "pricing": "Freemium",
-        "rating": 4.9,
-        "gdpr_status": "Nej",
-        "tags": [
-            "Röst",
-            "Ljud",
-            "Text-till-tal"
-        ],
-        "icon_emoji": "🎙️",
-        "icon_bg_color": "bg-indigo-100 text-indigo-600"
-    },
-    {
-        "id": 52,
-        "name": "ElevenLabs Reader",
-        "category": "ljud",
-        "description": "Lyssningsapp som läser upp artiklar, PDF:er och e-böcker med ElevenLabs hyperrealistiska AI-röster. Perfekt för on-the-go lärande.",
-        "pricing": "Gratis (App)",
-        "rating": 4.9,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "ljud",
-            "tts",
-            "mobilapp",
-            "text-till-tal"
-        ],
-        "icon_emoji": "🎧",
-        "icon_bg_color": "bg-blue-900"
-    },
-    {
-        "id": 62,
-        "name": "ElevenLabs Reader App",
-        "category": "ljud",
-        "description": "Dedikerad app för att lyssna på böcker, artiklar eller egna dokument med marknadens mest realistiska röster.",
-        "pricing": "Gratis för tillfället",
-        "rating": 4.9,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "ljud",
-            "läsapp",
-            "tts",
-            "röstkloning"
-        ],
-        "icon_emoji": "📱",
-        "icon_bg_color": "bg-gray-800"
-    },
-    {
-        "id": 53,
-        "name": "Figma AI",
-        "category": "design",
-        "description": "Figma's inbyggda AI-verktyg som låter dig generera UI-designer från text, hitta liknande komponenter och automatisera repetitiva uppgifter i designprocessen.",
-        "pricing": "Ingår i Figma Pro",
-        "rating": 4.7,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "design",
-            "ui",
-            "ux",
-            "wireframe"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-purple-600"
-    },
-    {
-        "id": 18,
-        "name": "Fireflies.ai",
-        "category": "ljud",
-        "description": "AI-antecknare som spelar in, transkriberar och sammanfattar dina möten (Zoom, Teams, Meet). Kan extrahera action items och söka genom tidigare möteshistorik.",
-        "pricing": "Freemium (från 10 USD/mån)",
-        "rating": 8.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Möten",
-            "Transkribering",
-            "Sammanfattning"
-        ],
-        "icon_emoji": "🔥",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 40,
-        "name": "Gamma",
-        "category": "presentation",
-        "description": "Skapa snygga presentationer, dokument och webbsidor snabbt med AI. Perfekt för pitchdeck och rapporter. Svenska stöds.",
-        "pricing": "Freemium",
-        "rating": 4.8,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Presentation",
-            "Design",
-            "Dokument"
-        ],
-        "icon_emoji": "📊",
-        "icon_bg_color": "bg-pink-100 text-pink-600"
-    },
-    {
-        "id": 25,
-        "name": "Gamma AI",
-        "category": "Presentation & Design",
-        "description": "Skapa snygga presentationer, dokument och webbsidor på sekunder med hjälp av AI. Perfekt för snabba pitch decks och rapporter.",
-        "pricing": "Freemium (från 8$/mån)",
-        "rating": 4.8,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Presentation",
-            "Design",
-            "AI",
-            "Snabbt"
-        ],
-        "icon_emoji": "✨",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 36,
-        "name": "Gemini 3.1 Pro",
-        "category": "text",
-        "description": "Googles mest avancerade multimodala AI-modell. Exceptionell på att förstå och kombinera text, bild, ljud och video i samma prompt. Perfekt för djup research och dataanalys.",
-        "pricing": "Gratis / $20/mån (Advanced)",
-        "rating": 4.8,
-        "gdpr_status": "Enterprise DPA tillgänglig",
-        "tags": [
-            "Google",
-            "Multimodal",
-            "Text",
-            "Kod",
-            "Bild"
-        ],
-        "icon_emoji": "✨",
-        "icon_bg_color": "bg-blue-600"
-    },
-    {
-        "id": 65,
-        "name": "Gen-3 Alpha",
-        "category": "video",
-        "description": "Runways senaste videogenereringsmodell med fotorealism och exakt kontroll över karaktärer och kamerarörelser. En av de starkaste SORA-utmanarna.",
-        "pricing": "Från $12/mån",
-        "rating": 4.8,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "video",
-            "text-till-video",
-            "runway",
-            "realism"
-        ],
-        "icon_emoji": "🎥",
-        "icon_bg_color": "bg-purple-500"
-    },
-    {
-        "id": 5,
-        "name": "GitHub Copilot",
-        "category": "kod",
-        "description": "AI-kodassistent inbyggd i VS Code och JetBrains. GPT-4o och Claude-modeller. Enterprise-plan med GDPR-avtal och datalagring utan träning.",
-        "pricing": "10–19 USD / mån",
-        "rating": 9.3,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "VS Code",
-            "Autocomplete",
-            "Chat"
-        ],
-        "icon_emoji": "💻",
-        "icon_bg_color": "bg-gray-100"
-    },
-    {
-        "id": 33,
-        "name": "Glean",
-        "category": "produktivitet",
-        "description": "Sökverktyg för enterprise. Ansluter till alla företagets appar (Slack, Drive, Jira etc) och använder AI för att hitta svar på anställdas frågor baserat på företagets interna data.",
-        "pricing": "Offert",
-        "rating": 4.8,
-        "gdpr_status": "Enterprise DPA",
-        "tags": [
-            "Sök",
-            "Enterprise",
-            "Produktivitet"
-        ],
-        "icon_emoji": "🔍",
-        "icon_bg_color": "bg-rose-500"
-    },
-    {
-        "id": 72,
-        "name": "Google NotebookLM",
-        "category": "produktivitet",
-        "description": "Ett AI-drivet anteckningsverktyg från Google som låter dig ladda upp källor (PDF:er, Google Docs) och sedan ställa frågor, skapa sammanfattningar eller generera insikter baserat enbart på ditt material.",
-        "pricing": "Gratis",
-        "rating": 4.6,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "anteckningar",
-            "sammanfattning",
-            "research",
-            "google",
-            "studenter",
-            "forskning"
-        ],
-        "icon_emoji": "📓",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": 16,
-        "name": "Grammarly",
-        "category": "text",
-        "description": "Grammarlys AI-assistent hjälper dig inte bara med stavning utan skriver om meningar, anpassar tonfall och genererar text. Mycket populärt och användarvänligt.",
-        "pricing": "Freemium (från 12 USD/mån)",
-        "rating": 8.7,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Rättstavning",
-            "Skrivande",
-            "Engelska"
-        ],
-        "icon_emoji": "📝",
-        "icon_bg_color": "bg-green-100"
-    },
-    {
-        "id": 59,
-        "name": "Groq",
-        "category": "kod & dev",
-        "description": "LPU-hårdvaruaccelerator som kör open-source LLM:er (som Llama 3) med otrolig hastighet (upp till 800+ tokens per sekund). Revolutionerar realtids-AI.",
-        "pricing": "Freemium",
-        "rating": 4.9,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "llm",
-            "snabbhet",
-            "lpu",
-            "api"
-        ],
-        "icon_emoji": "🏎️",
-        "icon_bg_color": "bg-orange-500"
-    },
-    {
-        "id": 35,
-        "name": "Harvey",
-        "category": "juridik & HR",
-        "description": "Generativ AI speciellt byggd för professionella jurister. Hjälper till med juridisk research, due diligence, kontraktsanalys och drafting. Används av världens största byråer.",
-        "pricing": "Enterprise",
-        "rating": 4.7,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Juridik",
-            "Research",
-            "Enterprise"
-        ],
-        "icon_emoji": "🏛️",
-        "icon_bg_color": "bg-slate-700"
-    },
-    {
-        "id": 73,
-        "name": "HeyGen",
-        "category": "ljud_och_video",
-        "description": "Ledande plattform för att skapa AI-videor med realistiska avatarer. Låter dig skriva ett manus och omedelbart få en video med en AI-presentatör, inklusive stöd för röstkloning och översättning.",
-        "pricing": "Freemium",
-        "rating": 4.7,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "video",
-            "avatar",
-            "presentation",
-            "marknadsföring",
-            "röstkloning"
-        ],
-        "icon_emoji": "👤",
-        "icon_bg_color": "bg-indigo-100"
-    },
-    {
-        "id": 8,
-        "name": "HubSpot AI",
-        "category": "affar",
-        "description": "CRM med inbyggd AI för försäljning och marknadsföring. AI-mejl, lead-scoring och konversationsanalys. Serverhosting i EU. Gratis-plan tillgänglig.",
-        "pricing": "0–800 USD / mån",
-        "rating": 8.6,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "CRM",
-            "E-post",
-            "Lead scoring"
-        ],
-        "icon_emoji": "📊",
-        "icon_bg_color": "bg-amber-100"
-    },
-    {
-        "id": 66,
-        "name": "Hugging Face Chat",
-        "category": "text",
-        "description": "Öppen chattklient från Hugging Face där du kan välja mellan flera ledande open-source modeller (som Llama 3 och Mixtral) helt gratis.",
-        "pricing": "Gratis",
-        "rating": 4.7,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "text",
-            "chatt",
-            "open-source",
-            "huggingface"
-        ],
-        "icon_emoji": "🤗",
-        "icon_bg_color": "bg-yellow-400"
-    },
-    {
-        "id": 58,
-        "name": "Ideogram 2.0",
-        "category": "bild",
-        "description": "Bildgenerator med marknadens bästa förmåga att rendera text i bilder korrekt. Oslagbar för logotyper, affischer och typografi-tung design.",
-        "pricing": "Freemium",
-        "rating": 4.7,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "bild",
-            "typografi",
-            "design",
-            "logotyp"
-        ],
-        "icon_emoji": "🔤",
-        "icon_bg_color": "bg-gray-900"
-    },
-    {
-        "id": 4,
-        "name": "Jasper AI",
-        "category": "text",
-        "description": "Specialiserat innehållsverktyg för marknadsföring. Mönster och templates för annonser, bloggar och e-post. DPA krävs separat – rekommenderas ej för känslig data.",
-        "pricing": "49 USD / mån",
-        "rating": 7.4,
-        "gdpr_status": "Begränsad DPA",
-        "tags": [
-            "Marketing",
-            "Templates",
-            "Brand voice"
-        ],
-        "icon_emoji": "✍️",
-        "icon_bg_color": "bg-violet-100"
-    },
-    {
-        "id": 56,
-        "name": "Kling",
-        "category": "video",
-        "description": "Kinas ledande AI-videogenerator som nyligen lanserats globalt. Genererar otroligt realistiska 1080p-videor från text med fantastisk fysik-simulering och upp till 2 minuters längd.",
-        "pricing": "Freemium",
-        "rating": 4.8,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "video",
-            "text-till-video",
-            "realism",
-            "sora-alternativ"
-        ],
-        "icon_emoji": "🎬",
-        "icon_bg_color": "bg-red-600"
-    },
-    {
-        "id": 50,
-        "name": "Kling AI",
-        "category": "video",
-        "description": "Kinas svar på Sora, tillgänglig globalt via webbinterface. Skapar hyperrealistiska 1080p videor på upp till 120 sekunder med fysiskt korrekta simulationer.",
-        "pricing": "Freemium (dagliga krediter)",
-        "rating": 4.8,
-        "gdpr_status": "Varning",
-        "tags": [
-            "video",
-            "text-till-video",
-            "kling"
-        ],
-        "icon_emoji": "🎬",
-        "icon_bg_color": "bg-red-600"
-    },
-    {
-        "id": 39,
-        "name": "Krea AI",
-        "category": "bild",
-        "description": "Realtidsgenerering av bilder och fantastisk bilduppskalning (upscaling). Du ritar en enkel skiss och AI:n renderar en fotorealistisk bild i realtid. Ett måste för designers.",
-        "pricing": "Gratis / $30/mån",
-        "rating": 4.7,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Bild",
-            "Design",
-            "Real-time"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-pink-600"
-    },
-    {
-        "id": 60,
-        "name": "Leonardo AI",
-        "category": "bild",
-        "description": "Avancerad bildgenerator för speldesigners, marknadsförare och konstnärer med extrem kontroll. Nya Phoenix-modellen imponerar.",
-        "pricing": "Freemium",
-        "rating": 4.8,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "bild",
-            "design",
-            "koncept",
-            "phoenix"
-        ],
-        "icon_emoji": "🦁",
-        "icon_bg_color": "bg-amber-600"
-    },
-    {
-        "id": 30,
-        "name": "Lexion",
-        "category": "juridik & HR",
-        "description": "AI-drivet contract management system. Automatiserar hanteringen av kontrakt, identifierar risker och gör det enkelt att söka i stora mängder avtal.",
-        "pricing": "Offert",
-        "rating": 4.6,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Juridik",
-            "Avtal",
-            "HR"
-        ],
-        "icon_emoji": "📝",
-        "icon_bg_color": "bg-indigo-800"
-    },
-    {
-        "id": 64,
-        "name": "Llama 3.1",
-        "category": "text",
-        "description": "Metas senaste öppna språkmodell (405B, 70B, 8B). 405B-versionen utmanar de allra största proprietära modellerna (GPT-4o, Claude 3.5 Sonnet) över hela linjen.",
-        "pricing": "Open Source",
-        "rating": 4.9,
-        "gdpr_status": "Lokal körning (GDPR-säker)",
-        "tags": [
-            "llm",
-            "open-source",
-            "meta",
-            "state-of-the-art"
-        ],
-        "icon_emoji": "🦙",
-        "icon_bg_color": "bg-blue-600"
-    },
-    {
-        "id": 43,
-        "name": "Luma Dream Machine",
-        "category": "Ljud & Video",
-        "description": "AI-videogenerator av högsta klass som kan skapa realistiska scener och animera stillbilder med extremt hög kvalitet och hastighet.",
-        "pricing": "Freemium",
-        "rating": 4.8,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Video",
-            "Animation",
-            "Videogenerering"
-        ],
-        "icon_emoji": "🎥",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": 3,
-        "name": "Microsoft Copilot 365",
-        "category": "affar",
-        "description": "GPT-4o inbyggt i Word, Excel, Teams och Outlook. Perfekt om du redan betalar för M365. Datalagring i EU-region. GDPR via Microsofts DPA.",
-        "pricing": "30 USD / mån / user",
-        "rating": 9.0,
-        "gdpr_status": "EU-data",
-        "tags": [
-            "M365-integration",
-            "Teams",
-            "Excel AI"
-        ],
-        "icon_emoji": "🪟",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": 6,
-        "name": "Midjourney",
-        "category": "bild",
-        "description": "Marknadsledande bildgenerering. Kraftfull men saknar DPA – undvik att inkludera klientdata i prompts. Bra för marknadsföringsmaterial utan personuppgifter.",
-        "pricing": "10–60 USD / mån",
-        "rating": 8.2,
-        "gdpr_status": "Begränsad DPA",
-        "tags": [
-            "Bildgenerering",
-            "Discord",
-            "Varumärke"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-pink-100"
-    },
-    {
-        "id": 48,
-        "name": "Midjourney V6",
-        "category": "bild",
-        "description": "Senaste versionen av Midjourney med exceptionell fotorealism och förmåga att rendera text i bilder.",
-        "pricing": "Från $10/mån",
-        "rating": 4.9,
-        "gdpr_status": "Varning (Discord)",
-        "tags": [
-            "bild",
-            "design",
-            "ai-konst",
-            "fotorealism"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-indigo-900"
-    },
-    {
-        "id": 49,
-        "name": "Mistral Large 2",
-        "category": "text",
-        "description": "Mistrals flaggskeppsmodell som utmanar GPT-4o i resonemang och kodning. Europeiskt företag med starkt fokus på data privacy.",
-        "pricing": "API / Le Chat",
-        "rating": 4.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "text",
-            "kodning",
-            "europeisk",
-            "llm"
-        ],
-        "icon_emoji": "🌪️",
-        "icon_bg_color": "bg-orange-600"
-    },
-    {
-        "id": 61,
-        "name": "Mistral NeMo",
-        "category": "kod & dev",
-        "description": "Liten men extremt kraftfull öppen modell byggd tillsammans med Nvidia. Bara 12B parametrar men presterar ofta i nivå med större system.",
-        "pricing": "Open Source",
-        "rating": 4.8,
-        "gdpr_status": "Lokal körning (GDPR-säker)",
-        "tags": [
-            "llm",
-            "open-source",
-            "nemo",
-            "kod"
-        ],
-        "icon_emoji": "🐠",
-        "icon_bg_color": "bg-blue-400"
-    },
-    {
-        "id": 51,
-        "name": "Napkin AI",
-        "category": "design",
-        "description": "Konverterar text automatiskt till diagram, grafer och mindmaps. Otroligt användbart för presentationer och strategidokument.",
-        "pricing": "Freemium",
-        "rating": 4.6,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "design",
-            "mindmap",
-            "presentation",
-            "diagram"
-        ],
-        "icon_emoji": "📊",
-        "icon_bg_color": "bg-yellow-500"
-    },
-    {
-        "id": 42,
-        "name": "NotebookLM",
-        "category": "produktivitet",
-        "description": "test",
-        "pricing": "Gratis",
-        "rating": 4.8,
-        "gdpr_status": null,
-        "tags": [],
-        "icon_emoji": "📚",
-        "icon_bg_color": "bg-yellow-100"
-    },
-    {
-        "id": 68,
-        "name": "Opus Clip",
-        "category": "video",
-        "description": "Tar en lång video (t.ex. en podd eller YouTube-video) och klipper automatiskt ut de mest engagerande virala ögonblicken som färdiga korta klipp med textning.",
-        "pricing": "Från $19/mån",
-        "rating": 4.8,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "video",
-            "redigering",
-            "sociala-medier",
-            "shorts"
-        ],
-        "icon_emoji": "✂️",
-        "icon_bg_color": "bg-pink-600"
-    },
-    {
-        "id": 10,
-        "name": "Perplexity AI",
-        "category": "sok",
-        "description": "AI-driven sökmotor som citerar sina källor. Perfekt för research och att hitta tillförlitlig information snabbt på nätet.",
-        "pricing": "20 USD / mån",
-        "rating": 9.1,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Research",
-            "Sökmotor",
-            "Källhänvisning"
-        ],
-        "icon_emoji": "🔍",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": 74,
-        "name": "Phind",
-        "category": "kod",
-        "description": "En AI-sökmotor byggd specifikt för utvecklare och tekniska frågor. Söker på webben och genererar kodexempel och förklaringar baserat på den senaste dokumentationen.",
-        "pricing": "Freemium",
-        "rating": 4.5,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "kod",
-            "utvecklare",
-            "sökmotor",
-            "programmering",
-            "felsökning"
-        ],
-        "icon_emoji": "🔍",
-        "icon_bg_color": "bg-slate-100"
-    },
-    {
-        "id": 32,
-        "name": "Pocketlaw",
-        "category": "juridik & HR",
-        "description": "Svensk legal tech-plattform med AI-funktioner. Hjälper företag att hantera alla sina juridiska behov, från att skapa anställningsavtal till bolagsrätt, snabbt och säkert.",
-        "pricing": "Prenumeration",
-        "rating": 4.7,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Juridik",
-            "Avtal",
-            "Svenskt"
-        ],
-        "icon_emoji": "💼",
-        "icon_bg_color": "bg-emerald-700"
-    },
-    {
-        "id": 63,
-        "name": "Qwen 2.5",
-        "category": "text",
-        "description": "Alibabas nya kraftfulla open-source AI-modell. Presterar i absoluta toppen bland öppna modeller och stöder kodning i 90+ språk.",
-        "pricing": "Open Source",
-        "rating": 4.8,
-        "gdpr_status": "Lokal körning (GDPR-säker)",
-        "tags": [
-            "llm",
-            "open-source",
-            "qwen",
-            "kod"
-        ],
-        "icon_emoji": "🐉",
-        "icon_bg_color": "bg-red-800"
-    },
-    {
-        "id": 47,
-        "name": "Replicate",
-        "category": "kod & dev",
-        "description": "Kör open-source AI-modeller (Llama 3, SDXL m.fl.) via API utan att bygga egen infrastruktur.",
-        "pricing": "Pay-per-second",
-        "rating": 4.7,
-        "gdpr_status": "Varning",
-        "tags": [
-            "api",
-            "open-source",
-            "llm"
-        ],
-        "icon_emoji": "🚀",
-        "icon_bg_color": "bg-slate-700"
-    },
-    {
-        "id": 29,
-        "name": "RobinAI",
-        "category": "juridik & HR",
-        "description": "AI-verktyg för jurister och legal teams. Hjälper till med att granska, sammanfatta och redigera juridiska kontrakt med hjälp av Anthropic's Claude-modeller.",
-        "pricing": "Offert",
-        "rating": 4.5,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Juridik",
-            "Kontrakt",
-            "Granskning"
-        ],
-        "icon_emoji": "⚖️",
-        "icon_bg_color": "bg-blue-900"
-    },
-    {
-        "id": 44,
-        "name": "Runway Gen-3",
-        "category": "Ljud & Video",
-        "description": "Nästa generations AI för videoregistrering och skapande. Möjliggör text-till-video, bild-till-video och avancerad videokontroll.",
-        "pricing": "Freemium",
-        "rating": 4.9,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Video",
-            "Animation",
-            "Videogenerering",
-            "Kreativt"
-        ],
-        "icon_emoji": "🎬",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 31,
-        "name": "Sana",
-        "category": "juridik & HR",
-        "description": "Svenskgrundad AI-plattform för kunskapshantering och lärande i företag. Hjälper anställda att hitta information, skapa kurser och lära sig snabbare. Mycket starkt fokus på enterprise-säkerhet.",
-        "pricing": "Offert",
-        "rating": 4.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "HR",
-            "Lärande",
-            "Kunskap",
-            "Enterprise"
-        ],
-        "icon_emoji": "🧠",
-        "icon_bg_color": "bg-purple-600"
-    },
-    {
-        "id": 37,
-        "name": "Sora",
-        "category": "video",
-        "description": "OpenAIs banbrytande text-till-video-modell. Genererar upp till 60 sekunder långa, fotorealistiska videor med hög visuell kvalitet och konsekvens baserat på textbeskrivningar.",
-        "pricing": "Pris på förfrågan / Enterprise",
-        "rating": 4.9,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "Video",
-            "OpenAI",
-            "Generativ"
-        ],
-        "icon_emoji": "🎥",
-        "icon_bg_color": "bg-purple-600"
-    },
-    {
-        "id": 12,
-        "name": "Suno AI",
-        "category": "musik",
-        "description": "Suno AI är en banbrytande AI-tjänst som kan skapa realistisk musik, kompletta med sång och instrument, baserat på en enkel textprompt. Användare kan specificera genre, stil och text för att generera unika låtar på sekunder.",
-        "pricing": "Freemium",
-        "rating": 4.7,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "musikgenerering",
-            "AI-låtar",
-            "text-till-musik"
-        ],
-        "icon_emoji": "🎵",
-        "icon_bg_color": "#FFD700"
-    },
-    {
-        "id": 67,
-        "name": "Supercreator.ai",
-        "category": "video",
-        "description": "Mobilapp som använder AI för att generera manus och skapa korta vertikala videos (TikTok, Reels, Shorts) på under 3 minuter.",
-        "pricing": "Freemium",
-        "rating": 4.5,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "video",
-            "mobil",
-            "sociala-medier",
-            "shorts"
-        ],
-        "icon_emoji": "📱",
-        "icon_bg_color": "bg-indigo-600"
-    },
-    {
-        "id": 11,
-        "name": "Synthesia",
-        "category": "video",
-        "description": "Skapa professionella AI-videor från text med realistiska avatarer. Stöd för över 120 språk inklusive svenska. Bra för internutbildning och säljvideor.",
-        "pricing": "22 USD / mån",
-        "rating": 8.7,
-        "gdpr_status": "EU-data",
-        "tags": [
-            "Video",
-            "Avatar",
-            "Utbildning"
-        ],
-        "icon_emoji": "🎥",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 70,
-        "name": "Tome",
-        "category": "design",
-        "description": "Generativ AI för presentationer och storytelling. Skriv en prompt och Tome genererar en hel presentation med text, bilder och layout på sekunder.",
-        "pricing": "Freemium",
-        "rating": 4.6,
-        "gdpr_status": "Granskning",
-        "tags": [
-            "design",
-            "presentation",
-            "storytelling",
-            "pitch"
-        ],
-        "icon_emoji": "📖",
-        "icon_bg_color": "bg-purple-800"
-    },
-    {
-        "id": 28,
-        "name": "V0 by Vercel",
-        "category": "kod & dev",
-        "description": "Generativt UI-verktyg från Vercel. Beskriv hur du vill att ett gränssnitt ska se ut, och V0 genererar produktionsklar React/Tailwind-kod direkt i webbläsaren.",
-        "pricing": "Gratis plan / Premium",
-        "rating": 4.8,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "UI",
-            "React",
-            "Tailwind",
-            "Design"
-        ],
-        "icon_emoji": "📐",
-        "icon_bg_color": "bg-zinc-900"
-    },
-    {
-        "id": 7,
-        "name": "Visma Compact AI",
-        "category": "juridik",
-        "description": "AI-funktioner i Vismas redovisningsprogram – specifikt byggt för svenska SME. Datalagring i Sverige. Bokföring, fakturor och lönehantering med AI-stöd.",
-        "pricing": "399 kr / mån",
-        "rating": 8.5,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Bokföring",
-            "Fakturaläsning",
-            "SV-data"
-        ],
-        "icon_emoji": "⚖️",
-        "icon_bg_color": "bg-teal-100"
-    },
-    {
-        "id": 15,
-        "name": "Zapier AI",
-        "category": "affar",
-        "description": "Automatisera arbetsflöden med AI. Zapier kopplar ihop dina appar och låter AI bygga dina automatiseringar. Kraftfullt för att spara tid och minska manuellt arbete.",
-        "pricing": "Freemium (från 20 USD/mån)",
-        "rating": 8.9,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Automatisering",
-            "Integrationer",
-            "Produktivitet"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": "tavus",
-        "name": "Tavus",
-        "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
-        "category": "Video",
-        "price": "Freemium / Från $89/mån",
-        "url": "https://www.tavus.io/",
-        "tags": [
-            "video",
-            "marknadsföring",
-            "sälj",
-            "AI-avatar",
-            "generativ-AI",
-            "personalisering"
-        ],
-        "rating": 4.6,
-        "isGDPRCompliant": true,
-        "gdprNote": "Erbjuder DPA och GDPR-compliance för företagskunder. Data krypteras i vila och under överföring."
-    },
-    {
-        "id": "zapier-central",
-        "name": "Zapier Central",
-        "description": "Experimentell AI-arbetsyta från Zapier där du kan lära botar att utföra uppgifter över 6000+ appar via chatt. Som ChatGPT, men med direkt åtkomst till hela din mjukvarustack.",
-        "category": "Automation",
-        "price": "Gratis under beta / Ingår i Zapier",
-        "url": "https://zapier.com/central",
-        "tags": [
-            "automation",
-            "AI-agent",
-            "integration",
-            "arbetsflöden",
-            "produktivitet"
-        ],
-        "rating": 4.5,
-        "isGDPRCompliant": true,
-        "gdprNote": "Följer Zapiers övergripande GDPR-policy med DPA tillgängligt för företag."
-    },
-    {
-        "id": "clay",
-        "name": "Clay",
-        "description": "AI-driven databerikning och prospektering för säljteam. Skrapar data, slår upp kontakter i 50+ databaser och använder AI för att skriva hyper-personliga kalla mail i stor skala.",
-        "category": "Marknadsföring",
-        "price": "Freemium / Från $149/mån",
-        "url": "https://www.clay.com/",
-        "tags": [
-            "sälj",
-            "B2B",
-            "kalla-mail",
-            "prospektering",
-            "CRM",
-            "automation",
-            "AI-agent"
-        ],
-        "rating": 4.8,
-        "isGDPRCompliant": true,
-        "gdprNote": "Clay har DPA och inbyggda funktioner för att exkludera specifika länder och följa regionala dataregleringar."
-    },
-    {
-        "id": "guidde",
-        "name": "Guidde",
-        "description": "AI-plattform för att skapa how-to-videor och dokumentation på sekunder. Spela in en process i webbläsaren, och AI genererar röst, text och visuella markeringar automatiskt.",
-        "category": "Produktivitet",
-        "price": "Freemium / Från $16/användare/mån",
-        "url": "https://www.guidde.com/",
-        "tags": [
-            "dokumentation",
-            "how-to",
-            "video",
-            "team",
-            "onboarding",
-            "chrome-extension"
-        ],
-        "rating": 4.9,
-        "isGDPRCompliant": true,
-        "gdprNote": "SOC 2 Type II-certifierade och GDPR-kompatibla. Erbjuder DPA."
-    },
-    {
-        "id": "pika-art",
-        "name": "Pika",
-        "description": "Innovativ plattform för AI-genererad video. Pika låter dig skapa eller redigera videor genom enkla textprompts. Har funktioner för Lip Sync och kan modifiera specifika regioner i en video.",
-        "category": "Video",
-        "price": "Freemium / Från $8/mån",
-        "url": "https://pika.art/",
-        "tags": [
-            "video",
-            "text-till-video",
-            "lip-sync",
-            "bild-till-video",
-            "generativ-AI",
-            "kreativt"
-        ],
-        "rating": 4.6,
-        "isGDPRCompliant": false,
-        "gdprNote": "Konsumentinriktad AI utan uttalad Enterprise-fokus på GDPR-compliance eller DPA. Använd ej för känslig persondata."
-    },
-    {
-        "id": "perplexity-pro",
-        "name": "Perplexity Pro",
-        "description": "Premiumversionen av den populära AI-sökmotorn. Ger tillgång till GPT-4o, Claude 3 Opus och Sonnet 3.5, obegränsade sökningar och möjlighet att analysera uppladdade filer.",
-        "category": "Text & Skrivande",
-        "price": "$20/mån",
-        "url": "https://www.perplexity.ai/pro",
-        "tags": [
-            "sökmotor",
-            "research",
-            "Fler-modell",
-            "GPT-4o",
-            "Claude-3.5",
-            "dokumentanalys"
-        ],
-        "rating": 4.9,
-        "isGDPRCompliant": true,
-        "gdprNote": "Perplexity Enterprise Pro är SOC2-certifierade och GDPR-kompatibla. De tränar inte modeller på Pro/Enterprise-användares data."
-    },
-    {
-        "name": "Google VideoFX",
-        "category": "video",
-        "description": "Googles kraftfulla AI-videogenerator driven av Veo-modellen. Låter användare skapa högkvalitativa 1080p-videor från textprompter, utöka existerande videor och byta ut element (inpainting). Konkurrerar med Sora och Runway Gen-3.",
-        "url": "https://aitestkitchen.withgoogle.com/tools/video-fx",
-        "pricing": "Gratis under testperioden",
-        "gdpr_status": "Oklart",
-        "tags": "videogenerering, ai video, google, veo, inpainting",
-        "rating": "9.0",
-        "icon_emoji": "🎬"
-    },
-    {
-        "name": "Hedra",
-        "category": "video",
-        "description": "AI-verktyg för karaktärsgenerering och läppsynk. Skapar mycket uttrycksfulla avatarer och ansiktsanimationer från ljud och text med en av de mest avancerade läppsynk-modellerna (Character-1) på marknaden just nu.",
-        "url": "https://www.hedra.com/",
-        "pricing": "Freemium",
-        "gdpr_status": "Oklart",
-        "tags": "avatar, läppsynk, karaktär, ai video",
-        "rating": "8.5",
-        "icon_emoji": "🗣️"
-    },
-    {
-        "id": "flux-1",
-        "name": "Flux.1",
-        "category": "bild",
-        "description": "Den nya kungen av open-source bildgenerering från Black Forest Labs. Flux.1 utmanar Midjourney och DALL-E 3 på fotorealism och förmåga att rendera text, och går att köra lokalt eller via API.",
-        "pricing": "Open Source / API",
-        "rating": 4.9,
-        "gdpr_status": "Lokal körning (GDPR-säker)",
-        "tags": [
-            "bild",
-            "open-source",
-            "fotorealism",
-            "text-rendering"
-        ],
-        "icon_emoji": "🎨",
-        "icon_bg_color": "bg-slate-900"
-    },
-    {
-        "id": "grok-2",
-        "name": "Grok 2",
-        "category": "text",
-        "description": "xAI:s senaste flaggskeppsmodell som integrerar avancerad resonemangsförmåga med realtidsdata från X (Twitter). En stark utmanare till GPT-4o med en obegränsad, okonventionell ton.",
-        "pricing": "Kräver X Premium",
-        "rating": 4.7,
-        "gdpr_status": "Oklart",
-        "tags": [
-            "llm",
-            "realtidsdata",
-            "xai",
-            "grok"
-        ],
-        "icon_emoji": "🛸",
-        "icon_bg_color": "bg-black"
-    }
+  {
+    "id": 1,
+    "slug": "adobe-firefly",
+    "name": "Adobe Firefly",
+    "category": "bild",
+    "description": "Adobes familj av generativa AI-modeller för bildskapande. Unik för att den är tränad helt på licensierat innehåll, vilket gör den helt säker för kommersiellt bruk.",
+    "pricing": "Ingår i Creative Cloud / freemium",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Adobes DPA. Tränad på licensierat material – trygg för kommersiellt bruk.",
+    "swedish": "delvis",
+    "swedish_note": "Gränssnittet finns på svenska, prompta helst på engelska.",
+    "tags": [
+      "bild",
+      "design",
+      "kommersiell-säker",
+      "adobe"
+    ],
+    "icon_emoji": "🦋",
+    "icon_bg_color": "bg-red-500",
+    "url": "https://firefly.adobe.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "maklare"
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "apple-intelligence",
+    "name": "Apple Intelligence",
+    "category": "produktivitet",
+    "description": "Apples djupt integrerade AI-system i iOS 18 och macOS Sequoia. Genererar text och bilder, förstår personlig kontext och förbättrar Siri kraftigt, med starkt fokus på on-device privacy.",
+    "pricing": "Gratis på kompatibla enheter",
+    "price_tier": "gratis",
+    "rating": 4.2,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Körs till stor del på enheten med Private Cloud Compute för resten.",
+    "swedish": "delvis",
+    "swedish_note": "Svenska har rullats ut senare än engelska – kontrollera vad som stöds på din enhet.",
+    "tags": [
+      "produktivitet",
+      "apple",
+      "ios",
+      "assistent"
+    ],
+    "icon_emoji": "🍎",
+    "icon_bg_color": "bg-gray-800",
+    "url": "https://www.apple.com/apple-intelligence/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 3,
+    "slug": "avtal24-ai",
+    "name": "Avtal24 AI",
+    "category": "juridik",
+    "description": "Svenskt juridikverktyg med AI-granskning av avtal. Baserat på svensk rätt. Genomgår standardavtal, NDA:er och hyreskontrakt – på svenska.",
+    "pricing": "Från 490 kr/mån",
+    "price_tier": "betald",
+    "rating": 4.1,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Svenskt bolag med data i Sverige.",
+    "swedish": "bra",
+    "swedish_note": "Byggt för svensk rätt och svenska avtal.",
+    "tags": [
+      "Avtalsanalys",
+      "NDA",
+      "Svensk rätt"
+    ],
+    "icon_emoji": "📋",
+    "icon_bg_color": "bg-red-100",
+    "url": "https://www.avtal24.se/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "juridik",
+      "maklare",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "beautiful-ai",
+    "name": "Beautiful.ai",
+    "category": "bild",
+    "description": "Skapar fantastiska presentationer på nolltid. AI designar slides automatiskt baserat på ditt innehåll och dina uppmaningar. En dröm för alla som avskyr PowerPoint.",
+    "pricing": "Från 12 USD/mån",
+    "price_tier": "betald",
+    "rating": 4.2,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA på Team-plan.",
+    "swedish": "delvis",
+    "swedish_note": "Mallarna är engelska men tar svensk text.",
+    "tags": [
+      "Presentationer",
+      "Design",
+      "Slides"
+    ],
+    "icon_emoji": "📊",
+    "icon_bg_color": "bg-pink-100",
+    "url": "https://www.beautiful.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 5,
+    "slug": "canva-magic-studio",
+    "name": "Canva Magic Studio",
+    "category": "bild",
+    "description": "Canvas inbyggda AI-svit. Innehåller allt från AI-bildgenerering och borttagning av bakgrunder till automatiskt genererade presentationer och texter.",
+    "pricing": "Ingår i Canva Pro",
+    "price_tier": "freemium",
+    "rating": 4.7,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "DPA och EU-datalagring för Teams/Enterprise.",
+    "swedish": "bra",
+    "swedish_note": "Svenskt gränssnitt och fungerar bra på svensk text i designer.",
+    "tags": [
+      "design",
+      "presentation",
+      "bild",
+      "allt-i-ett"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-cyan-500",
+    "url": "https://www.canva.com/magic-studio/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "maklare",
+      "hr"
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "chatgpt-teams",
+    "name": "ChatGPT Teams",
+    "category": "text",
+    "description": "OpenAI:s företagsplan med GPT-5.6 (Sol, Terra och Luna). Delade promptbibliotek, adminkontroll och DPA. Sol är flaggskeppet för resonemang och kod, Luna den snabba vardagsmodellen.",
+    "pricing": "25 USD/användare/mån",
+    "price_tier": "betald",
+    "rating": 4.8,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "DPA ingår, ingen träning på er data, EU-datalagring valbar.",
+    "swedish": "bra",
+    "swedish_note": "Mycket god svenska i både förståelse och text.",
+    "tags": [
+      "GPT-5.6",
+      "Allround",
+      "Team",
+      "DPA"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-indigo-100",
+    "url": "https://openai.com/chatgpt/team/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "hr",
+      "ekonomi",
+      "copywriter",
+      "maklare",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "claude-fable-5",
+    "name": "Claude Fable 5",
+    "category": "text",
+    "description": "Anthropics mest kapabla modell. Utmärkt på långa dokument, analys och juridisk text. Sedan juli 2026 kompletteras den av Claude Opus 5 som ger nästan samma nivå till halva priset.",
+    "pricing": "Gratis / från 20 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.9,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA via Anthropic eller EU-region i AWS Bedrock. Ingen träning på kunddata.",
+    "swedish": "bra",
+    "swedish_note": "Bland de starkaste på svensk text och nyans.",
+    "tags": [
+      "Fable 5",
+      "Opus 5",
+      "Dokument",
+      "Analys"
+    ],
+    "icon_emoji": "⚡",
+    "icon_bg_color": "bg-orange-100",
+    "url": "https://claude.ai/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "juridik",
+      "hr",
+      "copywriter",
+      "ekonomi"
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "clay",
+    "name": "Clay",
+    "category": "marknadsforing",
+    "description": "AI-driven databerikning och prospektering för säljteam. Skrapar data, slår upp kontakter i 50+ databaser och använder AI för att skriva hyper-personliga kalla mail i stor skala.",
+    "pricing": "Freemium / från 149 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.5,
+    "gdpr": "varning",
+    "gdpr_note": "Berikning av personuppgifter från publika källor kräver laglig grund och informationsplikt enligt GDPR art. 14.",
+    "swedish": "delvis",
+    "swedish_note": "Fungerar på svenska data men källorna är tunnare för Sverige.",
+    "tags": [
+      "sälj",
+      "B2B",
+      "kalla-mail",
+      "prospektering",
+      "CRM",
+      "automation",
+      "AI-agent"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://www.clay.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "maklare"
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "copy-ai",
+    "name": "Copy.ai",
+    "category": "marknadsforing",
+    "description": "Skapad specifikt för marknadsförare och säljare. Genererar blogginlägg, annonstexter och e-postkampanjer snabbt och effektivt. Har arbetsflödesfunktioner för team.",
+    "pricing": "Freemium (från 36 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.0,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA finns, men amerikansk databehandling.",
+    "swedish": "delvis",
+    "swedish_note": "Svenska fungerar, men kvaliteten sjunker på längre texter.",
+    "tags": [
+      "Marknadsföring",
+      "Copywriting",
+      "Sälj"
+    ],
+    "icon_emoji": "✍️",
+    "icon_bg_color": "bg-orange-100",
+    "url": "https://www.copy.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "cursor",
+    "name": "Cursor",
+    "category": "kod",
+    "description": "Den AI-första kodredigeraren. Byggd på VS Code, men med djupt integrerad AI (Claude Opus 5, GPT-5.6) som förstår hela din kodbas och kan skriva, refaktorera och debugga kod åt dig.",
+    "pricing": "Gratis / från 20 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.8,
+    "gdpr": "dpa",
+    "gdpr_note": "Privacy mode stoppar lagring av kod. DPA för Business.",
+    "swedish": "bra",
+    "swedish_note": "Chattar på svenska, men kod och dokumentation är engelsk.",
+    "tags": [
+      "Kod",
+      "Utveckling",
+      "AI",
+      "Editor"
+    ],
+    "icon_emoji": "⚡",
+    "icon_bg_color": "bg-slate-800",
+    "url": "https://cursor.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 11,
+    "slug": "descript",
+    "name": "Descript",
+    "category": "video",
+    "description": "Redigera video och poddar genom att redigera text (transkribering). Inkluderar Overdub för att skapa en AI-klon av din röst.",
+    "pricing": "Freemium (från 12 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA tillgänglig, data i USA.",
+    "swedish": "delvis",
+    "swedish_note": "Transkribering på svenska fungerar, redigeringsfunktionerna är byggda för engelska.",
+    "tags": [
+      "Podd",
+      "Video",
+      "Redigering",
+      "Transkribering"
+    ],
+    "icon_emoji": "🎙️",
+    "icon_bg_color": "bg-indigo-100",
+    "url": "https://www.descript.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "devin",
+    "name": "Devin",
+    "category": "kod",
+    "description": "Världens första helt autonoma AI-mjukvaruingenjör. Kan planera och utföra komplexa kodningsprojekt, hitta och fixa buggar, och lära sig nya teknologier på egen hand.",
+    "pricing": "Från 20 USD/mån",
+    "price_tier": "betald",
+    "rating": 4.0,
+    "gdpr": "oklart",
+    "gdpr_note": "Begränsad publik avtalsinformation.",
+    "swedish": "svagt",
+    "swedish_note": "Engelskt arbetsflöde.",
+    "tags": [
+      "Agent",
+      "Kod",
+      "Autonom"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-teal-700",
+    "url": "https://devin.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 13,
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "category": "ljud",
+    "description": "Marknadsledande AI-röstkloning och text-till-tal. Generera extremt realistiska röster på svenska och andra språk.",
+    "pricing": "Freemium (från 5 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.7,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA finns för betalplaner. Röstkloning av verklig person kräver samtycke.",
+    "swedish": "bra",
+    "swedish_note": "Marknadens bästa svenska AI-röster.",
+    "tags": [
+      "Röst",
+      "Ljud",
+      "Text-till-tal"
+    ],
+    "icon_emoji": "🎙️",
+    "icon_bg_color": "bg-indigo-100 text-indigo-600",
+    "url": "https://elevenlabs.io/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "hr"
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "elevenlabs-reader",
+    "name": "ElevenLabs Reader",
+    "category": "ljud",
+    "description": "Lyssningsapp som läser upp artiklar, PDF:er och e-böcker med ElevenLabs hyperrealistiska AI-röster. Perfekt för on-the-go lärande.",
+    "pricing": "Gratis (app)",
+    "price_tier": "gratis",
+    "rating": 4.5,
+    "gdpr": "dpa",
+    "gdpr_note": "Konsumentapp – ladda inte upp känsliga dokument.",
+    "swedish": "bra",
+    "swedish_note": "Läser upp svenska texter med naturligt uttal.",
+    "tags": [
+      "ljud",
+      "tts",
+      "mobilapp",
+      "text-till-tal"
+    ],
+    "icon_emoji": "🎧",
+    "icon_bg_color": "bg-blue-900",
+    "url": "https://elevenlabs.io/text-to-speech",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 15,
+    "slug": "figma-ai",
+    "name": "Figma AI",
+    "category": "bild",
+    "description": "Figma's inbyggda AI-verktyg som låter dig generera UI-designer från text, hitta liknande komponenter och automatisera repetitiva uppgifter i designprocessen.",
+    "pricing": "Ingår i Figma-plan",
+    "price_tier": "betald",
+    "rating": 4.5,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Figmas DPA gäller. AI-funktioner kan stängas av per organisation.",
+    "swedish": "delvis",
+    "swedish_note": "Engelskt gränssnitt, men genererar svensk text i designer.",
+    "tags": [
+      "design",
+      "ui",
+      "ux",
+      "wireframe"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-purple-600",
+    "url": "https://www.figma.com/ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 16,
+    "slug": "fireflies-ai",
+    "name": "Fireflies.ai",
+    "category": "produktivitet",
+    "description": "AI-antecknare som spelar in, transkriberar och sammanfattar dina möten (Zoom, Teams, Meet). Kan extrahera action items och söka genom tidigare möteshistorik.",
+    "pricing": "Freemium (från 10 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA och EU-datalagring på Business. Mötesdeltagare måste informeras om inspelning.",
+    "swedish": "bra",
+    "swedish_note": "Transkriberar svenska möten med god träffsäkerhet.",
+    "tags": [
+      "Möten",
+      "Transkribering",
+      "Sammanfattning"
+    ],
+    "icon_emoji": "🔥",
+    "icon_bg_color": "bg-purple-100",
+    "url": "https://fireflies.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "maklare",
+      "ekonomi"
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "flux-1",
+    "name": "Flux.1",
+    "category": "bild",
+    "description": "Den nya kungen av open-source bildgenerering från Black Forest Labs. Flux.1 utmanar Midjourney och de kommersiella bildmodellerna på fotorealism och förmåga att rendera text, och går att köra lokalt eller via API.",
+    "pricing": "Öppna vikter / API",
+    "price_tier": "gratis",
+    "rating": 4.6,
+    "gdpr": "lokal",
+    "gdpr_note": "Tyskt bolag och öppna vikter – kan köras helt lokalt.",
+    "swedish": "delvis",
+    "swedish_note": "Prompta på engelska, men kan köras inom EU.",
+    "tags": [
+      "bild",
+      "open-source",
+      "fotorealism",
+      "text-rendering"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-slate-900",
+    "url": "https://blackforestlabs.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 18,
+    "slug": "gamma",
+    "name": "Gamma",
+    "category": "bild",
+    "description": "Skapa snygga presentationer, dokument och webbsidor snabbt med AI. Perfekt för pitchdeck och rapporter. Svenska stöds.",
+    "pricing": "Freemium (från 8 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "oklart",
+    "gdpr_note": "DPA på begäran för Business-plan.",
+    "swedish": "bra",
+    "swedish_note": "Bygger fullt läsbara svenska presentationer från en prompt.",
+    "tags": [
+      "Presentation",
+      "Design",
+      "Dokument"
+    ],
+    "icon_emoji": "📊",
+    "icon_bg_color": "bg-pink-100 text-pink-600",
+    "url": "https://gamma.app/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "maklare",
+      "hr",
+      "ekonomi"
+    ]
+  },
+  {
+    "id": 19,
+    "slug": "gemini-3-1-pro",
+    "name": "Gemini 3.1 Pro",
+    "category": "text",
+    "description": "Googles flaggskepp med extremt långt kontextfönster och djup integration mot Workspace. I juli 2026 kom även Gemini 3.6 Flash som billigare arbetshäst för volymuppgifter.",
+    "pricing": "Gratis / 20 USD/mån (Advanced)",
+    "price_tier": "freemium",
+    "rating": 4.7,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA via Google Workspace. Konsumentversionen bör inte matas med personuppgifter.",
+    "swedish": "bra",
+    "swedish_note": "God svenska och stark på att sammanfatta svenska dokument.",
+    "tags": [
+      "Gemini",
+      "Workspace",
+      "Långt kontext"
+    ],
+    "icon_emoji": "✨",
+    "icon_bg_color": "bg-blue-600",
+    "url": "https://gemini.google.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "ekonomi",
+      "maklare",
+      "copywriter"
+    ]
+  },
+  {
+    "id": 20,
+    "slug": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "kod",
+    "description": "AI-kodassistent inbyggd i VS Code och JetBrains. GPT-5.6 och Claude-modeller. Enterprise-plan med GDPR-avtal och datalagring utan träning.",
+    "pricing": "10–39 USD/användare/mån",
+    "price_tier": "betald",
+    "rating": 4.7,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Microsofts DPA. Business-plan tränar inte på er kod.",
+    "swedish": "bra",
+    "swedish_note": "Chattfunktionen svarar på svenska.",
+    "tags": [
+      "VS Code",
+      "Autocomplete",
+      "Chat"
+    ],
+    "icon_emoji": "💻",
+    "icon_bg_color": "bg-gray-100",
+    "url": "https://github.com/features/copilot",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 21,
+    "slug": "glean",
+    "name": "Glean",
+    "category": "produktivitet",
+    "description": "Sökverktyg för enterprise. Ansluter till alla företagets appar (Slack, Drive, Jira etc) och använder AI för att hitta svar på anställdas frågor baserat på företagets interna data.",
+    "pricing": "Offert (enterprise)",
+    "price_tier": "betald",
+    "rating": 4.5,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Enterprise-DPA och EU-hosting. Ärver behörigheter från era källsystem.",
+    "swedish": "bra",
+    "swedish_note": "Söker i svenska dokument och svarar på svenska.",
+    "tags": [
+      "Sök",
+      "Enterprise",
+      "Produktivitet"
+    ],
+    "icon_emoji": "🔍",
+    "icon_bg_color": "bg-rose-500",
+    "url": "https://www.glean.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 22,
+    "slug": "google-videofx",
+    "name": "Google VideoFX",
+    "category": "video",
+    "description": "Googles kraftfulla AI-videogenerator driven av Veo-modellen. Låter användare skapa högkvalitativa 1080p-videor från textprompter, utöka existerande videor och byta ut element (inpainting). Konkurrerar med Sora och Runway Gen-3.",
+    "pricing": "Gratis (Google Labs)",
+    "price_tier": "gratis",
+    "rating": 4.3,
+    "gdpr": "oklart",
+    "gdpr_note": "Experimentell Labs-tjänst utan företagsavtal.",
+    "swedish": "delvis",
+    "swedish_note": "Förstår svenska prompts men engelska ger bättre träff.",
+    "tags": [
+      "videogenerering",
+      "ai video",
+      "google",
+      "veo",
+      "inpainting"
+    ],
+    "icon_emoji": "🎬",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://labs.google/fx/tools/video-fx",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 23,
+    "slug": "grammarly",
+    "name": "Grammarly",
+    "category": "text",
+    "description": "Grammarlys AI-assistent hjälper dig inte bara med stavning utan skriver om meningar, anpassar tonfall och genererar text. Mycket populärt och användarvänligt.",
+    "pricing": "Freemium (från 12 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.1,
+    "gdpr": "varning",
+    "gdpr_note": "Läser allt du skriver i webbläsaren. Bör inte installeras på klienter som hanterar personuppgifter.",
+    "swedish": "svagt",
+    "swedish_note": "Stödjer i praktiken bara engelska – begränsad nytta för svenska texter.",
+    "tags": [
+      "Rättstavning",
+      "Skrivande",
+      "Engelska"
+    ],
+    "icon_emoji": "📝",
+    "icon_bg_color": "bg-green-100",
+    "url": "https://www.grammarly.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 24,
+    "slug": "grok-2",
+    "name": "Grok 2",
+    "category": "text",
+    "description": "xAI:s senaste flaggskeppsmodell som integrerar avancerad resonemangsförmåga med realtidsdata från X (Twitter). En stark utmanare till GPT-5.6 med en obegränsad, okonventionell ton.",
+    "pricing": "Ingår i X Premium",
+    "price_tier": "betald",
+    "rating": 4.2,
+    "gdpr": "varning",
+    "gdpr_note": "Oklara villkor och data kopplad till X-kontot. Undvik för företagsdata.",
+    "swedish": "delvis",
+    "swedish_note": "Fungerar på svenska men med sämre nyans.",
+    "tags": [
+      "llm",
+      "realtidsdata",
+      "xai",
+      "grok"
+    ],
+    "icon_emoji": "🛸",
+    "icon_bg_color": "bg-black",
+    "url": "https://x.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 25,
+    "slug": "groq",
+    "name": "Groq",
+    "category": "kod",
+    "description": "LPU-hårdvaruaccelerator som kör open-source LLM:er (som Llama 3) med otrolig hastighet (upp till 800+ tokens per sekund). Revolutionerar realtids-AI.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.5,
+    "gdpr": "oklart",
+    "gdpr_note": "Amerikansk inferensleverantör. Kontrollera villkor innan personuppgifter skickas.",
+    "swedish": "delvis",
+    "swedish_note": "Beror på vilken modell du kör.",
+    "tags": [
+      "llm",
+      "snabbhet",
+      "lpu",
+      "api"
+    ],
+    "icon_emoji": "🏎️",
+    "icon_bg_color": "bg-orange-500",
+    "url": "https://groq.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 26,
+    "slug": "guidde",
+    "name": "Guidde",
+    "category": "produktivitet",
+    "description": "AI-plattform för att skapa how-to-videor och dokumentation på sekunder. Spela in en process i webbläsaren, och AI genererar röst, text och visuella markeringar automatiskt.",
+    "pricing": "Freemium / från 16 USD/användare/mån",
+    "price_tier": "freemium",
+    "rating": 4.3,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA på begäran.",
+    "swedish": "bra",
+    "swedish_note": "Genererar svenska instruktionsvideor med röst.",
+    "tags": [
+      "dokumentation",
+      "how-to",
+      "video",
+      "team",
+      "onboarding",
+      "chrome-extension"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://www.guidde.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 27,
+    "slug": "harvey",
+    "name": "Harvey",
+    "category": "juridik",
+    "description": "Generativ AI speciellt byggd för professionella jurister. Hjälper till med juridisk research, due diligence, kontraktsanalys och drafting. Används av världens största byråer.",
+    "pricing": "Offert (enterprise)",
+    "price_tier": "betald",
+    "rating": 4.4,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Enterprise-DPA, används av flera europeiska byråer.",
+    "swedish": "delvis",
+    "swedish_note": "Tränad främst på anglosaxisk rätt – svensk rätt kräver egen granskning.",
+    "tags": [
+      "Juridik",
+      "Research",
+      "Enterprise"
+    ],
+    "icon_emoji": "🏛️",
+    "icon_bg_color": "bg-slate-700",
+    "url": "https://www.harvey.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "juridik"
+    ]
+  },
+  {
+    "id": 28,
+    "slug": "hedra",
+    "name": "Hedra",
+    "category": "video",
+    "description": "AI-verktyg för karaktärsgenerering och läppsynk. Skapar mycket uttrycksfulla avatarer och ansiktsanimationer från ljud och text med en av de mest avancerade läppsynk-modellerna (Character-1) på marknaden just nu.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.1,
+    "gdpr": "oklart",
+    "gdpr_note": "Ung tjänst utan publik DPA.",
+    "swedish": "delvis",
+    "swedish_note": "Klarar svenskt tal till avatar.",
+    "tags": [
+      "avatar",
+      "läppsynk",
+      "karaktär",
+      "ai video"
+    ],
+    "icon_emoji": "🗣️",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://www.hedra.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 29,
+    "slug": "heygen",
+    "name": "HeyGen",
+    "category": "video",
+    "description": "Ledande plattform för att skapa AI-videor med realistiska avatarer. Låter dig skriva ett manus och omedelbart få en video med en AI-presentatör, inklusive stöd för röstkloning och översättning.",
+    "pricing": "Freemium (från 24 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA finns. SOC 2-certifierat, data i USA.",
+    "swedish": "bra",
+    "swedish_note": "Stark svensk röstdubbning med läppsynk.",
+    "tags": [
+      "video",
+      "avatar",
+      "presentation",
+      "marknadsföring",
+      "röstkloning"
+    ],
+    "icon_emoji": "👤",
+    "icon_bg_color": "bg-indigo-100",
+    "url": "https://www.heygen.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "copywriter"
+    ]
+  },
+  {
+    "id": 30,
+    "slug": "hubspot-ai",
+    "name": "HubSpot AI",
+    "category": "affar",
+    "description": "CRM med inbyggd AI för försäljning och marknadsföring. AI-mejl, lead-scoring och konversationsanalys. Serverhosting i EU. Gratis-plan tillgänglig.",
+    "pricing": "0–800 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "DPA och EU-datacenter (Frankfurt) valbart.",
+    "swedish": "bra",
+    "swedish_note": "Svenskt gränssnitt och genererar säljmejl på svenska.",
+    "tags": [
+      "CRM",
+      "E-post",
+      "Lead scoring"
+    ],
+    "icon_emoji": "📊",
+    "icon_bg_color": "bg-amber-100",
+    "url": "https://www.hubspot.com/products/artificial-intelligence",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "maklare",
+      "copywriter"
+    ]
+  },
+  {
+    "id": 31,
+    "slug": "hugging-face-chat",
+    "name": "Hugging Face Chat",
+    "category": "text",
+    "description": "Öppen chattklient från Hugging Face där du kan välja mellan flera ledande open-source modeller (som Llama 3 och Mixtral) helt gratis.",
+    "pricing": "Gratis",
+    "price_tier": "gratis",
+    "rating": 4.2,
+    "gdpr": "oklart",
+    "gdpr_note": "Öppna modeller i delad miljö. Skicka inte personuppgifter.",
+    "swedish": "delvis",
+    "swedish_note": "Beror helt på vilken öppen modell du väljer.",
+    "tags": [
+      "text",
+      "chatt",
+      "open-source",
+      "huggingface"
+    ],
+    "icon_emoji": "🤗",
+    "icon_bg_color": "bg-yellow-400",
+    "url": "https://huggingface.co/chat/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 32,
+    "slug": "ideogram",
+    "name": "Ideogram",
+    "category": "bild",
+    "description": "Bildgenerator med marknadens bästa förmåga att rendera text i bilder korrekt. Oslagbar för logotyper, affischer och typografi-tung design.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.5,
+    "gdpr": "oklart",
+    "gdpr_note": "Ingen tydlig DPA för företagskunder.",
+    "swedish": "delvis",
+    "swedish_note": "Bäst i klassen på text i bilder – även svenska ord blir korrekta.",
+    "tags": [
+      "bild",
+      "typografi",
+      "design",
+      "logotyp"
+    ],
+    "icon_emoji": "🔤",
+    "icon_bg_color": "bg-gray-900",
+    "url": "https://ideogram.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 33,
+    "slug": "jasper-ai",
+    "name": "Jasper AI",
+    "category": "marknadsforing",
+    "description": "Specialiserat innehållsverktyg för marknadsföring. Mönster och templates för annonser, bloggar och e-post. DPA krävs separat – rekommenderas ej för känslig data.",
+    "pricing": "Från 49 USD/mån",
+    "price_tier": "betald",
+    "rating": 3.9,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA finns men data behandlas i USA.",
+    "swedish": "delvis",
+    "swedish_note": "Skriver svenska men mallarna är byggda för engelska.",
+    "tags": [
+      "Marketing",
+      "Templates",
+      "Brand voice"
+    ],
+    "icon_emoji": "✍️",
+    "icon_bg_color": "bg-violet-100",
+    "url": "https://www.jasper.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 34,
+    "slug": "kling-3-0",
+    "name": "Kling 3.0",
+    "category": "video",
+    "description": "Kling 3.0 ger mycket realistisk rörelse och ljus till lågt pris, med storyboard-läge och ljudsynk över flera klipp. Bäst prisvärdhet när man behöver många iterationer.",
+    "pricing": "Freemium (dagliga krediter)",
+    "price_tier": "freemium",
+    "rating": 4.5,
+    "gdpr": "varning",
+    "gdpr_note": "Kinesiskt bolag, data utanför EU. Undvik allt som rör personuppgifter.",
+    "swedish": "svagt",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "video",
+      "text-till-video",
+      "realism",
+      "sora-alternativ"
+    ],
+    "icon_emoji": "🎬",
+    "icon_bg_color": "bg-red-600",
+    "url": "https://klingai.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 35,
+    "slug": "krea-ai",
+    "name": "Krea AI",
+    "category": "bild",
+    "description": "Realtidsgenerering av bilder och fantastisk bilduppskalning (upscaling). Du ritar en enkel skiss och AI:n renderar en fotorealistisk bild i realtid. Ett måste för designers.",
+    "pricing": "Gratis / från 30 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Saknar publik DPA.",
+    "swedish": "svagt",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "Bild",
+      "Design",
+      "Real-time"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-pink-600",
+    "url": "https://www.krea.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 36,
+    "slug": "leonardo-ai",
+    "name": "Leonardo AI",
+    "category": "bild",
+    "description": "Avancerad bildgenerator för speldesigners, marknadsförare och konstnärer med extrem kontroll. Nya Phoenix-modellen imponerar.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Australiskt bolag, begränsad EU-dokumentation.",
+    "swedish": "svagt",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "bild",
+      "design",
+      "koncept",
+      "phoenix"
+    ],
+    "icon_emoji": "🦁",
+    "icon_bg_color": "bg-amber-600",
+    "url": "https://leonardo.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 37,
+    "slug": "lexion",
+    "name": "Lexion",
+    "category": "juridik",
+    "description": "AI-drivet contract management system. Automatiserar hanteringen av kontrakt, identifierar risker och gör det enkelt att söka i stora mängder avtal.",
+    "pricing": "Offert",
+    "price_tier": "betald",
+    "rating": 4.0,
+    "gdpr": "dpa",
+    "gdpr_note": "Ingår numera i DocuSign IAM. DPA via DocuSign.",
+    "swedish": "delvis",
+    "swedish_note": "Engelskt gränssnitt, hanterar svenska avtal med varierande resultat.",
+    "tags": [
+      "Juridik",
+      "Avtal",
+      "HR"
+    ],
+    "icon_emoji": "📝",
+    "icon_bg_color": "bg-indigo-800",
+    "url": "https://www.docusign.com/products/iam",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "juridik"
+    ]
+  },
+  {
+    "id": 38,
+    "slug": "llama-4",
+    "name": "Llama 4",
+    "category": "text",
+    "description": "Metas öppna modellfamilj (Scout, Maverick, Behemoth) med multimodalt stöd. Kan köras lokalt eller hos svensk hostingpartner för full datakontroll.",
+    "pricing": "Öppna vikter (gratis)",
+    "price_tier": "gratis",
+    "rating": 4.5,
+    "gdpr": "lokal",
+    "gdpr_note": "Kan köras på egen server – då lämnar ingen data huset.",
+    "swedish": "delvis",
+    "swedish_note": "Klarar svenska men märkbart svagare än de stora molnmodellerna.",
+    "tags": [
+      "Open weights",
+      "Self-hosting",
+      "Multimodal"
+    ],
+    "icon_emoji": "🦙",
+    "icon_bg_color": "bg-blue-600",
+    "url": "https://www.llama.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 39,
+    "slug": "luma-dream-machine",
+    "name": "Luma Dream Machine",
+    "category": "video",
+    "description": "AI-videogenerator av högsta klass som kan skapa realistiska scener och animera stillbilder med extremt hög kvalitet och hastighet.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Saknar tydlig EU-dokumentation.",
+    "swedish": "svagt",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "Video",
+      "Animation",
+      "Videogenerering"
+    ],
+    "icon_emoji": "🎥",
+    "icon_bg_color": "bg-blue-100",
+    "url": "https://lumalabs.ai/dream-machine",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 40,
+    "slug": "microsoft-copilot-365",
+    "name": "Microsoft Copilot 365",
+    "category": "affar",
+    "description": "AI inbyggt i Word, Excel, Teams och Outlook. Sammanfattar möten, skriver utkast och bygger formler direkt i filerna ni redan arbetar i.",
+    "pricing": "30 USD/användare/mån",
+    "price_tier": "betald",
+    "rating": 4.6,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "EU Data Boundary och Microsofts DPA. Enklaste vägen för svenska bolag som redan kör M365.",
+    "swedish": "bra",
+    "swedish_note": "Fungerar på svenska i Word, Outlook och Teams.",
+    "tags": [
+      "M365",
+      "Teams",
+      "Excel",
+      "EU-data"
+    ],
+    "icon_emoji": "🪟",
+    "icon_bg_color": "bg-blue-100",
+    "url": "https://www.microsoft.com/microsoft-365/copilot",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "ekonomi",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 41,
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "category": "bild",
+    "description": "Marknadens starkaste verktyg för estetisk bildgenerering. Version 8.1 är standard sedan juni 2026 med 2K-upplösning direkt, snabbare rendering och betydligt bättre promptföljsamhet.",
+    "pricing": "10–60 USD/mån",
+    "price_tier": "betald",
+    "rating": 4.7,
+    "gdpr": "varning",
+    "gdpr_note": "Bilder blir publika på standardplan. Kräver Pro/Mega för privat läge.",
+    "swedish": "delvis",
+    "swedish_note": "Prompta på engelska för bäst resultat.",
+    "tags": [
+      "V8.1",
+      "Bild",
+      "Konceptbild"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-pink-100",
+    "url": "https://www.midjourney.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "maklare"
+    ]
+  },
+  {
+    "id": 42,
+    "slug": "mistral-large",
+    "name": "Mistral Large",
+    "category": "text",
+    "description": "Europeisk språkmodell med data inom EU. 128k kontext och stöd för 80+ språk. Väljs ofta av organisationer som inte vill lägga data hos amerikanska leverantörer.",
+    "pricing": "API / Le Chat freemium",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Franskt bolag med data inom EU. Starkaste kortet för europeisk dataresidens.",
+    "swedish": "delvis",
+    "swedish_note": "Bra på svenska men något stelare formuleringar än GPT och Claude.",
+    "tags": [
+      "EU",
+      "Open weights",
+      "Le Chat"
+    ],
+    "icon_emoji": "🌪️",
+    "icon_bg_color": "bg-orange-600",
+    "url": "https://mistral.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "juridik",
+      "ekonomi"
+    ]
+  },
+  {
+    "id": 43,
+    "slug": "mistral-nemo",
+    "name": "Mistral NeMo",
+    "category": "kod",
+    "description": "Liten men extremt kraftfull öppen modell byggd tillsammans med Nvidia. Bara 12B parametrar men presterar ofta i nivå med större system.",
+    "pricing": "Öppna vikter (gratis)",
+    "price_tier": "gratis",
+    "rating": 4.3,
+    "gdpr": "lokal",
+    "gdpr_note": "Öppna vikter – kör lokalt för full datakontroll.",
+    "swedish": "delvis",
+    "swedish_note": "Hanterar svenska men är främst en kodmodell.",
+    "tags": [
+      "llm",
+      "open-source",
+      "nemo",
+      "kod"
+    ],
+    "icon_emoji": "🐠",
+    "icon_bg_color": "bg-blue-400",
+    "url": "https://mistral.ai/news/mistral-nemo/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 44,
+    "slug": "napkin-ai",
+    "name": "Napkin AI",
+    "category": "bild",
+    "description": "Konverterar text automatiskt till diagram, grafer och mindmaps. Otroligt användbart för presentationer och strategidokument.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Ung tjänst, begränsad avtalsdokumentation.",
+    "swedish": "bra",
+    "swedish_note": "Gör diagram av svensk text utan problem.",
+    "tags": [
+      "design",
+      "mindmap",
+      "presentation",
+      "diagram"
+    ],
+    "icon_emoji": "📊",
+    "icon_bg_color": "bg-yellow-500",
+    "url": "https://www.napkin.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "ekonomi",
+      "hr"
+    ]
+  },
+  {
+    "id": 45,
+    "slug": "notebooklm",
+    "name": "NotebookLM",
+    "category": "produktivitet",
+    "description": "Ladda upp era egna dokument och ställ frågor till dem. Svarar bara utifrån materialet ni gett den och pekar på exakt var i dokumentet svaret står – vilket gör den ovanligt trygg för avtal och policys.",
+    "pricing": "Gratis / ingår i Workspace",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "dpa",
+    "gdpr_note": "Via Workspace omfattas den av Googles DPA. Gratisversionen bör inte matas med personuppgifter.",
+    "swedish": "bra",
+    "swedish_note": "Läser svenska PDF:er och svarar med källhänvisning i dokumentet.",
+    "tags": [],
+    "icon_emoji": "📚",
+    "icon_bg_color": "bg-yellow-100",
+    "url": "https://notebooklm.google.com/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "juridik",
+      "ekonomi",
+      "fastighetsforvaltare",
+      "hr"
+    ]
+  },
+  {
+    "id": 46,
+    "slug": "opus-clip",
+    "name": "Opus Clip",
+    "category": "video",
+    "description": "Tar en lång video (t.ex. en podd eller YouTube-video) och klipper automatiskt ut de mest engagerande virala ögonblicken som färdiga korta klipp med textning.",
+    "pricing": "Freemium (från 19 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA på begäran.",
+    "swedish": "bra",
+    "swedish_note": "Klipper och textar svenskt tal med bra träffsäkerhet.",
+    "tags": [
+      "video",
+      "redigering",
+      "sociala-medier",
+      "shorts"
+    ],
+    "icon_emoji": "✂️",
+    "icon_bg_color": "bg-pink-600",
+    "url": "https://www.opus.pro/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 47,
+    "slug": "perplexity-ai",
+    "name": "Perplexity AI",
+    "category": "sok",
+    "description": "AI-driven sökmotor som svarar med källhänvisningar. Ersätter Google för research där man behöver kunna verifiera var svaret kommer ifrån.",
+    "pricing": "Gratis / 20 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.7,
+    "gdpr": "dpa",
+    "gdpr_note": "Enterprise-plan har DPA. Gratisversionen loggar sökningar.",
+    "swedish": "bra",
+    "swedish_note": "Svarar på svenska och hittar svenska källor.",
+    "tags": [
+      "Sök",
+      "Källor",
+      "Research"
+    ],
+    "icon_emoji": "🔍",
+    "icon_bg_color": "bg-blue-100",
+    "url": "https://www.perplexity.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "maklare",
+      "ekonomi",
+      "copywriter"
+    ]
+  },
+  {
+    "id": 48,
+    "slug": "phind",
+    "name": "Phind",
+    "category": "kod",
+    "description": "En AI-sökmotor byggd specifikt för utvecklare och tekniska frågor. Söker på webben och genererar kodexempel och förklaringar baserat på den senaste dokumentationen.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.1,
+    "gdpr": "oklart",
+    "gdpr_note": "Ingen publik DPA.",
+    "swedish": "svagt",
+    "swedish_note": "Engelskspråkig utvecklarsök.",
+    "tags": [
+      "kod",
+      "utvecklare",
+      "sökmotor",
+      "programmering",
+      "felsökning"
+    ],
+    "icon_emoji": "🔍",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://www.phind.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 49,
+    "slug": "pika",
+    "name": "Pika",
+    "category": "video",
+    "description": "Innovativ plattform för AI-genererad video. Pika låter dig skapa eller redigera videor genom enkla textprompts. Har funktioner för Lip Sync och kan modifiera specifika regioner i en video.",
+    "pricing": "Freemium / från 8 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.2,
+    "gdpr": "oklart",
+    "gdpr_note": "Begränsad avtalsinformation.",
+    "swedish": "svagt",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "video",
+      "text-till-video",
+      "lip-sync",
+      "bild-till-video",
+      "generativ-AI",
+      "kreativt"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://pika.art/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 50,
+    "slug": "pocketlaw",
+    "name": "Pocketlaw",
+    "category": "juridik",
+    "description": "Svensk legal tech-plattform med AI-funktioner. Hjälper företag att hantera alla sina juridiska behov, från att skapa anställningsavtal till bolagsrätt, snabbt och säkert.",
+    "pricing": "Prenumeration (offert)",
+    "price_tier": "betald",
+    "rating": 4.5,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Svenskt bolag, data inom EU.",
+    "swedish": "bra",
+    "swedish_note": "Svenska avtalsmallar och svenskt gränssnitt.",
+    "tags": [
+      "Juridik",
+      "Avtal",
+      "Svenskt"
+    ],
+    "icon_emoji": "💼",
+    "icon_bg_color": "bg-emerald-700",
+    "url": "https://pocketlaw.com/sv",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "juridik",
+      "hr"
+    ]
+  },
+  {
+    "id": 51,
+    "slug": "qwen-3",
+    "name": "Qwen 3",
+    "category": "text",
+    "description": "Alibabas öppna modellfamilj. Bland de vassaste öppna modellerna på kod och matematik och ett vanligt val vid självhosting.",
+    "pricing": "Öppna vikter (gratis)",
+    "price_tier": "gratis",
+    "rating": 4.4,
+    "gdpr": "lokal",
+    "gdpr_note": "Öppna vikter kan köras lokalt. Molnversionen ligger utanför EU.",
+    "swedish": "svagt",
+    "swedish_note": "Stark på kod och matematik, betydligt svagare på svenska.",
+    "tags": [
+      "llm",
+      "open-source",
+      "qwen",
+      "kod"
+    ],
+    "icon_emoji": "🐉",
+    "icon_bg_color": "bg-red-800",
+    "url": "https://chat.qwen.ai/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 52,
+    "slug": "replicate",
+    "name": "Replicate",
+    "category": "kod",
+    "description": "Kör open-source AI-modeller (Llama 3, SDXL m.fl.) via API utan att bygga egen infrastruktur.",
+    "pricing": "Betalning per sekund",
+    "price_tier": "betald",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Delad infrastruktur i USA. Välj EU-hosting för personuppgifter.",
+    "swedish": "svagt",
+    "swedish_note": "Utvecklarplattform, inte språkberoende.",
+    "tags": [
+      "api",
+      "open-source",
+      "llm"
+    ],
+    "icon_emoji": "🚀",
+    "icon_bg_color": "bg-slate-700",
+    "url": "https://replicate.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 53,
+    "slug": "robinai",
+    "name": "RobinAI",
+    "category": "juridik",
+    "description": "AI-verktyg för jurister och legal teams. Hjälper till med att granska, sammanfatta och redigera juridiska kontrakt med hjälp av Anthropic's Claude-modeller.",
+    "pricing": "Offert",
+    "price_tier": "betald",
+    "rating": 4.1,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Brittiskt bolag med EU-anpassade avtal.",
+    "swedish": "delvis",
+    "swedish_note": "Bäst på engelska avtal.",
+    "tags": [
+      "Juridik",
+      "Kontrakt",
+      "Granskning"
+    ],
+    "icon_emoji": "⚖️",
+    "icon_bg_color": "bg-blue-900",
+    "url": "https://www.robinai.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "juridik"
+    ]
+  },
+  {
+    "id": 54,
+    "slug": "runway-gen-4-5",
+    "name": "Runway Gen-4.5",
+    "category": "video",
+    "description": "Proffsverktyget för AI-video. Gen-4.5 hanterar referensbilder, kamerastyrning och konsekventa karaktärer mellan klipp – i praktiken standard för AI-video i produktion.",
+    "pricing": "Freemium (från 15 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.7,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA för Enterprise. Amerikansk databehandling.",
+    "swedish": "delvis",
+    "swedish_note": "Prompta på engelska.",
+    "tags": [
+      "Gen-4.5",
+      "Image-to-video",
+      "Kamerastyrning"
+    ],
+    "icon_emoji": "🎬",
+    "icon_bg_color": "bg-purple-100",
+    "url": "https://runwayml.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter"
+    ]
+  },
+  {
+    "id": 55,
+    "slug": "sana",
+    "name": "Sana",
+    "category": "juridik",
+    "description": "Svensk AI-plattform för lärande och intern kunskapssökning. Bygger utbildningar automatiskt och svarar på frågor utifrån organisationens egna dokument.",
+    "pricing": "Offert (enterprise)",
+    "price_tier": "betald",
+    "rating": 4.5,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Svenskt bolag med EU-datalagring och enterprise-DPA.",
+    "swedish": "bra",
+    "swedish_note": "Svenskt bolag – svenska är förstklassigt stöd.",
+    "tags": [
+      "HR",
+      "Lärande",
+      "Kunskap",
+      "Enterprise"
+    ],
+    "icon_emoji": "🧠",
+    "icon_bg_color": "bg-purple-600",
+    "url": "https://sanalabs.com/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "hr",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 56,
+    "slug": "sora",
+    "name": "Sora",
+    "category": "video",
+    "description": "OpenAIs banbrytande text-till-video-modell. Genererar upp till 60 sekunder långa, fotorealistiska videor med hög visuell kvalitet och konsekvens baserat på textbeskrivningar.",
+    "pricing": "Ingår i ChatGPT Plus/Pro",
+    "price_tier": "betald",
+    "rating": 4.7,
+    "gdpr": "dpa",
+    "gdpr_note": "Samma DPA som övriga OpenAI-tjänster på företagsplan.",
+    "swedish": "delvis",
+    "swedish_note": "Prompta på engelska för bästa resultat.",
+    "tags": [
+      "Video",
+      "OpenAI",
+      "Generativ"
+    ],
+    "icon_emoji": "🎥",
+    "icon_bg_color": "bg-purple-600",
+    "url": "https://openai.com/sora/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "maklare"
+    ]
+  },
+  {
+    "id": 57,
+    "slug": "suno-ai",
+    "name": "Suno AI",
+    "category": "ljud",
+    "description": "Suno AI är en banbrytande AI-tjänst som kan skapa realistisk musik, kompletta med sång och instrument, baserat på en enkel textprompt. Användare kan specificera genre, stil och text för att generera unika låtar på sekunder.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.4,
+    "gdpr": "oklart",
+    "gdpr_note": "Upphovsrättsläget för genererad musik är fortfarande oprövat i EU.",
+    "swedish": "bra",
+    "swedish_note": "Genererar sång på svenska med begripligt uttal.",
+    "tags": [
+      "musikgenerering",
+      "AI-låtar",
+      "text-till-musik"
+    ],
+    "icon_emoji": "🎵",
+    "icon_bg_color": "#FFD700",
+    "url": "https://suno.com/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 58,
+    "slug": "synthesia",
+    "name": "Synthesia",
+    "category": "video",
+    "description": "Skapa professionella AI-videor från text med realistiska avatarer. Stöd för över 120 språk inklusive svenska. Bra för internutbildning och säljvideor.",
+    "pricing": "Från 29 USD/mån",
+    "price_tier": "betald",
+    "rating": 4.5,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Brittiskt bolag med EU-datalagring, DPA och ISO 27001.",
+    "swedish": "bra",
+    "swedish_note": "Avatarer talar svenska med god prosodi – används för internutbildning.",
+    "tags": [
+      "Video",
+      "Avatar",
+      "Utbildning"
+    ],
+    "icon_emoji": "🎥",
+    "icon_bg_color": "bg-purple-100",
+    "url": "https://www.synthesia.io/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "hr",
+      "fastighetsforvaltare"
+    ]
+  },
+  {
+    "id": 59,
+    "slug": "tavus",
+    "name": "Tavus",
+    "category": "video",
+    "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
+    "pricing": "Freemium / från 89 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.2,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA för Enterprise. Videoavatarer av verkliga personer kräver samtycke enligt GDPR.",
+    "swedish": "delvis",
+    "swedish_note": "Svenska stöds men är inte huvudspråket.",
+    "tags": [
+      "video",
+      "marknadsföring",
+      "sälj",
+      "AI-avatar",
+      "generativ-AI",
+      "personalisering"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://www.tavus.io/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 60,
+    "slug": "tome",
+    "name": "Tome",
+    "category": "bild",
+    "description": "Generativ AI för presentationer och storytelling. Skriv en prompt och Tome genererar en hel presentation med text, bilder och layout på sekunder.",
+    "pricing": "Freemium",
+    "price_tier": "freemium",
+    "rating": 4.0,
+    "gdpr": "oklart",
+    "gdpr_note": "Har svängt om produktfokus mot säljmaterial – kontrollera villkoren.",
+    "swedish": "delvis",
+    "swedish_note": "Fungerar på svenska med varierande kvalitet.",
+    "tags": [
+      "design",
+      "presentation",
+      "storytelling",
+      "pitch"
+    ],
+    "icon_emoji": "📖",
+    "icon_bg_color": "bg-purple-800",
+    "url": "https://tome.app/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 61,
+    "slug": "v0-by-vercel",
+    "name": "v0 by Vercel",
+    "category": "kod",
+    "description": "Generativt UI-verktyg från Vercel. Beskriv hur du vill att ett gränssnitt ska se ut, och V0 genererar produktionsklar React/Tailwind-kod direkt i webbläsaren.",
+    "pricing": "Gratis / från 20 USD/mån",
+    "price_tier": "freemium",
+    "rating": 4.5,
+    "gdpr": "dpa",
+    "gdpr_note": "Vercels DPA gäller.",
+    "swedish": "delvis",
+    "swedish_note": "Prompta på engelska, generera svensk UI-text separat.",
+    "tags": [
+      "UI",
+      "React",
+      "Tailwind",
+      "Design"
+    ],
+    "icon_emoji": "📐",
+    "icon_bg_color": "bg-zinc-900",
+    "url": "https://v0.app/",
+    "affiliate": false,
+    "featured": false,
+    "roles": []
+  },
+  {
+    "id": 62,
+    "slug": "visma-compact-ai",
+    "name": "Visma Compact AI",
+    "category": "juridik",
+    "description": "AI-funktioner i Vismas redovisningsprogram – specifikt byggt för svenska SME. Datalagring i Sverige. Bokföring, fakturor och lönehantering med AI-stöd.",
+    "pricing": "Från 399 kr/mån",
+    "price_tier": "betald",
+    "rating": 4.2,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Nordisk leverantör med data inom EU.",
+    "swedish": "bra",
+    "swedish_note": "Helt svenskt, byggt för svenska regelverk.",
+    "tags": [
+      "Bokföring",
+      "Fakturaläsning",
+      "SV-data"
+    ],
+    "icon_emoji": "⚖️",
+    "icon_bg_color": "bg-teal-100",
+    "url": "https://www.visma.se/",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "ekonomi",
+      "hr"
+    ]
+  },
+  {
+    "id": 63,
+    "slug": "zapier",
+    "name": "Zapier",
+    "category": "affar",
+    "description": "Limmet mellan era system. Kopplar ihop 7 000+ tjänster och kan numera köra AI-steg direkt i flödet – t.ex. sammanfatta ett inkommande mejl och lägga upp ett ärende automatiskt.",
+    "pricing": "Freemium (från 20 USD/mån)",
+    "price_tier": "freemium",
+    "rating": 4.6,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "DPA och EU-datalagring valbar.",
+    "swedish": "bra",
+    "swedish_note": "Kopplar ihop svenska system som Fortnox och Visma via API.",
+    "tags": [
+      "Automation",
+      "Integration",
+      "No-code"
+    ],
+    "icon_emoji": "⚡",
+    "icon_bg_color": "bg-blue-100",
+    "url": "https://zapier.com/",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "ekonomi",
+      "hr",
+      "fastighetsforvaltare",
+      "maklare"
+    ]
+  },
+  {
+    "id": 64,
+    "slug": "zapier-central",
+    "name": "Zapier Central",
+    "category": "affar",
+    "description": "Experimentell AI-arbetsyta från Zapier där du kan lära botar att utföra uppgifter över 6000+ appar via chatt. Som ChatGPT, men med direkt åtkomst till hela din mjukvarustack.",
+    "pricing": "Ingår i Zapier-plan",
+    "price_tier": "freemium",
+    "rating": 4.2,
+    "gdpr": "gdpr_klar",
+    "gdpr_note": "Samma avtal som Zapier i övrigt.",
+    "swedish": "bra",
+    "swedish_note": "Instruera agenterna på svenska.",
+    "tags": [
+      "automation",
+      "AI-agent",
+      "integration",
+      "arbetsflöden",
+      "produktivitet"
+    ],
+    "icon_emoji": "🤖",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://zapier.com/agents",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "ekonomi",
+      "hr"
+    ]
+  }
 ]

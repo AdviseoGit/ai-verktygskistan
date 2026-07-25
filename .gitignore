@@ -2,3 +2,7 @@
 __pycache__/
 *.pyc
 tools.db
+
+# Runtime-data som skrivs av appen – ska inte versionshanteras
+data_moat_calc.csv
+ai_data.db
