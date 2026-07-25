@@ -96,3 +96,19 @@ alla sidor, tools.json, schema.json, llms.txt och ai-ordlista-faq.json.
 `validate_catalog.py`, `build_stacks.py`, `build_sitemap.py` – kör alla tre
 efter varje katalogändring. Rotens tools.json borttagen (låg ur synk med
 static/tools.json, 87 vs 75 poster).
+
+### Rensning av repo-roten
+92 engångsskript borttagna (`add_tools_*.py`, `add_mobile_nav_*.sh`,
+`update_nav_lar_v{2,3,4}`, `add_progress_log_*` m.fl.). Flera hade hårdkodade
+sökvägar till `/data/workspace` och gick inte att köra alls. `ai_data.db`
+(0 bytes, inga referenser) borttagen. `data_moat_calc.csv` och `tools.db`
+avspårade och lagda i .gitignore – de skrivs av appen i drift och innehöll
+inskickade uppgifter.
+
+`add_tool.py` skrevs om: den skrev tidigare till SQLite-tabellen `tools` med
+det gamla schemat, medan sajten läser `static/tools.json`. Ett verktyg som lades
+till med den gamla versionen syntes alltså aldrig på sajten. Nya versionen
+skriver till katalogfilen, validerar värdena mot schemat och vägrar dubbletter.
+
+Kvar i roten: main.py, models.py, database.py, mailer.py, report_aiv.py,
+seed.py, add_tool.py, validate_catalog.py, build_stacks.py, build_sitemap.py.

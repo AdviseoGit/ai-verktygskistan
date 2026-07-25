@@ -70,7 +70,32 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 - index.html innehåller hårdkodade modellnamn i hero-sektionen och
   jämförelsetabellen – dessa måste uppdateras manuellt vid stora modellsläpp.
 
-### 6a. Obligatoriskt efter ändring i katalogen
+### 6a. Skript i repo-roten – hela listan
+Roten innehöll tidigare ~100 engångsskript (`add_tools_20260719k.py`,
+`update_nav_lar_v4.py` och liknande), många med hårdkodade sökvägar till
+`/data/workspace`. De är borttagna. **Skapa inte nya engångsskript i roten** –
+ändra filerna direkt eller lägg till en flagga i ett befintligt byggskript.
+
+Aktiva filer, och inget annat:
+
+| Fil | Roll |
+|-----|------|
+| `main.py` | FastAPI-appen: routing, lead- och nyhetsbrevs-API |
+| `models.py` / `database.py` | SQLAlchemy-modeller och session |
+| `mailer.py` / `report_aiv.py` | E-postutskick och PDF-generering |
+| `add_tool.py` | Lägg till ett verktyg i katalogen enligt schemat |
+| `validate_catalog.py` | Spärr mot att katalogschemat spretar |
+| `build_stacks.py` | Genererar rollsidorna från stacks.json |
+| `build_sitemap.py` | Genererar sitemapen från static/*.html |
+| `seed.py` | Seedar SQLite-tabellen `tools` – se varningen nedan |
+
+**Varning om seed.py och /api/tools:** tabellen `tools` och endpointen
+`/api/tools` läses inte av någon sida. Frontend hämtar `static/tools.json`.
+Innehållet i `seed.py` är dessutom utdaterat (nämner GPT-4o). Antingen ta bort
+tabellen, endpointen och seed.py, eller koppla dem till katalogen – men lita
+inte på dem som datakälla i nuläget.
+
+### 6b. Obligatoriskt efter ändring i katalogen
 Kör alltid dessa tre i ordning innan commit:
 
 ```bash
@@ -86,7 +111,7 @@ sträng. Effekten var att hela verktygsgriden var borta från index.html,
 ai-verktyg.html och ai-program.html – utan att något syntes i loggarna.
 Redigera aldrig katalogen utan att köra validatorn.
 
-### 6b. Kanoniskt schema för ett verktyg
+### 6c. Kanoniskt schema för ett verktyg
 Kategorier: `text, bild, video, ljud, kod, affar, marknadsforing, juridik,
 produktivitet, sok`. GDPR: `gdpr_klar, dpa, lokal, oklart, varning`.
 Svenska: `bra, delvis, svagt`. Pris: `gratis, freemium, betald`.
