@@ -66,22 +66,6 @@
         "icon_bg_color": "bg-pink-100"
     },
     {
-        "id": 24,
-        "name": "Beautiful.ai",
-        "category": "design",
-        "description": "Skapar fantastiska presentationer på nolltid. AI designar slides automatiskt baserat på ditt innehåll och dina uppmaningar. En dröm för alla som avskyr PowerPoint.",
-        "pricing": "12 USD/mån",
-        "rating": 8.6,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Presentationer",
-            "Design",
-            "Slides"
-        ],
-        "icon_emoji": "📊",
-        "icon_bg_color": "bg-pink-100"
-    },
-    {
         "id": 69,
         "name": "Canva Magic Studio",
         "category": "design",
@@ -150,7 +134,7 @@
     },
     {
         "id": 14,
-        "name": "Claude Opus 4.8",
+        "name": "Claude 3 Opus",
         "category": "text",
         "description": "Anthropics flaggskeppsmodell för extrem precision, strategiskt tänkande och komplex kodarkitektur. Överlägsen \"context window\" och minimala hallucinationer.",
         "pricing": "Prenumeration / API",
@@ -167,7 +151,7 @@
     },
     {
         "id": 38,
-        "name": "Claude Sonnet 4.5",
+        "name": "Claude 3.5 Sonnet",
         "category": "text",
         "description": "Anthropics extremt snabba och kapabla modell. Perfekt balans mellan hastighet och intelligens. Utmärkt för kodning, textgenerering och analys av långa dokument.",
         "pricing": "Gratis / $20/mån",
@@ -198,22 +182,6 @@
         "icon_bg_color": "bg-orange-100"
     },
     {
-        "id": 22,
-        "name": "Copy.ai",
-        "category": "text",
-        "description": "Skapad specifikt för marknadsförare och säljare. Genererar blogginlägg, annonstexter och e-postkampanjer snabbt och effektivt. Har arbetsflödesfunktioner för team.",
-        "pricing": "Freemium (från 36 USD/mån)",
-        "rating": 8.5,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Marknadsföring",
-            "Copywriting",
-            "Sälj"
-        ],
-        "icon_emoji": "✍️",
-        "icon_bg_color": "bg-orange-100"
-    },
-    {
         "id": 27,
         "name": "Cursor",
         "category": "kod & dev",
@@ -229,23 +197,6 @@
         ],
         "icon_emoji": "⚡",
         "icon_bg_color": "bg-slate-800"
-    },
-    {
-        "id": 46,
-        "name": "Cursor",
-        "category": "kod & dev",
-        "description": "En AI-first kodredigerare (fork av VS Code) med inbyggd Claude 3.5 Sonnet för utvecklare.",
-        "pricing": "Freemium ($20/mån)",
-        "rating": 4.9,
-        "gdpr_status": "OK (Privacy mode)",
-        "tags": [
-            "kodning",
-            "ide",
-            "vscode",
-            "ai"
-        ],
-        "icon_emoji": "💻",
-        "icon_bg_color": "bg-blue-600"
     },
     {
         "id": 26,
@@ -349,22 +300,6 @@
     },
     {
         "id": 18,
-        "name": "Fireflies.ai",
-        "category": "ljud",
-        "description": "AI-antecknare som spelar in, transkriberar och sammanfattar dina möten (Zoom, Teams, Meet). Kan extrahera action items och söka genom tidigare möteshistorik.",
-        "pricing": "Freemium (från 10 USD/mån)",
-        "rating": 8.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Möten",
-            "Transkribering",
-            "Sammanfattning"
-        ],
-        "icon_emoji": "🔥",
-        "icon_bg_color": "bg-purple-100"
-    },
-    {
-        "id": 23,
         "name": "Fireflies.ai",
         "category": "ljud",
         "description": "AI-antecknare som spelar in, transkriberar och sammanfattar dina möten (Zoom, Teams, Meet). Kan extrahera action items och söka genom tidigare möteshistorik.",
@@ -500,22 +435,6 @@
     },
     {
         "id": 16,
-        "name": "Grammarly",
-        "category": "text",
-        "description": "Grammarlys AI-assistent hjälper dig inte bara med stavning utan skriver om meningar, anpassar tonfall och genererar text. Mycket populärt och användarvänligt.",
-        "pricing": "Freemium (från 12 USD/mån)",
-        "rating": 8.7,
-        "gdpr_status": "Varning",
-        "tags": [
-            "Rättstavning",
-            "Skrivande",
-            "Engelska"
-        ],
-        "icon_emoji": "📝",
-        "icon_bg_color": "bg-green-100"
-    },
-    {
-        "id": 21,
         "name": "Grammarly",
         "category": "text",
         "description": "Grammarlys AI-assistent hjälper dig inte bara med stavning utan skriver om meningar, anpassar tonfall och genererar text. Mycket populärt och användarvänligt.",
@@ -1090,23 +1009,6 @@
         "icon_bg_color": "bg-purple-100"
     },
     {
-        "id": 54,
-        "name": "Synthesia",
-        "category": "video",
-        "description": "Ledande plattform för AI-avatarer. Skapa professionella utbildnings- och marknadsföringsvideor genom att bara skriva text. Stödjer över 120 språk.",
-        "pricing": "Från $22/mån",
-        "rating": 4.8,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "video",
-            "avatar",
-            "utbildning",
-            "presentation"
-        ],
-        "icon_emoji": "👤",
-        "icon_bg_color": "bg-blue-500"
-    },
-    {
         "id": 70,
         "name": "Tome",
         "category": "design",
@@ -1173,39 +1075,6 @@
         "icon_bg_color": "bg-blue-100"
     },
     {
-        "id": 20,
-        "name": "Zapier AI",
-        "category": "affar",
-        "description": "Automatisera arbetsflöden med AI. Zapier kopplar ihop dina appar och låter AI bygga dina automatiseringar. Kraftfullt för att spara tid och minska manuellt arbete.",
-        "pricing": "Freemium (från 20 USD/mån)",
-        "rating": 8.9,
-        "gdpr_status": "GDPR-klar",
-        "tags": [
-            "Automatisering",
-            "Integrationer",
-            "Produktivitet"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-blue-100"
-    },
-    {
-        "id": 45,
-        "name": "v0 by Vercel",
-        "category": "kod & dev",
-        "description": "Generativ UI-designer som bygger React/Tailwind-komponenter från textpromptar.",
-        "pricing": "Kräver konto, gratis nivå",
-        "rating": 4.8,
-        "gdpr_status": "Varning",
-        "tags": [
-            "frontend",
-            "kodning",
-            "react",
-            "tailwind"
-        ],
-        "icon_emoji": "⚡",
-        "icon_bg_color": "bg-slate-800"
-    },
-    {
         "id": "tavus",
         "name": "Tavus",
         "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
@@ -1223,119 +1092,6 @@
         "rating": 4.6,
         "isGDPRCompliant": true,
         "gdprNote": "Erbjuder DPA och GDPR-compliance för företagskunder. Data krypteras i vila och under överföring."
-    },
-    {
-        "id": "heygen",
-        "name": "HeyGen",
-        "description": "Kraftfull plattform för AI-avatarer och videoskapande. Skapa professionella videor med fotorealistiska avatarer och röster på över 40 språk utan kamera eller studio.",
-        "category": "Video",
-        "price": "Freemium / Från $29/mån",
-        "url": "https://www.heygen.com/",
-        "tags": [
-            "video",
-            "AI-avatar",
-            "generativ-AI",
-            "text-till-video",
-            "röstkloning",
-            "översättning"
-        ],
-        "rating": 4.8,
-        "isGDPRCompliant": true,
-        "gdprNote": "HeyGen är GDPR-kompatibla och erbjuder ett Data Processing Agreement (DPA) för europeiska kunder."
-    },
-    {
-        "id": "fireflies",
-        "name": "Fireflies.ai",
-        "description": "AI-assistent för möten som automatiskt spelar in, transkriberar, och sammanfattar videomöten (Teams, Zoom, Google Meet). Genererar action items och gör möten sökbara.",
-        "category": "Produktivitet",
-        "price": "Freemium / Från $10/mån",
-        "url": "https://fireflies.ai/",
-        "tags": [
-            "möten",
-            "transkribering",
-            "sammanfattning",
-            "produktivitet",
-            "team",
-            "integration"
-        ],
-        "rating": 4.7,
-        "isGDPRCompliant": true,
-        "gdprNote": "GDPR-kompatibla med servrar i USA (AWS). EU-baserade företag kan begära DPA och specifik datalagring."
-    },
-    {
-        "id": "zapier-central",
-        "name": "Zapier Central",
-        "description": "Experimentell AI-arbetsyta från Zapier där du kan lära botar att utföra uppgifter över 6000+ appar via chatt. Som ChatGPT, men med direkt åtkomst till hela din mjukvarustack.",
-        "category": "Automation",
-        "price": "Gratis under beta / Ingår i Zapier",
-        "url": "https://zapier.com/central",
-        "tags": [
-            "automation",
-            "AI-agent",
-            "integration",
-            "arbetsflöden",
-            "produktivitet"
-        ],
-        "rating": 4.5,
-        "isGDPRCompliant": true,
-        "gdprNote": "Följer Zapiers övergripande GDPR-policy med DPA tillgängligt för företag."
-    },
-    {
-        "id": "tavus",
-        "name": "Tavus",
-        "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
-        "category": "Video",
-        "price": "Freemium / Från $89/mån",
-        "url": "https://www.tavus.io/",
-        "tags": [
-            "video",
-            "marknadsföring",
-            "sälj",
-            "AI-avatar",
-            "generativ-AI",
-            "personalisering"
-        ],
-        "rating": 4.6,
-        "isGDPRCompliant": true,
-        "gdprNote": "Erbjuder DPA och GDPR-compliance för företagskunder. Data krypteras i vila och under överföring."
-    },
-    {
-        "id": "heygen",
-        "name": "HeyGen",
-        "description": "Kraftfull plattform för AI-avatarer och videoskapande. Skapa professionella videor med fotorealistiska avatarer och röster på över 40 språk utan kamera eller studio.",
-        "category": "Video",
-        "price": "Freemium / Från $29/mån",
-        "url": "https://www.heygen.com/",
-        "tags": [
-            "video",
-            "AI-avatar",
-            "generativ-AI",
-            "text-till-video",
-            "röstkloning",
-            "översättning"
-        ],
-        "rating": 4.8,
-        "isGDPRCompliant": true,
-        "gdprNote": "HeyGen är GDPR-kompatibla och erbjuder ett Data Processing Agreement (DPA) för europeiska kunder."
-    },
-    {
-        "id": "fireflies",
-        "name": "Fireflies.ai",
-        "description": "AI-assistent för möten som automatiskt spelar in, transkriberar, och sammanfattar videomöten (Teams, Zoom, Google Meet). Genererar action items och gör möten sökbara.",
-        "category": "Produktivitet",
-        "price": "Freemium / Från $10/mån",
-        "url": "https://fireflies.ai/",
-        "tags": [
-            "möten",
-            "transkribering",
-            "sammanfattning",
-            "produktivitet",
-            "team",
-            "integration"
-        ],
-        "rating": 4.7,
-        "isGDPRCompliant": true,
-        "gdprNote": "GDPR-kompatibla med servrar i USA (AWS). EU-baserade företag kan begära DPA och specifik datalagring."
     },
     {
         "id": "zapier-central",
@@ -1393,24 +1149,6 @@
         "rating": 4.9,
         "isGDPRCompliant": true,
         "gdprNote": "SOC 2 Type II-certifierade och GDPR-kompatibla. Erbjuder DPA."
-    },
-    {
-        "id": "11labs-reader",
-        "name": "ElevenLabs Reader App",
-        "description": "ElevenLabs officiella app för iOS/Android. Förvandlar artiklar, PDF:er, e-böcker eller e-post till högkvalitativa ljudböcker med världens bästa AI-röster.",
-        "category": "Ljud",
-        "price": "Gratis",
-        "url": "https://elevenlabs.io/text-to-speech",
-        "tags": [
-            "ljudbok",
-            "text-till-tal",
-            "app",
-            "konsument",
-            "tillgänglighet"
-        ],
-        "rating": 4.7,
-        "isGDPRCompliant": true,
-        "gdprNote": "Följer ElevenLabs standard för dataskydd. Konsumentinriktad, läser lokala filer och webblänkar."
     },
     {
         "id": "pika-art",
@@ -1473,89 +1211,37 @@
         "icon_emoji": "🗣️"
     },
     {
-        "name": "Ideogram 2.0",
+        "id": "flux-1",
+        "name": "Flux.1",
         "category": "bild",
-        "description": "Avancerad AI-bildgenerator känd för att vara exceptionellt bra på att rendera text och typografi inuti bilder (vilket Midjourney ofta har svårt med). Släppte precis version 2.0 som klår konkurrenterna på fotorealism och text-rendering.",
-        "url": "https://ideogram.ai/",
-        "pricing": "Freemium",
-        "gdpr_status": "Oklart",
-        "tags": "bildgenerering, text-i-bild, typografi, ai bild",
-        "rating": "9.2",
-        "icon_emoji": "🎨"
+        "description": "Den nya kungen av open-source bildgenerering från Black Forest Labs. Flux.1 utmanar Midjourney och DALL-E 3 på fotorealism och förmåga att rendera text, och går att köra lokalt eller via API.",
+        "pricing": "Open Source / API",
+        "rating": 4.9,
+        "gdpr_status": "Lokal körning (GDPR-säker)",
+        "tags": [
+            "bild",
+            "open-source",
+            "fotorealism",
+            "text-rendering"
+        ],
+        "icon_emoji": "🎨",
+        "icon_bg_color": "bg-slate-900"
     },
     {
-        "id": "tavus",
-        "name": "Tavus",
-        "description": "Programmatisk videogenerering med AI. Skapa personliga videokampanjer i stor skala genom att spela in en basvideo och låta AI anpassa namn, företag och röst till varje mottagare.",
-        "category": "Video",
-        "price": "Freemium / Från $89/mån",
-        "url": "https://www.tavus.io/",
-        "tags": [
-            "video",
-            "marknadsföring",
-            "sälj",
-            "AI-avatar",
-            "generativ-AI",
-            "personalisering"
-        ],
-        "rating": 4.6,
-        "isGDPRCompliant": true,
-        "gdprNote": "Erbjuder DPA och GDPR-compliance för företagskunder. Data krypteras i vila och under överföring."
-    },
-    {
-        "id": "heygen",
-        "name": "HeyGen",
-        "description": "Kraftfull plattform för AI-avatarer och videoskapande. Skapa professionella videor med fotorealistiska avatarer och röster på över 40 språk utan kamera eller studio.",
-        "category": "Video",
-        "price": "Freemium / Från $29/mån",
-        "url": "https://www.heygen.com/",
-        "tags": [
-            "video",
-            "AI-avatar",
-            "generativ-AI",
-            "text-till-video",
-            "röstkloning",
-            "översättning"
-        ],
-        "rating": 4.8,
-        "isGDPRCompliant": true,
-        "gdprNote": "HeyGen är GDPR-kompatibla och erbjuder ett Data Processing Agreement (DPA) för europeiska kunder."
-    },
-    {
-        "id": "fireflies",
-        "name": "Fireflies.ai",
-        "description": "AI-assistent för möten som automatiskt spelar in, transkriberar, och sammanfattar videomöten (Teams, Zoom, Google Meet). Genererar action items och gör möten sökbara.",
-        "category": "Produktivitet",
-        "price": "Freemium / Från $10/mån",
-        "url": "https://fireflies.ai/",
-        "tags": [
-            "möten",
-            "transkribering",
-            "sammanfattning",
-            "produktivitet",
-            "team",
-            "integration"
-        ],
+        "id": "grok-2",
+        "name": "Grok 2",
+        "category": "text",
+        "description": "xAI:s senaste flaggskeppsmodell som integrerar avancerad resonemangsförmåga med realtidsdata från X (Twitter). En stark utmanare till GPT-4o med en obegränsad, okonventionell ton.",
+        "pricing": "Kräver X Premium",
         "rating": 4.7,
-        "isGDPRCompliant": true,
-        "gdprNote": "GDPR-kompatibla med servrar i USA (AWS). EU-baserade företag kan begära DPA och specifik datalagring."
-    },
-    {
-        "id": "zapier-central",
-        "name": "Zapier Central",
-        "description": "Experimentell AI-arbetsyta från Zapier där du kan lära botar att utföra uppgifter över 6000+ appar via chatt. Som ChatGPT, men med direkt åtkomst till hela din mjukvarustack.",
-        "category": "Automation",
-        "price": "Gratis under beta / Ingår i Zapier",
-        "url": "https://zapier.com/central",
+        "gdpr_status": "Oklart",
         "tags": [
-            "automation",
-            "AI-agent",
-            "integration",
-            "arbetsflöden",
-            "produktivitet"
+            "llm",
+            "realtidsdata",
+            "xai",
+            "grok"
         ],
-        "rating": 4.5,
-        "isGDPRCompliant": true,
-        "gdprNote": "Följer Zapiers övergripande GDPR-policy med DPA tillgängligt för företag."
+        "icon_emoji": "🛸",
+        "icon_bg_color": "bg-black"
     }
 ]

@@ -1,3 +1,4 @@
+2026-07-25 | DATA/TILLVÄXT | Utökade katalogen med Flux.1, Grok 2 och Napkin AI + rensade 20 dubbletter | Katalog dedup + 3 nya, stärkt datamoat | nästa: Optimera leadflow eller bygga API-struktur
 2026-07-24 | DATA | Inspekterade indexeringsstatus och uppdaterade sitemap <lastmod> | Indexeringskön hanterad | nästa: Optimera leadflow eller verktyg
 2026-07-24 | TEKNIK | Fixade menybloat och 404 från Cloudflares e-postobfuskering | QA: 0 HARD-fynd | nästa: Optimera leadflow eller verktyg
 2026-07-24 | TILLVÄXT/DATA | Lade till Framer AI i katalogen (utökar kod/marknadsföring intent) | Katalog +1 | nästa: Bygga ny SEO-sida eller kalkylator
