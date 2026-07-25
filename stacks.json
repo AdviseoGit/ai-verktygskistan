@@ -92,7 +92,7 @@
       "meta": "AI-verktyg för HR-avdelningen: rekrytering, onboarding, utbildning och policyarbete. Med genomgång av EU AI Act, GDPR och vad som faktiskt är tillåtet.",
       "emoji": "👥",
       "intro": "HR är det område där AI ger mest nytta och samtidigt har hårdast regler. Rekrytering klassas som högrisk under EU AI Act, och beslut som rör anställda faller under GDPR:s striktaste bestämmelser. Den här stacken är därför byggd med tyngdpunkt på det som är oproblematiskt – internt material, utbildning och kommunikation – och med tydliga varningar där det inte är det.",
-      "warning": "AI-stödd rekrytering är ett högrisksystem enligt EU AI Act och kräver konsekvensbedömning (DPIA), mänsklig granskning av varje beslut och information till de sökande. Helt automatiserade avslag utan mänskligt övervägande är förbjudna enligt GDPR art. 22. Screena aldrig kandidater i ett verktyg utan personuppgiftsbiträdesavtal.",
+      "warning": "AI-stödd rekrytering klassas som högrisk enligt EU AI Act, men de skyldigheterna är framflyttade till 2 december 2027 genom Digital Omnibus. Det ändrar inget i praktiken för er: kraven på konsekvensbedömning (DPIA), mänsklig granskning av varje beslut och information till de sökande följer av GDPR och gäller redan. Helt automatiserade avslag utan mänskligt övervägande är förbjudna enligt artikel 22. Screena aldrig kandidater i ett verktyg utan personuppgiftsbiträdesavtal. Sedan 2 februari 2025 gäller dessutom kravet på AI-kunnighet hos personal som använder AI – oavsett risknivå.",
       "workflow": [
         {
           "step": "Annonser och kravprofiler",
@@ -114,7 +114,7 @@
       "faq": [
         {
           "q": "Får vi använda AI för att gallra bland CV:n?",
-          "a": "Bara med betydande försiktighet. Rekrytering är ett högrisksystem under EU AI Act, vilket innebär krav på konsekvensbedömning, dokumentation och mänsklig granskning. Ett helt automatiserat avslag är dessutom förbjudet enligt GDPR art. 22. AI får hjälpa dig sortera och sammanfatta – den får inte fatta beslutet."
+          "a": "Bara med betydande försiktighet. Rekrytering är klassat som högrisk under EU AI Act; de skyldigheterna börjar gälla 2 december 2027 efter framflyttningen genom Digital Omnibus. Men GDPR gäller redan: konsekvensbedömning, dokumentation och mänsklig granskning krävs nu, och ett helt automatiserat avslag är förbjudet enligt artikel 22. AI får hjälpa dig sortera och sammanfatta – den får inte fatta beslutet."
         },
         {
           "q": "Måste vi berätta för anställda att vi använder AI?",
