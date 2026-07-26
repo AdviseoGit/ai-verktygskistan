@@ -1,3 +1,4 @@
+2026-07-26 | TILLVÄXT/DATA | Lade till Claude 3.5 Sonnet, Midjourney v6 och Magnific AI, byggde om stacks-sidorna med AI-transparens | Katalog 64->67, 7 nya stacksidor | nästa: Fixa nyhetsbrev-flow eller lägg in fler verktyg
 2026-07-25 | DATA/TILLVÄXT | Utökade katalogen med Flux.1, Grok 2 och Napkin AI + rensade 20 dubbletter | Katalog dedup + 3 nya, stärkt datamoat | nästa: Optimera leadflow eller bygga API-struktur
 2026-07-24 | DATA | Inspekterade indexeringsstatus och uppdaterade sitemap <lastmod> | Indexeringskön hanterad | nästa: Optimera leadflow eller verktyg
 2026-07-24 | TEKNIK | Fixade menybloat och 404 från Cloudflares e-postobfuskering | QA: 0 HARD-fynd | nästa: Optimera leadflow eller verktyg

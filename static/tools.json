@@ -172,6 +172,37 @@
   },
   {
     "id": 7,
+    "slug": "claude-3-5-sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "category": "text",
+    "description": "Anthropics starkaste modell hittills. Överlägsen ChatGPT på kodning och nyanserad svensk text. Det bästa allround-valet just nu för de flesta arbetsuppgifter.",
+    "pricing": "Freemium (Pro för 0/mån)",
+    "price_tier": "freemium",
+    "rating": 4.9,
+    "gdpr": "dpa",
+    "gdpr_note": "DPA finns på betalplan (Team). Varning för dataanvändning i gratisversionen.",
+    "swedish": "bra",
+    "swedish_note": "Skriver en mycket naturlig och nyanserad svenska, mindre styltig än ChatGPT.",
+    "tags": [
+      "LLM",
+      "Text",
+      "Kod"
+    ],
+    "icon_emoji": "🧠",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://claude.ai",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "copywriter",
+      "hr",
+      "maklare",
+      "ekonomi",
+      "juridik"
+    ]
+  },
+  {
+    "id": 8,
     "slug": "claude-fable-5",
     "name": "Claude Fable 5",
     "category": "text",
@@ -202,7 +233,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "slug": "clay",
     "name": "Clay",
     "category": "marknadsforing",
@@ -233,7 +264,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 10,
     "slug": "copy-ai",
     "name": "Copy.ai",
     "category": "marknadsforing",
@@ -260,7 +291,7 @@
     ]
   },
   {
-    "id": 10,
+    "id": 11,
     "slug": "cursor",
     "name": "Cursor",
     "category": "kod",
@@ -286,7 +317,7 @@
     "roles": []
   },
   {
-    "id": 11,
+    "id": 12,
     "slug": "descript",
     "name": "Descript",
     "category": "video",
@@ -314,7 +345,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "slug": "devin",
     "name": "Devin",
     "category": "kod",
@@ -339,7 +370,7 @@
     "roles": []
   },
   {
-    "id": 13,
+    "id": 14,
     "slug": "elevenlabs",
     "name": "ElevenLabs",
     "category": "ljud",
@@ -367,7 +398,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 15,
     "slug": "elevenlabs-reader",
     "name": "ElevenLabs Reader",
     "category": "ljud",
@@ -393,7 +424,7 @@
     "roles": []
   },
   {
-    "id": 15,
+    "id": 16,
     "slug": "figma-ai",
     "name": "Figma AI",
     "category": "bild",
@@ -419,7 +450,7 @@
     "roles": []
   },
   {
-    "id": 16,
+    "id": 17,
     "slug": "fireflies-ai",
     "name": "Fireflies.ai",
     "category": "produktivitet",
@@ -448,7 +479,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 18,
     "slug": "flux-1",
     "name": "Flux.1",
     "category": "bild",
@@ -474,7 +505,7 @@
     "roles": []
   },
   {
-    "id": 18,
+    "id": 19,
     "slug": "gamma",
     "name": "Gamma",
     "category": "bild",
@@ -503,7 +534,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 20,
     "slug": "gemini-3-1-pro",
     "name": "Gemini 3.1 Pro",
     "category": "text",
@@ -532,7 +563,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 21,
     "slug": "github-copilot",
     "name": "GitHub Copilot",
     "category": "kod",
@@ -557,7 +588,7 @@
     "roles": []
   },
   {
-    "id": 21,
+    "id": 22,
     "slug": "glean",
     "name": "Glean",
     "category": "produktivitet",
@@ -585,7 +616,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 23,
     "slug": "google-videofx",
     "name": "Google VideoFX",
     "category": "video",
@@ -612,7 +643,7 @@
     "roles": []
   },
   {
-    "id": 23,
+    "id": 24,
     "slug": "grammarly",
     "name": "Grammarly",
     "category": "text",
@@ -639,7 +670,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 25,
     "slug": "grok-2",
     "name": "Grok 2",
     "category": "text",
@@ -665,7 +696,7 @@
     "roles": []
   },
   {
-    "id": 25,
+    "id": 26,
     "slug": "groq",
     "name": "Groq",
     "category": "kod",
@@ -691,7 +722,7 @@
     "roles": []
   },
   {
-    "id": 26,
+    "id": 27,
     "slug": "guidde",
     "name": "Guidde",
     "category": "produktivitet",
@@ -722,7 +753,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 28,
     "slug": "harvey",
     "name": "Harvey",
     "category": "juridik",
@@ -749,7 +780,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 29,
     "slug": "hedra",
     "name": "Hedra",
     "category": "video",
@@ -775,7 +806,7 @@
     "roles": []
   },
   {
-    "id": 29,
+    "id": 30,
     "slug": "heygen",
     "name": "HeyGen",
     "category": "video",
@@ -805,7 +836,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 31,
     "slug": "hubspot-ai",
     "name": "HubSpot AI",
     "category": "affar",
@@ -833,7 +864,7 @@
     ]
   },
   {
-    "id": 31,
+    "id": 32,
     "slug": "hugging-face-chat",
     "name": "Hugging Face Chat",
     "category": "text",
@@ -859,7 +890,7 @@
     "roles": []
   },
   {
-    "id": 32,
+    "id": 33,
     "slug": "ideogram",
     "name": "Ideogram",
     "category": "bild",
@@ -885,7 +916,7 @@
     "roles": []
   },
   {
-    "id": 33,
+    "id": 34,
     "slug": "jasper-ai",
     "name": "Jasper AI",
     "category": "marknadsforing",
@@ -912,7 +943,7 @@
     ]
   },
   {
-    "id": 34,
+    "id": 35,
     "slug": "kling-3-0",
     "name": "Kling 3.0",
     "category": "video",
@@ -938,7 +969,7 @@
     "roles": []
   },
   {
-    "id": 35,
+    "id": 36,
     "slug": "krea-ai",
     "name": "Krea AI",
     "category": "bild",
@@ -963,7 +994,7 @@
     "roles": []
   },
   {
-    "id": 36,
+    "id": 37,
     "slug": "leonardo-ai",
     "name": "Leonardo AI",
     "category": "bild",
@@ -989,7 +1020,7 @@
     "roles": []
   },
   {
-    "id": 37,
+    "id": 38,
     "slug": "lexion",
     "name": "Lexion",
     "category": "juridik",
@@ -1016,7 +1047,7 @@
     ]
   },
   {
-    "id": 38,
+    "id": 39,
     "slug": "llama-4",
     "name": "Llama 4",
     "category": "text",
@@ -1041,7 +1072,7 @@
     "roles": []
   },
   {
-    "id": 39,
+    "id": 40,
     "slug": "luma-dream-machine",
     "name": "Luma Dream Machine",
     "category": "video",
@@ -1066,7 +1097,34 @@
     "roles": []
   },
   {
-    "id": 40,
+    "id": 41,
+    "slug": "magnific-ai",
+    "name": "Magnific AI",
+    "category": "bild",
+    "description": "Den mest avancerade bilduppskalaren (upscaler) på marknaden. Lägger till fantastiska detaljer som inte fanns i originalbilden.",
+    "pricing": "Från 9/månad",
+    "price_tier": "betald",
+    "rating": 4.6,
+    "gdpr": "oklart",
+    "gdpr_note": "Liten startup, oklart GDPR-läge.",
+    "swedish": "svagt",
+    "swedish_note": "Gränssnitt på engelska, kräver engelska instruktioner.",
+    "tags": [
+      "Upscaling",
+      "Bildförbättring"
+    ],
+    "icon_emoji": "🔍",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://magnific.ai",
+    "affiliate": false,
+    "featured": false,
+    "roles": [
+      "copywriter",
+      "maklare"
+    ]
+  },
+  {
+    "id": 42,
     "slug": "microsoft-copilot-365",
     "name": "Microsoft Copilot 365",
     "category": "affar",
@@ -1096,7 +1154,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": 43,
     "slug": "midjourney",
     "name": "Midjourney",
     "category": "bild",
@@ -1124,7 +1182,35 @@
     ]
   },
   {
-    "id": 42,
+    "id": 44,
+    "slug": "midjourney-v6",
+    "name": "Midjourney v6",
+    "category": "bild",
+    "description": "Den absolut bästa AI-bildgeneratorn för fotorealism och konstnärlig kvalitet. Kräver Discord-konto eller deras nya webbgränssnitt.",
+    "pricing": "Från 0/månad",
+    "price_tier": "betald",
+    "rating": 4.8,
+    "gdpr": "oklart",
+    "gdpr_note": "Amerikanskt bolag, oklart GDPR-läge för företagsanvändning. Inga personuppgifter bör läggas i promptarna.",
+    "swedish": "svagt",
+    "swedish_note": "Förstår viss svenska men promtning måste ske på engelska för bra resultat.",
+    "tags": [
+      "Bildgenerator",
+      "Konst",
+      "Design"
+    ],
+    "icon_emoji": "🎨",
+    "icon_bg_color": "bg-slate-100",
+    "url": "https://midjourney.com",
+    "affiliate": false,
+    "featured": true,
+    "roles": [
+      "copywriter",
+      "maklare"
+    ]
+  },
+  {
+    "id": 45,
     "slug": "mistral-large",
     "name": "Mistral Large",
     "category": "text",
@@ -1152,7 +1238,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": 46,
     "slug": "mistral-nemo",
     "name": "Mistral NeMo",
     "category": "kod",
@@ -1178,7 +1264,7 @@
     "roles": []
   },
   {
-    "id": 44,
+    "id": 47,
     "slug": "napkin-ai",
     "name": "Napkin AI",
     "category": "bild",
@@ -1207,7 +1293,7 @@
     ]
   },
   {
-    "id": 45,
+    "id": 48,
     "slug": "notebooklm",
     "name": "NotebookLM",
     "category": "produktivitet",
@@ -1233,7 +1319,7 @@
     ]
   },
   {
-    "id": 46,
+    "id": 49,
     "slug": "opus-clip",
     "name": "Opus Clip",
     "category": "video",
@@ -1261,7 +1347,7 @@
     ]
   },
   {
-    "id": 47,
+    "id": 50,
     "slug": "perplexity-ai",
     "name": "Perplexity AI",
     "category": "sok",
@@ -1290,7 +1376,7 @@
     ]
   },
   {
-    "id": 48,
+    "id": 51,
     "slug": "phind",
     "name": "Phind",
     "category": "kod",
@@ -1317,7 +1403,7 @@
     "roles": []
   },
   {
-    "id": 49,
+    "id": 52,
     "slug": "pika",
     "name": "Pika",
     "category": "video",
@@ -1345,7 +1431,7 @@
     "roles": []
   },
   {
-    "id": 50,
+    "id": 53,
     "slug": "pocketlaw",
     "name": "Pocketlaw",
     "category": "juridik",
@@ -1373,7 +1459,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": 54,
     "slug": "qwen-3",
     "name": "Qwen 3",
     "category": "text",
@@ -1399,7 +1485,7 @@
     "roles": []
   },
   {
-    "id": 52,
+    "id": 55,
     "slug": "replicate",
     "name": "Replicate",
     "category": "kod",
@@ -1424,7 +1510,7 @@
     "roles": []
   },
   {
-    "id": 53,
+    "id": 56,
     "slug": "robinai",
     "name": "RobinAI",
     "category": "juridik",
@@ -1451,7 +1537,7 @@
     ]
   },
   {
-    "id": 54,
+    "id": 57,
     "slug": "runway-gen-4-5",
     "name": "Runway Gen-4.5",
     "category": "video",
@@ -1478,7 +1564,7 @@
     ]
   },
   {
-    "id": 55,
+    "id": 58,
     "slug": "sana",
     "name": "Sana",
     "category": "juridik",
@@ -1507,7 +1593,7 @@
     ]
   },
   {
-    "id": 56,
+    "id": 59,
     "slug": "sora",
     "name": "Sora",
     "category": "video",
@@ -1535,7 +1621,7 @@
     ]
   },
   {
-    "id": 57,
+    "id": 60,
     "slug": "suno-ai",
     "name": "Suno AI",
     "category": "ljud",
@@ -1560,7 +1646,7 @@
     "roles": []
   },
   {
-    "id": 58,
+    "id": 61,
     "slug": "synthesia",
     "name": "Synthesia",
     "category": "video",
@@ -1588,7 +1674,7 @@
     ]
   },
   {
-    "id": 59,
+    "id": 62,
     "slug": "tavus",
     "name": "Tavus",
     "category": "video",
@@ -1616,7 +1702,7 @@
     "roles": []
   },
   {
-    "id": 60,
+    "id": 63,
     "slug": "tome",
     "name": "Tome",
     "category": "bild",
@@ -1642,7 +1728,7 @@
     "roles": []
   },
   {
-    "id": 61,
+    "id": 64,
     "slug": "v0-by-vercel",
     "name": "v0 by Vercel",
     "category": "kod",
@@ -1668,7 +1754,7 @@
     "roles": []
   },
   {
-    "id": 62,
+    "id": 65,
     "slug": "visma-compact-ai",
     "name": "Visma Compact AI",
     "category": "juridik",
@@ -1696,7 +1782,7 @@
     ]
   },
   {
-    "id": 63,
+    "id": 66,
     "slug": "zapier",
     "name": "Zapier",
     "category": "affar",
@@ -1726,7 +1812,7 @@
     ]
   },
   {
-    "id": 64,
+    "id": 67,
     "slug": "zapier-central",
     "name": "Zapier Central",
     "category": "affar",

@@ -56,6 +56,7 @@ FOOTER = """    <footer class="py-12 px-6 border-t border-slate-200 text-slate-5
                 <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygskistan</span></div>
                 <p class="text-xs">© 2026 Adviseo · Oberoende guide till AI för svenska företag</p>
                 <p class="text-xs mt-2">Vi bedömer verktyg redaktionellt. Länkar till leverantörer kan vara affiliatelänkar och är i så fall märkta – det påverkar inte vilka verktyg vi rekommenderar.</p>
+                <p class="text-xs font-semibold text-slate-600 mt-2">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-indigo-600">Om sajten</a></p>
             </div>
             <div class="flex gap-6 text-xs">
                 <a href="/integritetspolicy.html" class="hover:text-indigo-600">Integritetspolicy</a>
