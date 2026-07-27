@@ -187,6 +187,28 @@
     </footer>
 
     <script>
+        document.querySelectorAll('.newsletter-form').forEach(function (form) {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var email = form.querySelector('input[type="email"]').value;
+                fetch('/api/newsletter', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        source: form.dataset.source || null
+                    })
+                }).catch(function () {});
+                form.classList.add('hidden');
+                var ok = form.parentElement.querySelector('.newsletter-success');
+                if (ok) ok.classList.remove('hidden');
+                if (typeof gtag === 'function') {
+                    gtag('event', 'newsletter_signup', { source: form.dataset.source });
+                }
+            });
+        });
+    </script>
+    <script>
         document.getElementById("mobile-menu-btn").addEventListener("click", function() {
             document.getElementById("mobile-menu").classList.toggle("hidden");
         });
