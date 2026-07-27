@@ -1,3 +1,4 @@
+2026-07-27 | LEADFLOW | Lagt till inline nyhetsbrevs-capture på ai-verktyg, ai-program, ai-jamfor, ai-kalkylator, ai-ordlista | Optimerar leadflow från SEO-trafik | nästa: affiliate-länkar eller verktyg
 2026-07-27 | TILLVÄXT/DATA | Byggt om AI-rapportsidan baserat på egen data-moat | Publicerat originaldatarapport | nästa: Optimera leadflow eller bygga API-struktur
 2026-07-26 | TILLVÄXT/DATA | Lade till Claude 3.5 Sonnet, Midjourney v6 och Magnific AI, byggde om stacks-sidorna med AI-transparens | Katalog 64->67, 7 nya stacksidor | nästa: Fixa nyhetsbrev-flow eller lägg in fler verktyg
 2026-07-25 | DATA/TILLVÄXT | Utökade katalogen med Flux.1, Grok 2 och Napkin AI + rensade 20 dubbletter | Katalog dedup + 3 nya, stärkt datamoat | nästa: Optimera leadflow eller bygga API-struktur
