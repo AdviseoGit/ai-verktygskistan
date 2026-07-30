@@ -12,6 +12,7 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Directory-filter för svenskt språkstöd, GDPR-status och pris (2026-07-25)
 - [x] AI-stackar per yrkesroll: 6 rollsidor + hubb (2026-07-25)
 - [x] "Veckans AI-verktyg"-nyhetsbrev med segmentering på roll (2026-07-25)
+- [x] Rensat designskuld/menybloat från dubbla `<nav>` och mobila menyer över tre nyckelsidor (2026-07-30)
 - [ ] #1 på Google för "AI verktyg"
 
 ## AKUT INNEHÅLLSSKULD
@@ -22,7 +23,7 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 ## ROADMAP (nästa prioriteringar)
 - [x] Bygga en "Skapa med AI" sida för att fånga utbildnings-intent inom bild/video
 - [x] Konvertera "AI verktyg" och "AI program" från statiska artiklar till dynamiska katalogsidor (tools.js integration för att matcha sökintentionen)
-- [x] Utöka katalogen till 35+ verktyg (särskilt inom 'juridik & HR' och 'kod & dev')
+- [x] Utöka katalogen till 70+ verktyg
 - [x] Skapa en "Jämför"-funktion för verktyg så man kan se skillnaden mellan t.ex. ChatGPT och Claude side-by-side
 - [x] Fånga fler leads: en "GDPR-checklista för AI" lead magnet i PDF-format som skickas vid sign-up (klar på index, ai-jamfor)
 - [x] Implementera databas-lagring för leads i main.py (och admin route för export)
@@ -51,8 +52,6 @@ Tre bärande delar:
       verktyg som har program. Plumbingen finns, avtalen saknas.
 - [ ] Fylla `partners` i stacks.json med portföljsajterna när domänerna är spikade.
 - [ ] Sätta `ADMIN_TOKEN` i Railway så leadexporten går att använda.
-- [x] Bygga faktiskt utskicksflöde för nyhetsbrevet (i dag lagras prenumeranter,
-      utskicket är manuellt). [Fixade inline-formulär 2026-07-27 för att öka signups]
 - [ ] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
       vilka skript som faktiskt används (validate_catalog, build_stacks,
       build_sitemap, seed, mailer, report_aiv).
