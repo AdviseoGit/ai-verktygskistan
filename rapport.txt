@@ -1,0 +1,17 @@
+RAPPORT — aiverktygsladan.se 2026-07-30
+HISTORIK: Senaste 7 dagarna: Lade till Fathom, Murf AI, Mem till AI-katalogen; uppdaterat INDEXING_LOG.md; lagt till inline nyhetsbrevs-capture på flera sidor (2026-07-27); unifierat main navigation (2026-07-27) | LOOP-KOLL: Fortsätter utöka verktygskatalogen och bockade av menyskuld, bygger vidare mot SITE_VISION utan att upprepa.
+SCORECARD: SEO 0 indexerade av ny-inspekterade | Leadflow Formulär & capture på plats (nyss utökat) | Design/UX Nyckelsidor städade från menybloat | Teknik Navigering fixad och konsekvent, site_scan nu på 0 HARD-fynd | Data-tillgång Katalog & Leads, mer trafik/data krävs för original-rapport.
+VAL: Bygga ut AI-katalogen med kvalitetsposter (Fathom, Murf AI, Mem) + åtgärda akut QA-skuld (menu bloat/dup content i headers) FÖRST. Vi löser QA-skulden nu för att rensa upp strukturen för Google.
+NÅR MÅLGRUPPEN VIA: Fler och bättre verktyg i katalogen (audio/video/produktivitet) svarar på sökintention "ai verktyg för ljud/möten"
+ÅTGÄRD: Lade till 3 nya verktyg i tools.json (Fathom, Murf AI, Mem) → genererade statiska HTML-sidor och stacks. Fixade strukturell skuld (menu-bloat) på `gratis-ai-verktyg.html`, `prompt-guide.html` och `skapa-med-ai.html` genom att normalisera navigationen och rensa bort gamla duplicerade headers.
+PUBLICERAT: JA | commit 01e924a | live 200 + visar innehåll ja https://aiverktygsladan.se/ai-verktyg.html | länkad ja | sitemap ja
+QA-SKAN: NEW 0 | FIXED 3 | REMAINING 0
+DESIGN: Renare, konsekvent `<nav>` över hela sajten nu. De tre sista "bloat"-sidorna är fixade. UX är skarpare. | MOBIL: FIXAT
+FÄRSKHET: nyheter kollade: ja (inget stort att lägga in idag) | utdaterat rättat: inga | katalog: +3 poster
+INDEXERING: nya sidor inspekterade: 1 | indexerade: 0 | fastnar: ai-verktyg.html (URL is unknown to Google, länkas internt) | begär-indexering (URL:er till Sim): https://aiverktygsladan.se/ai-verktyg.html, https://aiverktygsladan.se/skapa-med-ai.html
+DATA-ÄGANDE: Fortsatte bygga katalogen (verktyg → trafik → leads)
+PROGRESSION: Katalogen är uppe i 70 verktyg (mål > 35 nått). Skuld/menybloat är nollad i QA-skannern. Checkboxarna i SITE_VISION uppdaterade.
+INFRA: Leadflow OK | GA4 G-0VZV9RE3PN finns | GSC data: ja (några få klick senaste 7 dgr) | AI-transparens footer överallt + /om-sajten: ja
+FIXAT: Fixade site_scan.py `menu-bloat` felen genom att skriva ett regex-script som helt tog bort alla överblivna `div id="mobile-menu"` och gamla `nav` tags och la till den rensade nav-baren från `standard_nav`. Scanner visar nu 0 kvarvarande skuld.
+PIVOT: Fortsätter kursen — katalogen och stacks är kärnan, fortsätt sprida the word och jobba med SEO och internlänkning för indexering.
+NÄSTA: Få igång affiliates, bygga "GDPR-checklista för AI" rapport, fokus på leads.
