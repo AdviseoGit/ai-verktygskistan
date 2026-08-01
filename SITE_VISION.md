@@ -52,6 +52,6 @@ Tre bärande delar:
       verktyg som har program. Plumbingen finns, avtalen saknas.
 - [ ] Fylla `partners` i stacks.json med portföljsajterna när domänerna är spikade.
 - [ ] Sätta `ADMIN_TOKEN` i Railway så leadexporten går att använda.
-- [ ] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
+- [x] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
       vilka skript som faktiskt används (validate_catalog, build_stacks,
       build_sitemap, seed, mailer, report_aiv).
