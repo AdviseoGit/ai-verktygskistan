@@ -190,26 +190,32 @@ class CalcDataIn(BaseModel):
 
 @app.post("/api/calc-data")
 async def capture_calc_data(data: CalcDataIn, db: Session = Depends(get_db)):
+    """Sparar en kalkylatorkörning.
+
+    Skrev tidigare även till data_moat_calc.csv på containerdisken. Den filen
+    låg på efemär disk och raderades vid varje deploy, och till skillnad från
+    lead-endpointen fanns ingen mejlkopia – all kalkylatordata försvann alltså
+    spårlöst inom ett dygn. Databasen är enda lagringen nu.
+    """
     from models import CalcData
-    new_calc = CalcData(
+
+    db.add(CalcData(
         employees=data.employees,
         salary=data.salary,
         industry=data.industry,
-        saved_value=data.saved_value
-    )
-    db.add(new_calc)
+        saved_value=data.saved_value,
+    ))
     db.commit()
-    
-    import os
-    # Fallback log to a simple file as well to build the data moat easily
-    file_path = "data_moat_calc.csv"
-    if not os.path.exists(file_path):
-        with open(file_path, "w") as f:
-            f.write("employees,salary,industry,saved_value\n")
-    with open(file_path, "a") as f:
-        f.write(f"{data.employees},{data.salary},{data.industry},{data.saved_value}\n")
-        
     return {"status": "success"}
+
+
+@app.get("/api/admin/calc-data")
+async def get_calc_data(db: Session = Depends(get_db), _=Depends(require_admin)):
+    from models import CalcData
+    rows = db.query(CalcData).order_by(CalcData.created_at.desc()).all()
+    return [{"id": r.id, "employees": r.employees, "salary": r.salary,
+             "industry": r.industry, "saved_value": r.saved_value,
+             "created_at": r.created_at} for r in rows]
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 

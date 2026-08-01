@@ -70,6 +70,36 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 - index.html innehåller hårdkodade modellnamn i hero-sektionen och
   jämförelsetabellen – dessa måste uppdateras manuellt vid stora modellsläpp.
 
+### 6a. Databasen – läs detta innan du rör datalagret
+
+Appen läser **`DATABASE_URL`** från miljön. Sätts den inte faller den tillbaka
+på en lokal SQLite-fil, vilket är fint lokalt men **förstör data i produktion**.
+
+Bakgrunden: `database.py` hårdkodade tidigare `sqlite:///./tools.db`, en relativ
+sökväg på containerdisken. Railway-tjänsten har ingen volym monterad och
+redeployar dagligen via driver-cronen, så databasfilen återskapades tom ungefär
+var 24:e timme. Alla leads, nyhetsbrevsprenumeranter och kalkylatorsvar
+försvann, utan att något syntes i loggarna – exporterna returnerade bara en tom
+lista. Det som räddade leadflödet var att `_deliver_aiv` mejlar ägaren vid varje
+inskick; kalkylatordatan hade ingen sådan kopia och gick förlorad helt.
+
+**Två uppsättningar duger i produktion:** `sqlite:////data/tools.db` på en
+monterad Railway-volym, eller `postgresql://…` mot en hostad instans. Postgres
+ger automatiska säkerhetskopior, volymen gör det inte – väg in det.
+
+Det som *inte* duger är en relativ sökväg (`sqlite:///./tools.db`), som hamnar
+på containerdisken. Startloggen varnar då. Dyker varningen upp i Railway-loggen
+skriver tjänsten till en disk som snart raderas.
+
+Skriv aldrig verksamhetsdata till filsystemet. `capture_calc_data` gjorde det
+via `data_moat_calc.csv`; den filen är borta och datan går till tabellen
+`calc_data`.
+
+Tabellerna skapas av `Base.metadata.create_all` vid uppstart. Det hanterar
+**nya tabeller men inte ändringar i befintliga** – lägger ni till en kolumn i en
+tabell som redan finns i produktion måste den läggas till manuellt eller med
+Alembic.
+
 ### 6a. Skript i repo-roten – hela listan
 Roten innehöll tidigare ~100 engångsskript (`add_tools_20260719k.py`,
 `update_nav_lar_v4.py` och liknande), många med hårdkodade sökvägar till
@@ -82,16 +112,16 @@ Aktiva filer, och inget annat:
 |-----|------|
 | `main.py` | FastAPI-appen: routing, lead- och nyhetsbrevs-API |
 | `models.py` / `database.py` | SQLAlchemy-modeller och session |
-| `mailer.py` / `report_aiv.py` | E-postutskick och PDF-generering |
-| `add_tool.py` | Lägg till ett verktyg i katalogen enligt schemat |
-| `validate_catalog.py` | Spärr mot att katalogschemat spretar |
-| `build_stacks.py` | Genererar rollsidorna från stacks.json |
-| `build_sitemap.py` | Genererar sitemapen från static/*.html |
-| `seed.py` | Seedar SQLite-tabellen `tools` – se varningen nedan |
+| `mailer.py` / `scripts/report_aiv.py` | E-postutskick och PDF-generering |
+| `scripts/add_tool.py` | Lägg till ett verktyg i katalogen enligt schemat |
+| `scripts/validate_catalog.py` | Spärr mot att katalogschemat spretar |
+| `scripts/build_stacks.py` | Genererar rollsidorna från stacks.json |
+| `scripts/build_sitemap.py` | Genererar sitemapen från static/*.html |
+| `scripts/seed.py` | Seedar SQLite-tabellen `tools` – se varningen nedan |
 
 **Varning om seed.py och /api/tools:** tabellen `tools` och endpointen
 `/api/tools` läses inte av någon sida. Frontend hämtar `static/tools.json`.
-Innehållet i `seed.py` är dessutom utdaterat (nämner GPT-4o). Antingen ta bort
+Innehållet i `scripts/seed.py` är dessutom utdaterat (nämner GPT-4o). Antingen ta bort
 tabellen, endpointen och seed.py, eller koppla dem till katalogen – men lita
 inte på dem som datakälla i nuläget.
 
@@ -99,12 +129,12 @@ inte på dem som datakälla i nuläget.
 Kör alltid dessa tre i ordning innan commit:
 
 ```bash
-python3 validate_catalog.py   # schemat måste hålla, annars kraschar renderingen
-python3 build_stacks.py       # rollsidorna hämtar sina verktyg ur katalogen
-python3 build_sitemap.py      # sitemapen genereras från static/*.html
+python3 scripts/validate_catalog.py   # schemat måste hålla, annars kraschar renderingen
+python3 scripts/build_stacks.py       # rollsidorna hämtar sina verktyg ur katalogen
+python3 scripts/build_sitemap.py      # sitemapen genereras från static/*.html
 ```
 
-`validate_catalog.py` finns av en anledning: i juli 2026 hade katalogen 23
+`scripts/validate_catalog.py` finns av en anledning: i juli 2026 hade katalogen 23
 kategorivarianter, 16 GDPR-statussträngar och två betygsskalor samtidigt, och
 `tools.js` kraschade tyst på poster där `tags` var en lista i stället för en
 sträng. Effekten var att hela verktygsgriden var borta från index.html,
