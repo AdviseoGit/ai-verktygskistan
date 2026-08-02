@@ -240,6 +240,10 @@ async def sitemap():
 async def favicon():
     return FileResponse("static/favicon.svg")
 
+@app.get("/llms.txt")
+async def serve_llms_txt():
+    return FileResponse("static/llms.txt")
+
 @app.get("/{page_name}.html", response_class=HTMLResponse)
 async def serve_static_html(page_name: str):
     path = f"static/{page_name}.html"

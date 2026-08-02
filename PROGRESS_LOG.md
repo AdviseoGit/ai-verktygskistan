@@ -1,3 +1,4 @@
+2026-08-02 | GEO/SEO | Implementerade llms.txt och höjde AI-citerbarhet för HR-sidan | GEO-snitt 51 -> 52, HR-sida 38 -> 100 | nästa: Optimera leads eller bygga vidare på intent
 2026-08-01 | SEO/TEKNIK | Rensat upp skript-mappen | Organisering | nästa: Bygga datamoat/rapport
 2026-07-31 | DESIGN | Fixed missing nav and footer on prompt-guide and skapa-med-ai | Consistency/UX | nästa: Bygga AI-jämförelse-verktyg
 2026-07-30 | SEO/DATA | Lade till Fathom, Murf AI, Mem till AI-katalogen | Katalog: 67 -> 70 | nästa: Fortsätt utöka med fler AI-verktyg och case studies
