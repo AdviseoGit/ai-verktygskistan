@@ -26,16 +26,33 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "AI Kalkylator - Beräkna ROI för AI-investering",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "SEK"
+      "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "AI Kalkylator - Beräkna ROI för AI-investering",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "SEK"
+        },
+        "description": "Gratis AI-kalkylator för att beräkna potentiell tidsbesparing och avkastning (ROI) för ditt företag vid implementering av AI-verktyg."
       },
-      "description": "Gratis AI-kalkylator för att beräkna potentiell tidsbesparing och avkastning (ROI) för ditt företag vid implementering av AI-verktyg."
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Hur mycket kan företaget spara med AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Baserat på studier från MIT och NBER kan AI-verktyg frigöra 15-25% av arbetstiden för rutinuppgifter, textgenerering och kodning. För en anställd med 45 000 kr i månadslön innebär en 15% produktivitetsökning en besparing på 6 timmar per vecka eller cirka 106 450 kr per år, förutsatt 31,42% arbetsgivaravgift."
+            }
+          }
+        ]
+      }
+      ]
     }
     </script>
 
@@ -78,15 +95,18 @@
     <main class="py-12 md:py-20 px-6 max-w-4xl mx-auto">
         <div class="text-center mb-12">
             <span class="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full mb-4">Interaktiv Kalkylator</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Hur mycket kan ni spara med AI?</h1>
+            <h1 class="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">Hur mycket kan företaget spara med AI?</h1>
+            <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto mb-6">
+                Enligt ledande studier från MIT och NBER kan företag öka produktiviteten med 15-25% genom att implementera AI-verktyg. För en anställd med 45 000 kr i månadslön innebär en 15% produktivitetsökning en besparing på 6 timmar i veckan eller 106 450 kr per år (inkl 31,42% arbetsgivaravgift).
+            </p>
             <p class="text-slate-600 text-lg md:text-xl max-w-2xl mx-auto">
-                Fyll i företagets uppgifter nedan för att se er potentiella tids- och kostnadsbesparing per år. Vi bygger en rapport om svenska företags AI-användning baserat på anonymiserad data från denna kalkylator.
+                Fyll i företagets uppgifter nedan för att räkna ut er specifika besparingspotential. Kalkylatorn sparar inskickad data anonymt för en rapport om svenska företags AI-användning 2026.
             </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
             <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-                <h2 class="text-xl font-bold mb-6 text-slate-800">Företagets uppgifter</h2>
+                <h2 class="text-xl font-bold mb-6 text-slate-800">Hur många anställda har ni? (Fyll i formuläret)</h2>
                 <form id="calc-form" class="space-y-5">
                     <div>
                         <label class="block text-sm font-semibold text-slate-700 mb-2">Antal tjänstemän (kontorsanställda)</label>
@@ -118,12 +138,12 @@
             <div class="bg-indigo-50 p-8 rounded-2xl border border-indigo-100 flex flex-col justify-center">
                 <div id="result-placeholder" class="text-center">
                     <svg class="w-16 h-16 text-indigo-200 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                    <h3 class="text-xl font-bold text-slate-700 mb-2">Fyll i uppgifterna</h3>
-                    <p class="text-slate-500 text-sm">Din kalkyl visas här och är baserad på en genomsnittlig produktivitetsökning på 15-25% för rutinuppgifter (enligt studier från MIT och Harvard).</p>
+                    <h2 class="text-xl font-bold mb-6 text-slate-800">Vad blir resultatet? (Er potential)</h2>
+                    <p class="text-slate-500 text-sm">Din kalkyl visas här och är baserad på en genomsnittlig produktivitetsökning på 25% för kodning, 20% för textgenerering, och 15% för övriga rutinuppgifter (enligt studier från <a href="https://www.nber.org/papers/w31161" class="underline text-indigo-500" target="_blank" rel="noopener">NBER</a> och <a href="https://mitsloan.mit.edu/ideas-made-to-matter/how-generative-ai-can-boost-highly-skilled-workers-productivity" class="underline text-indigo-500" target="_blank" rel="noopener">MIT</a>).</p>
                 </div>
 
                 <div id="result-box" class="hidden">
-                    <h3 class="text-xl font-bold text-slate-800 mb-6 border-b border-indigo-200 pb-2">Er potential:</h3>
+                    <h2 class="text-xl font-bold text-slate-800 mb-6 border-b border-indigo-200 pb-2">Så här mycket sparar ni:</h2>
                     
                     <div class="mb-4">
                         <div class="text-sm text-slate-500 font-semibold mb-1">Frigjord tid per vecka</div>
