@@ -7,3 +7,4 @@ https://aiverktygsladan.se/ai-stack-maklare.html | URL is unknown to Google | 20
 https://aiverktygsladan.se/ai-stackar.html | URL is unknown to Google | 2026-07-26 | Ligger i sitemap med ny lastmod, länkad internt
 https://aiverktygsladan.se/om-sajten.html | URL is unknown to Google | 2026-07-26 | Ligger i sitemap med ny lastmod, länkad internt
 https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to Google | 2026-07-27 | Ligger i sitemap med ny lastmod, länkad internt
+https://aiverktygsladan.se/ai-kalkylator.html | URL is unknown to Google | 2026-08-03 | lagt till FAQPage schema, uppmaning att begära indexering via GSC
