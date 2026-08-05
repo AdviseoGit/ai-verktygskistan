@@ -1,3 +1,4 @@
+2026-08-05 | GEO | GEO-optimerade ai-program.html med siffror, källa, schema (Article & FAQPage) och tabell för AI-citerbarhet. | Snittpoäng ökar för sidan | nästa: Optimera leadflow på startsidan
 2026-08-04 | QA | Körde regrissionskoll efter ändringar | QA pass: inga nya fel och inga 500/404 introducerades. | nästa: Optimera ai-program.html eller bygga egen data capture-rapport
 2026-08-04 | GEO | GEO-optimerade stack-sidor (copywriter, ekonomi, hr) för citerbarhet (H2-frågor, synligt datum, dateModified) och lade till konkreta prisuppgifter. | Snittpoäng + leads överlever deploy | nästa: Optimera ai-program.html eller bygga egen data capture-rapport
 2026-08-03 | GEO/LEADFLOW | Gjorde ai-kalkylator citerbar (FAQ schema, källor, H2, siffror) | GEO: 44->100 för kalkylatorn | nästa: Optimera leadflow på startsidan
