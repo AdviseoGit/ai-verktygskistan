@@ -13,7 +13,7 @@ from models import Tool
 # Force rebuild
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="AI-Verktygskistan")
+app = FastAPI(title="AI-Verktygslådan")
 
 from pydantic import BaseModel, EmailStr
 
@@ -45,10 +45,10 @@ def _deliver_aiv(email: str):
     atts = [("AI-GDPR-checklista.pdf", pdf, "application/pdf")] if pdf else None
     mailer.send_email(email, "Din GDPR-checklista for AI-verktyg",
                       report_aiv.user_email_html(), attachments=atts,
-                      from_name="AI-Verktygskistan")
-    mailer.notify_owner("Ny lead - AI-Verktygskistan",
+                      from_name="AI-Verktygslådan")
+    mailer.notify_owner("Ny lead - AI-Verktygslådan",
                         f"<p>Ny lead: <b>{email}</b></p>", reply_to=email,
-                        from_name="AI-Verktygskistan")
+                        from_name="AI-Verktygslådan")
 
 
 @app.post("/api/lead/")
@@ -110,9 +110,9 @@ def _notify_newsletter(email: str, role: str | None, source: str | None):
     import mailer
     try:
         mailer.notify_owner(
-            "Ny nyhetsbrevsprenumerant - AI-Verktygskistan",
+            "Ny nyhetsbrevsprenumerant - AI-Verktygslådan",
             f"<p><b>{email}</b></p><p>Roll: {role or '-'}<br>Källa: {source or '-'}</p>",
-            reply_to=email, from_name="AI-Verktygskistan")
+            reply_to=email, from_name="AI-Verktygslådan")
     except Exception as e:
         print(f"[aiv] newsletter notify failed: {e}")
 
@@ -157,8 +157,8 @@ def _notify_b2b(data: "B2BLeadIn"):
         f"<p><b>Behov:</b><br>{data.need or '-'}</p>"
     )
     try:
-        mailer.notify_owner("Ny B2B-lead - AI-Verktygskistan", body,
-                            reply_to=data.email, from_name="AI-Verktygskistan")
+        mailer.notify_owner("Ny B2B-lead - AI-Verktygslådan", body,
+                            reply_to=data.email, from_name="AI-Verktygslådan")
     except Exception as e:
         print(f"[aiv] b2b notify failed: {e}")
 

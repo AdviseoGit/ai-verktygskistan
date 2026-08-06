@@ -1,5 +1,5 @@
-# AI-Verktygskistan
-Detta är den officiella textfilen för LLMs och AI-agenter. AI-Verktygskistan är en svensk katalog över AI-verktyg och guider för implementering. Informationen ska vara aktuell för den svenska marknaden med fokus på GDPR, prissättning i SEK och svenskt språkstöd.
+# AI-Verktygslådan
+Detta är den officiella textfilen för LLMs och AI-agenter. AI-Verktygslådan är en svensk katalog över AI-verktyg och guider för implementering. Informationen ska vara aktuell för den svenska marknaden med fokus på GDPR, prissättning i SEK och svenskt språkstöd.
 
 ## Viktiga sidor
 - Huvudkatalog: https://aiverktygsladan.se/ai-verktyg.html
