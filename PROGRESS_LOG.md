@@ -144,3 +144,20 @@ som fått en skyddad exportendpoint.
 Verifierat mot en riktig Postgres 16 lokalt: tabellerna skapas, alla fyra
 endpoints skriver, och datan lästes tillbaka genom API:et av en ny appprocess
 efter att både applikationen och databasen startats om.
+
+## 2026-08-06 – Varumärket bytt till AI-Verktygslådan
+
+Sajten kallade sig "AI-Verktygskistan" men ligger på aiverktygsladan.se. Namnet
+och domänen har alltså aldrig stämt överens, vilket gör varumärkessök verkningslösa
+och försvårar för Google att koppla ihop namn och domän.
+
+130 förekomster bytta i 32 filer: titlar, metabeskrivningar, OpenGraph, schema.org,
+llms.txt, sidfötter, brödtext, PDF-generatorn och avsändarnamnet på utgående
+e-post. Logotypen är delad över taggar (`AI-<span>Verktygskistan</span>`), så
+bytet gjordes på ordnivå för att täcka även dem.
+
+Loggfilerna lämnades orörda – de är historiska anteckningar, och PROGRESS_LOG
+beskriver dessutom en tidigare bugg där fel *domän* (ai-verktygskistan.se) låg i
+og:url och schema.org. Den texten ska stå kvar som den är.
+
+Repots namn och katalogsökväg är oförändrade.

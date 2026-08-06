@@ -1,5 +1,5 @@
 """
-AI-Verktygskistan lead magnet — "GDPR-checklista för AI-verktyg".
+AI-Verktygslådan lead magnet — "GDPR-checklista för AI-verktyg".
 
 Deluxe, multi-section PDF (shared design language with the other portfolio
 sites). fpdf2 core font = latin-1, which covers å/ä/ö; _s() keeps those and
@@ -155,11 +155,11 @@ def build_guide_pdf() -> bytes:
         pdf.set_y(-13)
         pdf.set_font("Helvetica", "I", 7.5)
         pdf.set_text_color(*MUTED)
-        pdf.cell(0, 4, _s("AI-Verktygskistan | aiverktygsladan.se | Allmän vägledning, inte "
+        pdf.cell(0, 4, _s("AI-Verktygslådan | aiverktygsladan.se | Allmän vägledning, inte "
                           "juridisk rådgivning. Stäm av med ert dataskyddsombud."), align="C")
 
     pdf.footer = footer_fn
-    r.cover("AI-Verktygskistan", "GDPR-checklista för AI-verktyg",
+    r.cover("AI-Verktygslådan", "GDPR-checklista för AI-verktyg",
             "Använd AI produktivt OCH säkert i företaget", INTRO)
     for title, items in DO:
         r.section(title)
@@ -182,7 +182,7 @@ def user_email_html() -> str:
        använder själva för att införa AI produktivt och säkert i en verksamhet.</p>
     <p>Den tar dig igenom rättslig grund, biträdesavtal, behandlingsregister, DPIA och de
        vanligaste misstagen att undvika.</p>
-    <p style="margin-top:22px">Lycka till!<br><b>AI-Verktygskistan</b><br>
+    <p style="margin-top:22px">Lycka till!<br><b>AI-Verktygslådan</b><br>
        <a href="https://aiverktygsladan.se" style="color:#059669">aiverktygsladan.se</a></p>
     <p style="font-size:11px;color:#9a9a9a;margin-top:22px">Du får detta för att du anmälde dig på
        aiverktygsladan.se. Vill du av listan, svara på detta mejl.</p>

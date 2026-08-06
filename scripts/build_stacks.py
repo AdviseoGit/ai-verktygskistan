@@ -3,6 +3,11 @@
 
     python3 build_stacks.py
 
+VARNING: rollsidorna har handredigerats efter att de genererades – bland annat
+med Article-schema, publicerings- och ändringsdatum för AI-citerbarhet (commit
+4dc1943). Att köra det här skriptet skriver över de ändringarna. Kontrollera
+med `git diff` efter körning, eller för in ändringarna i mallen nedan först.
+
 Producerar static/ai-stackar.html (hubb) och en sida per yrkesroll. Verktygen
 på varje sida hämtas från katalogens roles-fält, så en ny post i tools.json
 med rätt roll dyker upp i stacken automatiskt nästa gång skriptet körs.
@@ -29,7 +34,7 @@ SWEDISH_BADGE = {
 NAV = """    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="text-xl font-extrabold tracking-tight">
-                AI-<span class="text-indigo-600">Verktygskistan</span>
+                AI-<span class="text-indigo-600">Verktygslådan</span>
             </a>
             <div class="hidden md:flex space-x-6 items-center">
                 <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
@@ -53,7 +58,7 @@ NAV = """    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b
 FOOTER = """    <footer class="py-12 px-6 border-t border-slate-200 text-slate-500 text-sm mt-12">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
-                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygskistan</span></div>
+                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygslådan</span></div>
                 <p class="text-xs">© 2026 Adviseo · Oberoende guide till AI för svenska företag</p>
                 <p class="text-xs mt-2">Vi bedömer verktyg redaktionellt. Länkar till leverantörer kan vara affiliatelänkar och är i så fall märkta – det påverkar inte vilka verktyg vi rekommenderar.</p>
                 <p class="text-xs font-semibold text-slate-600 mt-2">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-indigo-600">Om sajten</a></p>
