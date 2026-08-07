@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Guide: Så pratar du med AI | AI-Verktygslådan</title>
     <meta name="description" content="Lär dig skriva effektiva prompts för ChatGPT, Claude och Gemini. Praktisk guide med ramverk och exempel för att få ut maximalt värde ur dina AI-verktyg.">
+    <link rel="canonical" href="https://aiverktygsladan.se/prompt-guide.html">
     <meta property="og:title" content="Prompt Guide: Så pratar du med AI | AI-Verktygslådan">
     <meta property="og:description" content="Lär dig skriva effektiva prompts för ChatGPT, Claude och Gemini. Praktisk guide med ramverk och exempel för att få ut maximalt värde ur dina AI-verktyg.">
     <meta property="og:type" content="article">
@@ -75,6 +76,7 @@
 
 </head>
 <body class="font-sans text-slate-800 bg-slate-50 flex flex-col min-h-screen">
+    <!-- @nav -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="/" class="text-xl font-extrabold tracking-tight">
@@ -88,19 +90,25 @@
                 <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
                 <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+            <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
         </div>
     </nav>
-    <div id="mobile-menu" class="hidden md:hidden pb-4 border-b border-slate-200/60 flex flex-col space-y-4 pt-4 px-6 bg-white absolute w-full left-0 shadow-lg z-50">
-        <a href="/ai-verktyg.html" class="hover:text-indigo-600 transition-colors font-medium">Verktyg</a>
-        <a href="/ai-stackar.html" class="block hover:text-indigo-600 transition-colors font-medium">AI-stackar</a>
-        <a href="/ai-jamfor.html" class="hover:text-indigo-600 transition-colors font-medium">Jämför</a>
-        <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 transition-colors font-medium">Lär dig AI</a>
-        <a href="/skapa-med-ai.html" class="block hover:text-indigo-600 transition-colors font-medium">Skapa</a>
-        <a href="/ai-kalkylator.html" class="block hover:text-indigo-600 transition-colors font-medium">Kalkylator</a>
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/ai-verktyg.html" class="block font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+        <a href="/ai-stackar.html" class="block font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
+        <a href="/ai-jamfor.html" class="block font-medium hover:text-indigo-600 transition-colors">Jämför</a>
+        <a href="/lar-dig-ai.html" class="block font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
+        <a href="/skapa-med-ai.html" class="block font-medium hover:text-indigo-600 transition-colors">Skapa</a>
+        <a href="/ai-kalkylator.html" class="block font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+        <div class="border-t border-slate-100 pt-3 mt-1">
+            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data &amp; ROI</span>
+            <a href="/ai-kalkylator.html" class="block mt-2 hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
+            <a href="/ai-svenska-foretag-rapport.html" class="block mt-2 hover:text-indigo-600 transition-colors">Rapport 2026</a>
+        </div>
     </div>
-    <!-- Header -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <!-- /@nav -->    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0 flex items-center">
@@ -225,49 +233,55 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-300 py-12 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="col-span-1 md:col-span-2">
-                    <span class="text-xl font-bold text-white tracking-tight flex items-center gap-2 mb-4">
-                        <svg class="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        AI-Verktygslådan
-                    </span>
-                    <p class="text-slate-400 text-sm max-w-md">Din guide i AI-djungeln. Vi hjälper svenska företag och privatpersoner att hitta, jämföra och förstå de bästa AI-verktygen på marknaden.</p>
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges guide till AI-verktyg för svenska företag – GDPR-genomlyst, testat på svenska, ärliga bedömningar.</p>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Innehåll</h3>
+                    <h2 class="text-white font-bold text-sm mb-4">Hitta verktyg</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">AI Verktyg</a></li>
-                        <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI Verktyg</a></li>
-                        <li><a href="/ai-program.html" class="hover:text-white transition-colors">AI Program</a></li>
-                        <li><a href="/ai-jamfor.html" class="hover:text-white transition-colors">Jämför AI</a></li>
+                        <li><a href="/" class="hover:text-white transition-colors">Startsida</a></li>
+                        <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">Alla AI-verktyg</a></li>
+                        <li><a href="/hitta-ratt-ai.html" class="hover:text-white transition-colors">AI-Kompassen</a></li>
+                        <li><a href="/ai-jamfor.html" class="hover:text-white transition-colors">Jämför verktyg</a></li>
+                        <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI-verktyg</a></li>
+                        <li><a href="/ai-program.html" class="hover:text-white transition-colors">AI-program</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Guider & Info</h3>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
                     <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-stackar.html" class="hover:text-white transition-colors">AI-stackar per yrke</a></li>
                         <li><a href="/lar-dig-ai.html" class="hover:text-white transition-colors">Lär dig AI</a></li>
+                        <li><a href="/prompt-guide.html" class="hover:text-white transition-colors">Promptguide</a></li>
+                        <li><a href="/ai-ordlista.html" class="hover:text-white transition-colors">AI-ordlistan</a></li>
+                        <li><a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-white transition-colors">Claude vs GPT-5.6</a></li>
                         <li><a href="/bygg-med-ai.html" class="hover:text-white transition-colors">Bygg med AI</a></li>
-                        <li><a href="/ai-ordlista.html" class="hover:text-white transition-colors">AI Ordlista</a></li>
-                        <li><a href="/prompt-guide.html" class="hover:text-white transition-colors">Prompt Guide</a></li>
-                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om AI-Verktygslådan</a></li>
+                        <li><a href="/ai-for-hr.html" class="hover:text-white transition-colors">AI för HR</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om oss</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/annonsera.html" class="hover:text-white transition-colors">Annonsera</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">AI-kalkylatorn</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-slate-800 text-sm text-slate-400 flex flex-col md:flex-row justify-between items-center">
-                <p>&copy; 2026 AI-Verktygslådan. Alla rättigheter förbehållna.</p>
-                <div class="mt-4 md:mt-0 space-x-4">
-                    <a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a>
-                <a href="/annonsera.html" class="hover:text-white transition-colors">Annonsera</a>
-                <a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a>
-                </div>
-            </div>
-            <div class="mt-4 text-center">
-                <p class="text-xs font-semibold text-slate-500">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-slate-300">Om sajten</a></p>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Sidan kan innehålla affiliatelänkar och är i så fall märkta – det påverkar inte våra bedömningar.</div>
             </div>
         </div>
     </footer>
+    <!-- /@footer -->
 
     <script>
         // Mobile Menu Toggle

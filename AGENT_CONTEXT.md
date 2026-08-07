@@ -70,7 +70,42 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 - index.html innehåller hårdkodade modellnamn i hero-sektionen och
   jämförelsetabellen – dessa måste uppdateras manuellt vid stora modellsläpp.
 
-### 6a. Databasen – läs detta innan du rör datalagret
+### 6a. Bygga sajten – ETT kommando
+
+```bash
+make check    # kontrollera utan att skriva något (samma som CI kör)
+make build    # bygg allt från källorna och kontrollera
+make serve    # kör lokalt på http://127.0.0.1:8000
+```
+
+**Kör `make check` innan du pushar.** Den fångar det som annars upptäcks först
+i produktion: brutna länkar, saknad canonical, dubblerade titlar, tom sitemap,
+ogiltig JSON, obalanserad markup och sidor som hamnat ur synk med mallarna.
+
+#### Nav och sidfot ligger i templates/, inte i sidorna
+
+`templates/nav.html` och `templates/footer.html` är enda källan. Sidorna har
+markörer som `scripts/build_site.py` fyller på:
+
+```html
+<!-- @nav -->   …genereras…   <!-- /@nav -->
+<!-- @footer --> …genereras… <!-- /@footer -->
+```
+
+**Redigera aldrig innehållet mellan markörerna** – det skrivs över vid nästa
+bygge. Ändra i `templates/` och kör `make build`.
+
+Bakgrunden: varje sida bar tidigare sin egen kopia. Med 27 sidor blev det 27
+ställen att ändra, och resultatet var fyra olika navigationer, nio olika
+sidfötter och överblivna `</div>` i menyn på 14 av 27 sidor.
+
+#### build_stacks.py är ett scaffold, inte en regenerator
+
+Rollsidorna har handredigerats efter generering, bland annat med Article-schema
+och publiceringsdatum. Skriptet hoppar därför över sidor som redan finns och
+skriver bara nya. `--force` skriver över – och raderar då handredigeringarna.
+
+### 6b. Databasen – läs detta innan du rör datalagret
 
 Appen läser **`DATABASE_URL`** från miljön. Sätts den inte faller den tillbaka
 på en lokal SQLite-fil, vilket är fint lokalt men **förstör data i produktion**.
@@ -100,7 +135,7 @@ Tabellerna skapas av `Base.metadata.create_all` vid uppstart. Det hanterar
 tabell som redan finns i produktion måste den läggas till manuellt eller med
 Alembic.
 
-### 6a. Skript i repo-roten – hela listan
+### 6c. Skript i scripts/ – hela listan
 Roten innehöll tidigare ~100 engångsskript (`add_tools_20260719k.py`,
 `update_nav_lar_v4.py` och liknande), många med hårdkodade sökvägar till
 `/data/workspace`. De är borttagna. **Skapa inte nya engångsskript i roten** –
@@ -115,7 +150,9 @@ Aktiva filer, och inget annat:
 | `mailer.py` / `scripts/report_aiv.py` | E-postutskick och PDF-generering |
 | `scripts/add_tool.py` | Lägg till ett verktyg i katalogen enligt schemat |
 | `scripts/validate_catalog.py` | Spärr mot att katalogschemat spretar |
-| `scripts/build_stacks.py` | Genererar rollsidorna från stacks.json |
+| `scripts/build_site.py` | Injicerar nav och sidfot från templates/ |
+| `scripts/check_site.py` | Kontrollerar länkar, canonical, sitemap, markup |
+| `scripts/build_stacks.py` | Scaffoldar nya rollsidor från stacks.json |
 | `scripts/build_sitemap.py` | Genererar sitemapen från static/*.html |
 | `scripts/seed.py` | Seedar SQLite-tabellen `tools` – se varningen nedan |
 
@@ -125,13 +162,11 @@ Innehållet i `scripts/seed.py` är dessutom utdaterat (nämner GPT-4o). Antinge
 tabellen, endpointen och seed.py, eller koppla dem till katalogen – men lita
 inte på dem som datakälla i nuläget.
 
-### 6b. Obligatoriskt efter ändring i katalogen
+### 6d. Obligatoriskt efter ändring i katalogen
 Kör alltid dessa tre i ordning innan commit:
 
 ```bash
-python3 scripts/validate_catalog.py   # schemat måste hålla, annars kraschar renderingen
-python3 scripts/build_stacks.py       # rollsidorna hämtar sina verktyg ur katalogen
-python3 scripts/build_sitemap.py      # sitemapen genereras från static/*.html
+make build
 ```
 
 `scripts/validate_catalog.py` finns av en anledning: i juli 2026 hade katalogen 23
@@ -141,7 +176,7 @@ sträng. Effekten var att hela verktygsgriden var borta från index.html,
 ai-verktyg.html och ai-program.html – utan att något syntes i loggarna.
 Redigera aldrig katalogen utan att köra validatorn.
 
-### 6c. Kanoniskt schema för ett verktyg
+### 6e. Kanoniskt schema för ett verktyg
 Kategorier: `text, bild, video, ljud, kod, affar, marknadsforing, juridik,
 produktivitet, sok`. GDPR: `gdpr_klar, dpa, lokal, oklart, varning`.
 Svenska: `bra, delvis, svagt`. Pris: `gratis, freemium, betald`.
