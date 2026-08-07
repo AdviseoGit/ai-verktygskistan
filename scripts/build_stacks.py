@@ -3,10 +3,13 @@
 
     python3 build_stacks.py
 
-VARNING: rollsidorna har handredigerats efter att de genererades – bland annat
-med Article-schema, publicerings- och ändringsdatum för AI-citerbarhet (commit
-4dc1943). Att köra det här skriptet skriver över de ändringarna. Kontrollera
-med `git diff` efter körning, eller för in ändringarna i mallen nedan först.
+Skriptet är ett *scaffold*, inte en regenerator: sidor som redan finns lämnas
+orörda. Rollsidorna har nämligen handredigerats efter att de genererades, bland
+annat med Article-schema och publiceringsdatum för AI-citerbarhet (4dc1943), och
+en full regenerering raderade det tyst. Använd `--force` bara om du vet att du
+vill kasta bort de ändringarna.
+
+Nav och sidfot hämtas från templates/ så nya sidor matchar resten av sajten.
 
 Producerar static/ai-stackar.html (hubb) och en sida per yrkesroll. Verktygen
 på varje sida hämtas från katalogens roles-fält, så en ny post i tools.json
@@ -15,6 +18,7 @@ Kör build_sitemap.py efteråt om antalet sidor har ändrats.
 """
 import html
 import json
+import pathlib
 
 BASE = "https://aiverktygsladan.se"
 
@@ -31,52 +35,16 @@ SWEDISH_BADGE = {
     "svagt": ("bg-amber-50 text-amber-700 border-amber-200", "Svagt på svenska"),
 }
 
-NAV = """    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-extrabold tracking-tight">
-                AI-<span class="text-indigo-600">Verktygslådan</span>
-            </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
-                <a href="/ai-stackar.html" class="text-sm font-medium text-indigo-600">AI-stackar</a>
-                <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
-                <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
-                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none" aria-label="Meny"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
-        </div>
-    </nav>
-    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-4 py-4 px-6 bg-white border-b border-slate-200">
-        <a href="/ai-verktyg.html" class="block hover:text-indigo-600 font-medium">Verktyg</a>
-        <a href="/ai-stackar.html" class="block text-indigo-600 font-medium">AI-stackar</a>
-        <a href="/ai-jamfor.html" class="block hover:text-indigo-600 font-medium">Jämför</a>
-        <a href="/lar-dig-ai.html" class="block hover:text-indigo-600 font-medium">Lär dig AI</a>
-        <a href="/ai-kalkylator.html" class="block hover:text-indigo-600 font-medium">Kalkylator</a>
-    </div>
-"""
+def _partial(name):
+    """Nav och sidfot delas med resten av sajten via templates/."""
+    body = pathlib.Path(f"templates/{name}.html").read_text(
+        encoding="utf-8").rstrip("\n")
+    return f"    <!-- @{name} -->\n{body}\n    <!-- /@{name} -->"
 
-FOOTER = """    <footer class="py-12 px-6 border-t border-slate-200 text-slate-500 text-sm mt-12">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-                <div class="text-lg font-extrabold text-slate-800 mb-1">AI<span class="text-indigo-600">-Verktygslådan</span></div>
-                <p class="text-xs">© 2026 Adviseo · Oberoende guide till AI för svenska företag</p>
-                <p class="text-xs mt-2">Vi bedömer verktyg redaktionellt. Länkar till leverantörer kan vara affiliatelänkar och är i så fall märkta – det påverkar inte vilka verktyg vi rekommenderar.</p>
-                <p class="text-xs font-semibold text-slate-600 mt-2">Denna sajt skapas och drivs helt av AI &middot; <a href="/om-sajten.html" class="underline hover:text-indigo-600">Om sajten</a></p>
-            </div>
-            <div class="flex gap-6 text-xs">
-                <a href="/integritetspolicy.html" class="hover:text-indigo-600">Integritetspolicy</a>
-                <a href="/nyhetsbrev.html" class="hover:text-indigo-600">Nyhetsbrev</a>
-                <a href="/annonsera.html" class="hover:text-indigo-600">Annonsera</a>
-                <a href="/om-sajten.html" class="hover:text-indigo-600">Om sajten</a>
-            </div>
-        </div>
-    </footer>
-    <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function () {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
-    </script>
-"""
+
+NAV = _partial("nav")
+
+FOOTER = _partial("footer")
 
 
 def head(title, description, canonical, extra_schema=""):
@@ -406,28 +374,47 @@ def build_hub(roles, tools, partners):
 ALL_ROLES = []
 
 
-def main():
+def main(force=False):
     global ALL_ROLES
     config = json.load(open("stacks.json", encoding="utf-8"))
     tools = json.load(open("static/tools.json", encoding="utf-8"))
     ALL_ROLES = config["roles"]
     partners = config.get("partners", [])
 
+    written, skipped = 0, 0
     for role in config["roles"]:
-        path = f"static/ai-stack-{role['slug']}.html"
-        with open(path, "w", encoding="utf-8") as f:
-            f.write(build_role_page(role, tools, partners))
+        path = pathlib.Path(f"static/ai-stack-{role['slug']}.html")
+        if path.exists() and not force:
+            print(f"  hoppar över {path.name} (finns redan)")
+            skipped += 1
+            continue
+        path.write_text(build_role_page(role, tools, partners), encoding="utf-8")
         picks = len([t for t in tools if role["role"] in t.get("roles", [])])
-        print(f"  {path} ({picks} verktyg)")
+        print(f"  skrev {path.name} ({picks} verktyg)")
+        written += 1
 
-    with open("static/ai-stackar.html", "w", encoding="utf-8") as f:
-        f.write(build_hub(config["roles"], tools, partners))
-    print("  static/ai-stackar.html (hubb)")
+    hub = pathlib.Path("static/ai-stackar.html")
+    if hub.exists() and not force:
+        print(f"  hoppar över {hub.name} (finns redan)")
+        skipped += 1
+    else:
+        hub.write_text(build_hub(config["roles"], tools, partners), encoding="utf-8")
+        print(f"  skrev {hub.name} (hubb)")
+        written += 1
 
     if not partners:
         print("\nOBS: partners är tom i stacks.json – partnersektionen visas inte.")
-    print(f"\n✅ Byggde {len(config['roles']) + 1} sidor.")
+    print(f"\n✅ Skrev {written} sidor, hoppade över {skipped}.")
+    if skipped and not force:
+        print("   Befintliga sidor lämnas orörda eftersom de handredigerats "
+              "efter generering.\n   Kör med --force för att skriva över dem.")
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--force", action="store_true",
+                    help="Skriv över befintliga sidor. OBS: raderar handredigeringar "
+                         "som Article-schema och datum.")
+    main(force=ap.parse_args().force)

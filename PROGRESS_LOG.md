@@ -161,3 +161,26 @@ beskriver dessutom en tidigare bugg där fel *domän* (ai-verktygskistan.se) lå
 og:url och schema.org. Den texten ska stå kvar som den är.
 
 Repots namn och katalogsökväg är oförändrade.
+
+## 2026-08-07 – Gemensam grund och byggkontroll
+
+Varje sida bar sin egen kopia av navigation och sidfot. Med 27 sidor blev det 27
+ställen att ändra, och driften syntes: fyra olika navigationer, nio olika
+sidfötter och överblivna </div>-taggar i menyn på 14 av 27 sidor.
+
+Nav och sidfot ligger nu i templates/ och injiceras av scripts/build_site.py
+mellan markörer i varje sida. Sidunikt innehåll rörs aldrig. Sidfoten fick
+tillbaka det länkblock som de mörka varianterna hade – interna länkar gick från
+409 till 609, vilket spelar roll för en sajt som ännu inte är indexerad.
+
+scripts/check_site.py kontrollerar länkar, canonical, titlar, sitemap mot
+filsystem, markup-balans, JSON och varumärkesnamn. Den hittade sju fel direkt:
+sex saknade canonical och en saknad metabeskrivning. Alla åtgärdade.
+
+build_stacks.py är nu ett scaffold i stället för en regenerator. Den skrev
+tidigare över rollsidorna och raderade tyst det Article-schema som lagts till i
+efterhand. Nu hoppar den över sidor som finns och kräver --force för att skriva
+över.
+
+Allt körs med `make check` och `make build`, och CI kör samma kontroller på
+varje push och pull request.
