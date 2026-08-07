@@ -124,7 +124,53 @@
     <main class="px-6 pb-24 max-w-7xl mx-auto">
         
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200/60 mb-12">
-            <h2 class="text-xl font-bold mb-6">Välj verktyg att jämföra</h2>
+            <h2 class="text-2xl font-bold mt-12 mb-6">Vilka AI-verktyg är gratis och vilka kostar?</h2>
+        <p class="mb-4">Många av de bästa AI-verktygen erbjuder en gratisversion, kallad "freemium", vilket räcker långt för privatpersoner och testning. Men för kontinuerlig användning på företag krävs nästan alltid en Pro- eller Enterprise-licens. Kostnaden för en Pro-licens ligger i snitt på <strong>20 dollar i månaden (ca 220 kr)</strong> för chattbaserade verktyg, medan Enterprise-licenser för hela team kan kosta <strong>500–1000 kr i månaden per användare</strong>, ofta med årliga avtal.</p>
+        
+        <p class="text-sm text-slate-600 mb-8 border-l-4 border-indigo-500 pl-4 py-1">Enligt <a href="https://www.imy.se/verksamhet/dataskydd/det-har-galler-enligt-gdpr/" target="_blank" rel="noopener nofollow" class="text-indigo-600 hover:underline">Integritetsskyddsmyndigheten (IMY)</a> är det viktigt att säkerställa var datan sparas när du använder AI i tjänsten. Gratisverktyg tränar ofta på din data — välj verktyg med GDPR-säkert EU-läge ("Inget träningsdata") för företagsinformation.</p>
+
+        <h2 class="text-xl font-bold mb-6">Välj verktyg att jämföra</h2>
+        
+        <h2 class="text-2xl font-bold mt-12 mb-6">Vilket AI-verktyg är bäst för dina behov?</h2>
+        <p class="mb-4">Att välja rätt AI-verktyg handlar om att förstå exakt vad du behöver hjälp med. Genom att jämföra <strong>funktioner</strong>, <strong>språkstöd</strong> och <strong>pris</strong> (från gratis till över 3 000 kr/månad för företagslicenser) kan du undvika dyra felinvesteringar.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">Vad är skillnaden mellan de största AI-modellerna?</h2>
+        <p class="mb-4">Skillnaden ligger ofta i hur modellerna är tränade och vilka funktioner som är inbyggda. ChatGPT är generalisten med inbyggd bildgenerering och datakodning. Claude excellerar på textförfattande och hanterar enorma dokument (upp till 200 000 ord). Copilot är integrerat direkt i Microsofts ekosystem och drar data från dina befintliga Word- och Excel-filer.</p>
+        
+        <div class="mt-8 mb-8 overflow-x-auto bg-white rounded-xl shadow p-6 border border-slate-100">
+            <h3 class="font-bold text-lg mb-4">Snabbfakta: Topp 3 modeller (2026)</h3>
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-50 border-b">
+                        <th class="p-3 font-semibold text-sm">Modell</th>
+                        <th class="p-3 font-semibold text-sm">Starkaste egenskap</th>
+                        <th class="p-3 font-semibold text-sm">Pris/månad (Pro)</th>
+                        <th class="p-3 font-semibold text-sm">Datagräns/dokument</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b hover:bg-slate-50">
+                        <td class="p-3">ChatGPT (OpenAI)</td>
+                        <td class="p-3">Allround, kod, webbsök</td>
+                        <td class="p-3">~220 kr ($20)</td>
+                        <td class="p-3">Medium (128k tokens)</td>
+                    </tr>
+                    <tr class="border-b hover:bg-slate-50">
+                        <td class="p-3">Claude (Anthropic)</td>
+                        <td class="p-3">Nyanserad text, analys</td>
+                        <td class="p-3">~220 kr ($20)</td>
+                        <td class="p-3">Mycket hög (200k tokens)</td>
+                    </tr>
+                    <tr>
+                        <td class="p-3">Gemini (Google)</td>
+                        <td class="p-3">Google Workspace-integration</td>
+                        <td class="p-3">~220 kr ($20)</td>
+                        <td class="p-3">Extremt hög (1-2M tokens)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="text-xs text-slate-500 mt-2">Källa: Officiella prislistor (OpenAI, Anthropic, Google). Priser kan variera beroende på valutakurs och moms.</p>
+        </div>
             <div class="flex flex-col md:flex-row gap-4 mb-8">
                 <select id="tool1" class="flex-1 bg-slate-50 border border-slate-200 text-slate-900 text-sm rounded-xl focus:ring-indigo-500 focus:border-indigo-500 block w-full p-3 font-medium">
                     <option value="">Välj första verktyget...</option>
