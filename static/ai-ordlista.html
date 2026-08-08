@@ -5,6 +5,9 @@
     <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vad \u00e4r en LLM (Large Language Model)?", "acceptedAnswer": {"@type": "Answer", "text": "LLM (Stor spr\u00e5kmodell) \u00e4r en typ av AI som tr\u00e4nats p\u00e5 enorma m\u00e4ngder textdata f\u00f6r att f\u00f6rst\u00e5, generera och interagera med m\u00e4nskligt spr\u00e5k. Exempel inkluderar GPT-5.6 och Claude."}}, {"@type": "Question", "name": "Vad betyder Prompt Engineering?", "acceptedAnswer": {"@type": "Answer", "text": "Prompt Engineering \u00e4r f\u00f6rm\u00e5gan att skriva tydliga och effektiva instruktioner (prompts) till en AI-modell f\u00f6r att f\u00e5 exakt det resultat du vill ha."}}, {"@type": "Question", "name": "Vad \u00e4r Hallucination inom AI?", "acceptedAnswer": {"@type": "Answer", "text": "N\u00e4r en AI-modell sj\u00e4lvs\u00e4kert presenterar falsk eller p\u00e5hittad information som fakta kallas det f\u00f6r en hallucination. Det sker n\u00e4r modellen saknar kunskap men f\u00f6rs\u00f6ker gissa sig till ett svar."}}, {"@type": "Question", "name": "Vad \u00e4r RAG (Retrieval-Augmented Generation)?", "acceptedAnswer": {"@type": "Answer", "text": "RAG \u00e4r en teknik d\u00e4r AI-modellen f\u00f6rst s\u00f6ker upp relevant, specifik och ofta intern data (t.ex. f\u00f6retagets dokument) och sedan anv\u00e4nder den informationen f\u00f6r att generera ett mer exakt svar."}}]}
 </script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "AI-Ordlista: De vanligaste AI-termerna (Enkelt f\u00f6rklarat)", "description": "L\u00e4r dig vad LLM, prompt, token och hallucination egentligen betyder.", "publisher": {"@type": "Organization", "name": "AI-Verktygsl\u00e5dan", "url": "https://aiverktygsladan.se"}, "datePublished": "2026-07-04", "dateModified": "2026-08-08", "author": {"@type": "Organization", "name": "AI-Verktygsl\u00e5dan"}}
+</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
 <script>
@@ -82,42 +85,79 @@
         <div class="space-y-12">
             
             <div id="llm" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">LLM (Large Language Model)</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad är LLM (Large Language Model)?</h2>
                 <div class="prose prose-slate prose-lg">
-                    <p>En "stor språkmodell". Det är själva "hjärnan" bakom AI-chattbotar. En LLM har tränats på enorma mängder text från internet för att lära sig förstå och generera mänskligt språk. Exempel på LLM:er är GPT-5.6, Claude Fable 5 och Llama 4.</p>
+                    <p><strong>En LLM (Large Language Model) är en avancerad AI-modell tränad på enorma mängder text för att förstå, sammanfatta och generera människoliknande språk.</strong> Det är själva "hjärnan" bakom AI-chattbotar. Enligt <a href="https://stanford.edu/class/cs324/" target="_blank" rel="noopener nofollow">Stanford University</a> kan moderna LLM:er ha över 175 miljarder parametrar. Exempel på LLM:er är GPT-5.6, Claude Fable 5 och Llama 4.</p>
                 </div>
             </div>
 
             <div id="prompt" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Prompt (Prompta)</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad betyder Prompt (Prompta)?</h2>
                 <div class="prose prose-slate prose-lg">
-                    <p>Den instruktion eller fråga du skriver in till en AI. Att "prompta bra" handlar om att ge AI:n rätt kontext och tydliga instruktioner för att få bästa möjliga svar tillbaka. Ett prompt kan vara allt från "Vad är klockan?" till en tre sidor lång instruktion för kodning.</p>
+                    <p><strong>En prompt är den instruktion, text eller data du matar in i en AI för att få ett svar, och processen kallas att prompta.</strong> Att "prompta bra" handlar om att ge AI:n rätt kontext och tydliga instruktioner för att få bästa möjliga svar tillbaka. Ett prompt kan vara allt från 10 tecken långt till en instruktion på 128 000 tokens (ca 300 sidor text) i moderna kontextfönster.</p>
                 </div>
             </div>
             
             <div id="token" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Token</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad är Token inom AI?</h2>
                 <div class="prose prose-slate prose-lg">
                     <p>Det sätt som AI:n delar upp ord. Ett "token" är inte nödvändigtvis ett helt ord, utan oftast cirka 3-4 bokstäver. En AI bearbetar text token för token. När AI-företag tar betalt (API-kostnader) görs det nästan alltid per genererat token.</p>
                 </div>
             </div>
 
+            <div class="bg-indigo-50 border border-indigo-100 rounded-2xl p-6 mb-12 shadow-sm">
+                <h3 class="text-xl font-bold text-slate-800 mb-4">Snabbjämförelse: AI-begrepp</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left bg-white rounded-lg overflow-hidden shadow-sm text-sm">
+                        <thead class="bg-indigo-100 text-indigo-900">
+                            <tr>
+                                <th class="p-3 font-semibold border-b border-indigo-200">Begrepp</th>
+                                <th class="p-3 font-semibold border-b border-indigo-200">Kort definition</th>
+                                <th class="p-3 font-semibold border-b border-indigo-200">Exempel / Mått</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="p-3 font-medium text-slate-800">LLM</td>
+                                <td class="p-3 text-slate-600">Själva AI-modellen (hjärnan)</td>
+                                <td class="p-3 text-slate-600">GPT-5.6, Claude Fable 5</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-slate-800">Prompt</td>
+                                <td class="p-3 text-slate-600">Instruktionen du skriver</td>
+                                <td class="p-3 text-slate-600">Max 128 000 tokens i Claude</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-slate-800">Token</td>
+                                <td class="p-3 text-slate-600">Orddelar AI:n processar</td>
+                                <td class="p-3 text-slate-600">100 tokens ≈ 75 ord</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-medium text-slate-800">Hallucination</td>
+                                <td class="p-3 text-slate-600">När AI hittar på fakta</td>
+                                <td class="p-3 text-slate-600">3-16% fel (enligt Vectara)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <div id="context-window" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Kontextfönster (Context Window)</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad är ett Kontextfönster (Context Window)?</h2>
                 <div class="prose prose-slate prose-lg">
-                    <p>AI:ns arbetsminne. Kontextfönstret mäts i tokens och bestämmer hur mycket text AI:n kan "komma ihåg" på en och samma gång. Om du klistrar in en lång bok som överstiger AI:ns kontextfönster, kommer den "glömma" början av boken när du ställer frågor i slutet.</p>
+                    <p><strong>Ett kontextfönster är AI:ns arbetsminne, vilket bestämmer hur mycket text den kan "komma ihåg" och processa i en enda interaktion.</strong> Kontextfönstret mäts i tokens. Enligt testdata från ledande modeller 2026 ligger standarden ofta på 200 000 tokens (ca 150 000 ord). Om du klistrar in text som överstiger AI:ns kontextfönster, kommer den "glömma" tidigare delar av prompten.</p>
                 </div>
             </div>
 
             <div id="hallucination" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Hallucination</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad menas med AI-Hallucination?</h2>
                 <div class="prose prose-slate prose-lg">
-                    <p>När en AI hittar på fakta men presenterar det med stort självförtroende som sanning. En LLM "vet" egentligen ingenting, den gissar bara vilket ord som statistiskt sett borde komma härnäst. Om gissningen är dålig får vi en hallucination.</p>
+                    <p><strong>En AI-hallucination uppstår när en AI-modell genererar faktafel men presenterar dem med stort självförtroende som sanning.</strong> Eftersom en LLM i grunden beräknar sannolikheten för nästa ord, kan den producera statistiskt logiska men faktamässigt inkorrekta påståenden. En studie från <a href="https://www.vectara.com/research/llm-hallucination-leaderboard" target="_blank" rel="noopener nofollow">Vectara (2024)</a> visade att kommersiella modeller hallucinerar mellan 3 % och 16 % av gångerna när de summerar korta texter.</p>
                 </div>
             </div>
 
             <div id="rag" class="scroll-mt-24">
-                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">RAG (Retrieval-Augmented Generation)</h2>
+                                <h2 class="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2">Vad är RAG (Retrieval-Augmented Generation)?</h2>
                 <div class="prose prose-slate prose-lg">
                     <p>Ett sätt att minska hallucinationer. Genom RAG kopplas AI:n först till en databas med pålitlig fakta (t.ex. dina företagsdokument). När du ställer en fråga, söker systemet upp rätt fakta från databasen <i>först</i>, och ger sedan faktan till AI:n som formulerar svaret. Detta gör AI:n mycket mer träffsäker på din specifika data.</p>
                 </div>
@@ -194,6 +234,7 @@
             </div>
             <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
                 <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
                 <div>Sidan kan innehålla affiliatelänkar och är i så fall märkta – det påverkar inte våra bedömningar.</div>
             </div>
         </div>

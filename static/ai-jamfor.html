@@ -275,6 +275,7 @@
             </div>
             <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
                 <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
                 <div>Sidan kan innehålla affiliatelänkar och är i så fall märkta – det påverkar inte våra bedömningar.</div>
             </div>
         </div>
@@ -324,6 +325,10 @@
             const t3 = document.getElementById('tool3').value;
             
             const selectedNames = [t1, t2, t3].filter(n => n !== '');
+            if (selectedNames.length >= 2 && typeof gtag === 'function') {
+                gtag('event', 'verktyg_start', { tool: 'ai-jamfor' });
+                gtag('event', 'verktyg_klart', { tool: 'ai-jamfor' });
+            }
             const errorEl = document.getElementById('compare-error');
             const resultsEl = document.getElementById('compare-results');
             
@@ -405,6 +410,7 @@
         const heroForm = document.getElementById('lead-form-hero');
         if(heroForm) {
             heroForm.addEventListener('submit', function(e) {
+                if (typeof gtag === 'function') { gtag('event', 'lead_skickad', { source: 'hero' }); }
                 e.preventDefault();
                 const email = document.getElementById('hero-email').value;
                 fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).catch(function(){});
