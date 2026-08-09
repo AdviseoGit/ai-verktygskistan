@@ -8,7 +8,7 @@ from sqlalchemy.orm import Session
 import uvicorn
 
 from database import get_db, engine, Base
-from models import Tool
+from models import Tool, NewsletterSubscriber, B2BLead, Lead, CalcData
 
 # Ensure tables are created
 # Force rebuild
