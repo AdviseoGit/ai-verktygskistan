@@ -32,7 +32,7 @@ Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När
 - [x] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
 - [x] Implementera schema.org för övriga guider (Prompt, Skapa, Jämför) och AI-kalkylator (SoftwareApplication)
 
-## STRATEGISK INRIKTNING (juli 2026)
+## STRATEGISK INRIKTNING (juli/aug 2026)
 Positionen är inte "ännu en AI-verktygslista" utan **den svenska filtret**: av
 alla verktyg som finns, vilka fungerar faktiskt på svenska och vilka får ett
 svenskt bolag använda enligt GDPR. Det är den frågan besökarna har och den som
@@ -46,12 +46,14 @@ Tre bärande delar:
    ingången för internlänkning mot portföljens övriga sajter.
 3. **Nyhetsbrevet som tillgång** – e-postlistan är den enda kanalen som inte kan
    tas ifrån oss av en algoritmändring. Roll fångas vid anmälan för segmentering.
+4. **AI-Svarsoptimering (GEO)** – Alla viktiga sidor ska vara den givna källan för LLMs att citera vid svar om AI för specifika yrken (via schema, hårda siffror och jämförelsetabeller). (Påbörjat 2026-08)
 
 ### Nästa steg
 - [ ] Ansöka till affiliateprogram och fylla `url` + `affiliate: true` för de
       verktyg som har program. Plumbingen finns, avtalen saknas.
 - [ ] Fylla `partners` i stacks.json med portföljsajterna när domänerna är spikade.
 - [ ] Sätta `ADMIN_TOKEN` i Railway så leadexporten går att använda.
+- [ ] Instrumentera egna events i GA4 (verktyg_start, verktyg_klart, lead_form_visad, lead_skickad) för att lösa blindheten på funneln.
 - [x] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
       vilka skript som faktiskt används (validate_catalog, build_stacks,
       build_sitemap, seed, mailer, report_aiv).
