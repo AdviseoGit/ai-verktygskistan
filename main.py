@@ -1,5 +1,6 @@
 import os
 import secrets
+import datetime
 from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException, Header
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -65,6 +66,36 @@ async def capture_lead(lead: LeadIn, background: BackgroundTasks, db: Session = 
     
     background.add_task(_deliver_aiv, lead.email)
     return {"status": "success"}
+
+@app.get("/api/stats/leads")
+def get_leads_stats(db: Session = Depends(get_db)):
+    """Returnerar statistik om lead-flödet (alla typer)."""
+    now = datetime.datetime.utcnow()
+    seven_days_ago = now - datetime.timedelta(days=7)
+    
+    # Newsletter leads
+    newsletter_total = db.query(models.NewsletterSubscriber).count()
+    newsletter_7d = db.query(models.NewsletterSubscriber).filter(models.NewsletterSubscriber.created_at >= seven_days_ago).count()
+    
+    # B2B leads
+    b2b_total = db.query(models.B2BLead).count()
+    b2b_7d = db.query(models.B2BLead).filter(models.B2BLead.created_at >= seven_days_ago).count()
+    
+    # Basic leads (fallback/old system)
+    basic_total = db.query(models.Lead).count()
+    basic_7d = db.query(models.Lead).filter(models.Lead.created_at >= seven_days_ago).count()
+    
+    total = newsletter_total + b2b_total + basic_total
+    last_7_days = newsletter_7d + b2b_7d + basic_7d
+    
+    return {
+        "total": total,
+        "last_7_days": last_7_days,
+        "breakdown": {
+            "newsletter": {"total": newsletter_total, "last_7_days": newsletter_7d},
+            "b2b": {"total": b2b_total, "last_7_days": b2b_7d}
+        }
+    }
 
 @app.get("/api/admin/leads")
 async def get_leads(db: Session = Depends(get_db), _=Depends(require_admin)):
