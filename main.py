@@ -74,16 +74,16 @@ def get_leads_stats(db: Session = Depends(get_db)):
     seven_days_ago = now - datetime.timedelta(days=7)
     
     # Newsletter leads
-    newsletter_total = db.query(models.NewsletterSubscriber).count()
-    newsletter_7d = db.query(models.NewsletterSubscriber).filter(models.NewsletterSubscriber.created_at >= seven_days_ago).count()
+    newsletter_total = db.query(NewsletterSubscriber).count()
+    newsletter_7d = db.query(NewsletterSubscriber).filter(NewsletterSubscriber.created_at >= seven_days_ago).count()
     
     # B2B leads
-    b2b_total = db.query(models.B2BLead).count()
-    b2b_7d = db.query(models.B2BLead).filter(models.B2BLead.created_at >= seven_days_ago).count()
+    b2b_total = db.query(B2BLead).count()
+    b2b_7d = db.query(B2BLead).filter(B2BLead.created_at >= seven_days_ago).count()
     
     # Basic leads (fallback/old system)
-    basic_total = db.query(models.Lead).count()
-    basic_7d = db.query(models.Lead).filter(models.Lead.created_at >= seven_days_ago).count()
+    basic_total = db.query(Lead).count()
+    basic_7d = db.query(Lead).filter(Lead.created_at >= seven_days_ago).count()
     
     total = newsletter_total + b2b_total + basic_total
     last_7_days = newsletter_7d + b2b_7d + basic_7d
