@@ -28,6 +28,45 @@
     <!-- OpenGraph -->
     <meta property="og:title" content="Vilka AI-verktyg ska ert företag använda?">
     <meta property="og:description" content="Svara på tre frågor och få förslag, eller filtrera bland 64 granskade AI-verktyg på svenskt språkstöd, GDPR-status och pris.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hur hittar jag rätt AI-verktyg för mitt företag?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "På AI-Verktygslådan kan du filtrera över 64 granskade AI-verktyg baserat på GDPR-status, svenskt språkstöd och prissättning för att hitta rätt lösning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vilka AI-verktyg uppfyller GDPR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Verktyg som ChatGPT Enterprise, Claude Team och Microsoft Copilot för Microsoft 365 uppfyller GDPR när de används med rätt avtal (DPA) som förhindrar modellträning på företagsdata."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://aiverktygsladan.se/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://aiverktygsladan.se/ai-verktyg.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aiverktygsladan.se/">
     <meta property="og:locale" content="sv_SE">

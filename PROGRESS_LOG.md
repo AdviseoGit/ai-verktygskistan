@@ -1,3 +1,4 @@
+2026-08-09 | GEO | GEO-optimerat ai-stack-hr och ai-for-hr | Citerbarhet + Schema | nästa: Bygg originaldata-rapport eller förbättra UX-mätning (events)
 2026-08-08 | GEO | GEO-optimerade ai-ordlista.html och la in egna events i ai-kalkylator/jamfor | Snittpoäng ökar och events loggas | nästa: Optimera leadflow på startsidan
 2026-08-05 | GEO | GEO-optimerade ai-program.html med siffror, källa, schema (Article & FAQPage) och tabell för AI-citerbarhet. | Snittpoäng ökar för sidan | nästa: Optimera leadflow på startsidan
 2026-08-04 | QA | Körde regrissionskoll efter ändringar | QA pass: inga nya fel och inga 500/404 introducerades. | nästa: Optimera ai-program.html eller bygga egen data capture-rapport

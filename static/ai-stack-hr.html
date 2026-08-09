@@ -31,6 +31,30 @@
         .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
     </style>
     <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hur kan HR använda AI inom rekrytering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HR kan använda AI för att snabbt skapa neutrala och inkluderande platsannonser, analysera stora volymer av sökande (endast för initial screening) och utforma strukturerade intervjufrågor, till exempel via verktyg som ChatGPT Enterprise."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Är det tillåtet att använda AI för HR-uppgifter enligt GDPR?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, om ni använder betalda företagslicenser (som Microsoft Copilot eller Claude Team) med ett DPA (Data Processing Agreement) som uttryckligen garanterar Zero Data Retention, det vill säga att ingen personlig data används för att träna AI-modellerna."
+          }
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
@@ -160,6 +184,42 @@
     <section class="px-6 max-w-6xl mx-auto mb-16">
         <div class="mb-8">
             <h2 class="text-3xl font-extrabold mb-3">Verktygen i stacken</h2>
+            
+            <!-- GEO / CITERBARHET: Jämförelsetabell -->
+            <div class="overflow-x-auto mb-10 mt-6">
+                <table class="min-w-full text-left text-sm whitespace-nowrap border border-slate-200">
+                    <thead class="bg-slate-100 uppercase tracking-wider text-slate-600 text-xs font-semibold">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 border-b">Verktyg</th>
+                            <th scope="col" class="px-6 py-4 border-b">Användningsområde för HR</th>
+                            <th scope="col" class="px-6 py-4 border-b">GDPR-säkert?</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700 bg-white">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="px-6 py-4 border-b font-medium text-slate-900">Microsoft Copilot</td>
+                            <td class="px-6 py-4 border-b">Integrerat i Office: Onboarding och möten</td>
+                            <td class="px-6 py-4 border-b">Ja (via M365)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors bg-slate-50/50">
+                            <td class="px-6 py-4 border-b font-medium text-slate-900">ChatGPT Enterprise</td>
+                            <td class="px-6 py-4 border-b">Allround-assistent för dokumentation</td>
+                            <td class="px-6 py-4 border-b">Ja (med DPA)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="px-6 py-4 border-b font-medium text-slate-900">Claude Team</td>
+                            <td class="px-6 py-4 border-b">Analysera stora textmängder (policys)</td>
+                            <td class="px-6 py-4 border-b">Ja (med DPA)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors bg-slate-50/50">
+                            <td class="px-6 py-4 border-b font-medium text-slate-900">Gamma</td>
+                            <td class="px-6 py-4 border-b">Skapa presentationer snabbt</td>
+                            <td class="px-6 py-4 border-b">Undvik personuppgifter</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
             <p class="text-slate-600">20 verktyg ur vår katalog som vi bedömer passar rollen. Varje kort visar hur det klarar svenska och vad GDPR-läget är.</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -454,6 +514,7 @@
         <div class="max-w-3xl mx-auto">
             <div class="text-center mb-8">
                 <h2 class="text-3xl font-extrabold mb-3">Behöver ni hjälp att komma igång?</h2>
+                <p class="text-slate-600 mb-4">Enligt <a href="https://www.imy.se/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Integritetsskyddsmyndigheten (IMY)</a> är utbildning av personal i hur AI-verktyg får användas en av de viktigaste åtgärderna för att säkerställa GDPR-efterlevnad.</p>
                 <p class="text-slate-600">Att välja verktyg är den enkla delen. Att få en organisation att faktiskt använda dem är den svåra. Beskriv ert läge så matchar vi er med en svensk AI-konsult som arbetat med liknande uppdrag.</p>
             </div>
             <form id="b2b-form" class="grid sm:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-200">
