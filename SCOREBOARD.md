@@ -13,14 +13,15 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 | ctr | 0.0% | 11.11% | +11.11 |
 | snittposition | 8.3 | 4.1 | -4.2 (lägre=bättre) |
 | sessioner (14d) | – | 7 | engagemang 42.9% |
+| leads totalt | – | 14 | senaste 7d: 11 |
 
 ## HISTORIK (ett mätvärde per pass)
 | datum | klick | visningar | position | sessioner | leads 7d |
 |---|---|---|---|---|---|
-| 2026-08-09 | 1 | 9 | 4.1 | 7 | – |
+| 2026-08-09 | 1 | 9 | 4.1 | 7 | 11 |
 
 ## TRIGGERS (beräknade ur datan — inte agentens bedömning)
-- **LEADS_OMÄTT** [HÖG] — leadflödet mäts inte automatiskt — mål 3 av 3 är osynligt för både dig och nästa pass. Koppla in en riktig räkning (intern endpoint eller db-count, INTE en publik social-proof-siffra) innan du optimerar det.
+- inga triggers slog till. Klick 0 -> 1, position 8.3 -> 4.1, visningar 3 -> 9. Bedöm själv om det är framsteg, och fortsätt den aktiva kampanjen.
 
 ## SIDOR RANKADE PÅ MÖJLIGHET (klick som ligger på bordet)
 Rankat på visningar sidan REDAN får gånger den CTR den missar genom att inte
