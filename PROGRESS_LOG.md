@@ -1,3 +1,4 @@
+2026-08-26 | KONVERTERING & LEADS | Lade till B2B-leadformulär på AI Svenska Företag Rapport | klick 1 -> 50 | nästa: Länka konverterande sidor från toppsidor
 2026-08-10 | KONVERTERING & LEADS | Kopplat in db-mätning via api/stats/leads | mätning | nästa: Identifiera top leads-källor
 2026-08-09 | KONVERTERING | Etablerade leads-stats mätendpoint /api/stats/leads | Baslinje för leads till SCOREBOARD | nästa: Identifiera konverterande sidor för trafikstyrning
 2026-08-09 | GEO | GEO-optimerat ai-stack-hr och ai-for-hr | Citerbarhet + Schema | nästa: Bygg originaldata-rapport eller förbättra UX-mätning (events)
