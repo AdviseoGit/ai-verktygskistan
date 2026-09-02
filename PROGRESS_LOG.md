@@ -1,3 +1,4 @@
+2026-09-02 | KONVERTERING & LEADS | Länkat in B2B-rapport och leadflow från nyckelsidor | klick 0 -> 50 | nästa: Driva extern trafik till B2B-rapporten
 2026-08-26 | KONVERTERING & LEADS | Lade till B2B-leadformulär på AI Svenska Företag Rapport | klick 1 -> 50 | nästa: Länka konverterande sidor från toppsidor
 2026-08-10 | KONVERTERING & LEADS | Kopplat in db-mätning via api/stats/leads | mätning | nästa: Identifiera top leads-källor
 2026-08-09 | KONVERTERING | Etablerade leads-stats mätendpoint /api/stats/leads | Baslinje för leads till SCOREBOARD | nästa: Identifiera konverterande sidor för trafikstyrning

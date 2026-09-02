@@ -10,3 +10,4 @@ https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to G
 https://aiverktygsladan.se/ai-kalkylator.html | URL is unknown to Google | 2026-08-03 | lagt till FAQPage schema, uppmaning att begära indexering via GSC
 https://aiverktygsladan.se/ai-stack-hr.html | URL is unknown to Google | 2026-08-09 | GEO-optimerad, ligger i sitemap med uppdaterad lastmod
 https://aiverktygsladan.se/ai-for-hr.html | URL is unknown to Google | 2026-08-09 | GEO-optimerad, ligger i sitemap med uppdaterad lastmod
+https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to Google | 2026-08-26 | lastmod uppdaterad för att trigga omindexering (innehåller nu lead capture)
