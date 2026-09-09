@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guider för Företag: Strategisk AI för Beslutsfattare | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="En samling strategiska guider för svenska företag om AI. Lär dig om arkitektur, kostnader (TCO), säkerhet, GDPR och implementation.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-guider-foretag.html">
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Sticky Nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-extrabold tracking-tight">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="/ai-guider-foretag.html" class="text-sm font-bold text-indigo-600">Guider för Företag</a>
+                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
+                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
+                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+            </div>
+            <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/ai-guider-foretag.html" class="block font-bold text-indigo-600">Guider för Företag</a>
+        <a href="/ai-verktyg.html" class="block font-medium hover:text-indigo-600">Verktyg</a>
+        <a href="/ai-stackar.html" class="block font-medium hover:text-indigo-600">AI-stackar</a>
+        <a href="/ai-kalkylator.html" class="block font-medium hover:text-indigo-600">Kalkylator</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <header class="text-center mb-16 fade-in">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">Guider för Företag</h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    En samling strategiska guider för att hjälpa er navigera de kritiska frågorna kring AI i er organisation.
+                </p>
+            </header>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <a href="/ai-arkitektur-foretag.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-5xl mb-4" aria-hidden="true">🏛️</div>
+                    <h3 class="text-2xl font-bold mb-3">Arkitektur</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6 flex-grow">Bygga eget, fine-tuna en modell, eller använda färdiga API:er? Vi reder ut vilken väg som passar er organisation och era mål.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+                <a href="/ai-kostnader-tco.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-5xl mb-4" aria-hidden="true">💰</div>
+                    <h3 class="text-2xl font-bold mb-3">Kostnad & TCO</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6 flex-grow">Vad är den verkliga kostnaden för AI? Vi tittar på Total Cost of Ownership – från API-anrop till personal och underhåll.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+                <a href="/ai-sakerhet-gdpr.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-5xl mb-4" aria-hidden="true">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-3">Säkerhet & GDPR</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6 flex-grow">Hur hanterar ni kunddata på ett säkert sätt? Praktiska checklistor för GDPR och regelefterlevnad när ni använder AI-verktyg.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+                <a href="/implementera-ai-guide.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-5xl mb-4" aria-hidden="true">🚀</div>
+                    <h3 class="text-2xl font-bold mb-3">Implementation</h3>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6 flex-grow">En konkret steg-för-steg-guide för att gå från behovsanalys till en lyckad utrullning av AI i er organisation.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        // Mobile menu
+        document.getElementById("mobile-menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("hidden");
+        });
+    </script>
+</body>
+</html>

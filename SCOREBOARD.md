@@ -1,6 +1,6 @@
-# SCOREBOARD — sc-domain:aiverktygsladan.se (2026-09-02)
+# SCOREBOARD — sc-domain:aiverktygsladan.se (2026-09-09)
 
-Fönster: **2026-08-17 .. 2026-08-30** jämfört med **2026-08-03 .. 2026-08-16** (14 dagar vardera, GSC-lag 3d).
+Fönster: **2026-08-24 .. 2026-09-06** jämfört med **2026-08-10 .. 2026-08-23** (14 dagar vardera, GSC-lag 3d).
 
 Denna fil skrivs av scoreboard.py och committas — den är passens ENDA minne av
 vad siffrorna faktiskt gjorde. Ändra den inte för hand.
@@ -9,10 +9,10 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 | mått | före | efter | delta |
 |---|---|---|---|
 | klick | 0 | **0** | +0 |
-| visningar | 17 | 8 | -9 |
+| visningar | 5 | 8 | +3 |
 | ctr | 0.0% | 0.0% | +0.00 |
-| snittposition | 3.1 | 2.6 | -0.5 (lägre=bättre) |
-| sessioner (14d) | – | 3 | engagemang 66.7% |
+| snittposition | 3.8 | 2.6 | -1.2 (lägre=bättre) |
+| sessioner (14d) | – | 6 | engagemang 50.0% |
 | leads totalt | – | 14 | senaste 7d: 0 |
 
 ## HISTORIK (ett mätvärde per pass)
@@ -23,9 +23,10 @@ vad siffrorna faktiskt gjorde. Ändra den inte för hand.
 | 2026-08-20 | 0 | 17 | 3.1 | 5 | 0 |
 | 2026-08-26 | 0 | 5 | 3.8 | 2 | 0 |
 | 2026-09-02 | 0 | 8 | 2.6 | 3 | 0 |
+| 2026-09-09 | 0 | 8 | 2.6 | 6 | 0 |
 
 ## TRIGGERS (beräknade ur datan — inte agentens bedömning)
-- **STAGNATION** [HÖG] — klick har inte rört sig på 4 mätta pass (1->0->0->0). Metoden ska bytas, inte upprepas hårdare.
+- **STAGNATION** [HÖG] — klick har inte rört sig på 4 mätta pass (0->0->0->0). Metoden ska bytas, inte upprepas hårdare.
 
 ## SIDOR RANKADE PÅ MÖJLIGHET (klick som ligger på bordet)
 Rankat på visningar sidan REDAN får gånger den CTR den missar genom att inte
