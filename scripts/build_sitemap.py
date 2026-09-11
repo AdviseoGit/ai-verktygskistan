@@ -35,6 +35,7 @@ PRIORITY = {
     "bygg-ai-agent": (0.9, "monthly"),
     "ai-agent-exempel": (0.9, "monthly"),
     "ai-agent-anvandningsfall": (0.9, "monthly"),
+    "ai-agent-openclaw": (0.9, "weekly"),
     "ai-agent-mcp": (0.9, "monthly"),
     "ai-agent-n8n": (0.8, "monthly"),
     "ai-agent-sakerhet": (0.8, "monthly"),

@@ -30,6 +30,7 @@ valet fritt och bör styras av vem som ska förvalta lösningen.
 - Användningsfall som når produktion, och de som inte gör det: https://aiverktygsladan.se/ai-agent-anvandningsfall.html
 
 ## Fördjupning
+- OpenClaw: vad det är, säkerhetsläget och om företag bör använda det: https://aiverktygsladan.se/ai-agent-openclaw.html
 - MCP (Model Context Protocol) förklarat, med kodexempel: https://aiverktygsladan.se/ai-agent-mcp.html
 - Säkerhet: promptinjektion, behörigheter, spärrar: https://aiverktygsladan.se/ai-agent-sakerhet.html
 - Multiagentsystem: när flera agenter behövs och när inte: https://aiverktygsladan.se/multiagent-system.html

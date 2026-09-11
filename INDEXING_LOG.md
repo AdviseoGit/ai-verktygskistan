@@ -37,3 +37,4 @@ https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to G
 2026-09-11 | https://aiverktygsladan.se/ai-agent-litet-foretag.html | NY | FAQPage-schema. Målterm: "ai agent litet företag".
 2026-09-11 | https://aiverktygsladan.se/ai-agent-google-workspace.html | NY | FAQPage-schema.
 2026-09-11 | https://aiverktygsladan.se/ai-agent-reglerad-bransch.html | NY | FAQPage-schema.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-openclaw.html | NY | FAQPage-schema. Hög söktermsvolym, inlagd i nav. Begär indexering.

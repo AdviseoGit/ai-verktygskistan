@@ -54,3 +54,14 @@ snabbt inaktuella, kontrollera vid varje större uppdatering.
 Vägvalsguidens JS skrevs först utan å/ä/ö; rättat. Notera att optionsvärdena
 (`lasa`, `kansligt` m.fl.) medvetet är ASCII eftersom de jämförs mot
 HTML-attribut — rätta aldrig dem.
+
+## 2026-09-11 — OpenClaw (31 sidor)
+OpenClaw saknades helt trots att det är ett av de snabbast växande öppna
+projekten någonsin (350 000+ GitHub-stjärnor, släppt sent 2025). Orsaken var
+att aktualitetsregeln i AGENT_CONTEXT bara täckte modellversioner, inte
+produkter. Regeln är utvidgad — se avsnitt 5.0.
+Sidan tar ställning: bra som personligt verktyg, villkorat som intern
+operationsbot, nej som produktionsagent i verksamheten. Säkerhetsavsnittet
+bygger på publicerade CVE:er och exponeringsmätningar från 2026 med källor.
+Siffrorna är ögonblicksbilder från början av 2026 och 2.0 kom i augusti —
+det står i texten, men kontrollera vid uppdatering.

@@ -38,10 +38,29 @@ Läs `SITE_VISION.md` innan du gör något strukturellt — särskilt avsnittet
   (Gartners 40 %, 89 % av piloter, MCP-adoption) har källor listade på
   `/ai-agent-ramverk.html` — utöka den listan när nya siffror tillkommer.
 
-## 5. Modellaktualitet – KRITISK REGEL
+## 5. Aktualitet – KRITISK REGEL
+
+### 5.0 Regeln gäller inte bara modeller
+Den här regeln skrevs för modellversioner. Den missade därför OpenClaw helt:
+ett projekt som släpptes i slutet av 2025, passerade 350 000 GitHub-stjärnor
+och blev den mest omskrivna agentprodukten – utan att nämnas på sajten, för att
+ingen letade efter *produkter*, bara efter modellnamn.
+
+**Sök därför varje pass även efter nya agentprodukter och ramverk**, inte bara
+nya modellversioner. Sökfrågor som fungerar: "new AI agent framework [månad
+år]", "fastest growing open source AI agent", "AI agent launch [år]". En
+produkt som saknas på sajten är en lucka; en produkt som beskrivs inaktuellt är
+en bugg.
+
+Gäller särskilt: plattformsnamn byts ofta (Azure AI Foundry → Microsoft
+Foundry, Agentspace → Gemini Enterprise Agent Platform). Kontrollera dem vid
+varje större uppdatering av `ai-agent-microsoft-365.html`,
+`ai-agent-google-workspace.html` och `ai-agent-ramverk.html`.
+
+## 5a. Modellaktualitet
 AI-modeller uppdateras ofta. Gammal modellinformation skadar credibiliteten.
 
-### 5a. Verifiera ALLTID aktuell modell innan publicering
+### 5b. Verifiera ALLTID aktuell modell innan publicering
 Innan du nämner en specifik modellversion på en sida – särskilt i kodexemplet
 på `bygg-ai-agent.html` eller i ramverkstabellen på `ai-agent-ramverk.html`:
 
@@ -57,14 +76,14 @@ på `bygg-ai-agent.html` eller i ramverkstabellen på `ai-agent-ramverk.html`:
 3. **Uppdatera sidan** om du hittar en nyare version, och notera det i
    `MAINTENANCE_LOG.md`.
 
-### 5b. Checklist vid modelluppdatering
+### 5c. Checklist vid modelluppdatering
 - [ ] Vilken modell är nuvarande default på webbplatsen (inte bara API)?
 - [ ] Har pricing förändrats?
 - [ ] Finns ny GDPR/DPA-information?
 - [ ] Uppdatera varje sida där modellnamnet nämns (`grep -rn` i `static/`).
 - [ ] Uppdatera "Uppdaterad [månad] [år]"-märket i berörda sidors hero.
 
-### 5c. Modeller att bevaka (verifierat 25 juli 2026)
+### 5d. Modeller att bevaka (verifierat 25 juli 2026)
 | Leverantör | Aktuell flagship | Senaste uppdatering |
 |-----------|-----------------|---------------------|
 | OpenAI    | GPT-5.6 (Luna / Terra / Sol) | 9 juli 2026 – GA efter gated preview 26 juni |
@@ -76,7 +95,7 @@ på `bygg-ai-agent.html` eller i ramverkstabellen på `ai-agent-ramverk.html`:
 | Runway    | Gen-4.5         | 2026                |
 | Kling     | Kling 3.0       | 2026                |
 
-### 5d. Söktermer att använda vid verifiering
+### 5e. Söktermer att använda vid verifiering
 - "[Modelnamn] latest model [innevarande år]"
 - "[Leverantör] new model release [innevarande månad och år]"
 - "what is the current [GPT/Claude/Gemini] model [innevarande år]"

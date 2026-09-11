@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw: vad det är och om företag ska använda det | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Vad OpenClaw gör, varför det spreds så snabbt, det dokumenterade säkerhetsläget – och vår bedömning per användningsfall. Plus härdningschecklista.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-openclaw.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="OpenClaw: vad det är och om företag ska använda det">
+    <meta property="og:description" content="Vad OpenClaw gör, varför det spreds så snabbt, det dokumenterade säkerhetsläget – och vår bedömning per användningsfall. Plus härdningschecklista.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-openclaw.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad är OpenClaw?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OpenClaw är ett öppet, självhostat ramverk för personliga AI-agenter, skapat av Peter Steinberger och släppt i slutet av 2025. Det körs som en bakgrundstjänst på egen hårdvara, kopplas till valfri språkmodell med egen API-nyckel, och möter användaren i kanaler den redan använder – WhatsApp, Telegram, Slack, Discord, Signal, iMessage och ett tjugotal till. Det har passerat 350 000 stjärnor på GitHub och är ett av de snabbast växande öppna projekten någonsin. OpenAI anställde skaparen i början av 2026 och sponsrar projektet, som ligger kvar under MIT-licens i en stiftelsemodell."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Är OpenClaw säkert att använda i företag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inte i standardkonfigurationen. Under 2026 har flera allvarliga sårbarheter rapporterats, bland annat kommandoinjektion, SSRF, path traversal och kodexekvering via promptinjektion. SecurityScorecard observerade i februari 2026 drygt 40 000 internetexponerade instanser varav en tredjedel flaggades som sårbara. Till det kommer arkitektoniska svagheter: lagring av API-nycklar i klartext, avsaknad av rollbaserad behörighet och bristande revisionsspår. Ska OpenClaw användas i en organisation krävs härdning, isolering och styrning – det är inget man installerar och lämnar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är skillnaden mellan OpenClaw och n8n?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De löser olika problem. OpenClaw är en personlig assistent som bor på er hårdvara, når era kanaler och agerar självständigt på ett brett mandat. n8n är en automationsmotor där ni ritar ett avgränsat flöde som gör en bestämd sak. För ett företag som vill automatisera ett arbetsmoment med spårbarhet och tydliga gränser är n8n nästan alltid rätt val. OpenClaw är starkare som personligt verktyg och som intern operationsbot, men ger av konstruktion ett bredare mandat, vilket är just det som gör det svårare att styra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan man köra OpenClaw GDPR-säkert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Att det går att självhosta inom EU löser en del av frågan men inte hela. Språkmodellen anropas normalt som extern tjänst, vilket kräver biträdesavtal, och agentens breda åtkomst till mejl, filer och meddelandekanaler innebär omfattande behandling av personuppgifter. Saknaden av revisionsspår i grundutförandet gör det dessutom svårt att i efterhand redogöra för vad som hänt i ett enskilt fall, vilket är ett krav. Vid bred åtkomst till personuppgifter bör en konsekvensbedömning göras."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-vagval.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad passar oss?</a>
+                <a href="/ai-agent-openclaw.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">OpenClaw</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/ai-agent-vagval.html" class="block font-bold text-indigo-600">Vad passar oss? (vägvalsguide)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-microsoft-365.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi kör Microsoft 365</a>
+        <a href="/ai-agent-litet-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi är ett litet bolag</a>
+        <a href="/ai-agent-openclaw.html" class="block font-medium hover:text-indigo-600 transition-colors">OpenClaw</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Fenomenet · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight"><span class="gradient-text">OpenClaw</span> &ndash; vad det är, och om ni ska använda det</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Ett av de snabbast växande öppna projekten någonsin, och det mest omskrivna inom agenter just nu. Här är vad det faktiskt gör, vad det är bra på, och det säkerhetsläge som sällan nämns i entusiasmen.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-4">Snabbfakta</h2>
+            <dl class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Vad</dt><dd class="font-semibold text-right">Självhostat agentramverk</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Skapare</dt><dd class="font-semibold text-right">Peter Steinberger</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Licens</dt><dd class="font-semibold text-right">MIT, stiftelsemodell</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Sponsras av</dt><dd class="font-semibold text-right">OpenAI sedan 2026</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">GitHub-stjärnor</dt><dd class="font-semibold text-right">350 000+</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Senaste större version</dt><dd class="font-semibold text-right">2.0, augusti 2026</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Modeller</dt><dd class="font-semibold text-right">Valfria, även lokala</dd></div>
+                <div class="flex justify-between border-b border-slate-100 pb-2"><dt class="text-slate-500">Kanaler</dt><dd class="font-semibold text-right">20+ (WhatsApp, Slack &hellip;)</dd></div>
+            </dl>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Varför alla pratar om det</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">OpenClaw träffade något ingen annan agentprodukt hade träffat: den bor hos <em>dig</em>, inte hos en leverantör. Fyra egenskaper förklarar spridningen.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-lg font-bold mb-2">Den kör på din egen hårdvara</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">En bakgrundstjänst på din maskin eller server, med din egen API-nyckel. Ingen prenumeration, ingen tredje part som ser din data i mitten.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-lg font-bold mb-2">Den möter dig där du redan är</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">WhatsApp, Telegram, Slack, Discord, Signal, iMessage, Teams och ett tjugotal kanaler till. Ingen ny app att lära sig &ndash; agenten blir en kontakt bland andra.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-lg font-bold mb-2">Den vaknar av sig själv</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mekanismen som kallas <em>heartbeat</em> låter agenten vakna enligt schema, titta i filer och databaser och höra av sig utan att någon frågat. Det är det som skiljer den från en chatt.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-lg font-bold mb-2">Den är inte låst till en leverantör</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Claude, GPT, Gemini, Grok, Mistral, DeepSeek &ndash; eller en lokal modell via Ollama för full dataisolering. Modellen är en inställning, inte ett beslut ni fastnar i.</p>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Tekniskt ligger en gateway-process i mitten som multiplexar WebSocket och HTTP på en port och sköter sessioner, verktygsanrop och kanalrouting. Funktionalitet paketeras i moduler kallade <em>AgentSkills</em>. Det är en genomtänkt konstruktion &ndash; populariteten är inte bara hype.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Det som sällan nämns: säkerhetsläget</h2>
+            <p class="text-slate-400 leading-relaxed mb-8">Det här avsnittet finns för att nästan ingen svensk text om OpenClaw innehåller det. Under 2026 har projektet fått omfattande säkerhetsgranskning, och resultaten är allvarliga nog att påverka beslutet.</p>
+
+            <div class="grid sm:grid-cols-3 gap-5 mb-8">
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-white mb-1">40 214</div>
+                    <p class="text-sm text-slate-400">internetexponerade instanser observerade i februari 2026</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-white mb-1">35 %</div>
+                    <p class="text-sm text-slate-400">av dem flaggades som sårbara vid analystillfället</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl text-center">
+                    <div class="text-3xl font-extrabold text-white mb-1">4</div>
+                    <p class="text-sm text-slate-400">allvarliga CVE:er publicerade under 2026</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-white mb-3">Rapporterade sårbarheter</h3>
+            <p class="text-slate-400 leading-relaxed mb-4">Bland annat kommandoinjektion (CVE-2026-24763), SSRF (CVE-2026-26322), path traversal som medger läsning av lokala filer (CVE-2026-26329) och kodexekvering via promptinjektion (CVE-2026-30741). Ett intrång kopplat till tjänsten Moltbook exponerade mejlarkiv från 41 företag.</p>
+
+            <h3 class="text-xl font-bold text-white mb-3 mt-8">De arkitektoniska svagheterna är viktigare än enskilda CVE:er</h3>
+            <p class="text-slate-400 leading-relaxed mb-4">Sårbarheter lagas. Det här är egenskaper hos konstruktionen, och de kvarstår tills ni själva åtgärdar dem:</p>
+            <div class="space-y-3">
+                <div class="bg-slate-800 p-5 rounded-xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Nycklar i klartext.</strong> Både modelleverantörens API-nyckel och tokens för varje meddelandekanal agenten är kopplad till. Den som kommer åt maskinen kommer åt allt.</p></div>
+                <div class="bg-slate-800 p-5 rounded-xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Ingen rollbaserad behörighet.</strong> Det finns inget inbyggt sätt att ge olika användare olika rättigheter.</p></div>
+                <div class="bg-slate-800 p-5 rounded-xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Bristande revisionsspår.</strong> Utan logg över varje verktygsanrop kan ni inte svara på vad som hände i ett enskilt fall &ndash; ett krav enligt <a href="/ai-agent-gdpr.html" class="text-indigo-300 underline">GDPR</a>.</p></div>
+                <div class="bg-slate-800 p-5 rounded-xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Långtidsminne gör promptinjektion värre.</strong> Agenten behåller kontext över sessioner. En injicerad instruktion kan därmed ligga kvar och påverka framtida körningar &ndash; inte bara den där den kom in. Se <a href="/ai-agent-sakerhet.html" class="text-indigo-300 underline">säkerhetsguiden</a>.</p></div>
+            </div>
+            <p class="text-slate-400 leading-relaxed mt-6"><strong class="text-white">Att vara rättvis:</strong> siffrorna ovan är ögonblicksbilder från början av 2026, och version 2.0 kom i augusti samma år. En del är sannolikt åtgärdat. Men den grundläggande riskbilden &ndash; en agent med brett mandat, åtkomst till era kanaler och ett bestående minne &ndash; följer av vad produkten <em>är</em>, och försvinner inte med en uppdatering.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Era anställda kör det kanske redan</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Det här är den delen som gör OpenClaw till en företagsfråga även för den som inte tänkt införa det. Uppgifter från 2026 pekar på att <strong>omkring 22 % av organisationerna har anställda som kör OpenClaw utan godkännande</strong>.</p>
+            <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-7 mb-6">
+                <h3 class="text-xl font-bold mb-3">Varför det är allvarligare än vanlig skugg-IT</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">Ett obehörigt SaaS-verktyg ser er data. En obehörig OpenClaw-instans <em>agerar</em> med den anställdes behörigheter &ndash; läser mejl, filer och chattar, och kan skicka i deras namn. Utan telemetri, utan revisionsspår, utan att någon i organisationen vet att den finns.</p>
+                <p class="text-slate-700 leading-relaxed">Sker ett intrång är det er data, och ni kan inte redogöra för vad som hänt.</p>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Vad ni bör göra, oavsett hållning</h3>
+            <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                <li>Ta reda på om det redan körs hos er. Fråga rakt ut &ndash; folk installerar det för att det är användbart, inte för att smyga.</li>
+                <li>Bestäm en hållning och kommunicera den. &quot;Vi har inte tänkt på det&quot; är i praktiken ett tyst ja.</li>
+                <li>Erbjud ett godkänt alternativ. Förbud utan alternativ driver användningen under ytan, där ni inte ser den.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Ska ni använda det?</h2>
+            <p class="text-slate-600 mb-8">Vår bedömning, uppdelad på hur ni tänkt använda det.</p>
+            <div class="space-y-5">
+                <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-2">Ja &ndash; som personligt verktyg</h3>
+                    <p class="text-slate-700 leading-relaxed">På en egen maskin, för egna uppgifter, utan åtkomst till företagets system. Här är OpenClaw genuint bra och riskerna är era egna. Det är också det den byggdes för.</p>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-2">Kanske &ndash; som intern operationsbot</h3>
+                    <p class="text-slate-700 leading-relaxed">En delad instans som sammanställer veckorapporter, uppdaterar interna listor eller påminner i en kanal kan fungera väl. Villkoret är att den körs isolerat, med minsta möjliga behörighet, utan åtkomst till personuppgifter, och att någon namngiven äger den. Räkna med härdningsarbete.</p>
+                </div>
+                <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-2">Nej &ndash; som produktionsagent i verksamheten</h3>
+                    <p class="text-slate-700 leading-relaxed">Ska agenten kontera fakturor, hantera kundärenden eller röra personuppgifter i era system: välj något annat. Inte för att OpenClaw är dåligt, utan för att ni då behöver avgränsat mandat, spårbarhet och godkännandesteg &ndash; och det är inte vad OpenClaw är byggt för. Använd <a href="/ai-agent-n8n.html" class="text-indigo-600 font-semibold underline">n8n</a> eller ett <a href="/ai-agent-ramverk.html" class="text-indigo-600 font-semibold underline">kodramverk</a>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">OpenClaw jämfört med alternativen</h2>
+            <p class="text-slate-600 mb-8">De löser olika problem, vilket är hela poängen.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[760px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200"></th>
+                            <th class="p-4 font-bold border-b border-slate-200">OpenClaw</th>
+                            <th class="p-4 font-bold border-b border-slate-200">n8n</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Kodramverk</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100"><td class="p-4 font-semibold">Grundidé</td><td class="p-4 text-slate-600">Personlig assistent med brett mandat</td><td class="p-4 text-slate-600">Avgränsat flöde ni ritar</td><td class="p-4 text-slate-600">Avgränsad agent ni kodar</td></tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50"><td class="p-4 font-semibold">Mandat</td><td class="p-4 text-rose-700">Brett av konstruktion</td><td class="p-4 text-emerald-700">Precis det ni ritat</td><td class="p-4 text-emerald-700">Precis det ni kodat</td></tr>
+                        <tr class="border-b border-slate-100"><td class="p-4 font-semibold">Revisionsspår</td><td class="p-4 text-rose-700">Bristande</td><td class="p-4 text-emerald-700">Per körning</td><td class="p-4 text-emerald-700">Så bra ni bygger det</td></tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50"><td class="p-4 font-semibold">Godkännandesteg</td><td class="p-4 text-amber-700">Går att bygga</td><td class="p-4 text-emerald-700">Inbyggt mönster</td><td class="p-4 text-emerald-700">Inbyggt mönster</td></tr>
+                        <tr class="border-b border-slate-100"><td class="p-4 font-semibold">Kör inom EU</td><td class="p-4 text-emerald-700">Ja, självhostat</td><td class="p-4 text-emerald-700">Ja, självhostat</td><td class="p-4 text-emerald-700">Ja, självhostat</td></tr>
+                        <tr><td class="p-4 font-semibold">Bäst för</td><td class="p-4 text-slate-600">Dig själv, och interna operationsbotar</td><td class="p-4 text-slate-600">Verksamhetens arbetsmoment</td><td class="p-4 text-slate-600">Produktion med krav</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Om ni ändå ska köra det: härdningschecklista</h2>
+            <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8">
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Instansen är <strong>inte</strong> exponerad mot internet. Det här är den enskilt viktigaste punkten.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Den körs isolerat &ndash; egen maskin eller container, inte på någons arbetsdator med företagsinloggning.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Egna konton med minsta möjliga behörighet, aldrig en människas inloggning.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> API-nycklar med utgiftstak och möjlighet att spärras omedelbart.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Ingen åtkomst till personuppgifter innan en konsekvensbedömning är gjord.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Extern loggning ni själva lagt till, eftersom revisionsspåret inte räcker i grundutförandet.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Uppdateringsrutin med namngiven ägare &ndash; sårbarheterna publiceras löpande.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Testad med en promptinjektion i inkommande material, med kontroll av att minnet inte behöll den.</li>
+                    <li class="flex gap-3"><span class="text-indigo-600 font-bold shrink-0" aria-hidden="true">&#9633;</span> Endast AgentSkills ni själva granskat &ndash; samma resonemang som för <a href="/ai-agent-mcp.html" class="text-indigo-600 font-semibold underline">MCP-servrar</a>.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Källor</h2>
+            <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+                <li>Vad OpenClaw är, historik och spridning &ndash; <a href="https://en.wikipedia.org/wiki/OpenClaw" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Wikipedia</a>, <a href="https://www.digitalocean.com/resources/articles/what-is-openclaw" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">DigitalOcean</a></li>
+                <li>Sårbarheter, CVE:er och exponeringsmätningar &ndash; <a href="https://adversa.ai/blog/openclaw-security-101-vulnerabilities-hardening-2026/" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Adversa AI</a>, <a href="https://thehackernews.com/2026/03/openclaw-ai-agent-flaws-could-enable.html" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">The Hacker News</a></li>
+                <li>Dataläckage och promptinjektion &ndash; <a href="https://www.giskard.ai/knowledge/openclaw-security-vulnerabilities-include-data-leakage-and-prompt-injection-risks" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Giskard</a></li>
+                <li>Företagsanvändning, skugg-IT och styrningsluckor &ndash; <a href="https://www.mintmcp.com/blog/secure-openclaw-enterprise" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">MintMCP</a>, <a href="https://www.linuxjournal.com/content/openclaw-2026-what-it-whos-using-it-and-whether-your-business-should-adopt-it" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Linux Journal</a></li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-5">Uppgifterna avser september 2026. OpenClaw utvecklas snabbt och säkerhetsläget ändras löpande &ndash; kontrollera aktuell version, publicerade CVE:er och projektets egna säkerhetsrekommendationer innan ni fattar beslut.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Kör någon hos er OpenClaw redan?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv hur ni tänkt använda det, eller vad ni upptäckt att någon redan gör, så får ni en rak bedömning av riskbilden och vad som krävs för att göra det försvarbart &ndash; eller vilket alternativ som passar bättre.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-openclaw" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/ai-agent-vagval.html" class="hover:text-white transition-colors">Vad passar oss? (guide)</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Er situation</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-microsoft-365.html" class="hover:text-white transition-colors">Vi kör Microsoft 365</a></li>
+                        <li><a href="/ai-agent-google-workspace.html" class="hover:text-white transition-colors">Vi kör Google Workspace</a></li>
+                        <li><a href="/ai-agent-litet-foretag.html" class="hover:text-white transition-colors">Vi är ett litet bolag</a></li>
+                        <li><a href="/ai-agent-reglerad-bransch.html" class="hover:text-white transition-colors">Vi är reglerade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-openclaw.html" class="hover:text-white transition-colors">OpenClaw</a></li>
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>
