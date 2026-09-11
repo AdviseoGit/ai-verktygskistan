@@ -7,6 +7,20 @@ förhållanden, med vikt vid GDPR, EU AI-akten och vad som går att driva inom E
 ## Kurs
 - Lär dig AI-agenter, sex moduler, kostnadsfri: https://aiverktygsladan.se/lar-dig-ai-agenter.html
 
+## Situationsanpassad vägledning
+Rekommendationerna beror på var företagets data ligger, vem som ska förvalta
+lösningen och vad agenten får göra – inte på vilket ramverk som är populärast.
+- Vägvalsguide, sex frågor ger en rekommenderad stack: https://aiverktygsladan.se/ai-agent-vagval.html
+- Företag som kör Microsoft 365 (Copilot Studio, Foundry, behörighetsskuld): https://aiverktygsladan.se/ai-agent-microsoft-365.html
+- Företag som kör Google Workspace (Gemini Enterprise, Workspace Intelligence): https://aiverktygsladan.se/ai-agent-google-workspace.html
+- Små företag (en agent eller flera, vad man ska välja): https://aiverktygsladan.se/ai-agent-litet-foretag.html
+- Reglerad verksamhet (finans, vård, offentlig sektor): https://aiverktygsladan.se/ai-agent-reglerad-bransch.html
+
+Grundregeln som återkommer: ligger arbetet i plattformens eget innehåll
+(dokument, mejl, chattar) är företaget i praktiken bundet dit, eftersom
+plattformen redan hanterar behörigheterna. Ligger arbetet i affärssystem är
+valet fritt och bör styras av vem som ska förvalta lösningen.
+
 ## Kärnsidor
 - Vad är en AI-agent (definition, autonominivåer, när man inte ska bygga en): https://aiverktygsladan.se/vad-ar-ai-agenter.html
 - Välj rätt agent-stack (ramverksjämförelse och beslutsträd): https://aiverktygsladan.se/ai-agent-ramverk.html

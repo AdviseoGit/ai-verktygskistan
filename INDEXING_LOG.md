@@ -31,3 +31,9 @@ https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to G
 2026-09-11 | https://aiverktygsladan.se/ai-agent-kostnad.html | NY | FAQPage-schema, räkneexempel.
 2026-09-11 | https://aiverktygsladan.se/ai-agent-gdpr.html | NY | FAQPage-schema.
 2026-09-11 | https://aiverktygsladan.se/multiagent-system.html | NY | FAQPage-schema.
+2026-09-11 | SITUATIONSSPÅR: fem sidor som möter företag i deras eget läge. Begär indexering.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-vagval.html | NY | Interaktiv vägvalsguide, FAQPage-schema. Högsta sitemap-prioritet.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-microsoft-365.html | NY | FAQPage-schema. Målterm: "ai agent microsoft 365", "copilot studio".
+2026-09-11 | https://aiverktygsladan.se/ai-agent-litet-foretag.html | NY | FAQPage-schema. Målterm: "ai agent litet företag".
+2026-09-11 | https://aiverktygsladan.se/ai-agent-google-workspace.html | NY | FAQPage-schema.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-reglerad-bransch.html | NY | FAQPage-schema.

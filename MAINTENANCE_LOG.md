@@ -43,3 +43,14 @@ verkligheten (påstod affiliate och annonser) och är omskrivna.
 omstrukturerade, sitemap-prioriteter och llms.txt uppdaterade. `check_site.py`
 fick en spärr mot dubblettnycklar i REDIRECTS — literal_eval sväljer dem tyst
 och låter sista raden vinna, vilket hittades genom att själv råka införa en.
+
+## 2026-09-11 — Situationsspår (30 sidor)
+Fem sidor som svarar utifrån företagets eget läge i stället för generellt:
+vägvalsguide (interaktiv, räknas i webbläsaren, inget sparas) plus profilsidor
+för Microsoft 365, Google Workspace, små bolag och reglerad verksamhet.
+Fakta om Microsofts och Googles agentplattformar verifierade mot källor från
+2026 och listade på sidorna — produktnamnen har bytts flera gånger och blir
+snabbt inaktuella, kontrollera vid varje större uppdatering.
+Vägvalsguidens JS skrevs först utan å/ä/ö; rättat. Notera att optionsvärdena
+(`lasa`, `kansligt` m.fl.) medvetet är ASCII eftersom de jämförs mot
+HTML-attribut — rätta aldrig dem.

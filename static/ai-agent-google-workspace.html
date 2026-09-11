@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-agenter, GDPR och AI-akten: vad som gäller från augusti 2026 | AI-Verktygslådan</title>
+    <title>AI-agenter i Google Workspace: Gemini Enterprise och när ni är fria | AI-Verktygslådan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,14 +21,14 @@
     <!-- SEO -->
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Vad som skiljer en agent från ett AI-verktyg juridiskt, de sex GDPR-kraven som måste finnas, riskklasserna i AI-akten och genvägen som förenklar nästan allt.">
-    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-gdpr.html">
+    <meta name="description" content="Så hänger Googles agenterbjudande ihop, när Workspace binder er och när det inte gör det – plus delningen i Drive som är er verkliga risk.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-google-workspace.html">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="AI-agenter, GDPR och AI-akten: vad som gäller från augusti 2026">
-    <meta property="og:description" content="Vad som skiljer en agent från ett AI-verktyg juridiskt, de sex GDPR-kraven som måste finnas, riskklasserna i AI-akten och genvägen som förenklar nästan allt.">
+    <meta property="og:title" content="AI-agenter i Google Workspace: Gemini Enterprise och när ni är fria">
+    <meta property="og:description" content="Så hänger Googles agenterbjudande ihop, när Workspace binder er och när det inte gör det – plus delningen i Drive som är er verkliga risk.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-gdpr.html">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-google-workspace.html">
     <meta property="og:locale" content="sv_SE">
 
     <script type="application/ld+json">
@@ -38,26 +38,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Får man använda AI-agenter enligt GDPR?",
+      "name": "Hur bygger man AI-agenter i Google Workspace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ja. GDPR förbjuder inte AI-agenter, men kraven blir mer konkreta när agenten både läser personuppgifter och agerar på dem. Ni behöver rättslig grund för behandlingen, biträdesavtal med modelleverantören, kontroll på var behandlingen sker geografiskt, en anteckning i behandlingsregistret som beskriver vad agenten faktiskt gör, och möjlighet att i efterhand redogöra för enskilda beslut. Det sista är det som oftast saknas, och det löses med loggning av varje verktygsanrop."
+        "text": "Google samlar sitt agenterbjudande i Gemini Enterprise Agent Platform, som är den omdöpta versionen av Agentspace och Vertex-plattformen. Den används för att bygga egna agenter, medan Workspace Intelligence är det som slutanvändarna möter direkt i Gmail, Docs, Sheets, Meet och Drive. En egen agent byggd på plattformen kan kopplas in mot Workspace Intelligence via Agent Gateway. Till skillnad från licensmodeller per användare debiteras plattformen efter beräkningskraft och tokens."
       }
     },
     {
       "@type": "Question",
-      "name": "Vad innebär EU:s AI-akt för AI-agenter?",
+      "name": "Måste ett företag i Google Workspace använda Googles agentverktyg?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Huvuddelen av AI-akten tillämpas från augusti 2026. För de flesta agenter i företag handlar det praktiskt om fyra saker: klassificera agentens risknivå och dokumentera bedömningen, säkerställa mänsklig kontroll där besluten påverkar människor, informera berörda om att de interagerar med ett AI-system, och kunna visa hur systemet fungerar. Agenter som fattar beslut om anställning, kreditvärdighet eller tillgång till tjänster hamnar sannolikt i högriskkategorin och kräver betydligt mer."
+        "text": "Nej, men samma regel gäller som i Microsoft-världen: det avgörande är var arbetet ligger. Ska agenten arbeta med innehåll i Gmail, Drive och Docs är Googles egna verktyg nästan alltid rätt, eftersom de når innehållet med de behörigheter som redan gäller. Ska agenten arbeta i affärssystem som ERP, CRM eller ärendehantering spelar Workspace-bindningen ingen roll och ni väljer stack på vanliga grunder – exempelvis n8n eller ett kodramverk."
       }
     },
     {
       "@type": "Question",
-      "name": "Är automatiserat beslutsfattande med AI-agent tillåtet?",
+      "name": "Vilken är den största risken med AI-agenter i Google Workspace?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Artikel 22 i GDPR ger en rätt att inte bli föremål för beslut som enbart grundas på automatiserad behandling och som har rättsliga följder eller på liknande sätt i betydande grad påverkar den enskilde. Det innebär inte att agenter är förbjudna, men att en agent som ensam avgör sådana ärenden kräver särskilt stöd, information till den registrerade och en möjlighet till mänsklig prövning. Den praktiska lösningen är nästan alltid att låta en människa godkänna beslutet, vilket också är den autonominivå de flesta agenter bör ligga på ändå."
+        "text": "Bred delning i Drive. Precis som i SharePoint-världen skapar agenten inte problemet – den gör befintlig överdelning användbar och sökbar. Filer och mappar som delats med hela organisationen eller via öppna länkar har varit ofarliga så länge ingen hittade dem. Gå igenom delningsinställningarna för de mappar agenten ska få läsa innan ni släpper på den, och begränsa åtkomsten till en avgränsad mängd i stället för hela Drive."
       }
     }
   ]
@@ -123,134 +123,128 @@
 
 
     <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
-        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Regelverk · Uppdaterad September 2026</div>
-        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">AI-agenter, <span class="gradient-text">GDPR och AI-akten</span></h1>
-        <p class="text-xl text-slate-600 leading-relaxed">Agenter skärper kraven jämfört med vanliga AI-verktyg, eftersom de både läser personuppgifter och agerar på dem. Här är vad som faktiskt gäller, vad som skiljer en agent från en chatt i juridisk mening, och vad ni behöver ha på plats.</p>
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Er situation · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Vi kör <span class="gradient-text">Google Workspace</span> &ndash; vad gäller för oss?</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Samma grundregel som i Microsoft-världen, men med ett annat verktygslandskap och en annan prismodell. Här är hur Googles agenterbjudande hänger ihop, när ni är bundna dit, och när ni lika gärna kan välja något helt annat.</p>
     </header>
 
     <section class="px-6 pb-4">
-        <div class="max-w-3xl mx-auto bg-slate-100 border-l-4 border-slate-400 p-6 rounded-r-2xl">
-            <p class="text-slate-700 leading-relaxed text-sm"><strong>Detta är inte juridisk rådgivning.</strong> Sidan beskriver hur regelverket brukar tillämpas i praktiken och vad som normalt behöver finnas på plats. Beslut med rättsliga följder ska fattas tillsammans med jurist.</p>
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border-2 border-indigo-200 p-8">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Svaret på en rad</h2>
+            <p class="text-2xl font-bold leading-snug mb-4">Ligger arbetet i Gmail, Drive och Docs är ni i praktiken bundna till Google. Ligger det i era affärssystem är ni helt fria.</p>
+            <p class="text-slate-600 leading-relaxed">Bindningen kommer inte från licensen utan från behörigheterna. Google vet redan vem som får se vilken fil &ndash; en egen agent måste återskapa det, och gör det nästan alltid fel.</p>
         </div>
     </section>
 
     <section class="py-16 px-6">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-extrabold mb-3">Vad som skiljer en agent från ett AI-verktyg</h2>
-            <p class="text-slate-600 leading-relaxed mb-8">I juridisk mening är skillnaden inte teknisk utan handlar om vad systemet <em>gör</em>. En chatt producerar ett underlag som en människa använder. En agent utför behandlingen själv och verkställer resultatet. Det förskjuter tre saker:</p>
-            <div class="grid md:grid-cols-3 gap-5">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold mb-2">Omfattningen växer</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">En agent som arbetar sig igenom ett ärendeflöde behandlar personuppgifter i stor skala och systematiskt &ndash; två ord som i GDPR utlöser tyngre krav, bland annat på konsekvensbedömning.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold mb-2">Beslutet blir automatiserat</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">När ingen människa granskar närmar ni er artikel 22 om automatiserat beslutsfattande. Med en människa som godkänner är frågan sällan aktuell.</p>
-                </div>
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold mb-2">Spårbarheten krävs på riktigt</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Ni måste kunna redogöra för vad som hände i ett enskilt ärende. För en chatt räcker en policy; för en agent krävs en logg över varje verktygsanrop.</p>
-                </div>
+            <h2 class="text-3xl font-extrabold mb-3">Googles verktyg, sorterade</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Namnen har bytts flera gånger, vilket gjort det svårt att veta vad som är vad. Agentspace döptes om till Gemini Enterprise Agent Platform i oktober 2025, och erbjudandet samlades vid Google Cloud Next i april 2026. Så här hänger det ihop i september 2026.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[720px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Vad</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Vad det är</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Välj när</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Workspace Intelligence</td>
+                            <td class="p-4 text-slate-600">Agentisk funktionalitet direkt i Gmail, Docs, Sheets, Meet och Drive. Det slutanvändarna möter.</td>
+                            <td class="p-4 text-slate-600">Ni vill ha nytta utan att bygga något själva.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Gemini Enterprise Agent Platform</td>
+                            <td class="p-4 text-slate-600">Plattformen där egna agenter byggs, med modellval, orkestrering, driftsättning och säkerhet.</td>
+                            <td class="p-4 text-slate-600">Ni bygger egna agenter och vill ligga kvar i Googles ekosystem.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Agent Gateway</td>
+                            <td class="p-4 text-slate-600">Kopplingen som låter en egen agent nå slutanvändarna via Workspace Intelligence.</td>
+                            <td class="p-4 text-slate-600">Er egna agent ska mötas där folk redan arbetar.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Google ADK</td>
+                            <td class="p-4 text-slate-600">Kodramverk för agenter, Googles motsvarighet till leverantörsspecifika SDK:er.</td>
+                            <td class="p-4 text-slate-600">Ni har utvecklare och lever redan i Google Cloud.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-8 bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-7">
+                <h3 class="text-xl font-bold mb-2">En viktig skillnad mot Microsoft-spåret</h3>
+                <p class="text-slate-700 leading-relaxed">Agentplattformen debiteras efter <strong>beräkningskraft och tokens</strong>, inte per användare. Det är bra för er om ni har många anställda men få som faktiskt använder agenten &ndash; och sämre om ni har hög volym på få händer. Räkna på er egen fördelning innan ni jämför med en licensmodell per plats; talen är inte jämförbara rakt av.</p>
             </div>
         </div>
     </section>
 
     <section class="py-16 px-6 bg-white border-y border-slate-200">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-extrabold mb-3">GDPR: de sex sakerna som måste finnas</h2>
-            <p class="text-slate-600 mb-8">Ingen av dem är svår. De saknas ändå nästan alltid när någon byggt en agent utan att fråga.</p>
-            <div class="space-y-4">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">1. Rättslig grund</h3>
-                    <p class="text-slate-600 leading-relaxed">Oftast berättigat intresse eller fullgörande av avtal. Skriv ned vilken och varför. Att ni gjorde samma sak manuellt tidigare gör inte grunden självklar &ndash; men den brukar bära, eftersom ändamålet är oförändrat.</p>
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Placera ert fall</h2>
+            <p class="text-slate-600 mb-8 max-w-3xl">De flesta Workspace-hus har fall i båda kolumnerna. Sortera dem först &ndash; det gör stackvalet nästan självklart.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                    <h3 class="text-xl font-bold mb-3">Arbetet ligger i Workspace</h3>
+                    <p class="text-sm text-slate-500 mb-4">Bunden &ndash; stanna hos Google</p>
+                    <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5">
+                        <li>Svara på frågor ur dokument i Drive</li>
+                        <li>Sammanfatta långa mejltrådar i Gmail</li>
+                        <li>Ta fram underlag ur mötesanteckningar</li>
+                        <li>Bearbeta data som lever i Sheets</li>
+                    </ul>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">2. Biträdesavtal med modelleverantören</h3>
-                    <p class="text-slate-600 leading-relaxed">Så snart agenten skickar personuppgifter till en modell &ndash; vilket den nästan alltid gör &ndash; är leverantören personuppgiftsbiträde. Kontrollera att avtalet finns, att data inte används för träning, och vad som gäller för lagring av anrop.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">3. Koll på var behandlingen sker</h3>
-                    <p class="text-slate-600 leading-relaxed">Ramverket kan köras i EU men modellen anropas ofta utanför. Flera leverantörer erbjuder EU-regioner eller möjlighet att styra var inferensen sker &ndash; ta reda på vad som gäller för er konfiguration, inte vad som står i marknadsföringen.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">4. Anteckning i behandlingsregistret</h3>
-                    <p class="text-slate-600 leading-relaxed">Beskriv vad agenten gör, vilka kategorier av uppgifter den rör, vilka mottagare som finns och hur länge loggarna sparas. Det är den här texten en tillsynsmyndighet börjar i.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">5. Konsekvensbedömning när det behövs</h3>
-                    <p class="text-slate-600 leading-relaxed">Storskalig systematisk behandling, känsliga uppgifter eller beslut som påverkar enskilda &rarr; gör en DPIA. En agent som betar av ett ärendeflöde träffar ofta minst ett av kriterierna.</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h3 class="font-bold text-lg mb-2">6. Loggar som gör er svarsförmögna</h3>
-                    <p class="text-slate-600 leading-relaxed">Vid en begäran om registerutdrag, en rättelse eller en fråga om ett enskilt beslut måste ni kunna svara. Samtidigt är loggen i sig en personuppgiftsbehandling &ndash; sätt en gallringstid och håll den.</p>
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                    <h3 class="text-xl font-bold mb-3">Arbetet ligger i affärssystemen</h3>
+                    <p class="text-sm text-slate-500 mb-4">Fri &ndash; välj på vanliga grunder</p>
+                    <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5">
+                        <li>Ärendehantering, CRM, ekonomisystem</li>
+                        <li>Kontering, fakturaflöden, orderhantering</li>
+                        <li>Agenter mot externa API:er och portaler</li>
+                        <li>Allt som inte rör Workspace-innehåll</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="py-16 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-extrabold mb-3">AI-akten: vad som gäller från augusti 2026</h2>
-            <p class="text-slate-600 leading-relaxed mb-8">Huvuddelen av EU:s AI-akt tillämpas från augusti 2026. De flesta företagsagenter är inte högrisksystem, men alla omfattas av något. Börja med att placera er agent:</p>
-            <div class="overflow-x-auto mb-8">
-                <table class="w-full text-sm border-collapse min-w-[720px]">
-                    <thead>
-                        <tr class="bg-slate-50 text-left">
-                            <th class="p-4 font-bold border-b border-slate-200">Nivå</th>
-                            <th class="p-4 font-bold border-b border-slate-200">Exempel på agent</th>
-                            <th class="p-4 font-bold border-b border-slate-200">Vad som krävs</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b border-slate-100">
-                            <td class="p-4 font-semibold text-rose-700">Förbjuden</td>
-                            <td class="p-4 text-slate-600">Social poängsättning, manipulativa system</td>
-                            <td class="p-4 text-slate-600">Otillåtet sedan februari 2025.</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 bg-slate-50/50">
-                            <td class="p-4 font-semibold text-amber-700">Hög risk</td>
-                            <td class="p-4 text-slate-600">Agent som sållar jobbansökningar, bedömer kreditvärdighet eller styr tillgång till tjänster</td>
-                            <td class="p-4 text-slate-600">Riskhanteringssystem, datastyrning, teknisk dokumentation, loggning, mänsklig kontroll, konformitetsbedömning. Betydande arbete &ndash; involvera jurist tidigt.</td>
-                        </tr>
-                        <tr class="border-b border-slate-100">
-                            <td class="p-4 font-semibold text-slate-700">Begränsad risk</td>
-                            <td class="p-4 text-slate-600">Agent som svarar kunder</td>
-                            <td class="p-4 text-slate-600">Informationsplikt: den som interagerar ska förstå att det är ett AI-system.</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-semibold text-emerald-700">Minimal risk</td>
-                            <td class="p-4 text-slate-600">Intern agent som konterar fakturor eller sorterar ärenden</td>
-                            <td class="p-4 text-slate-600">Inga särskilda krav utöver GDPR. Här hamnar de flesta.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-7">
-                <h3 class="text-xl font-bold mb-3">Det som gäller alla nivåer</h3>
-                <p class="text-slate-700 leading-relaxed">Kravet på <strong>AI-kunnighet</strong> gäller oavsett riskklass: de som använder systemet ska ha tillräcklig kompetens för att förstå vad det gör och vad det inte gör. En agent som rullas ut utan att användarna fått veta hur den fungerar &ndash; och när den brukar ha fel &ndash; uppfyller inte det.</p>
-            </div>
+            <p class="text-slate-600 leading-relaxed mt-8">För högerkolumnen gäller samma resonemang som för alla andra: har ni ingen utvecklarfunktion är <a href="/ai-agent-n8n.html" class="text-indigo-600 font-semibold underline">n8n</a> oftast rätt, och rör agenten pengar eller avtal pekar det mot ett kodramverk med spårbarhet. <a href="/ai-agent-ramverk.html" class="text-indigo-600 font-semibold underline">Beslutsträdet</a> tar er hela vägen.</p>
         </div>
     </section>
 
     <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Er verkliga risk: delningen i Drive</h2>
+            <p class="text-slate-300 leading-relaxed mb-6 text-lg"><strong class="text-white">Agenten skapar inte överdelningen. Den gör den användbar.</strong></p>
+            <p class="text-slate-400 leading-relaxed mb-6">Drive är i många organisationer ännu rörigare än SharePoint, eftersom det är så enkelt att dela. En mapp som delats med &quot;alla i organisationen&quot; för fem år sedan har varit ofarlig så länge ingen letade. En agent letar, sammanfattar och svarar.</p>
+            <h3 class="text-xl font-bold text-white mb-3">Ordningen som fungerar</h3>
+            <ol class="space-y-3 text-slate-300">
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">1.</span> <span><strong class="text-white">Ge agenten en avgränsad mängd.</strong> Peka ut de mappar den får läsa i stället för att ge den hela Drive. Det är den enskilt mest verkningsfulla åtgärden och den tar en eftermiddag.</span></li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">2.</span> <span><strong class="text-white">Gå igenom delningen för just de mapparna.</strong> Öppna länkar, delning med hela organisationen, externa gäster som blivit kvar.</span></li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">3.</span> <span><strong class="text-white">Utöka gradvis</strong>, och gör genomgången till en rutin i stället för en engångsstädning.</span></li>
+            </ol>
+            <p class="text-slate-400 leading-relaxed mt-8">Arbetet är värt att göra oavsett agenter. Ni har ett dataskyddsproblem redan i dag &ndash; agenten gör det bara synligt.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
         <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-extrabold mb-6 text-white">Den praktiska genvägen</h2>
-            <p class="text-slate-300 leading-relaxed mb-6">Nästan allt ovan blir enklare av ett enda arkitekturbeslut: <strong class="text-white">låt en människa godkänna</strong>.</p>
-            <ul class="space-y-3 text-slate-300 list-disc pl-5">
-                <li>Artikel 22 om automatiserat beslutsfattande blir sällan aktuell.</li>
-                <li>Kravet på mänsklig kontroll i AI-akten är uppfyllt av konstruktionen.</li>
-                <li>Godkännandena blir er logg, och samtidigt er <a href="/bygg-ai-agent.html" class="text-indigo-300 font-semibold underline">utvärderingsdata</a>.</li>
-                <li>Riskklassningen blir enklare att motivera.</li>
-            </ul>
-            <p class="text-slate-400 leading-relaxed mt-6">Det är samma nivå 2 som rekommenderas av rent tekniska skäl i <a href="/vad-ar-ai-agenter.html" class="text-indigo-300 font-semibold underline">grundguiden</a>. Att den också är den juridiskt enklaste vägen är ingen slump: regelverket är skrivet utifrån samma insikt som driften lär ut &ndash; system som agerar utan tillsyn gör fel som ingen upptäcker.</p>
+            <h2 class="text-3xl font-extrabold mb-6">Rekommenderad ordning</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <ol class="space-y-4 text-slate-600">
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">1</span> <span><strong class="text-slate-900">Börja med ett fall i affärssystemen.</strong> Ni slipper delningsfrågan helt och lär er hur agenter fungerar på ett avgränsat fall.</span></li>
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">2</span> <span><strong class="text-slate-900">Prova Workspace Intelligence parallellt.</strong> Det kräver inget bygge och visar snabbt vad medarbetarna faktiskt efterfrågar.</span></li>
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">3</span> <span><strong class="text-slate-900">Bygg först då något eget på plattformen</strong>, med en avgränsad mängd Drive-innehåll och <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 underline">autonominivå 2</a>.</span></li>
+                </ol>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Osäkra på var ert fall hamnar? <a href="/ai-agent-vagval.html" class="text-indigo-600 font-semibold underline">Vägvalsguiden</a> ger ett svar på sex frågor.</p>
+            <p class="text-xs text-slate-500 mt-6">Googles produktnamn har ändrats flera gånger de senaste åren. Uppgifterna avser september 2026 &ndash; kontrollera aktuell status och tillgänglighet i er region i Googles egen dokumentation innan ni fattar beslut. Källa: <a href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-agent-platform" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Google Cloud Blog</a>.</p>
         </div>
     </section>
 
     <section class="py-16 px-6 bg-white border-y border-slate-200">
         <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold mb-4">Osäkra på var er agent hamnar?</h2>
-            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv vad agenten ska göra och vilka uppgifter den rör, så får ni en bedömning av riskklass, vad som behöver dokumenteras och var ni bör lägga godkännandesteget.</p>
-            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-gdpr" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha era fall sorterade?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv de arbetsmoment ni funderar på, så får ni tillbaka vilka som hör hemma hos Google, vilka ni är fria att bygga hur ni vill, och vad delningsgenomgången kräver.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-google-workspace" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
                 Beskriv ert läge
                 <span aria-hidden="true">&rarr;</span>
             </a>

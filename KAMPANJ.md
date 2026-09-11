@@ -12,6 +12,7 @@
   Steg: [x] Pivotera sajten: 5 nya kärnsidor, 24 katalogsidor retirerade med 301
         [x] Konverteringsvägen samlad på en mätbar sida med källspårning per sida
         [x] Bygga ut klustret till 25 sidor med kursen som ryggrad
+        [x] Situationsspår: vägvalsguide + profilsidor för MS 365, Google, litet bolag, reglerat
         [ ] Begära indexering av samtliga nya sidor i GSC
         [ ] Mäta vilka agent-termer som får visningar innan fler sidor byggs
 

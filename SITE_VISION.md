@@ -14,6 +14,13 @@ beslutet till läsaren. Vår position är den motsatta:
 
 > **Vi minskar antalet val.** Varje sida ska sluta i ett svar, inte i en lista.
 
+Och sedan september 2026 en princip till, som visade sig viktigare än väntat:
+
+> **Generella råd hjälper ingen.** Svaret beror på var företagets data ligger,
+> vem som ska förvalta lösningen och vad agenten får göra. Situationsspåret
+> (`ai-agent-vagval.html` + profilsidorna) finns för att möta läsaren där den
+> faktiskt står, i stället för att beskriva ett genomsnittsföretag.
+
 Tre bärande principer:
 1. **Ta ställning.** Ett beslutsträd som ger ett ramverk slår en tabell med tio.
    Tabellen finns kvar, men som underlag för svaret — inte i stället för det.
@@ -43,6 +50,11 @@ ställe man *lär sig* på, inte bara slår upp på, och ger allt annat en ordni
 | Spår | Sida | Roll |
 |---|---|---|
 | Lär | `lar-dig-ai-agenter.html` | Kurshubb i sex moduler, Course-schema. Primär ingång. |
+| Situation | `ai-agent-vagval.html` | Interaktiv vägvalsguide, sex frågor → ett svar. Räknas i webbläsaren. |
+| Situation | `ai-agent-microsoft-365.html` | Bundna eller fria? Behörighetsskulden som fäller Microsoft-hus. |
+| Situation | `ai-agent-google-workspace.html` | Motsvarande för Workspace, inkl. annan prismodell. |
+| Situation | `ai-agent-litet-foretag.html` | En agent eller flera. Svaret är förvaltning, inte kapacitet. |
+| Situation | `ai-agent-reglerad-bransch.html` | Vad som går, vad som blir högrisk, vad som fäller projekten. |
 | Förstå | `vad-ar-ai-agenter.html` | Pelarsida: definition, autonominivåer, när man ska avstå |
 | Välj | `ai-agent-ramverk.html` | Beslutsträd + ramverksjämförelse |
 | Bygg (kod) | `bygg-ai-agent.html` | Sju steg med kodexempel på agentloopen |
@@ -63,6 +75,7 @@ ställe man *lär sig* på, inte bara slår upp på, och ger allt annat en ordni
 - [x] Fem nya kärnsidor med FAQ- och HowTo-schema (2026-09-11)
 - [x] Konverteringsvägen samlad på en mätbar sida med källspårning (2026-09-11)
 - [x] Klustret utbyggt till 25 sidor med kurs som ryggrad (2026-09-11)
+- [x] Situationsspår: vägvalsguide + fyra profilsidor (2026-09-11)
 - [ ] Första indexerade klicket på en agent-term
 - [ ] Topp 10 på "ai agent" eller "bygga ai agent" på svenska
 - [ ] 10 kvalificerade implementationsförfrågningar

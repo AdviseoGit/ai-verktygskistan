@@ -25,6 +25,11 @@ EXCLUDE = set()
 PRIORITY = {
     "index": (1.0, "weekly"),
     "lar-dig-ai-agenter": (1.0, "weekly"),
+    "ai-agent-vagval": (1.0, "monthly"),
+    "ai-agent-microsoft-365": (0.9, "monthly"),
+    "ai-agent-litet-foretag": (0.9, "monthly"),
+    "ai-agent-google-workspace": (0.8, "monthly"),
+    "ai-agent-reglerad-bransch": (0.8, "monthly"),
     "vad-ar-ai-agenter": (0.9, "monthly"),
     "ai-agent-ramverk": (0.9, "weekly"),
     "bygg-ai-agent": (0.9, "monthly"),

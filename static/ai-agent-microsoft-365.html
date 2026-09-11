@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agenter i Microsoft 365: måste ni stanna i Microsofts verktyg? | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Copilot Studio, Foundry eller eget ramverk? Så avgör ni när ni är bundna och när ni är fria – plus behörighetsskulden som fäller flest Microsoft-hus.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-microsoft-365.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agenter i Microsoft 365: måste ni stanna i Microsofts verktyg?">
+    <meta property="og:description" content="Copilot Studio, Foundry eller eget ramverk? Så avgör ni när ni är bundna och när ni är fria – plus behörighetsskulden som fäller flest Microsoft-hus.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-microsoft-365.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Måste ett företag som kör Microsoft 365 bygga sina AI-agenter i Microsofts verktyg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej, men frågan bör ställas om. Det avgörande är var arbetet ligger. Ska agenten arbeta med innehåll som redan finns i Microsoft 365 – dokument i SharePoint, mejl, Teams-konversationer – är Microsofts egna verktyg nästan alltid rätt, eftersom de når innehållet via Microsoft Graph och ärver de behörigheter som redan gäller. Ska agenten arbeta i affärssystem som ERP, CRM eller ärendehantering är Microsoft-bindningen irrelevant och ni väljer stack på vanliga grunder. Ungefär hälften av alla agentfall i ett Microsoft-hus hör till den andra kategorin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är skillnaden mellan Copilot Studio och Microsoft Foundry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Copilot Studio är den låg-kodade vägen: agenter byggs i ett grafiskt gränssnitt och publiceras in i Teams och Microsoft 365 Copilot. Microsoft Foundry, som hette Azure AI Foundry innan namnbytet 2026, är den pro-kodade vägen för egna agenter och AI-applikationer, och dess agenter kan sedan juni 2026 också publiceras till Microsoft 365 Copilot och Teams. Styrning och säkerhet för båda samlas i Microsoft Agent 365. Har ni ingen utvecklarfunktion väljer ni Copilot Studio; har ni det är Foundry mer flexibelt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilken är den största risken med AI-agenter i Microsoft 365?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Överdelning av dokument. En agent skapar inte överdelningsproblemet – den gör den behörighetsskuld som redan finns i SharePoint användbar och sökbar. Fyra mönster står för det mesta: grupper av typen alla utom externa användare, brutna behörighetsarv, breda eller anonyma delningslänkar, och gamla säkerhetsgrupper som omfattar alla anställda. Inventera vad agenten faktiskt kan nå via Microsoft Graph innan ni släpper på den, och använd Restricted Content Discovery för att snabbt stänga ute de värsta sajterna."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur lång tid tar det att införa en AI-agent i ett stort Microsoft-hus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bygget tar typiskt en till tre veckor. Införandet tar oftast betydligt längre, och tiden går inte till tekniken utan till behörighetsgenomgång, säkerhetsgranskning och beslutsprocess. I organisationer med egen IT-avdelning är det vanligt att den delen mäts i månader. Planera därför projektet baklänges från godkännandeprocessen, och börja behörighetsinventeringen samtidigt som bygget i stället för efter."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-vagval.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad passar oss?</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/ai-agent-vagval.html" class="block font-bold text-indigo-600">Vad passar oss? (vägvalsguide)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-microsoft-365.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi kör Microsoft 365</a>
+        <a href="/ai-agent-litet-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi är ett litet bolag</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Er situation · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Vi kör <span class="gradient-text">Microsoft 365</span> &ndash; kan vi välja vilken stack som helst?</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Det korta svaret är ja, men frågan är fel ställd. Det avgörande är inte vilken licens ni har, utan var arbetet ligger och vem som redan vaktar behörigheterna. Här är hela resonemanget, och den risk som fäller flest Microsoft-hus.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border-2 border-indigo-200 p-8">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Svaret på en rad</h2>
+            <p class="text-2xl font-bold leading-snug mb-4">Ligger arbetet i Microsoft 365:s eget innehåll är ni i praktiken bundna dit. Ligger det i era affärssystem är ni helt fria.</p>
+            <p class="text-slate-600 leading-relaxed">Ni är alltså inte &quot;fast&quot; i Microsoft. Ni är bundna för vissa fall och fria för andra, och det går att avgöra vilket innan ni börjar bygga.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Varför bindningen inte handlar om licensen</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">Det finns inget tekniskt som hindrar er från att köra LangGraph eller n8n bredvid Microsoft 365. Microsoft Graph har API:er, och vem som helst kan bygga mot dem.</p>
+            <p class="text-slate-600 leading-relaxed mb-6">Det som binder er är <strong>behörighetsmodellen</strong>. Microsoft 365 vet redan vem som får se vilket dokument, vilken mapp som är delad med vem och vilka arv som brutits var. Copilot och agenter byggda i Microsofts verktyg hämtar innehåll via Graph och respekterar de behörigheterna automatiskt.</p>
+            <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-7">
+                <h3 class="text-xl font-bold mb-3">Det här är fällan</h3>
+                <p class="text-slate-700 leading-relaxed">Bygger ni en egen agent mot Microsoft 365-innehåll med ett eget ramverk måste ni <em>själva</em> återskapa den behörighetsmodellen &ndash; per dokument, per användare, per fråga. Det vanliga misstaget är att ge agenten ett tjänstekonto med bred läsrätt och låta den svara alla. Då har ni byggt en maskin som läcker dokument tvärs igenom organisationen, och ingen märker det förrän någon frågar agenten om något de inte borde få veta.</p>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Det är därför svaret är &quot;i praktiken nej&quot; för innehållsfall, trots att det tekniskt är ja.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Placera ert fall</h2>
+            <p class="text-slate-600 mb-8 max-w-3xl">De flesta Microsoft-hus har fall i båda kolumnerna. Sortera dem innan ni väljer stack &ndash; det är det som gör valet enkelt.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                    <h3 class="text-xl font-bold mb-3">Arbetet ligger i Microsoft 365</h3>
+                    <p class="text-sm text-slate-500 mb-4">Bunden &ndash; stanna i Microsofts verktyg</p>
+                    <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5 mb-5">
+                        <li>Svara på frågor ur policy- och rutindokument</li>
+                        <li>Sammanfatta långa mejltrådar eller Teams-kanaler</li>
+                        <li>Hitta rätt underlag i SharePoint inför ett möte</li>
+                        <li>Sammanställa information ur dokument flera avdelningar äger</li>
+                    </ul>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Varför:</strong> behörigheterna är halva uppgiften, och Microsoft har dem redan.</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+                    <h3 class="text-xl font-bold mb-3">Arbetet ligger i affärssystemen</h3>
+                    <p class="text-sm text-slate-500 mb-4">Fri &ndash; välj på vanliga grunder</p>
+                    <ul class="space-y-2 text-slate-600 text-sm list-disc pl-5 mb-5">
+                        <li>Klassa och dirigera ärenden i ärendehanteringssystemet</li>
+                        <li>Föreslå kontering av leverantörsfakturor</li>
+                        <li>Kvalificera leads och berika poster i CRM</li>
+                        <li>Extrahera villkor ur avtal till en strukturerad tabell</li>
+                    </ul>
+                    <p class="text-slate-600 text-sm leading-relaxed"><strong>Varför:</strong> Microsoft 365 äger inte den datan, så bindningen finns inte.</p>
+                </div>
+            </div>
+            <div class="mt-8 bg-indigo-50 border border-indigo-200 rounded-2xl p-7">
+                <p class="text-slate-700 leading-relaxed"><strong>Praktiskt råd:</strong> börja i högerkolumnen. Fallen där är avgränsade, har tydligt facit och kräver ingen behörighetsstädning för att komma igång. Vänsterkolumnen ger ofta större värde men kräver att ni först städat behörigheterna &ndash; vilket är ett eget projekt, se nedan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Microsofts verktyg, sorterade</h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">Namnen har ändrats flera gånger, vilket gjort landskapet svårläst. Så här ser det ut i september 2026.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[760px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Verktyg</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Vad det är</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Välj när</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Copilot Studio</td>
+                            <td class="p-4 text-slate-600">Låg-kodad byggare för agenter som publiceras in i Teams och Microsoft 365 Copilot.</td>
+                            <td class="p-4 text-slate-600">Arbetet ligger i Microsoft 365-innehåll och ni saknar utvecklarfunktion.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Microsoft Foundry</td>
+                            <td class="p-4 text-slate-600">Pro-kodad plattform för egna agenter, tidigare Azure AI Foundry. Agenter kan sedan juni 2026 publiceras till Microsoft 365 Copilot och Teams.</td>
+                            <td class="p-4 text-slate-600">Ni har utvecklare och behöver mer kontroll än Copilot Studio ger.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Microsoft Agent 365</td>
+                            <td class="p-4 text-slate-600">Styrning och säkerhet för agenter byggda i båda ovanstående.</td>
+                            <td class="p-4 text-slate-600">Alltid, så snart ni har fler än en agent i drift.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Entra Agent ID</td>
+                            <td class="p-4 text-slate-600">Identitet för agenter, så att de kan särskiljas och deras handlingar tillskrivas dem.</td>
+                            <td class="p-4 text-slate-600">Så snart agenten agerar självständigt. Ge aldrig agenten en människas konto.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Microsoft Agent Framework</td>
+                            <td class="p-4 text-slate-600">Kodramverk för agenter, grafbaserat i samma anda som LangGraph.</td>
+                            <td class="p-4 text-slate-600">Ni bygger i .NET och vill ligga nära Azure.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Värt att veta för den som tror att Microsoft-spåret låser modellvalet: Claude-modeller finns generellt tillgängliga i Microsoft Foundry på Azure, och kan användas som resonemangsmotor i Foundry Agent Service. Plattformsvalet och modellvalet är alltså två olika frågor.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Er verkliga risk: behörighetsskulden</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">Om ni bara läser ett avsnitt på den här sidan, läs det här. Den vanligaste orsaken till att agentprojekt i Microsoft-hus stoppas är inte att agenten blev dålig.</p>
+            <p class="text-slate-300 leading-relaxed mb-8 text-lg"><strong class="text-white">En agent skapar inte överdelning. Den gör den överdelning ni redan har användbar.</strong></p>
+            <p class="text-slate-400 leading-relaxed mb-6">Dokument som legat felaktigt delade i åratal har varit ofarliga eftersom ingen hittade dem. En agent hittar dem, sammanfattar dem och svarar på frågor om dem. Fyra mönster står för det mesta:</p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-8">
+                <div class="bg-slate-800 p-5 rounded-2xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">&quot;Alla utom externa användare&quot;</strong> &ndash; gruppen som råkat bli standardval vid delning.</p></div>
+                <div class="bg-slate-800 p-5 rounded-2xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Brutna behörighetsarv</strong> &ndash; en undermapp som öppnats upp och aldrig stängts igen.</p></div>
+                <div class="bg-slate-800 p-5 rounded-2xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Breda delningslänkar</strong> &ndash; organisationsövergripande eller anonyma, skapade för ett enskilt tillfälle.</p></div>
+                <div class="bg-slate-800 p-5 rounded-2xl"><p class="text-slate-300 text-sm leading-relaxed"><strong class="text-white">Gamla &quot;alla anställda&quot;-grupper</strong> &ndash; säkerhetsgrupper som vuxit med organisationen.</p></div>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Ordningen som fungerar</h3>
+            <ol class="space-y-3 text-slate-300">
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">1.</span> <span><strong class="text-white">Inventera.</strong> Vad kan agenten faktiskt nå via Microsoft Graph, för de användargrupper som ska ha den? Börja med den mest riskfyllda gruppen, inte med hela organisationen.</span></li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">2.</span> <span><strong class="text-white">Triagera.</strong> Vilka sajter är farliga och vilka är bara röriga? Alla behöver inte åtgärdas före lansering.</span></li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">3.</span> <span><strong class="text-white">Stäng ute det värsta.</strong> Restricted Content Discovery blockerar överdelade SharePoint-sajter från Copilot och agenter utan att ni först måste städa dem. Det är bromsen, inte lösningen &ndash; men den ger er tid.</span></li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">4.</span> <span><strong class="text-white">Sätt en grind.</strong> Behörighetsgenomgång blir en löpande rutin, inte en engångsstädning inför lanseringen.</span></li>
+            </ol>
+            <p class="text-slate-400 leading-relaxed mt-8">Den goda nyheten: arbetet är värt att göra oavsett agenter. Ni har ett dataskyddsproblem redan i dag &ndash; agenten gör det bara synligt.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Det stora IT-huset har ett eget problem</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Med egen IT-avdelning är tekniken sällan hindret. Tre saker är det i stället:</p>
+            <div class="space-y-5">
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-amber-500">
+                    <h3 class="text-xl font-bold mb-2">Processen är längre än bygget</h3>
+                    <p class="text-slate-600 leading-relaxed">Agenten byggs på en till tre veckor. Säkerhetsgranskning, behörighetsgenomgång och beslut tar ofta månader. <strong>Planera baklänges från godkännandeprocessen</strong> och starta behörighetsinventeringen parallellt med bygget, inte efter. Annars står en färdig agent och väntar i ett kvartal.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-amber-500">
+                    <h3 class="text-xl font-bold mb-2">Ny leverantör kostar mer än ny licens</h3>
+                    <p class="text-slate-600 leading-relaxed">Att utöka ett befintligt Microsoft-avtal är en annan sak än att ta in en ny leverantör med upphandling, säkerhetsgranskning och biträdesavtal. Det är ett fullt legitimt skäl att välja Microsoft-spåret &ndash; men var ärliga om att det är skälet, i stället för att efterkonstruera tekniska argument.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-amber-500">
+                    <h3 class="text-xl font-bold mb-2">Det blir ett plattformsprojekt i stället för ett nyttoprojekt</h3>
+                    <p class="text-slate-600 leading-relaxed">Stora organisationer dras till att först bygga &quot;en plattform för agenter&quot; och sedan leta efter något att köra på den. Det ger ett år av arbete och noll levererat värde. Bygg <em>en</em> agent för <em>ett</em> fall först. Plattformsfrågorna besvarar sig själva när ni har något som faktiskt körs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Rekommenderad ordning</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <ol class="space-y-4 text-slate-600">
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">1</span> <span><strong class="text-slate-900">Välj ett fall i affärssystemen</strong>, inte i SharePoint. Ni kommer i mål på veckor i stället för kvartal, och lär er hur agenter fungerar på ett fall utan behörighetsminor.</span></li>
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">2</span> <span><strong class="text-slate-900">Starta behörighetsinventeringen parallellt.</strong> Den är ändå nödvändig, tar lång tid och blockerar allt innehållsnära senare.</span></li>
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">3</span> <span><strong class="text-slate-900">Kör på <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 underline">autonominivå 2</a></strong> med en människa som godkänner. Det förenklar både säkerhetsgranskningen och <a href="/ai-agent-gdpr.html" class="text-indigo-600 underline">AI-aktens krav</a> på mänsklig kontroll.</span></li>
+                    <li class="flex gap-4"><span class="bg-indigo-600 text-white font-bold w-8 h-8 rounded-lg flex items-center justify-center shrink-0 text-sm">4</span> <span><strong class="text-slate-900">Ta innehållsfallen först när städningen kommit igång</strong> &ndash; och då i Copilot Studio eller Foundry, inte i ett eget ramverk.</span></li>
+                </ol>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Osäkra på var ert fall hamnar? <a href="/ai-agent-vagval.html" class="text-indigo-600 font-semibold underline">Vägvalsguiden</a> ger ett svar på sex frågor.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Källor</h2>
+            <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+                <li>Microsofts agentplattformar, Agent 365, Entra Agent ID och publicering från Foundry till Microsoft 365 &ndash; <a href="https://devblogs.microsoft.com/foundry/agent-service-build2026/" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Microsoft Foundry Blog, Build 2026</a></li>
+                <li>Överdelning och styrning av Copilot och agenter &ndash; <a href="https://techcommunity.microsoft.com/blog/microsoft365copilotblog/mitigate-oversharing-to-govern-microsoft-365-copilot-and-agents/4448744" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Microsoft Community Hub</a></li>
+                <li>Övergång av säkerhetsfunktioner till Microsoft Agent 365 &ndash; <a href="https://learn.microsoft.com/en-us/defender-xdr/security-for-ai/transition-agent-security-to-agent-365" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Microsoft Learn</a></li>
+            </ul>
+            <p class="text-xs text-slate-500 mt-5">Microsofts produktnamn och funktioner ändras ofta. Uppgifterna avser september 2026 &ndash; kontrollera aktuell status i Microsofts egen dokumentation innan ni fattar beslut.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha era fall sorterade?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv de arbetsmoment ni funderar på, så får ni tillbaka vilka som hör hemma i Microsofts verktyg, vilka ni är fria att bygga hur ni vill, och vilka som kräver behörighetsstädning först.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-microsoft-365" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/ai-agent-vagval.html" class="hover:text-white transition-colors">Vad passar oss? (guide)</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Er situation</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-microsoft-365.html" class="hover:text-white transition-colors">Vi kör Microsoft 365</a></li>
+                        <li><a href="/ai-agent-google-workspace.html" class="hover:text-white transition-colors">Vi kör Google Workspace</a></li>
+                        <li><a href="/ai-agent-litet-foretag.html" class="hover:text-white transition-colors">Vi är ett litet bolag</a></li>
+                        <li><a href="/ai-agent-reglerad-bransch.html" class="hover:text-white transition-colors">Vi är reglerade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

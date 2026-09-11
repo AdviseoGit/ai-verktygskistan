@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilken AI-agent-stack passar ert företag? Vägvalsguide i sex frågor | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Sex frågor om er situation ger en rekommenderad stack, om ni kan välja fritt, rätt autonominivå, kostnadsbild och er största risk. Inget sparas.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-vagval.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Vilken AI-agent-stack passar ert företag? Vägvalsguide i sex frågor">
+    <meta property="og:description" content="Sex frågor om er situation ger en rekommenderad stack, om ni kan välja fritt, rätt autonominivå, kostnadsbild och er största risk. Inget sparas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-vagval.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ett företag som kör Microsoft 365 välja vilken agent-stack som helst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tekniskt ja, men frågan är fel ställd. Det avgörande är var arbetet ligger. Ska agenten arbeta med innehåll som redan finns i Microsoft 365 – dokument, mejl, Teams – är Microsofts egna verktyg nästan alltid rätt, eftersom de når innehållet via Microsoft Graph och ärver de behörigheter som redan gäller. Ska agenten i stället arbeta i affärssystem som ERP, CRM eller ärendehantering är Microsoft-bindningen irrelevant och ni väljer stack på vanliga grunder. Den som bygger en egen agent mot Microsoft 365-innehåll måste själv återskapa behörighetsmodellen, och det är där de flesta misslyckas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ska ett litet företag bygga en agent eller flera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En. Begränsningen för ett litet bolag är sällan teknisk utan handlar om förvaltning: antalet agenter ni kan driva är lika med antalet personer som kan felsöka dem när något går sönder. Är den siffran ett, är antalet agenter ett. Dessutom multipliceras felen i en kedja – fem agenter som var och en gör rätt i nio fall av tio ger ett system som gör rätt i knappt sex fall av tio. Bygg en agent som gör en sak bra, med två till fyra verktyg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad avgör vilken AI-agent-stack ett företag ska välja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tre saker, i den här ordningen: var arbetet ligger, vem som ska förvalta lösningen, och vad agenten får göra. Var arbetet ligger avgör om ni är bundna till en plattform eller fria att välja. Vem som förvaltar avgör om ni ska bygga visuellt eller i kod – en lösning som ingen kan felsöka är värdelös oavsett hur bra den är. Vad agenten får göra avgör autonominivån och hur mycket spårbarhet som krävs. Modellvalet är däremot sällan avgörande och bör fattas sist."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-vagval.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad passar oss?</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/ai-agent-vagval.html" class="block font-bold text-indigo-600">Vad passar oss? (vägvalsguide)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-microsoft-365.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi kör Microsoft 365</a>
+        <a href="/ai-agent-litet-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi är ett litet bolag</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Vägvalsguide · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Vilken agent-stack passar <span class="gradient-text">er situation</span>?</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Sex frågor om hur ni faktiskt ser ut. Ni får tillbaka en rekommenderad stack, om ni kan välja fritt eller inte, vilken autonominivå ni ska börja på, en kostnadsbild och er största risk. Inget sparas och inget skickas.</p>
+    </header>
+
+    <section class="px-6 pb-8">
+        <div class="max-w-3xl mx-auto">
+            <form id="vagval" class="bg-slate-50 border border-slate-200 rounded-3xl p-8">
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">1. Vilken plattform lever ni i?</legend>
+                <p class="text-slate-500 text-sm mb-4">Avgör om ni är bundna eller fria – men bara i kombination med fråga 3.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="plattform" value="microsoft" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Microsoft 365</span><span class="text-slate-500 text-sm">Outlook, Teams, SharePoint</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="plattform" value="google" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Google Workspace</span><span class="text-slate-500 text-sm">Gmail, Drive, Docs</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="plattform" value="blandat" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Blandat</span><span class="text-slate-500 text-sm">Båda finns, ingen dominerar</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="plattform" value="ingen" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Ingen stark bindning</span><span class="text-slate-500 text-sm">Eller vi är fria att välja</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">2. Vem ska förvalta lösningen efteråt?</legend>
+                <p class="text-slate-500 text-sm mb-4">Den viktigaste frågan på hela sidan. En lösning ingen kan felsöka är värdelös.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="it" value="ingen" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Ingen IT-funktion</span><span class="text-slate-500 text-sm">Vi köper in när det behövs</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="it" value="liten" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">1–2 personer</span><span class="text-slate-500 text-sm">Som redan har fullt upp</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="it" value="itavdelning" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Egen IT-avdelning</span><span class="text-slate-500 text-sm">Men inte utvecklare</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="it" value="utveckling" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Egen utveckling</span><span class="text-slate-500 text-sm">Vi bygger och driftar själva</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">3. Var ligger arbetet agenten ska göra?</legend>
+                <p class="text-slate-500 text-sm mb-4">Detta – inte plattformen i sig – avgör om ni kan välja stack fritt.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="arbete" value="plattform" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">I plattformens innehåll</span><span class="text-slate-500 text-sm">Dokument, mejl, chattar, filer</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="arbete" value="affarssystem" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">I affärssystem</span><span class="text-slate-500 text-sm">ERP, CRM, ärendehantering, ekonomi</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="arbete" value="bada" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Båda delarna</span><span class="text-slate-500 text-sm">Agenten behöver nå bägge</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="arbete" value="externt" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">I externa källor</span><span class="text-slate-500 text-sm">Webb, leverantörsportaler, API:er</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">4. Vad ska agenten få göra?</legend>
+                <p class="text-slate-500 text-sm mb-4">Avgör autonominivå och hur mycket spårbarhet som krävs.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="gor" value="lasa" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Bara läsa och sammanställa</span><span class="text-slate-500 text-sm">Inget skrivs tillbaka</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="gor" value="skriva" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Skriva i interna system</span><span class="text-slate-500 text-sm">Skapa ärenden, uppdatera poster</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="gor" value="kansligt" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Röra pengar, avtal eller persondata</span><span class="text-slate-500 text-sm">Kontering, utbetalning, kunduppgifter</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">5. Hur ofta utförs uppgiften?</legend>
+                <p class="text-slate-500 text-sm mb-4">Under tio gånger i veckan hinner ni aldrig samla underlag för att veta om agenten fungerar.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="volym" value="lag" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Under 10 gånger i veckan</span><span class="text-slate-500 text-sm">Fundera på ett annat fall</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="volym" value="medel" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">10–100 gånger i veckan</span><span class="text-slate-500 text-sm">Bra utgångsläge</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="volym" value="hog" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Fler än 100 gånger i veckan</span><span class="text-slate-500 text-sm">Här finns störst värde</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-8">
+                <legend class="text-xl font-bold mb-1">6. Är ni i en reglerad verksamhet?</legend>
+                <p class="text-slate-500 text-sm mb-4">Finans, vård, försäkring, offentlig sektor – eller hanterar ni känsliga personuppgifter.</p>
+                <div class="grid sm:grid-cols-2 gap-3">
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="reglerad" value="nej" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Nej</span><span class="text-slate-500 text-sm">Vanlig privat verksamhet</span></span>
+                    </label>
+                    <label class="flex gap-3 items-start bg-white border border-slate-200 rounded-xl p-4 cursor-pointer hover:border-indigo-400 transition-colors">
+                        <input type="radio" name="reglerad" value="ja" class="mt-1 shrink-0">
+                        <span><span class="font-semibold block">Ja</span><span class="text-slate-500 text-sm">Särskild tillsyn eller känsliga uppgifter</span></span>
+                    </label>
+                </div>
+            </fieldset>
+
+                <button type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors text-lg">Visa vår rekommendation</button>
+                <p class="text-xs text-slate-400 mt-4 text-center">Allt räknas ut i din webbläsare. Inga svar lämnar sidan.</p>
+            </form>
+            <div id="resultat" class="hidden mt-10"></div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Logiken bakom svaret</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Guiden är inte ett quiz. Den bygger på tre regler som förklarar det mesta, och som är värda att kunna även utan formuläret.</p>
+            <div class="space-y-5">
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold mb-2">1. Var arbetet ligger avgör om ni är fria</h3>
+                    <p class="text-slate-600 leading-relaxed">Ska agenten arbeta med dokument, mejl och chattar som redan ligger i Microsoft 365 eller Google Workspace är ni i praktiken bundna dit &ndash; inte av licensavtalet, utan av behörigheterna. Plattformen vet redan vem som får se vad. En egen agent måste återskapa det, och gör det nästan alltid fel. Ska agenten däremot arbeta i affärssystem spelar plattformen ingen roll alls.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold mb-2">2. Vem som förvaltar avgör hur ni bygger</h3>
+                    <p class="text-slate-600 leading-relaxed">Antalet agenter ni kan driva är lika med antalet personer som kan felsöka dem klockan sju på morgonen när något gått fel. Är den siffran låg ska ni bygga synligt och enkelt, även om ni tekniskt hade klarat något mer avancerat. En elegant lösning som ingen förstår är sämre än en enkel som alla gör.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold mb-2">3. Vad agenten får göra avgör autonominivån</h3>
+                    <p class="text-slate-600 leading-relaxed">Läsande agenter är nästan riskfria. Skrivande agenter ska ha en människa i beslutet tills ni har månader av data. Modellvalet, som de flesta diskuterar först, påverkar mindre än något av detta och bör fattas sist.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8 text-center">Djupdykning i er situation</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <a href="/ai-agent-microsoft-365.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover">
+                    <h3 class="text-xl font-bold mb-2">Vi kör Microsoft 365</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Copilot Studio, Foundry eller något helt annat? Och varför behörighetsskulden i SharePoint är er verkliga risk.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-litet-foretag.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover">
+                    <h3 class="text-xl font-bold mb-2">Vi är små och flexibla</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">En agent eller flera, vad ni ska välja när ni kan välja allt, och fällan som friheten skapar.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-google-workspace.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover">
+                    <h3 class="text-xl font-bold mb-2">Vi kör Google Workspace</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Gemini Enterprise, Workspace Intelligence och när ni ska gå utanför Googles ekosystem.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-reglerad-bransch.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover">
+                    <h3 class="text-xl font-bold mb-2">Vi är i en reglerad bransch</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-4">Finans, vård och offentlig sektor: vad som faktiskt går, vad som kräver mer, och vad som inte är värt att försöka.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/ai-agent-vagval.html" class="hover:text-white transition-colors">Vad passar oss? (guide)</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Er situation</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-microsoft-365.html" class="hover:text-white transition-colors">Vi kör Microsoft 365</a></li>
+                        <li><a href="/ai-agent-google-workspace.html" class="hover:text-white transition-colors">Vi kör Google Workspace</a></li>
+                        <li><a href="/ai-agent-litet-foretag.html" class="hover:text-white transition-colors">Vi är ett litet bolag</a></li>
+                        <li><a href="/ai-agent-reglerad-bransch.html" class="hover:text-white transition-colors">Vi är reglerade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+    <script>
+    (function () {
+        var form = document.getElementById('vagval');
+        if (!form) return;
+        var result = document.getElementById('resultat');
+
+        function svar(namn) {
+            var el = form.querySelector('input[name="' + namn + '"]:checked');
+            return el ? el.value : null;
+        }
+
+        function stackFor(a) {
+            // Ligger arbetet i plattformens eget innehall ar ni i praktiken bundna dit.
+            if (a.arbete === 'plattform') {
+                if (a.plattform === 'microsoft') {
+                    return a.it === 'utveckling'
+                        ? { namn: 'Microsoft Foundry', fri: false,
+                            varfor: 'Arbetet ligger i innehåll som redan finns i Microsoft 365. Foundry når det via Microsoft Graph, ärver behörigheterna som redan gäller och kan publiceras in i Teams och Microsoft 365 Copilot. Ni har utvecklare, så den pro-kodade vägen är rimlig.' }
+                        : { namn: 'Copilot Studio', fri: false,
+                            varfor: 'Arbetet ligger i innehåll som redan finns i Microsoft 365. Copilot Studio når det via Microsoft Graph och ärver behörigheterna som redan gäller, utan att ni behöver bygga integrationen själva.' };
+                }
+                if (a.plattform === 'google') {
+                    return { namn: 'Gemini Enterprise Agent Platform', fri: false,
+                             varfor: 'Arbetet ligger i Workspace-innehåll. Googles egen plattform når Gmail, Drive och Docs med befintliga behörigheter, och en egen agent kan kopplas in mot Workspace Intelligence via Agent Gateway.' };
+                }
+                return { namn: 'Följ plattformen som äger innehållet', fri: false,
+                         varfor: 'Ni har innehåll spritt över flera plattformar. Börja med den plattform där merparten av innehållet faktiskt ligger och bygg där, i stället för att bygga en agent som ska nå allt.' };
+            }
+
+            // Ligger arbetet i affarssystem spelar plattformsbindningen ingen roll.
+            if (a.it === 'ingen' || a.it === 'liten') {
+                return { namn: 'n8n', fri: true,
+                         varfor: 'Arbetet ligger i affärssystem, så er plattform binder er inte. Med begränsad IT-kapacitet är n8n rätt: det går att köra på egen server inom EU, har fler än 400 färdiga integrationer, och flödet är synligt så att någon annan än den som byggde det kan förstå vad som händer.' };
+            }
+            if (a.gor === 'kansligt') {
+                return { namn: 'LangGraph', fri: true,
+                         varfor: 'Arbetet ligger i affärssystem, så er plattform binder er inte. Agenten rör pengar, avtal eller persondata, vilket kräver spårbarhet, möjlighet att pausa för godkännande och att kunna återupptas efter avbrott. Det är precis vad LangGraph är byggt för.' };
+            }
+            return { namn: 'n8n för pilot, kodramverk om det ska härdas', fri: true,
+                     varfor: 'Arbetet ligger i affärssystem, så er plattform binder er inte. Med IT-kapacitet men utan tunga krav på spårbarhet är snabbaste vägen att bevisa värdet visuellt och flytta till kod först när fallet burit i några veckor.' };
+        }
+
+        function nivaFor(a) {
+            if (a.gor === 'lasa') return { n: '1', text: 'Agenten får läsa men inte ändra något. Lägsta risknivån som ändå ger verklig nytta, och rätt nivå att börja på.' };
+            if (a.gor === 'kansligt') return { n: '2', text: 'Agenten förbereder, en människa godkänner. Med pengar, avtal eller persondata inblandat ska ni inte gå högre förrän flödet gått rätt i månader – och i reglerad verksamhet inte alls utan juridisk genomgång.' };
+            return { n: '2', text: 'Agenten förbereder, en människa godkänner. Ni får nästan hela tidsvinsten till en bråkdel av risken, och varje godkännande blir utvärderingsdata.' };
+        }
+
+        function riskFor(a) {
+            if (a.arbete === 'plattform' && a.plattform === 'microsoft') {
+                return { rubrik: 'Överdelning av dokument', text: 'Er största risk är inte agenten utan behörighetsskulden som redan finns i SharePoint. En agent skapar inte överdelning – den gör befintlig överdelning användbar. Inventera vad agenten kan nå innan ni släpper på den, särskilt grupper av typen "alla utom externa", brutna behörighetsarv och gamla delningslänkar.' };
+            }
+            if (a.arbete === 'plattform' && a.plattform === 'google') {
+                return { rubrik: 'Överdelning i Drive', text: 'Samma mönster som i SharePoint-världen: agenten gör befintlig överdelning användbar. Gå igenom vilka mappar och filer som delats brett innan agenten får läsa i Drive.' };
+            }
+            if (a.reglerad === 'ja') {
+                return { rubrik: 'Riskklassning och dokumentation', text: 'Rör agenten anställning, kreditvärdighet eller tillgång till tjänster hamnar den sannolikt i högriskkategorin i AI-akten, vilket innebär betydande krav på dokumentation, loggning och mänsklig kontroll. Involvera jurist innan ni bygger, inte efteråt.' };
+            }
+            if (a.it === 'ingen' || a.it === 'liten') {
+                return { rubrik: 'Förvaltningen efter lanseringen', text: 'Er största risk är att lösningen inte kan underhållas av någon annan än den som byggde den. Välj synliga flöden framför smart kod, dokumentera varje verktyg, och låt minst två personer se hur det fungerar innan ni går i drift.' };
+            }
+            return { rubrik: 'System utan API', text: 'Kontrollera att varje system agenten ska nå har ett API innan projektet startar. Måste ni styra ett gränssnitt i stället bygger ni ett underhållsåtagande, inte en agent.' };
+        }
+
+        function kostnadFor(a) {
+            var bygge = (a.it === 'ingen' || a.it === 'liten')
+                ? 'Bygge: räkna med en till tre veckor med hjälp utifrån, eller längre på egen hand.'
+                : 'Bygge: en till tre veckor för någon som gjort det förut, förutsatt att systemen har API:er.';
+            var drift = a.volym === 'hog'
+                ? 'Modellkostnad: i storleksordningen några hundra till några tusen kronor i månaden vid höga volymer.'
+                : 'Modellkostnad: typiskt under några hundra kronor i månaden. Den är nästan aldrig problemet.';
+            var granskning = a.gor === 'lasa'
+                ? 'Granskning: liten, eftersom agenten inte verkställer något.'
+                : 'Granskning: den största posten under inkörningen. Räkna 10–30 sekunder per ärende de första veckorna.';
+            return [bygge, drift, granskning, 'Förvaltning: 2–8 timmar i månaden för utvärderingar, integrationer och modellbyten.'];
+        }
+
+        function antalFor(a) {
+            if (a.it === 'ingen' || a.it === 'liten') {
+                return 'En agent. Antalet agenter ni kan driva är lika med antalet personer som kan felsöka dem när något går sönder. Med er bemanning är den siffran ett.';
+            }
+            if (a.arbete === 'bada') {
+                return 'Börja med en. Behöver ni senare dela upp, gör det längs gränserna mellan behörigheter – inte längs organisationsschemat.';
+            }
+            return 'En agent, med två till fyra verktyg. Dela upp först när ni har ett konkret skäl: behörigheter som inte bör blandas, arbete som måste ske parallellt, eller en deluppgift som dränker kontexten.';
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var a = {
+                plattform: svar('plattform'), it: svar('it'), arbete: svar('arbete'),
+                gor: svar('gor'), volym: svar('volym'), reglerad: svar('reglerad')
+            };
+            for (var k in a) {
+                if (!a[k]) {
+                    result.innerHTML = '<p class="text-rose-600 font-semibold">Besvara alla frågor för att få en rekommendation.</p>';
+                    result.classList.remove('hidden');
+                    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return;
+                }
+            }
+
+            var stack = stackFor(a), niva = nivaFor(a), risk = riskFor(a);
+            var kostnad = kostnadFor(a).map(function (r) { return '<li>' + r + '</li>'; }).join('');
+            var friText = stack.fri
+                ? '<strong class="text-emerald-700">Ja, ni kan välja fritt.</strong> Arbetet ligger i affärssystem, inte i plattformens eget innehåll, så er nuvarande plattform binder er inte. Välj på förvaltning och krav i stället.'
+                : '<strong class="text-amber-700">I praktiken nej.</strong> Arbetet ligger i innehåll som plattformen äger och vars behörigheter den redan hanterar. En egen agent skulle behöva återskapa den behörighetsmodellen, och det är där de flesta går fel.';
+
+            result.innerHTML =
+                '<h2 class="text-3xl font-extrabold mb-8">Er rekommendation</h2>' +
+                '<div class="bg-indigo-600 text-white rounded-3xl p-8 mb-5">' +
+                  '<p class="text-xs font-bold uppercase tracking-wider text-indigo-200 mb-2">Rekommenderad stack</p>' +
+                  '<p class="text-3xl font-extrabold mb-4">' + stack.namn + '</p>' +
+                  '<p class="leading-relaxed text-indigo-50">' + stack.varfor + '</p>' +
+                '</div>' +
+                '<div class="bg-white border border-slate-200 rounded-3xl p-8 mb-5">' +
+                  '<h3 class="text-xl font-bold mb-3">Kan ni välja fritt?</h3>' +
+                  '<p class="text-slate-600 leading-relaxed">' + friText + '</p>' +
+                '</div>' +
+                '<div class="grid md:grid-cols-2 gap-5 mb-5">' +
+                  '<div class="bg-white border border-slate-200 rounded-3xl p-7">' +
+                    '<h3 class="text-lg font-bold mb-2">Autonominivå ' + niva.n + '</h3>' +
+                    '<p class="text-slate-600 text-sm leading-relaxed">' + niva.text + '</p>' +
+                  '</div>' +
+                  '<div class="bg-white border border-slate-200 rounded-3xl p-7">' +
+                    '<h3 class="text-lg font-bold mb-2">En agent eller flera?</h3>' +
+                    '<p class="text-slate-600 text-sm leading-relaxed">' + antalFor(a) + '</p>' +
+                  '</div>' +
+                '</div>' +
+                '<div class="bg-white border border-slate-200 rounded-3xl p-8 mb-5">' +
+                  '<h3 class="text-xl font-bold mb-3">Vad det kostar</h3>' +
+                  '<ul class="space-y-2 text-slate-600 list-disc pl-5 text-sm">' + kostnad + '</ul>' +
+                '</div>' +
+                '<div class="bg-slate-900 text-slate-200 rounded-3xl p-8 mb-5">' +
+                  '<p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2">Er största risk</p>' +
+                  '<h3 class="text-xl font-bold text-white mb-3">' + risk.rubrik + '</h3>' +
+                  '<p class="text-slate-400 leading-relaxed">' + risk.text + '</p>' +
+                '</div>' +
+                '<div class="bg-white border-2 border-indigo-200 rounded-3xl p-8">' +
+                  '<h3 class="text-xl font-bold mb-3">Första steget</h3>' +
+                  '<p class="text-slate-600 leading-relaxed mb-5">Välj en uppgift som utförs minst tio gånger i veckan, där någon kan avgöra om resultatet är rätt och där underlaget redan finns digitalt. Skriv den i en mening utan ordet "och". Går det inte är den för bred.</p>' +
+                  '<a href="/bygg-ai-agent.html" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-colors">Till stegguiden <span aria-hidden="true">&rarr;</span></a>' +
+                  '<a href="/bygga-ai-agent-hjalp.html?fran=vagval" class="inline-flex items-center gap-2 ml-3 text-indigo-600 font-bold px-2 py-3">Låt oss titta på det <span aria-hidden="true">&rarr;</span></a>' +
+                '</div>';
+
+            result.classList.remove('hidden');
+            result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (typeof gtag === 'function') {
+                gtag('event', 'vagval_klart', { plattform: a.plattform, it: a.it, arbete: a.arbete });
+            }
+        });
+    })();
+    </script>
+
+</body>
+</html>

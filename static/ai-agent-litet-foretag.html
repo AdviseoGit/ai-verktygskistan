@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agenter i små företag: en agent eller flera? | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="En agent – och skälet är förvaltning, inte kapacitet. Vad små bolag ska välja, frihetens två fällor, och de tre fördelar ni har som storbolagen saknar.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-litet-foretag.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agenter i små företag: en agent eller flera?">
+    <meta property="og:description" content="En agent – och skälet är förvaltning, inte kapacitet. Vad små bolag ska välja, frihetens två fällor, och de tre fördelar ni har som storbolagen saknar.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-litet-foretag.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ska ett litet företag köra en AI-agent eller flera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En. Begränsningen är inte teknisk utan handlar om förvaltning: antalet agenter ni kan driva är lika med antalet personer som kan felsöka dem när något går sönder en tisdagmorgon. I ett litet bolag är den siffran oftast ett, och ibland noll. Till det kommer att fel multipliceras i en kedja – fem agenter som var och en gör rätt i nio fall av tio ger ett system som gör rätt i knappt sex fall av tio. Bygg en agent med två till fyra verktyg som gör en sak bra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilket verktyg ska ett litet företag välja för AI-agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För de flesta små bolag är n8n rätt val. Flödet är synligt, vilket gör att någon annan än den som byggde det kan förstå vad som händer, det går att köra på egen server inom EU, och det har färdiga kopplingar till de vanligaste systemen. Har ni en utvecklare internt fungerar ett enkelt kodramverk lika bra. Det avgörande kriteriet är inte kapacitet utan om lösningen går att underhålla av den som inte byggde den."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilken fördel har små företag när de bygger AI-agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tre avgörande fördelar. Ni kan fatta beslut på en dag i stället för ett kvartal, eftersom det inte finns någon upphandlings- eller granskningsprocess. Ni har ingen behörighetsskuld i form av tio års felaktigt delade dokument som en agent kan hitta. Och någon i bolaget kan hela processen i huvudet, vilket gör att uppgiften kan avgränsas exakt – vilket är det som avgör om ett agentprojekt lyckas. Stora organisationer saknar alla tre."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-vagval.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad passar oss?</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/ai-agent-vagval.html" class="block font-bold text-indigo-600">Vad passar oss? (vägvalsguide)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-microsoft-365.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi kör Microsoft 365</a>
+        <a href="/ai-agent-litet-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Vi är ett litet bolag</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Er situation · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Litet bolag, <span class="gradient-text">full frihet</span> &ndash; en agent eller flera?</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">En. Och skälet är inte att ni är för små för något avancerat, utan att antalet agenter ni kan driva är lika med antalet personer som kan laga dem när de går sönder. Här är hela resonemanget, vad ni ska välja, och de tre fördelar ni har som ingen storbank kan köpa.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border-2 border-indigo-200 p-8">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Regeln</h2>
+            <p class="text-2xl font-bold leading-snug mb-4">Antalet agenter ni kan driva = antalet personer som kan felsöka dem klockan sju på morgonen.</p>
+            <p class="text-slate-600 leading-relaxed">Är den siffran ett, är antalet agenter ett. Är den noll ska ni inte bygga något förrän ni löst det, oavsett hur enkelt verktyget är att använda.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Varför en, och inte flera</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Det finns två skäl, och det andra är det som brukar förvåna.</p>
+            <div class="space-y-5 mb-8">
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Skäl 1: ni har ingen att förvalta med</h3>
+                    <p class="text-slate-600 leading-relaxed">En agent går sönder. Inte dramatiskt &ndash; en leverantör ändrar ett API, ett fält byter namn, en modell uppdateras och svaren blir aningen annorlunda. Någon måste märka det och laga det. I ett bolag med tio personer är det en person, som redan har ett annat jobb. Två agenter innebär inte dubbelt arbete utan ungefär tre gånger, eftersom felen börjar uppstå mellan dem.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Skäl 2: felen multipliceras</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Det här är matematik, inte tyckande. Fel i en kedja adderas inte &ndash; de multipliceras:</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm border-collapse min-w-[420px]">
+                            <thead><tr class="bg-slate-50 text-left"><th class="p-3 font-bold border-b border-slate-200">Antal agenter i kedja</th><th class="p-3 font-bold border-b border-slate-200">Var och en rätt 90 %</th></tr></thead>
+                            <tbody>
+                                <tr class="border-b border-slate-100"><td class="p-3">1</td><td class="p-3 text-emerald-700 font-semibold">90 %</td></tr>
+                                <tr class="border-b border-slate-100"><td class="p-3">3</td><td class="p-3 text-amber-700 font-semibold">73 %</td></tr>
+                                <tr><td class="p-3">5</td><td class="p-3 text-rose-700 font-semibold">59 %</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mt-4">Det är därför demon imponerar &ndash; en körning &ndash; och vardagen inte gör det. Se <a href="/multiagent-system.html" class="text-indigo-600 font-semibold underline">multiagentsidan</a> för när uppdelning ändå är rätt.</p>
+                </div>
+            </div>
+            <div class="bg-slate-100 border-l-4 border-slate-400 p-6 rounded-r-2xl">
+                <p class="text-slate-700 leading-relaxed"><strong>Vad ni ska bygga i stället:</strong> en agent med två till fyra verktyg som gör en avgränsad sak bra. Alla tre exemplen i <a href="/ai-agent-exempel.html" class="text-indigo-600 font-semibold underline">genomgången</a> ser ut så. Ingen av dem har tio verktyg, och ingen av dem är flera agenter.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Frihetens fälla</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Ni kan välja precis vad ni vill. Ingen IT-avdelning säger nej, ingen upphandling, inget säkerhetsråd. Det låter som en fördel och är det oftast &ndash; men det skapar två specifika problem som stora organisationer slipper.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-rose-50 border border-rose-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-2">Ni väljer det senaste</h3>
+                    <p class="text-slate-700 leading-relaxed">Utan någon som bromsar hamnar valet lätt på det som demonstrerades snyggast förra veckan. Ett ramverk som är sex månader gammalt har inga svar att googla när något går fel &ndash; och ni har ingen intern expert att fråga. <strong>Välj tråkigt.</strong> Tråkigt betyder dokumentation, forum och svar på era frågor.</p>
+                </div>
+                <div class="bg-rose-50 border border-rose-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-2">Konsulten bygger och försvinner</h3>
+                    <p class="text-slate-700 leading-relaxed">Den vanligaste dödsorsaken för agenter i små bolag. Något elegant byggs, det fungerar, konsulten går vidare, ett API ändras &ndash; och ingen kvar i huset kan öppna lösningen. <strong>Motmedel:</strong> kräv att lösningen är synlig, att varje verktyg är dokumenterat på svenska, och att minst två personer hos er sett hur det fungerar innan slutfakturan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Vad ni ska välja</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Kriteriet är inte kapacitet. Det är <em>om den som inte byggde det kan underhålla det</em>.</p>
+            <div class="space-y-5">
+                <div class="bg-white p-7 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-xl font-bold mb-2">Ingen utvecklare internt &rarr; n8n</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Flödet är synligt, så någon annan kan se vad som händer utan att läsa kod. Det går att köra på egen server inom EU. Det finns färdiga kopplingar till de flesta system ni använder. Och det finns gott om folk som kan det, vilket betyder att ni inte är låsta till en enda person.</p>
+                    <a href="/ai-agent-n8n.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm">Till n8n-guiden <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">En utvecklare internt &rarr; enklaste möjliga kodramverk</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Har ni någon som kodar dagligen är ett enkelt kodramverk lika hanterbart och ger mer kontroll. Men håll det litet: en fil, tydliga verktyg, promptarna i egna filer. Bygg inte en plattform.</p>
+                    <a href="/bygg-ai-agent.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm">Till stegguiden <span aria-hidden="true">&rarr;</span></a>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Vad ni inte ska välja</h3>
+                    <p class="text-slate-600 leading-relaxed">Tunga produktionsramverk byggda för revisionskrav ni inte har. Multiagent-ramverk. Egen vektordatabas innan ni provat vanlig sökning. Allt som kräver att någon håller sig uppdaterad på ett ekosystem på heltid.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Tre fördelar ni har som ingen storbank kan köpa</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed">Det skrivs mycket om vad små bolag saknar. Det här är vad ni har, och det är mer avgörande än det låter.</p>
+            <div class="space-y-5">
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-white mb-2">1. Ni kan bestämma på en dag</h3>
+                    <p class="text-slate-400 leading-relaxed">I ett stort hus tar säkerhetsgranskning och beslut månader &ndash; bygget är den snabba delen. Ni kan prova på onsdag och veta på fredag om det bär. Den skillnaden är värd mer än all teknisk kapacitet motparten har.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-white mb-2">2. Ni har ingen behörighetsskuld</h3>
+                    <p class="text-slate-400 leading-relaxed">Det som oftast stoppar agentprojekt i stora organisationer är tio år av felaktigt delade dokument som agenten plötsligt kan hitta och sammanfatta. Ni har inte det problemet, eller så är det litet nog att lösa på en eftermiddag.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold text-white mb-2">3. Någon kan hela processen i huvudet</h3>
+                    <p class="text-slate-400 leading-relaxed">Det här är den största fördelen. Agentprojekt lyckas eller misslyckas på hur exakt uppgiften avgränsas, och den avgränsningen kräver att någon vet precis hur arbetet går till &ndash; inklusive alla undantag. I ett stort bolag är den kunskapen utspridd på tolv personer och tre avdelningar. Hos er sitter den i ett huvud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Vilket fall ni ska börja med</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Det finns en genväg till rätt svar: <strong>vad gör den i bolaget som kan mest, på söndagar, för att det aldrig hinns med i veckan?</strong> Det är nästan alltid rätt första agent &ndash; repetitivt nog att skjutas upp, viktigt nog att ändå göras.</p>
+            <div class="grid sm:grid-cols-2 gap-5 mb-6">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><p class="text-slate-700 text-sm leading-relaxed"><strong>Bra första fall:</strong> sortera och besvara återkommande kundfrågor, förbereda offertunderlag, uppdatera CRM efter möten, sammanställa veckans siffror ur flera system.</p></div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200"><p class="text-slate-700 text-sm leading-relaxed"><strong>Dåligt första fall:</strong> allt som görs någon gång i månaden, allt där ni inte kan avgöra om svaret är rätt, och &quot;en assistent som kan allt om vårt bolag&quot;.</p></div>
+            </div>
+            <p class="text-slate-600 leading-relaxed">Kravet på minst tio gånger i veckan gäller er också. Under det hinner ni aldrig samla nog med underlag för att veta om agenten fungerar &ndash; och då bygger ni något ni aldrig får veta om det är bra.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Vad det landar på</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <ul class="space-y-3 text-slate-600">
+                    <li><strong class="text-slate-900">Modellkostnad:</strong> vid er volym typiskt under ett par hundra kronor i månaden. Den är inte problemet.</li>
+                    <li><strong class="text-slate-900">n8n:</strong> gratis självhostat, plus en liten server. Molnversionen kostar en licensavgift i storleksordningen några hundralappar i månaden.</li>
+                    <li><strong class="text-slate-900">Bygget:</strong> en till tre veckor med hjälp utifrån, längre på egen hand första gången.</li>
+                    <li><strong class="text-slate-900">Förvaltning:</strong> några timmar i månaden. Det här är posten att ta på allvar &ndash; den är liten men den måste finnas, och den måste ha ett namn på sig.</li>
+                </ul>
+                <p class="text-slate-600 leading-relaxed mt-5">Hela resonemanget med räkneexempel finns på <a href="/ai-agent-kostnad.html" class="text-indigo-600 font-semibold underline">kostnadssidan</a>. Osäkra på vad som passar er? <a href="/ai-agent-vagval.html" class="text-indigo-600 font-semibold underline">Vägvalsguiden</a> ger ett svar på sex frågor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha hjälp att välja första fallet?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv de arbetsmoment som tar mest tid hos er, så får ni tillbaka en rangordning: vilket som lämpar sig bäst som första agent, vad det kräver, och vad ni ska kräva av den som bygger det åt er.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-litet-foretag" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/ai-agent-vagval.html" class="hover:text-white transition-colors">Vad passar oss? (guide)</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Er situation</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-microsoft-365.html" class="hover:text-white transition-colors">Vi kör Microsoft 365</a></li>
+                        <li><a href="/ai-agent-google-workspace.html" class="hover:text-white transition-colors">Vi kör Google Workspace</a></li>
+                        <li><a href="/ai-agent-litet-foretag.html" class="hover:text-white transition-colors">Vi är ett litet bolag</a></li>
+                        <li><a href="/ai-agent-reglerad-bransch.html" class="hover:text-white transition-colors">Vi är reglerade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>
