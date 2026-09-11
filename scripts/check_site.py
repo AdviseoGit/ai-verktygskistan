@@ -13,8 +13,9 @@ en gång har gått sönder i produktion utan att någon märkte det:
   som inte ens resolvar.
 * **Dubblerade titlar** – två sidor med samma titel konkurrerar i sök.
 * **Balanserad markup** – 14 sidor hade överblivna </div> i menyn.
-* **JSON-validitet** – tools.json och schema.json läses av frontend.
+* **JSON-validitet** – schema.json och sidornas JSON-LD läses av sökmotorer.
 * **Varumärkesnamn** – sajten hette fel namn i förhållande till domänen.
+* **Omdirigeringar** – REDIRECTS i main.py pekade på sidor som tagits bort.
 """
 import json
 import pathlib
@@ -131,8 +132,7 @@ def check_markup(errors):
 
 
 def check_json(errors):
-    for path in (STATIC / "tools.json", STATIC / "schema.json",
-                 STATIC / "ai-ordlista-faq.json", STATIC / "lar-dig-ai-faq.json"):
+    for path in (STATIC / "schema.json",):
         if not path.exists():
             continue
         try:
@@ -161,6 +161,42 @@ def check_brand(errors):
                           f"'{OLD_BRAND}'")
 
 
+def check_redirects(errors):
+    """REDIRECTS i main.py ska peka på sidor som faktiskt finns.
+
+    De gamla katalogsidorna togs bort när sajten smalnade av till AI-agenter.
+    Omdirigeringarna är det enda som håller deras länkvärde vid liv, så en
+    omdirigering till en sida som i sin tur tagits bort är värre än ingen
+    alls: den skickar besökaren till en 404 via en 301.
+    """
+    import ast
+
+    source = pathlib.Path("main.py")
+    if not source.exists():
+        return
+    tree = ast.parse(source.read_text(encoding="utf-8"))
+    mapping = None
+    for node in ast.walk(tree):
+        if (isinstance(node, ast.Assign)
+                and any(getattr(t, "id", None) == "REDIRECTS" for t in node.targets)):
+            mapping = ast.literal_eval(node.value)
+            break
+    if mapping is None:
+        errors.append("main.py: hittar ingen REDIRECTS-tabell")
+        return
+
+    existing = {p.name for p in pages()}
+    for source_page, target in sorted(mapping.items()):
+        if f"{source_page}.html" in existing:
+            errors.append(f"REDIRECTS: {source_page} omdirigeras men finns "
+                          f"kvar som sida – ta bort det ena")
+        if target == "/":
+            continue
+        if target.lstrip("/") not in existing:
+            errors.append(f"REDIRECTS: {source_page} pekar på {target} "
+                          f"som inte finns")
+
+
 def check_robots(errors):
     path = STATIC / "robots.txt"
     if not path.exists():
@@ -184,6 +220,7 @@ def main():
     check_markup(errors)
     check_json(errors)
     check_brand(errors)
+    check_redirects(errors)
     check_robots(errors)
 
     for w in warnings:

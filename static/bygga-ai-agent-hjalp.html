@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Få hjälp att bygga er AI-agent – kostnadsfri bedömning | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Beskriv uppgiften ni vill automatisera. Ni får en rak bedömning av om den passar som AI-agent, vilken stack som passar och vad som krävs för produktion.">
+    <link rel="canonical" href="https://aiverktygsladan.se/bygga-ai-agent-hjalp.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Få hjälp att bygga er AI-agent – kostnadsfri bedömning">
+    <meta property="og:description" content="Beskriv uppgiften ni vill automatisera. Ni får en rak bedömning av om den passar som AI-agent, vilken stack som passar och vad som krävs för produktion.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiverktygsladan.se/bygga-ai-agent-hjalp.html">
+    <meta property="og:locale" content="sv_SE">
+
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Kom vidare · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Få hjälp att bygga <span class="gradient-text">er agent</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Beskriv vad ni vill automatisera och var ni står. Ni får tillbaka en rak bedömning av om det lämpar sig som agent, vad som krävs för att nå produktion – och om svaret är att ni inte ska bygga en agent säger vi det.</p>
+    </header>
+
+    <section class="px-6 pb-8">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-5">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="text-2xl mb-2" aria-hidden="true">&#128269;</div>
+                <h2 class="font-bold mb-2">1. Vi läser ert läge</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">Uppgiften, systemen den rör och vem som ska förvalta lösningen. Ingen demo, ingen presentation.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="text-2xl mb-2" aria-hidden="true">&#128221;</div>
+                <h2 class="font-bold mb-2">2. Ni får en bedömning</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">Lämpar sig fallet som agent, som workflow eller inte alls? Vilken stack, vilken autonominivå, vad som är den troliga fallgropen.</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="text-2xl mb-2" aria-hidden="true">&#128736;</div>
+                <h2 class="font-bold mb-2">3. Ni väljer väg</h2>
+                <p class="text-slate-600 text-sm leading-relaxed">Bygga själva med underlaget som stöd, eller låta oss bygga det. Båda vägarna är lika välkomna.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <form id="agent-form" class="grid sm:grid-cols-2 gap-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-name">Namn</label>
+                    <input id="f-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-email">E-post</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-company">Företag</label>
+                    <input id="f-company" name="company" autocomplete="organization" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-role">Din roll</label>
+                    <input id="f-role" name="role" autocomplete="organization-title" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-semibold mb-1.5" for="f-employees">Antal anställda</label>
+                    <select id="f-employees" name="employees" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                        <option value="1-9">1&ndash;9</option>
+                        <option value="10-49">10&ndash;49</option>
+                        <option value="50-199">50&ndash;199</option>
+                        <option value="200+">200+</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-semibold mb-1.5" for="f-need">Vad vill ni att agenten ska göra?</label>
+                    <textarea id="f-need" name="need" rows="5" placeholder="Beskriv uppgiften, hur ofta den utförs i dag och vilka system den rör. Ju konkretare, desto bättre svar." class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+                <div class="sm:col-span-2">
+                    <button id="form-submit" type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-60">Skicka in</button>
+                    <p id="form-status" class="text-sm text-slate-500 mt-4 text-center"></p>
+                    <p class="text-xs text-slate-400 mt-3 text-center">Kostnadsfritt och utan åtagande. Vi använder uppgifterna för att svara på din förfrågan och inget annat &ndash; se <a href="/integritetspolicy.html" class="underline">integritetspolicyn</a>.</p>
+                </div>
+            </form>
+            <div id="form-success" class="hidden bg-white p-10 rounded-3xl border-2 border-emerald-200 text-center">
+                <div class="text-4xl mb-4" aria-hidden="true">&#9989;</div>
+                <h2 class="text-2xl font-extrabold mb-3">Tack &ndash; förfrågan är inne</h2>
+                <p class="text-slate-600 leading-relaxed">Vi hör av oss inom ett par arbetsdagar med en bedömning. Under tiden är <a href="/bygg-ai-agent.html" class="text-indigo-600 font-semibold underline">stegguiden</a> en bra förberedelse &ndash; särskilt steg 1 och 5.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8">Vanliga frågor</h2>
+            <div class="space-y-4">
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6" open>
+                    <summary class="font-bold cursor-pointer">Kostar det något?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Nej. Den första bedömningen är kostnadsfri och ni binder er inte till något. Vill ni sedan ha hjälp att bygga lämnar vi en offert, och vill ni bygga själva är det ett lika bra utfall.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Vad händer med uppgifterna jag lämnar?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">De används för att besvara din förfrågan och för inget annat. De säljs inte vidare och används inte för utskick du inte bett om. Läs mer i <a href="/integritetspolicy.html" class="text-indigo-600 font-semibold underline">integritetspolicyn</a>.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Vi vet inte riktigt vad vi vill ha. Är det för tidigt?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Tvärtom &ndash; det är det bästa läget att höra av sig i. Den dyraste sortens agentprojekt är det som startar med en bestämd lösning innan någon frågat om uppgiften passar. Beskriv arbetsmomentet, så tar vi det därifrån.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Får ni tillgång till våra system?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Inte för en bedömning. Den bygger på er beskrivning. Skulle det bli aktuellt att bygga något regleras åtkomst och personuppgiftsbehandling i avtal innan någon rör ett system.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+    <script>
+        (function () {
+            var form = document.getElementById('agent-form');
+            if (!form) return;
+            var params = new URLSearchParams(window.location.search);
+            var from = (params.get('fran') || 'hjalpsida').replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
+            var status = document.getElementById('form-status');
+            var submit = document.getElementById('form-submit');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submit.disabled = true;
+                submit.textContent = 'Skickar...';
+                status.className = 'text-sm text-slate-500 mt-4 text-center';
+                status.textContent = '';
+
+                fetch('/api/lead/b2b', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('f-name').value,
+                        email: document.getElementById('f-email').value,
+                        company: document.getElementById('f-company').value,
+                        role: document.getElementById('f-role').value,
+                        employees: document.getElementById('f-employees').value,
+                        need: document.getElementById('f-need').value,
+                        source: 'agent_hjalp:' + from
+                    })
+                }).then(function (r) {
+                    if (!r.ok) throw new Error('status ' + r.status);
+                    form.classList.add('hidden');
+                    document.getElementById('form-success').classList.remove('hidden');
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'agent_lead', { source: from });
+                    }
+                }).catch(function () {
+                    submit.disabled = false;
+                    submit.textContent = 'Skicka in';
+                    status.className = 'text-sm text-rose-600 mt-4 text-center font-semibold';
+                    status.textContent = 'Något gick fel. Försök igen, eller mejla oss direkt.';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>

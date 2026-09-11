@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Välj rätt AI-agent-stack 2026: ramverk jämförda och ett beslutsträd | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="LangGraph, n8n, CrewAI, Claude och OpenAI Agents SDK jämförda för svenska förhållanden. Ett beslutsträd som ger ett svar, plus varför MCP gör valet ofarligt.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-ramverk.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Välj rätt AI-agent-stack 2026: ramverk jämförda och ett beslutsträd">
+    <meta property="og:description" content="LangGraph, n8n, CrewAI, Claude och OpenAI Agents SDK jämförda för svenska förhållanden. Ett beslutsträd som ger ett svar, plus varför MCP gör valet ofarligt.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-ramverk.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vilket ramverk ska man välja för att bygga AI-agenter 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För de flesta svenska organisationer finns tre rimliga vägar. Ska agenten kopplas till många befintliga system och byggas av ett team utan utvecklare är n8n snabbast och kan dessutom självhostas inom EU. Ska agenten till produktion med krav på spårbarhet och återstart är LangGraph den etablerade standarden. Vill ni ha minsta möjliga kod runt en modell är OpenAI Agents SDK eller Claude Agent SDK enklast att komma igång med. Valet av ramverk är sällan det som avgör om projektet lyckas – avgränsningen av uppgiften är det."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är MCP (Model Context Protocol)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP är en öppen standard för hur AI-agenter kopplas till verktyg och datakällor. I stället för att skriva en egen integration per modell och per ramverk beskriver ni verktyget en gång som en MCP-server, och alla MCP-kompatibla agenter kan använda det. Protokollet donerades av Anthropic till Agentic AI Foundation under Linux Foundation i december 2025 och stöds av samtliga stora leverantörer. Det gör att valet av ramverk blir mindre riskabelt: byter ni ramverk följer verktygen med."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan man bygga AI-agenter utan att kunna programmera?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Visuella byggare som n8n, Flowise och Langflow låter er koppla ihop modell, verktyg och villkor utan kod, och räcker hela vägen till produktion för avgränsade uppgifter. Begränsningen märks när ni behöver återstart mitt i ett flöde, detaljerad spårbarhet eller egna tester – då är kodramverk starkare. Ett vanligt och fungerande upplägg är att bygga prototypen visuellt och flytta den till kod först när den bevisat sitt värde."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka agentplattformar går att köra inom EU?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alla ramverk som går att självhosta kan köras på europeisk infrastruktur, exempelvis n8n, LangGraph, Flowise, Langflow och Pydantic AI. n8n utvecklas dessutom av ett tyskt bolag och är byggt för att köras på egen server. Observera att ramverket bara är halva frågan: själva språkmodellen anropas oftast som en extern tjänst, så det är där ni behöver biträdesavtal och kontroll på var behandlingen sker."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Stackvalet · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Välj rätt <span class="gradient-text">agent-stack</span> – utan att läsa trettio jämförelser</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Det finns ett dussin ramverk, fem protokoll och ett nytt varje vecka. De flesta gör i praktiken samma sak. Här är beslutsträdet som ger er ett svar, tabellen bakom svaret, och det ni behöver veta för att valet inte ska låsa in er.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-amber-50 border-2 border-amber-200 rounded-3xl p-8">
+            <h2 class="text-xl font-bold mb-3">Läs det här först</h2>
+            <p class="text-slate-700 leading-relaxed mb-3">Ramverket är det minst avgörande valet ni gör. Agentprojekt kraschar på otydliga uppgifter, saknad data och obefintlig utvärdering – i stort sett aldrig på att någon valde fel bibliotek.</p>
+            <p class="text-slate-700 leading-relaxed">Lägg en timme på det här valet, inte tre veckor. Och bygg så att ni kan byta: håller ni verktygen bakom <a href="#mcp" class="text-indigo-700 font-semibold underline">MCP</a> och logiken utanför ramverket kostar ett byte dagar i stället för månader.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Beslutsträdet: fyra frågor</h2>
+            <p class="text-slate-600 mb-10">Svara uppifrån och ned. Första träffen är ert svar – gå inte vidare för att leta efter ett bättre.</p>
+
+            <div class="space-y-5">
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Fråga 1</span>
+                        <h3 class="text-xl font-bold">Har ni utvecklare som kommer förvalta det här?</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4"><strong class="text-slate-900">Nej.</strong> Välj <strong>n8n</strong>. Det är en automationsmotor med agentnoder och fler än 400 färdiga integrationer, byggd av ett tyskt bolag och möjlig att köra på egen server inom EU. Ni kommer längre än ni tror, och ni slipper vara beroende av att en konsult finns kvar.</p>
+                        <p class="text-slate-600">Behöver ni bara en chattagent mot era egna dokument är <strong>Flowise</strong> eller <strong>Langflow</strong> enklare än n8n.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Fråga 2</span>
+                        <h3 class="text-xl font-bold">Ska agenten röra pengar, avtal eller personuppgifter?</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4"><strong class="text-slate-900">Ja.</strong> Välj <strong>LangGraph</strong>. Ni behöver kunna svara på frågan &quot;varför gjorde den så?&quot; ett halvår senare, pausa mitt i ett flöde för ett godkännande och återuppta efter ett avbrott. LangGraph är byggt kring just det och är i dag den vanligaste produktionsstandarden för spårbara agentflöden.</p>
+                        <p class="text-slate-600">Kör ni .NET och Azure är <strong>Microsoft Agent Framework</strong> samma idé på hemmaplan.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Fråga 3</span>
+                        <h3 class="text-xl font-bold">Är ni redan inlåsta i en modelleverantör?</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600 mb-4"><strong class="text-slate-900">Ja, och det är okej.</strong> Ta leverantörens eget SDK – <strong>OpenAI Agents SDK</strong>, <strong>Claude Agent SDK</strong> eller <strong>Google ADK</strong>. Minst kod, bäst dokumentation, snabbast till något som kör. Claude Agent SDK har den djupaste MCP-integrationen om verktygen är många.</p>
+                        <p class="text-slate-600">Priset är att en leverantörsbytesdiskussion blir en ombyggnad. Acceptabelt för interna agenter, sämre för något ni säljer vidare.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                    <div class="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Fråga 4</span>
+                        <h3 class="text-xl font-bold">Inget av ovanstående?</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-slate-600"><strong class="text-slate-900">Då spelar det ingen roll.</strong> Ta <strong>Pydantic AI</strong> om ni gillar typad Python, <strong>CrewAI</strong> om ni vill ha något som kör inom ett par timmar. Lägg kraften på uppgiften i stället. Ni kommer byta ramverk ändå, och det gör inget om verktygen ligger bakom MCP.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Tabellen bakom svaret</h2>
+            <p class="text-slate-600 mb-8 max-w-3xl">Kolumnen som brukar saknas i jämförelser är den sista: när ramverket är fel val. Den är oftast mer användbar än listan med funktioner.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[900px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Ramverk</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Typ</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Bäst för</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Kör inom EU</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Välj inte om</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">n8n</td>
+                            <td class="p-4 text-slate-600">Visuell automation</td>
+                            <td class="p-4 text-slate-600">Många system, få utvecklare</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Ni behöver egna tester och detaljerad spårbarhet</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">LangGraph</td>
+                            <td class="p-4 text-slate-600">Graf, kod</td>
+                            <td class="p-4 text-slate-600">Produktion med revisionskrav</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Ni bara testar en idé – överbyggt för det</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Claude Agent SDK</td>
+                            <td class="p-4 text-slate-600">Modelldriven loop</td>
+                            <td class="p-4 text-slate-600">Verktygstunga agenter, djup MCP</td>
+                            <td class="p-4 text-amber-700">Koden ja, modellen extern</td>
+                            <td class="p-4 text-slate-600">Ni måste kunna byta modelleverantör enkelt</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">OpenAI Agents SDK</td>
+                            <td class="p-4 text-slate-600">Modelldriven loop</td>
+                            <td class="p-4 text-slate-600">Snabbaste vägen i GPT-hus</td>
+                            <td class="p-4 text-amber-700">Koden ja, modellen extern</td>
+                            <td class="p-4 text-slate-600">Ni vill ha kontroll över varje steg</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Google ADK</td>
+                            <td class="p-4 text-slate-600">Kod</td>
+                            <td class="p-4 text-slate-600">Organisationer på Google Cloud</td>
+                            <td class="p-4 text-amber-700">Beror på region</td>
+                            <td class="p-4 text-slate-600">Ni inte redan lever i Googles stack</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Microsoft Agent Framework</td>
+                            <td class="p-4 text-slate-600">Graf, kod</td>
+                            <td class="p-4 text-slate-600">.NET- och Azure-hus</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, EU-regioner</td>
+                            <td class="p-4 text-slate-600">Ni bygger i Python utanför Azure</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">CrewAI</td>
+                            <td class="p-4 text-slate-600">Rollbaserad multiagent</td>
+                            <td class="p-4 text-slate-600">Prototyp på ett par timmar</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Det ska driftas i åratal av någon annan</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Pydantic AI</td>
+                            <td class="p-4 text-slate-600">Typad kod</td>
+                            <td class="p-4 text-slate-600">Python-team som vill ha struktur</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Ni vill ha ett grafiskt gränssnitt</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Flowise / Langflow</td>
+                            <td class="p-4 text-slate-600">Visuell LLM-byggare</td>
+                            <td class="p-4 text-slate-600">Chatt och RAG mot egna dokument</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Agenten ska skriva till affärssystem</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold">Haystack</td>
+                            <td class="p-4 text-slate-600">Deterministisk pipeline</td>
+                            <td class="p-4 text-slate-600">Sökning och RAG med förutsägbarhet</td>
+                            <td class="p-4 text-emerald-700 font-semibold">Ja, självhostad</td>
+                            <td class="p-4 text-slate-600">Agenten behöver välja väg fritt</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xs text-slate-500 mt-6">Bedömningarna gäller september 2026 och beskriver vad ramverken är byggda för, inte vad de kan förmås att göra. Landskapet rör sig snabbt – kontrollera alltid mot leverantörens egen dokumentation innan ni binder upp er.</p>
+        </div>
+    </section>
+
+    <section id="mcp" class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">MCP: det som gör valet mindre farligt</h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">Den vanligaste invändningen mot att välja snabbt är rädslan för inlåsning. Den rädslan var befogad 2024. Sedan dess har <strong>Model Context Protocol</strong> blivit den gemensamma standarden för hur agenter kopplas till verktyg och data, med stöd hos samtliga stora leverantörer.</p>
+            <div class="grid sm:grid-cols-3 gap-5 mb-8">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-600 mb-1">97M</div>
+                    <p class="text-sm text-slate-600">nedladdningar av MCP-SDK:er per månad</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-600 mb-1">9 400+</div>
+                    <p class="text-sm text-slate-600">publika MCP-servrar att koppla in</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 text-center">
+                    <div class="text-3xl font-extrabold text-indigo-600 mb-1">41 %</div>
+                    <p class="text-sm text-slate-600">av tillfrågade organisationer kör MCP i produktion</p>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-3xl border border-slate-200">
+                <h3 class="text-xl font-bold mb-3">Vad det betyder i praktiken</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">Beskriv varje verktyg – &quot;hämta kund&quot;, &quot;skapa ärende&quot;, &quot;sök i avtalsarkivet&quot; – en gång som en MCP-server. Då kan vilken MCP-kompatibel agent som helst använda det, oavsett ramverk och modell. Byter ni ramverk byter ni loopen, inte integrationerna, och det är integrationerna som kostar.</p>
+                <p class="text-slate-600 leading-relaxed">Protokollet ägs sedan december 2025 inte längre av en enskild leverantör: Anthropic donerade det till Agentic AI Foundation under Linux Foundation, och det förvaltas nu genom en öppen process. Vid sidan av MCP finns <strong>A2A</strong> för kommunikation mellan agenter och <strong>ACP</strong> som REST-baserat alternativ, men för agent mot verktyg är MCP det val som kräver minst motivering.</p>
+            </div>
+            <div class="mt-6 bg-slate-100 border-l-4 border-slate-400 p-6 rounded-r-2xl">
+                <p class="text-slate-700 leading-relaxed"><strong>Den praktiska regeln:</strong> lägg aldrig affärslogik i ramverkets egna abstraktioner. Verktygen bakom MCP, promptarna i egna filer, utvärderingarna som vanliga tester. Då är ramverket utbytbart och valet ovan slutar vara läskigt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Källor</h2>
+            <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+                <li>Model Context Protocol, specifikation 2026-07-28 samt uppgifter om förvaltning under Agentic AI Foundation – <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">blog.modelcontextprotocol.io</a></li>
+                <li>Adoptionssiffror för MCP, inklusive andelen organisationer i produktion – <a href="https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">MCP Adoption Statistics 2026</a></li>
+                <li>Jämförelser av agent-ramverk och deras produktionsegenskaper – <a href="https://langfuse.com/blog/2025-03-19-ai-agent-comparison" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Langfuse</a>, <a href="https://airbyte.com/agentic-data/best-ai-agent-frameworks-2026" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Airbyte</a></li>
+                <li>Gartners prognos om nedlagda agentprojekt – <a href="https://www.forbes.com/sites/robertszczerba/2026/07/07/why-40-of-agentic-ai-projects-may-be-canceled-by-2027/" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">Forbes</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha valet gjort åt er?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv vad agenten ska göra, vilka system den ska nå och vilka som ska förvalta den. Ni får ett konkret förslag på stack och en uppskattning av vad som krävs för att nå produktion.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-ramverk" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Få ett stackförslag
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

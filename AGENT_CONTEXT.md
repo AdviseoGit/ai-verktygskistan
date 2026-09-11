@@ -1,30 +1,49 @@
-# Agent Mission: AI-verktygslådan Growth
+# Agent Mission: AI-Verktygslådan — AI-agenter
 
 ## 1. Mål (Goal)
-- Etablera AI-verktygslådan som en go-to resurs för svenska användare som vill hitta och jämföra AI-verktyg.
-- Driva organisk trafik och generera affiliatintäkter.
+- Vara Sveriges mest lättillgängliga källa för den som ska implementera och
+  använda AI-agenter.
+- Omvandla den trafiken till kvalificerade implementationsförfrågningar.
 
-## 2. Mätbara KPI:er (Key Performance Indicators)
-- Nå topp 5 på Google för minst 20 olika söktermer relaterade till specifika AI-verktyg (t.ex. "bästa ai bildgenerator", "chatgpt alternativ") inom 6 månader.
-- Öka organisk trafik med 25% per månad.
-- Generera 100 affiliate-klick per vecka.
+**Sajten pivoterade i september 2026** från verktygskatalog till AI-agenter.
+Läs `SITE_VISION.md` innan du gör något strukturellt — särskilt avsnittet
+"Gäller inte längre". Katalogen ska inte återuppstå.
 
-## 3. Strategi & Taktik (Execution)
-- **Content:** Varje torsdag, lägg till och recensera 3-5 nya, relevanta AI-verktyg. Uppdatera befintliga recensioner om verktygen har fått stora uppdateringar.
-- **SEO:** Fokusera på "long-tail"-sökord och recensions-schema (structured data) för att få rika resultat i Google.
-- **Monetization:** Identifiera och implementera nya affiliate-program. A/B-testa placering och utformning av affiliate-länkar för att maximera klickfrekvens (CTR).
-- **Rapportering:** Varje fredag, sammanställ en rapport med veckans åtgärder, trafik- och klickdata.
+## 2. Mätbara KPI:er
+- Första klicket på en agent-relaterad sökterm (baslinjen är 0).
+- Topp 10 på svenska agent-termer ("ai agent", "bygga ai agent", "ai agent
+  ramverk") inom sex månader.
+- 10 kvalificerade förfrågningar via `/bygga-ai-agent-hjalp.html`.
 
-## 4. Gränser & Ramverk (Boundaries)
-- Alla recensioner måste vara ärliga och transparenta. Nackdelar med ett verktyg ska belysas lika väl som fördelar.
-- Markera tydligt ut affiliatelänkar.
+## 3. Strategi & Taktik
+- **Innehåll:** djup före bredd. En sida som faktiskt besvarar en fråga slår
+  fem som nuddar den. Varje ny sida ska sluta i ett svar, inte i en lista.
+- **Ta ställning.** Rekommendera ett alternativ och motivera. Jämförelser utan
+  rekommendation är det marknaden redan har för mycket av.
+- **Var ärlig om när man ska avstå.** Avsnitten om när man *inte* ska bygga en
+  agent är en tillgång, inte en brist. De är också det enda i innehållet som
+  konkurrenterna inte kopierar.
+- **SEO/GEO:** FAQ- och HowTo-schema på allt, hårda siffror med källa, svenska
+  termer. Sidorna ska gå att citera av en språkmodell utan omskrivning.
+- **Rapportering:** `SCOREBOARD.md` skrivs av scoreboard.py och är passens enda
+  minne av vad siffrorna gjorde. Ändra den aldrig för hand.
+
+## 4. Gränser & Ramverk
+- Bedömningar ska vara ärliga. Nackdelar väger lika tungt som fördelar, och
+  rekommendationen "bygg inte det här" ska ges när den är riktig.
+- Konverteringsvägen är neutralt formulerad och behovsdriven. Inga
+  säljargument i det redaktionella innehållet.
 - Ändra inte den visuella profilen utan manuellt godkännande.
+- Påstå aldrig siffror utan källa. De statistikuppgifter som används i dag
+  (Gartners 40 %, 89 % av piloter, MCP-adoption) har källor listade på
+  `/ai-agent-ramverk.html` — utöka den listan när nya siffror tillkommer.
 
 ## 5. Modellaktualitet – KRITISK REGEL
 AI-modeller uppdateras ofta. Gammal modellinformation skadar credibiliteten.
 
 ### 5a. Verifiera ALLTID aktuell modell innan publicering
-Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tools.json, index.html eller artiklar:
+Innan du nämner en specifik modellversion på en sida – särskilt i kodexemplet
+på `bygg-ai-agent.html` eller i ramverkstabellen på `ai-agent-ramverk.html`:
 
 1. **Sök på leverantörens officiella sida**:
    - OpenAI: https://openai.com/blog och https://platform.openai.com/docs/models
@@ -35,15 +54,15 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 
 2. **Kontrollera att modellen fortfarande är default/flagship** – inte superseded av nyare version.
 
-3. **Uppdatera tools.json** om du hittar en nyare version. Ändra description, tags och rating vid behov.
+3. **Uppdatera sidan** om du hittar en nyare version, och notera det i
+   `MAINTENANCE_LOG.md`.
 
 ### 5b. Checklist vid modelluppdatering
 - [ ] Vilken modell är nuvarande default på webbplatsen (inte bara API)?
 - [ ] Har pricing förändrats?
 - [ ] Finns ny GDPR/DPA-information?
-- [ ] Är betyget (rating) fortfarande rimligt jämfört med konkurrenter?
-- [ ] Uppdatera **både** tools.json OCH index.html om modellnamnet nämns där.
-- [ ] Uppdatera "Uppdaterad [månad] [år]"-märket i index.html hero-sektionen.
+- [ ] Uppdatera varje sida där modellnamnet nämns (`grep -rn` i `static/`).
+- [ ] Uppdatera "Uppdaterad [månad] [år]"-märket i berörda sidors hero.
 
 ### 5c. Modeller att bevaka (verifierat 25 juli 2026)
 | Leverantör | Aktuell flagship | Senaste uppdatering |
@@ -64,11 +83,18 @@ Innan du nämner en specifik modellversion (t.ex. "GPT-4o", "Claude 3.5") i tool
 
 ## 6. Teknisk Info
 - Railway-deploy: Automatisk deploy vid push till main branch.
-- **`static/tools.json` är enda källan för katalogen.** Den läses av tools.js,
-  ai-jamfor.html, hitta-ratt-ai.html och build_stacks.py. Roten hade tidigare en
-  andra `tools.json` som låg ur synk – den är borttagen, skapa den inte igen.
-- index.html innehåller hårdkodade modellnamn i hero-sektionen och
-  jämförelsetabellen – dessa måste uppdateras manuellt vid stora modellsläpp.
+- **Katalogen är borttagen.** `static/tools.json`, `static/js/tools.js`,
+  `stacks.json`, `validate_catalog.py`, `build_stacks.py`, `add_tool.py` och
+  `seed.py` togs bort vid pivoten i september 2026 tillsammans med de 24 sidor
+  som läste dem. Skapa dem inte igen.
+- **De borttagna sidorna lever som 301.** `REDIRECTS` i `main.py` pekar varje
+  gammal URL till sin närmaste efterföljare. `check_site.py` kontrollerar att
+  målen finns, så en omdirigering kan inte tyst börja peka på en 404. Lägg till
+  en rad där när en sida tas bort — ta aldrig bort en rad.
+- Sidorna nämner modellnamn sparsamt och medvetet: innehållet är byggt kring
+  mönster som håller över modellgenerationer, inte kring vilken modell som är
+  bäst i veckan. Kodexemplet på `bygg-ai-agent.html` anger dock en modell och
+  måste hållas aktuellt enligt regel 5 ovan.
 
 ### 6a. Bygga sajten – ETT kommando
 
@@ -98,12 +124,6 @@ bygge. Ändra i `templates/` och kör `make build`.
 Bakgrunden: varje sida bar tidigare sin egen kopia. Med 27 sidor blev det 27
 ställen att ändra, och resultatet var fyra olika navigationer, nio olika
 sidfötter och överblivna `</div>` i menyn på 14 av 27 sidor.
-
-#### build_stacks.py är ett scaffold, inte en regenerator
-
-Rollsidorna har handredigerats efter generering, bland annat med Article-schema
-och publiceringsdatum. Skriptet hoppar därför över sidor som redan finns och
-skriver bara nya. `--force` skriver över – och raderar då handredigeringarna.
 
 ### 6b. Databasen – läs detta innan du rör datalagret
 
@@ -148,56 +168,53 @@ Aktiva filer, och inget annat:
 | `main.py` | FastAPI-appen: routing, lead- och nyhetsbrevs-API |
 | `models.py` / `database.py` | SQLAlchemy-modeller och session |
 | `mailer.py` / `scripts/report_aiv.py` | E-postutskick och PDF-generering |
-| `scripts/add_tool.py` | Lägg till ett verktyg i katalogen enligt schemat |
-| `scripts/validate_catalog.py` | Spärr mot att katalogschemat spretar |
 | `scripts/build_site.py` | Injicerar nav och sidfot från templates/ |
-| `scripts/check_site.py` | Kontrollerar länkar, canonical, sitemap, markup |
-| `scripts/build_stacks.py` | Scaffoldar nya rollsidor från stacks.json |
+| `scripts/check_site.py` | Kontrollerar länkar, canonical, sitemap, markup, omdirigeringar |
 | `scripts/build_sitemap.py` | Genererar sitemapen från static/*.html |
-| `scripts/seed.py` | Seedar SQLite-tabellen `tools` – se varningen nedan |
 
-**Varning om seed.py och /api/tools:** tabellen `tools` och endpointen
-`/api/tools` läses inte av någon sida. Frontend hämtar `static/tools.json`.
-Innehållet i `scripts/seed.py` är dessutom utdaterat (nämner GPT-4o). Antingen ta bort
-tabellen, endpointen och seed.py, eller koppla dem till katalogen – men lita
-inte på dem som datakälla i nuläget.
+`/api/tools` och `scripts/seed.py` är borttagna tillsammans med katalogen.
+Tabellen `tools` finns kvar i `models.py` men används inte av något – lämna den
+eller migrera bort den, men lita inte på den som datakälla.
 
-### 6d. Obligatoriskt efter ändring i katalogen
-Kör alltid dessa tre i ordning innan commit:
+### 6d. Obligatoriskt före commit
 
 ```bash
 make build
 ```
 
-`scripts/validate_catalog.py` finns av en anledning: i juli 2026 hade katalogen 23
-kategorivarianter, 16 GDPR-statussträngar och två betygsskalor samtidigt, och
-`tools.js` kraschade tyst på poster där `tags` var en lista i stället för en
-sträng. Effekten var att hela verktygsgriden var borta från index.html,
-ai-verktyg.html och ai-program.html – utan att något syntes i loggarna.
-Redigera aldrig katalogen utan att köra validatorn.
+`make check` körs av CI och fångar det som annars upptäcks först i produktion:
+brutna interna länkar, saknad canonical, dubblerade titlar, tom sitemap, ogiltig
+JSON-LD, obalanserad markup, sidor ur synk med `templates/`, och omdirigeringar
+som pekar på sidor som inte finns.
 
-### 6e. Kanoniskt schema för ett verktyg
-Kategorier: `text, bild, video, ljud, kod, affar, marknadsforing, juridik,
-produktivitet, sok`. GDPR: `gdpr_klar, dpa, lokal, oklart, varning`.
-Svenska: `bra, delvis, svagt`. Pris: `gratis, freemium, betald`.
-Roller: `maklare, fastighetsforvaltare, hr, copywriter, ekonomi, juridik`.
-Betyg alltid på skalan 0–5. Alla poster måste ha `url` (https).
+Sidor med description över 160 tecken ger en varning, inte ett fel – men kapas i
+sökresultatet, så åtgärda den.
 
-`affiliate: true` sätter `rel="sponsored"` på länken och ska bara användas när
-länken faktiskt är kommersiell. `featured: true` ger märkningen
-"Redaktionens val" – den är redaktionell, inte såld. Sponsrade placeringar ska
-märkas som sponsrade, inte som redaktionens val.
+### 6e. Att lägga till en ny sida
+
+1. Skriv sidan i `static/` med `<!-- @nav --><!-- /@nav -->` och
+   `<!-- @footer --><!-- /@footer -->` som tomma markörer – `build_site.py`
+   fyller dem.
+2. Sätt `<title>`, `meta description` (högst 160 tecken) och `canonical`
+   (`https://aiverktygsladan.se/<filnamn>.html`). Titlar måste vara unika.
+3. Lägg till FAQ- eller HowTo-schema om sidan besvarar frågor.
+4. Länka in sidan från minst en befintlig sida – annars är den föräldralös.
+5. Sätt prioritet i `PRIORITY` i `scripts/build_sitemap.py`.
+6. Kör `make build`.
 
 ## 7. Monetarisering – implementerat
-- **Affiliate:** `url` + `affiliate`-flagga per verktyg. Ingen post är i dag
-  markerad som affiliate; lägg in riktiga affiliatelänkar i `url` och sätt
-  flaggan när programmen är på plats.
-- **Featured listings:** säljs via `/annonsera.html`, renderas via `featured`.
-- **Nyhetsbrev:** `POST /api/newsletter` (e-post, roll, källa) →
-  tabellen `newsletter_subscribers`. Rollen används för segmenterade utskick.
-- **B2B-leads:** `POST /api/lead/b2b` → tabellen `b2b_leads`. Annonsörer landar
-  i samma tabell med `source="annonsera"`.
-- **Export:** `/api/admin/leads`, `/api/admin/newsletter`, `/api/admin/b2b-leads`
-  kräver headern `X-Admin-Token` som matchar miljövariabeln `ADMIN_TOKEN`.
-  Saknas variabeln svarar de 404. Sätt `ADMIN_TOKEN` i Railway innan export
-  används – endpointsen lämnar ut personuppgifter.
+Sajten har en konverteringsväg, inte flera:
+
+- **Implementationsförfrågningar:** `/bygga-ai-agent-hjalp.html` postar till
+  `POST /api/lead/b2b` → tabellen `b2b_leads`. CTA-blocken på innehållssidorna
+  länkar dit med `?fran=<sida>`, vilket sparas som
+  `source="agent_hjalp:<sida>"`. Det är så vi ser vilken sida som faktiskt
+  konverterar – ändra inte det formatet utan att uppdatera rapporteringen.
+- **Nyhetsbrev:** `POST /api/newsletter` → `newsletter_subscribers`.
+- **Export:** `/api/admin/leads`, `/api/admin/newsletter`,
+  `/api/admin/b2b-leads` kräver headern `X-Admin-Token` som matchar
+  miljövariabeln `ADMIN_TOKEN`. Saknas variabeln svarar de 404. Sätt den i
+  Railway innan export används – endpointsen lämnar ut personuppgifter.
+
+Annonsförsäljning och affiliate-märkning i katalogen är borttaget tillsammans
+med katalogen. Det redaktionella innehållet är inte till salu.

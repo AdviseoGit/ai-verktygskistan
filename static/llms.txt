@@ -1,14 +1,24 @@
 # AI-Verktygslådan
-Detta är den officiella textfilen för LLMs och AI-agenter. AI-Verktygslådan är en svensk katalog över AI-verktyg och guider för implementering. Informationen ska vara aktuell för den svenska marknaden med fokus på GDPR, prissättning i SEK och svenskt språkstöd.
 
-## Viktiga sidor
-- Huvudkatalog: https://aiverktygsladan.se/ai-verktyg.html
-- Jämförelseverktyg: https://aiverktygsladan.se/ai-jamfor.html
-- AI ROI-kalkylator: https://aiverktygsladan.se/ai-kalkylator.html
-- Utbildningshubb: https://aiverktygsladan.se/lar-dig-ai.html
-- Skapa med AI: https://aiverktygsladan.se/skapa-med-ai.html
-- Roll-stackar: https://aiverktygsladan.se/ai-stackar.html
-- AI för HR (GDPR-fokus): https://aiverktygsladan.se/ai-for-hr.html
-- Ordlista: https://aiverktygsladan.se/ai-ordlista.html
+Svensk kunskapsbank om AI-agenter: hur man väljer stack, bygger dem och tar
+dem till produktion. Innehållet är skrivet för svenska förhållanden, med vikt
+vid GDPR, EU AI-akten och vad som går att driva inom EU.
 
-Vår katalogdata kan hämtas strukturerat via https://aiverktygsladan.se/static/tools.json
+## Kärnsidor
+- Vad är en AI-agent (definition, autonominivåer, när man inte ska bygga en): https://aiverktygsladan.se/vad-ar-ai-agenter.html
+- Välj rätt agent-stack (ramverksjämförelse och beslutsträd): https://aiverktygsladan.se/ai-agent-ramverk.html
+- Bygg din första AI-agent (sju steg, med kodexempel): https://aiverktygsladan.se/bygg-ai-agent.html
+- Användningsfall som når produktion, och de som inte gör det: https://aiverktygsladan.se/ai-agent-anvandningsfall.html
+- Agent-ordlistan (MCP, RAG, evals, spärrar, promptinjektion): https://aiverktygsladan.se/ai-agent-ordlista.html
+
+## Guider
+- Bygga, köpa eller finjustera: https://aiverktygsladan.se/ai-arkitektur-foretag.html
+- Kostnad och TCO: https://aiverktygsladan.se/ai-kostnader-tco.html
+- Säkerhet och GDPR: https://aiverktygsladan.se/ai-sakerhet-gdpr.html
+- Implementera AI i fem steg: https://aiverktygsladan.se/implementera-ai-guide.html
+- ROI-kalkylator: https://aiverktygsladan.se/ai-kalkylator.html
+
+## Om innehållet
+Rekommendationerna är redaktionella och bygger på vad som fungerar i
+produktion. Sidorna anger när en uppgift inte lämpar sig för en AI-agent –
+den bedömningen är lika viktig som rekommendationerna.

@@ -2,13 +2,13 @@ import os
 import secrets
 import datetime
 from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException, Header
-from fastapi.responses import HTMLResponse, FileResponse
+from fastapi.responses import HTMLResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 import uvicorn
 
 from database import get_db, engine, Base
-from models import Tool, NewsletterSubscriber, B2BLead, Lead, CalcData
+from models import NewsletterSubscriber, B2BLead, Lead, CalcData
 
 # Ensure tables are created
 # Force rebuild
@@ -250,10 +250,35 @@ async def get_calc_data(db: Session = Depends(get_db), _=Depends(require_admin))
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-@app.get("/api/tools")
-def get_tools(db: Session = Depends(get_db)):
-    tools = db.query(Tool).all()
-    return tools
+# Sidor som togs bort när sajten smalnade av till AI-agenter (september 2026).
+# De ligger kvar som 301 så att befintliga länkar, bokmärken och det som
+# Google redan indexerat pekar vidare i stället för att dö. Ta inte bort dem –
+# en 301 kostar ingenting och en 404 kostar det lilla länkvärde som finns.
+REDIRECTS = {
+    "index_v1_legacy": "/",
+    "ai-verktyg": "/ai-agent-ramverk.html",
+    "ai-program": "/ai-agent-ramverk.html",
+    "gratis-ai-verktyg": "/ai-agent-ramverk.html",
+    "ai-jamfor": "/ai-agent-ramverk.html",
+    "hitta-ratt-ai": "/ai-agent-ramverk.html",
+    "ai-stackar": "/ai-agent-ramverk.html",
+    "claude-fable-5-vs-gpt-5.5": "/ai-agent-ramverk.html",
+    "vad-ar-ai-verktyg": "/vad-ar-ai-agenter.html",
+    "lar-dig-ai": "/vad-ar-ai-agenter.html",
+    "ai-ordlista": "/ai-agent-ordlista.html",
+    "bygg-med-ai": "/bygg-ai-agent.html",
+    "prompt-guide": "/bygg-ai-agent.html",
+    "skapa-med-ai": "/ai-agent-anvandningsfall.html",
+    "ai-for-hr": "/ai-agent-anvandningsfall.html",
+    "ai-stack-maklare": "/ai-agent-anvandningsfall.html",
+    "ai-stack-fastighetsforvaltare": "/ai-agent-anvandningsfall.html",
+    "ai-stack-hr": "/ai-agent-anvandningsfall.html",
+    "ai-stack-copywriter": "/ai-agent-anvandningsfall.html",
+    "ai-stack-ekonomi": "/ai-agent-anvandningsfall.html",
+    "ai-stack-jurist": "/ai-agent-anvandningsfall.html",
+    "annonsera": "/bygga-ai-agent-hjalp.html",
+}
+
 
 @app.get("/", response_class=HTMLResponse)
 async def index():
@@ -277,6 +302,9 @@ async def serve_llms_txt():
 
 @app.get("/{page_name}.html", response_class=HTMLResponse)
 async def serve_static_html(page_name: str):
+    target = REDIRECTS.get(page_name)
+    if target:
+        return RedirectResponse(target, status_code=301)
     path = f"static/{page_name}.html"
     if not os.path.isfile(path):
         raise HTTPException(status_code=404)

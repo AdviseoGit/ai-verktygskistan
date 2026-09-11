@@ -14,3 +14,11 @@ https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to G
 2026-09-02 | https://aiverktygsladan.se/ai-verktyg.html | Updated with B2B callout
 2026-09-02 | https://aiverktygsladan.se/ai-jamfor.html | Updated with B2B callout
 2026-09-02 | https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | B2B leadform tracker tag added
+2026-09-11 | PIVOT: sajten smalnad av till AI-agenter. 24 katalogsidor borttagna och 301:ade (se REDIRECTS i main.py).
+2026-09-11 | https://aiverktygsladan.se/vad-ar-ai-agenter.html | NY | Pelarsida, FAQPage-schema. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-ramverk.html | NY | Beslutsträd + ramverksjämförelse, FAQPage-schema. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/bygg-ai-agent.html | NY | HowTo-schema med 7 steg. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-anvandningsfall.html | NY | FAQPage-schema. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-ordlista.html | NY | FAQPage-schema, 30 begrepp. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/bygga-ai-agent-hjalp.html | NY | Konverteringssida. Begär indexering i GSC.
+2026-09-11 | https://aiverktygsladan.se/ | Omskriven för agent-positionen, ny lastmod.

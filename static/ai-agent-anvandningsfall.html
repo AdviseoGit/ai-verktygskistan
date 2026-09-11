@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agenter: 12 användningsfall som når produktion – och 4 fällor | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Konkreta agentfall per funktion med autonominivå och träffsäkerhet, plus de fyra projekttyper som nästan alltid fastnar i piloten och vad man gör i stället.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-anvandningsfall.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agenter: 12 användningsfall som når produktion – och 4 fällor">
+    <meta property="og:description" content="Konkreta agentfall per funktion med autonominivå och träffsäkerhet, plus de fyra projekttyper som nästan alltid fastnar i piloten och vad man gör i stället.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-anvandningsfall.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vilka användningsfall passar bäst för AI-agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De användningsfall som oftast når produktion har fyra saker gemensamt: uppgiften utförs många gånger i veckan, det finns ett facit i hur den faktiskt hanterades tidigare, underlaget finns redan digitalt, och ett enskilt fel är billigt att upptäcka och rätta. Klassificering och dirigering av ärenden, sammanfattning av ärendehistorik, förslag på kontering av fakturor och extrahering av avtalsvillkor uppfyller alla fyra. Uppgifter med få körningar, otydligt facit eller dyra fel gör det sällan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka AI-agentprojekt misslyckas oftast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fyra mönster återkommer. Den allmänna företagsassistenten som ska kunna allt blir medelmåttig på varje enskild uppgift. Agenten som ska ersätta en hel roll stöter på alla undantag rollen egentligen hanterar. Agenten som bygger på data som inte finns digitalt får aldrig tag i svaret. Och agenten mot ett system utan API kräver skör skärmautomation som går sönder vid varje gränssnittsändring. Gemensamt är att problemet ligger i valet av uppgift, inte i tekniken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur mycket tid sparar en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För väl avgränsade uppgifter med tydligt facit rapporteras typiskt att handläggningstiden per ärende halveras eller mer, men den siffran gäller bara den automatiserade delen av arbetet. Räkna i stället på hela flödet inklusive granskning, undantag och överlämningar till människa. Bland de agentpiloter som faktiskt når produktion – ungefär elva procent enligt sammanställningar från 2026 – rapporteras en avkastning på omkring 171 procent, vilket säger mer om urvalet av lyckade projekt än om en typisk agent."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Användningsfall · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Tolv agentfall som <span class="gradient-text">når produktion</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Listan är inte sorterad på hur imponerande fallen är, utan på hur ofta de faktiskt tar sig förbi piloten. Sist står de fyra fall som nästan alltid fastnar – läs dem först om ni känner igen er.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white border border-slate-200 rounded-3xl p-8">
+            <h2 class="text-xl font-bold mb-4">Vad de lyckade fallen har gemensamt</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">Fyra egenskaper återkommer i praktiskt taget varje agent som når produktion. Saknas någon av dem är oddsen dåliga, oavsett hur bra tekniken är.</p>
+            <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                <li><strong class="text-slate-900">Hög frekvens.</strong> Uppgiften utförs många gånger i veckan.</li>
+                <li><strong class="text-slate-900">Facit finns.</strong> Det går att se i efterhand hur uppgiften faktiskt löstes.</li>
+                <li><strong class="text-slate-900">Underlaget är digitalt.</strong> Data finns i system agenten kan nå.</li>
+                <li><strong class="text-slate-900">Billiga fel.</strong> Ett misstag upptäcks och rättas utan större skada.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Tabellen</h2>
+            <p class="text-slate-600 mb-8 max-w-3xl">Kolumnen <strong>Nivå</strong> hänvisar till <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 font-semibold underline">autonominivåerna</a>. <strong>Träffsäkerhet</strong> är vår bedömning av hur ofta fallet når produktion när det byggs som beskrivet – inte hur väl tekniken presterar.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[860px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Uppgift</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Funktion</th>
+                            <th class="p-4 font-bold border-b border-slate-200 text-center">Nivå</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Träffsäkerhet</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Varför</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Klassa och dirigera inkommande ärenden</td>
+                            <td class="p-4 text-slate-600">Support, kundtjänst</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-emerald-700">Hög</td>
+                            <td class="p-4 text-slate-600">Tydligt facit i hur ärendet faktiskt hanterades – utvärderingsdata gratis.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Sammanfatta ärendehistorik inför samtal</td>
+                            <td class="p-4 text-slate-600">Support, säljare</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">1</td>
+                            <td class="p-4 font-semibold text-emerald-700">Hög</td>
+                            <td class="p-4 text-slate-600">Agenten läser bara. Ingen risk, omedelbar nytta.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Föreslå kontering av leverantörsfakturor</td>
+                            <td class="p-4 text-slate-600">Ekonomi</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-emerald-700">Hög</td>
+                            <td class="p-4 text-slate-600">Repetitivt, stort underlag av historiska konteringar att lära av.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Extrahera villkor ur avtal till strukturerad form</td>
+                            <td class="p-4 text-slate-600">Juridik, inköp</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">1</td>
+                            <td class="p-4 font-semibold text-emerald-700">Hög</td>
+                            <td class="p-4 text-slate-600">Går från timmar till minuter, och felen syns direkt vid granskning.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Kvalificera och berika inkommande leads</td>
+                            <td class="p-4 text-slate-600">Sälj, marknad</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-emerald-700">Hög</td>
+                            <td class="p-4 text-slate-600">Låg kostnad för fel, hög volym, mätbar utfallsdata.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Svara på interna frågor ur policy och rutiner</td>
+                            <td class="p-4 text-slate-600">HR, IT</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">1</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Kräver att dokumenten är aktuella – annars automatiserar ni fel svar.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Förbereda underlag inför månadsbokslut</td>
+                            <td class="p-4 text-slate-600">Ekonomi</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Återkommande, tidskritiskt, men kräver bra systemintegration.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Granska och kommentera kod eller konfiguration</td>
+                            <td class="p-4 text-slate-600">IT, utveckling</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Facit finns i form av det som faktiskt mergades.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Bevaka förändringar i regelverk och rapportera</td>
+                            <td class="p-4 text-slate-600">Compliance</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">1</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Läsande agent med schemalagd körning – begränsad risk.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Uppdatera CRM efter kundmöten och mejlväxlingar</td>
+                            <td class="p-4 text-slate-600">Sälj</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">3</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Tråkigt arbete ingen gör noggrant ändå. Låg kostnad för fel.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Ta fram första utkast till offerter</td>
+                            <td class="p-4 text-slate-600">Sälj</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">2</td>
+                            <td class="p-4 font-semibold text-amber-700">Medel</td>
+                            <td class="p-4 text-slate-600">Människan äger alltid det slutliga utskicket.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Triagera och åtgärda enkla IT-incidenter</td>
+                            <td class="p-4 text-slate-600">IT-drift</td>
+                            <td class="p-4 text-center font-bold text-indigo-600">3</td>
+                            <td class="p-4 font-semibold text-slate-500">Låg</td>
+                            <td class="p-4 text-slate-600">Kräver mogna spärrar och bra loggning innan agenten får skriva.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">De fyra fällorna</h2>
+            <p class="text-slate-400 mb-8">Det här är de fall som säljs in lättast och misslyckas oftast. Känner ni igen ert projekt här är det värt att stanna upp innan ni bygger vidare.</p>
+            <div class="space-y-5">
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Den allmänna företagsassistenten</h3>
+                    <p class="text-slate-400 leading-relaxed">&quot;En agent som kan allt om vårt företag.&quot; Utan avgränsning finns inget facit och ingen utvärdering, vilket betyder att ni aldrig kan säga om den blir bättre eller sämre. Den demar fantastiskt och används inte efter tre veckor. <strong class="text-slate-200">Gör så här i stället:</strong> välj den vanligaste frågan assistenten skulle få och bygg en agent för bara den.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Agenten som ska ersätta en hel roll</h3>
+                    <p class="text-slate-400 leading-relaxed">En roll är inte en uppgift, den är hundra uppgifter varav de flesta är undantagshantering. Agenten klarar de trettio enkla procenten och lämnar de svåra sjuttio till en människa som nu också måste granska agenten. <strong class="text-slate-200">Gör så här i stället:</strong> ta de tre mest repetitiva uppgifterna i rollen, var för sig.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Agenten som bygger på data ni inte har</h3>
+                    <p class="text-slate-400 leading-relaxed">Ligger kunskapen i mejltrådar, i pärmar eller i huvudet på två personer löser ingen agent det. Datakvalitet uppges vara det största hindret av 52&nbsp;% av organisationerna. <strong class="text-slate-200">Gör så här i stället:</strong> gör datajobbet först och bygg agenten sedan – eller välj ett annat fall.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Agenten mot systemet utan API</h3>
+                    <p class="text-slate-400 leading-relaxed">Går affärssystemet bara att nå via gränssnittet krävs skärmautomation, och den går sönder varje gång leverantören flyttar en knapp. Ni bygger då inte en agent utan ett underhållsåtagande. <strong class="text-slate-200">Gör så här i stället:</strong> ta reda på om leverantören har ett API innan projektet startar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Om siffrorna</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <p class="text-slate-600 leading-relaxed mb-4">Det cirkulerar mycket optimistisk statistik om agenter. Två tal är värda att hålla i huvudet samtidigt: ungefär <strong>89&nbsp;% av agentpiloter når aldrig produktion</strong>, och de som gör det rapporterar en avkastning kring <strong>171&nbsp;%</strong>.</p>
+                <p class="text-slate-600 leading-relaxed mb-4">Den andra siffran beskriver alltså en grupp som redan överlevt ett hårt urval. Att räkna hem ett agentprojekt på 171&nbsp;% innan ni vet om ni tillhör de elva procenten är samma sak som att budgetera efter lotterivinsten.</p>
+                <p class="text-slate-600 leading-relaxed">Räkna hellre så här: vad kostar det att ta ett fall till nivå 2 med utvärdering på plats, och vad är den uppgiften värd per år i dag? Är svaret inte uppenbart positivt, välj ett annat fall. <a href="/ai-kalkylator.html" class="text-indigo-600 font-semibold underline">ROI-kalkylatorn</a> ger en grov första bild.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vet ni inte vilket fall ni ska börja med?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv era mest repetitiva arbetsmoment, så får ni tillbaka en rangordning: vilket som lämpar sig bäst som första agent, vad det kräver och vad som sannolikt sätter käppar i hjulet.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-anvandningsfall" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Få fallen rangordnade
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

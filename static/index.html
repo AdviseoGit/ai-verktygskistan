@@ -12,7 +12,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategisk AI för företag: Guider för Implementation, Kostnad & Säkerhet | AI-Verktygslådan</title>
+    <title>AI-agenter för svenska företag: bygg, välj stack och nå produktion | AI-Verktygslådan</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,27 +21,31 @@
     <!-- SEO -->
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Hur implementerar man AI säkert och kostnadseffektivt? Vi hjälper svenska företag navigera AI-arkitektur, TCO och GDPR. Få praktiska guider och strategier.">
-    <meta name="keywords" content="ai för företag, implementera ai, ai strategi, ai kostnad, ai säkerhet, gdpr ai, ai arkitektur, agentiska ramverk">
+    <meta name="description" content="Sveriges mest lättillgängliga guide till AI-agenter. Välj rätt stack, bygg steg för steg och se vilka användningsfall som faktiskt når produktion.">
     <link rel="canonical" href="https://aiverktygsladan.se/">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="Strategisk AI för företag: Från Vision till Verklighet">
-    <meta property="og:description" content="Våra guider hjälper er att navigera de kritiska frågorna kring implementation, kostnad, säkerhet och arkitektur för AI i er organisation.">
+    <meta property="og:title" content="AI-agenter för svenska företag: från val till produktion">
+    <meta property="og:description" content="Sveriges mest lättillgängliga guide till AI-agenter. Välj rätt stack, bygg steg för steg och se vilka användningsfall som faktiskt når produktion.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aiverktygsladan.se/">
     <meta property="og:locale" content="sv_SE">
 
-    <!-- Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "AI-Verktygslådan",
-      "url": "https://aiverktygsladan.se",
-      "description": "En kunskapsbank för svenska företag som vill implementera AI på ett säkert, strategiskt och kostnadseffektivt sätt.",
-      "inLanguage": "sv-SE"
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://aiverktygsladan.se/#website",
+  "name": "AI-Verktygslådan",
+  "url": "https://aiverktygsladan.se",
+  "description": "Sveriges mest lättillgängliga guide till att bygga och använda AI-agenter – stackval, steg-för-steg-guider och användningsfall för svenska organisationer.",
+  "inLanguage": "sv-SE",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Adviseo",
+    "url": "https://aiverktygsladan.se"
+  }
+}
     </script>
 
     <style>
@@ -56,114 +60,192 @@
         .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
         .fade-in { animation: fadeIn 0.6s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Sticky Nav -->
+    <!-- @nav -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-extrabold tracking-tight">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
                 AI-<span class="text-indigo-600">Verktygslådan</span>
             </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="/ai-guider-foretag.html" class="text-sm font-bold text-indigo-600">Guider för Företag</a>
-                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
-                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
-                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
             </div>
-            <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
         </div>
     </nav>
-    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
-        <a href="/ai-guider-foretag.html" class="block font-bold text-indigo-600">Guider för Företag</a>
-        <a href="/ai-verktyg.html" class="block font-medium hover:text-indigo-600">Verktyg</a>
-        <a href="/ai-stackar.html" class="block font-medium hover:text-indigo-600">AI-stackar</a>
-        <a href="/ai-kalkylator.html" class="block font-medium hover:text-indigo-600">Kalkylator</a>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
     </div>
+    <!-- /@nav -->
 
-    <!-- Hero -->
-    <header class="py-24 px-6 max-w-5xl mx-auto text-center fade-in">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-            Hur kan AI hjälpa <span class="gradient-text">ert företag</span> växa?
+
+    <header class="py-20 md:py-28 px-6 max-w-5xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Uppdaterad september 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">
+            Bygg AI-agenter som faktiskt<br class="hidden md:block"> når <span class="gradient-text">produktion</span>
         </h1>
         <p class="text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            Från att välja rätt arkitektur till att förstå kostnader och säkerhet. Vi ger er de strategiska guiderna för att implementera AI på riktigt – bortom att bara testa verktyg.
+            Det finns ett dussin ramverk, fem protokoll och ett nytt varje vecka &ndash; och nästan ingen vägledning på svenska om vad man faktiskt ska välja. Den här sajten gör valen åt er, förklarar varför, och visar hur ni bygger.
         </p>
-
-        <a href="#strategi" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:-translate-y-0.5">
-            Utforska våra företagsguider
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/bygg-ai-agent.html" class="inline-flex items-center justify-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-200 hover:-translate-y-0.5">
+                Bygg din första agent
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a href="/ai-agent-ramverk.html" class="inline-flex items-center justify-center gap-3 bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold text-lg hover:border-indigo-400 transition-all">
+                Välj rätt stack
+            </a>
+        </div>
     </header>
 
-    <!-- Pillar Pages Section -->
-    <section id="strategi" class="bg-white py-20 px-6 border-y border-slate-200">
+    <section class="px-6 pb-8">
+        <div class="max-w-4xl mx-auto bg-slate-900 text-slate-200 rounded-3xl p-10">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-5">Problemet är inte att tekniken är svår</h2>
+            <p class="leading-relaxed mb-4 text-slate-300">Fler än <strong class="text-white">40&nbsp;% av alla agentprojekt väntas läggas ned</strong> före utgången av 2027, och omkring <strong class="text-white">89&nbsp;% av piloterna når aldrig produktion</strong>. Det beror sällan på att någon valde fel bibliotek.</p>
+            <p class="leading-relaxed text-slate-300">Det beror på att uppgiften var för bred, att ingen kunde mäta om agenten blev bättre, och att spärrarna satt i en prompt i stället för i koden. Det är kunskap som finns hos dem som byggt några stycken &ndash; och nästan ingenstans på svenska. Det är den luckan sajten fyller.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-extrabold mb-4">Från idé till implementation: De 4 kärnfrågorna</h2>
-                <p class="text-slate-600 text-lg max-w-3xl mx-auto">Att lyckas med AI handlar om mer än teknik. Det handlar om att ha en plan för implementation, kostnad, säkerhet och arkitektur.</p>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Var står ni?</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Tre ingångar. Ta den som stämmer, hoppa över resten.</p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <a href="/ai-arkitektur-foretag.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col text-center">
-                    <div class="text-5xl mb-4 mx-auto" aria-hidden="true">🏛️</div>
-                    <h3 class="text-2xl font-bold mb-3">Arkitektur</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Bygga eget, fine-tuna en modell, eller använda färdiga API:er? Vi reder ut vilken väg som passar er organisation och era mål.</p>
-                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2 justify-center">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/vad-ar-ai-agenter.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">&#129300;</div>
+                    <h3 class="text-2xl font-bold mb-3">&quot;Vi vet inte vad en agent är&quot;</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 flex-grow">Definitionen, skillnaden mot chatbot och automation, de fem autonominivåerna &ndash; och de fyra fall där ni inte ska bygga en agent alls.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Börja här <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span></span>
                 </a>
-                <a href="/ai-kostnader-tco.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col text-center">
-                    <div class="text-5xl mb-4 mx-auto" aria-hidden="true">💰</div>
-                    <h3 class="text-2xl font-bold mb-3">Kostnad & TCO</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Vad är den verkliga kostnaden för AI? Vi tittar på Total Cost of Ownership – från API-anrop till personal och underhåll.</p>
-                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2 justify-center">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                <a href="/ai-agent-ramverk.html" class="group bg-white p-8 rounded-3xl border-2 border-indigo-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">&#129517;</div>
+                    <h3 class="text-2xl font-bold mb-3">&quot;Vi drunknar i alternativ&quot;</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 flex-grow">LangGraph, n8n, CrewAI, Claude och OpenAI Agents SDK jämförda. Ett beslutsträd med fyra frågor som ger ett svar &ndash; inte en lista.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Till stackvalet <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span></span>
                 </a>
-                <a href="/ai-sakerhet-gdpr.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col text-center">
-                    <div class="text-5xl mb-4 mx-auto" aria-hidden="true">🛡️</div>
-                    <h3 class="text-2xl font-bold mb-3">Säkerhet & GDPR</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">Hur hanterar ni kunddata på ett säkert sätt? Praktiska checklistor för GDPR och regelefterlevnad när ni använder AI-verktyg.</p>
-                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2 justify-center">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
-                </a>
-                <a href="/implementera-ai-guide.html" class="group bg-slate-50 p-8 rounded-3xl border border-slate-200 card-hover flex flex-col text-center">
-                    <div class="text-5xl mb-4 mx-auto" aria-hidden="true">🚀</div>
-                    <h3 class="text-2xl font-bold mb-3">Implementation</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6 flex-grow">En konkret steg-för-steg-guide för att gå från behovsanalys till en lyckad utrullning av AI i er organisation.</p>
-                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2 justify-center">Läs guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span></span>
+                <a href="/bygg-ai-agent.html" class="group bg-white p-8 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-4" aria-hidden="true">&#128296;</div>
+                    <h3 class="text-2xl font-bold mb-3">&quot;Vi vill bygga nu&quot;</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6 flex-grow">Sju steg från vald uppgift till något som kör, med kodexempel på agentloopen och de fem fel som fäller flest projekt.</p>
+                    <span class="font-bold text-indigo-600 inline-flex items-center gap-2">Till guiden <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span></span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- B2B: hjälp att införa AI -->
-    <section class="py-20 px-6 bg-white border-t border-slate-200" id="hjalp">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-8">
-                <h2 class="text-4xl font-extrabold mb-4">Behöver ni en strategisk partner?</h2>
-                <p class="text-slate-600 text-lg">Att välja verktyg är en sak. Att bygga en hållbar AI-strategi som är förankrad i affärsmålen är en annan. Beskriv ert läge, så matchar vi er med en svensk AI-konsult som kan hjälpa er med allt från workshops till fullskalig implementation.</p>
-            </div>
-            <form id="b2b-form" class="grid sm:grid-cols-2 gap-4 bg-slate-50 p-6 rounded-3xl border border-slate-200">
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-name">Namn</label>
-                    <input id="b2b-name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-email">E-post</label>
-                    <input id="b2b-email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-company">Företag</label>
-                    <input id="b2b-company" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></div>
-                <div><label class="block text-sm font-semibold mb-1" for="b2b-employees">Antal anställda</label>
-                    <select id="b2b-employees" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
-                        <option value="1-9">1–9</option><option value="10-49">10–49</option>
-                        <option value="50-199">50–199</option><option value="200+">200+</option>
-                    </select></div>
-                <div class="sm:col-span-2"><label class="block text-sm font-semibold mb-1" for="b2b-need">Vad är er största utmaning med AI just nu?</label>
-                    <textarea id="b2b-need" rows="3" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea></div>
-                <div class="sm:col-span-2">
-                    <button type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp med strategin</button>
-                    <p class="text-xs text-slate-400 mt-3">Vi förmedlar din förfrågan till en eller flera partners. Du binder dig inte till något.</p>
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-4">Tolv användningsfall som når produktion</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">Sorterade på hur ofta de faktiskt tar sig förbi piloten &ndash; inte på hur imponerande de låter. Med autonominivå, träffsäkerhet och skälet bakom bedömningen.</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">Sist står de fyra projekttyperna som nästan alltid fastnar. Läs dem först om ni redan har ett projekt igång.</p>
+                    <a href="/ai-agent-anvandningsfall.html" class="inline-flex items-center gap-2 font-bold text-indigo-600">Se alla användningsfall <span aria-hidden="true">&rarr;</span></a>
                 </div>
-            </form>
-            <p id="b2b-success" class="hidden text-center text-emerald-600 font-bold mt-6">✓ Tack! Vi hör av oss inom ett par arbetsdagar.</p>
+                <div class="bg-slate-50 rounded-3xl border border-slate-200 p-8">
+                    <ul class="space-y-3 text-slate-700">
+                        <li class="flex gap-3"><span class="text-emerald-600 font-bold" aria-hidden="true">&#10003;</span> Klassa och dirigera inkommande ärenden</li>
+                        <li class="flex gap-3"><span class="text-emerald-600 font-bold" aria-hidden="true">&#10003;</span> Föreslå kontering av leverantörsfakturor</li>
+                        <li class="flex gap-3"><span class="text-emerald-600 font-bold" aria-hidden="true">&#10003;</span> Extrahera villkor ur avtal</li>
+                        <li class="flex gap-3"><span class="text-emerald-600 font-bold" aria-hidden="true">&#10003;</span> Kvalificera och berika inkommande leads</li>
+                        <li class="flex gap-3 text-slate-400"><span class="text-rose-500 font-bold" aria-hidden="true">&times;</span> Den allmänna företagsassistenten</li>
+                        <li class="flex gap-3 text-slate-400"><span class="text-rose-500 font-bold" aria-hidden="true">&times;</span> Agenten som ska ersätta en hel roll</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Guider för besluten runt omkring</h2>
+                <p class="text-slate-600 text-lg max-w-2xl mx-auto">Bygget är sällan det svåra. Arkitekturen, kostnaden, regelverket och utrullningen är det.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="/ai-arkitektur-foretag.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-3" aria-hidden="true">&#127963;</div>
+                    <h3 class="text-xl font-bold mb-2">Bygga eller köpa</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow mb-4">Färdiga API:er, finjustera eller bygga eget &ndash; vilken väg som passar er organisation.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs guiden <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-kostnader-tco.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-3" aria-hidden="true">&#128176;</div>
+                    <h3 class="text-xl font-bold mb-2">Kostnad &amp; TCO</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow mb-4">Vad AI faktiskt kostar när drift, underhåll och personal räknas in &ndash; inte bara API-anropen.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs guiden <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-sakerhet-gdpr.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-3" aria-hidden="true">&#128737;</div>
+                    <h3 class="text-xl font-bold mb-2">Säkerhet &amp; GDPR</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow mb-4">Rollerna, fallgroparna och checklistan &ndash; särskilt när agenten både läser och agerar på persondata.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs guiden <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/implementera-ai-guide.html" class="group bg-white p-7 rounded-3xl border border-slate-200 card-hover flex flex-col">
+                    <div class="text-4xl mb-3" aria-hidden="true">&#128640;</div>
+                    <h3 class="text-xl font-bold mb-2">Implementation</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed flex-grow mb-4">Fem steg från behovsanalys till utrullning, för den som ska driva införandet internt.</p>
+                    <span class="font-bold text-indigo-600 text-sm">Läs guiden <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            <a href="/ai-agent-ordlista.html" class="group bg-slate-50 p-7 rounded-3xl border border-slate-200 card-hover">
+                <h3 class="text-lg font-bold mb-2">Agent-ordlistan</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">MCP, RAG, evals, promptinjektion &ndash; 30 begrepp förklarade så att ni kan läsa en offert.</p>
+                <span class="font-bold text-indigo-600 text-sm">Slå upp <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a href="/ai-kalkylator.html" class="group bg-slate-50 p-7 rounded-3xl border border-slate-200 card-hover">
+                <h3 class="text-lg font-bold mb-2">ROI-kalkylatorn</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">En grov första bild av vad ett automatiserat arbetsmoment är värt per år hos er.</p>
+                <span class="font-bold text-indigo-600 text-sm">Räkna <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a href="/ai-svenska-foretag-rapport.html" class="group bg-slate-50 p-7 rounded-3xl border border-slate-200 card-hover">
+                <h3 class="text-lg font-bold mb-2">Rapport 2026</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">Siffror om AI-användningen i svenska företag, att ta med till ledningsgruppen.</p>
+                <span class="font-bold text-indigo-600 text-sm">Läs rapporten <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Ska ni bygga &ndash; eller ska ni inte?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv arbetsmomentet ni funderar på, så får ni en rak bedömning av om det lämpar sig som agent, vilken stack som passar och vad som krävs för att nå produktion. Är svaret att ni inte ska bygga en agent säger vi det.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=startsida" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
 
     <!-- @footer -->
     <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
@@ -171,30 +253,36 @@
             <div class="grid gap-10 md:grid-cols-4 mb-10">
                 <div class="md:col-span-1">
                     <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
-                    <p class="text-sm leading-relaxed">Sveriges kunskapsbank för företag som vill lyckas med AI.</p>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
                 </div>
                 <div>
-                    <h2 class="text-white font-bold text-sm mb-4">Guider för Företag</h2>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">AI-Arkitektur</a></li>
-                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad & TCO</a></li>
-                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet & GDPR</a></li>
-                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementation</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-white font-bold text-sm mb-4">Resurser</h2>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">Verktygsdatabas</a></li>
-                        <li><a href="/ai-stackar.html" class="hover:text-white transition-colors">AI-stackar per yrke</a></li>
-                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">AI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-white font-bold text-sm mb-4">Om oss</h2>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
                         <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
                         <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
                     </ul>
                 </div>
@@ -202,36 +290,21 @@
             <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
                 <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
                 <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
             </div>
         </div>
     </footer>
     <!-- /@footer -->
 
     <script>
-        // B2B-förfrågan om implementeringshjälp
-        document.getElementById('b2b-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            fetch('/api/lead/b2b', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: document.getElementById('b2b-name').value,
-                    email: document.getElementById('b2b-email').value,
-                    company: document.getElementById('b2b-company').value,
-                    employees: document.getElementById('b2b-employees').value,
-                    need: document.getElementById('b2b-need').value,
-                    source: 'startsida_v2'
-                })
-            }).catch(function(){});
-            this.classList.add('hidden');
-            document.getElementById('b2b-success').classList.remove('hidden');
-            if (typeof gtag === 'function') gtag('event', 'b2b_lead', { source: 'startsida_v2' });
-        });
-
-        // Mobile menu
-        document.getElementById("mobile-menu-btn").addEventListener("click", function() {
-            document.getElementById("mobile-menu").classList.toggle("hidden");
-        });
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
     </script>
 
 </body>

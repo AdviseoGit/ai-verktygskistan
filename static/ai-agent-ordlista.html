@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent-ordlistan: 30 AI-agentbegrepp förklarade på svenska | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="MCP, RAG, evals, spärrar, promptinjektion och autonominivåer – begreppen du behöver för att förstå vad en agentoffert faktiskt innehåller. Kort och på svenska.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-ordlista.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Agent-ordlistan: 30 AI-agentbegrepp förklarade på svenska">
+    <meta property="og:description" content="MCP, RAG, evals, spärrar, promptinjektion och autonominivåer – begreppen du behöver för att förstå vad en agentoffert faktiskt innehåller. Kort och på svenska.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-ordlista.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad betyder MCP inom AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP står för Model Context Protocol och är en öppen standard för hur AI-agenter kopplas till verktyg och datakällor. I stället för en egen integration per modell och ramverk beskriver ni verktyget en gång som en MCP-server, varpå alla MCP-kompatibla agenter kan använda det. Protokollet förvaltas sedan december 2025 av Agentic AI Foundation under Linux Foundation och stöds av samtliga stora leverantörer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är en eval för en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En eval är en uppsättning testfall med känt rätt svar som körs varje gång agenten ändras. Den svarar på frågan om en ändring gjorde agenten bättre eller sämre. Tjugo verkliga fall räcker långt, förutsatt att de knepiga fallen är med och att minst några har svaret att agenten bör lämna över till en människa. Avsaknad av evals är det vanligaste skälet till att agentprojekt aldrig lämnar pilotstadiet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är promptinjektion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Promptinjektion innebär att någon gömmer instruktioner i innehåll som agenten läser – ett mejl, en webbsida, ett dokument – i syfte att få agenten att göra något annat än vad den var avsedd att göra. Det är den viktigaste nya sårbarheten när agenter ges rätt att läsa extern text och samtidigt agera i era system. Motmedlen är minsta möjliga behörighet, mänskligt godkännande före känsliga åtgärder och hårda spärrar i koden snarare än i prompten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad menas med human-in-the-loop?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Human-in-the-loop betyder att en människa godkänner agentens förslag innan det verkställs. Agenten utför hela arbetet men lämnar resultatet som något att klicka igenom. Upplägget ger nästan hela tidsvinsten till en bråkdel av risken, och varje godkännande eller avslag blir data att utvärdera agenten på. Det är den nivå de flesta agenter i produktion börjar på."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Ordlista · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Agent-ordlistan: <span class="gradient-text">30 begrepp</span> på svenska</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Orden ni stöter på i offerter, konferensföredrag och dokumentation – förklarade så att ni kan avgöra vad någon faktiskt föreslår. Kort, på svenska, utan marknadsföring.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-4xl mx-auto flex flex-wrap gap-3 justify-center"><a href="#grunder" class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 transition-colors">Grunderna</a> <a href="#protokoll" class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 transition-colors">Protokoll och standarder</a> <a href="#data" class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 transition-colors">Data och kunskap</a> <a href="#kvalitet" class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 transition-colors">Kvalitet och drift</a> <a href="#risk" class="bg-white border border-slate-200 px-4 py-2 rounded-xl text-sm font-semibold hover:border-indigo-400 hover:text-indigo-600 transition-colors">Säkerhet och regelverk</a></div>
+    </section>
+
+    <section id="grunder" class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Grunderna</h2>
+            <div class="grid gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Agent</h3>
+                    <p class="text-slate-600 leading-relaxed">Ett program där en språkmodell får ett mål, verktyg och rätt att köra flera steg i rad tills målet är nått. Saknas verktygen är det en chatbot; saknas de egna stegen är det ett skript.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Agentloop</h3>
+                    <p class="text-slate-600 leading-relaxed">Cykeln tänk &rarr; anropa verktyg &rarr; läs resultat &rarr; tänk igen, som upprepas tills uppgiften är klar eller ett stopptak nås. Loopen är det som gör en agent till en agent.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Autonominivå</h3>
+                    <p class="text-slate-600 leading-relaxed">Hur mycket agenten får göra på egen hand, från att bara föreslå text till att planera och utföra långa kedjor själv. De flesta agenter som fungerar i produktion ligger på nivån där en människa godkänner innan något verkställs.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Verktyg (tool)</h3>
+                    <p class="text-slate-600 leading-relaxed">En funktion agenten får anropa, till exempel &quot;hämta kund&quot; eller &quot;skapa ärende&quot;. Modellen väljer verktyg utifrån beskrivningen, så en otydlig beskrivning ger en agent som väljer fel.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Tool use / function calling</h3>
+                    <p class="text-slate-600 leading-relaxed">Mekanismen där modellen svarar med ett strukturerat anrop i stället för text, er kod kör funktionen och skickar tillbaka resultatet. Grunden som all agentbyggnation vilar på.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Systemprompt</h3>
+                    <p class="text-slate-600 leading-relaxed">Agentens stående arbetsbeskrivning: uppgiften, gränserna och vad den ska göra när den är osäker. Den del som avgör mest och som får minst tid.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Orkestrering</h3>
+                    <p class="text-slate-600 leading-relaxed">Hur flera steg, verktyg eller agenter styrs och i vilken ordning. Kan vara en fast graf ni ritat eller något modellen avgör vid varje körning.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Multiagent</h3>
+                    <p class="text-slate-600 leading-relaxed">Flera agenter som delar upp ett arbete mellan sig. Låter kraftfullt, men mångdubblar antalet ställen där något kan gå fel och gör felsökning svårare eftersom felet uppstår mellan agenterna.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="protokoll" class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Protokoll och standarder</h2>
+            <div class="grid gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">MCP (Model Context Protocol)</h3>
+                    <p class="text-slate-600 leading-relaxed">Öppen standard för hur agenter kopplas till verktyg och datakällor. Beskriv verktyget en gång som en MCP-server, så kan alla MCP-kompatibla agenter använda det oavsett modell och ramverk. Förvaltas sedan december 2025 av Agentic AI Foundation under Linux Foundation.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">MCP-server</h3>
+                    <p class="text-slate-600 leading-relaxed">En tjänst som exponerar ett eller flera verktyg enligt MCP. Det finns över 9 400 publika att koppla in, och era egna system blir enklast tillgängliga för agenter genom att paketeras som en.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">A2A (Agent-to-Agent)</h3>
+                    <p class="text-slate-600 leading-relaxed">Googles protokoll för att agenter ska kunna prata med varandra, till skillnad från MCP som handlar om agent mot verktyg. Relevant först när ni har flera agenter från olika leverantörer.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">ACP (Agent Communication Protocol)</h3>
+                    <p class="text-slate-600 leading-relaxed">REST-baserat alternativ för kommunikation mellan agenter, drivet av IBM och AGNTCY. Mindre spritt än MCP och A2A.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data" class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Data och kunskap</h2>
+            <div class="grid gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">RAG</h3>
+                    <p class="text-slate-600 leading-relaxed">Retrieval-Augmented Generation: agenten söker fram relevanta textstycken ur era dokument och får dem som underlag innan den svarar. Sättet att ge en modell tillgång till kunskap den inte tränats på.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Embedding</h3>
+                    <p class="text-slate-600 leading-relaxed">En numerisk representation av text som gör att datorn kan hitta stycken med liknande innebörd, inte bara samma ord. Grunden i all semantisk sökning.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Vektordatabas</h3>
+                    <p class="text-slate-600 leading-relaxed">Databas som lagrar embeddings och snabbt hittar de mest närliggande. Ni behöver inte alltid en – för mindre mängder dokument räcker ofta vanlig sökning.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Kontextfönster</h3>
+                    <p class="text-slate-600 leading-relaxed">Hur mycket text modellen kan hålla i huvudet på en gång, mätt i tokens. En agent som kör många varv fyller fönstret snabbt eftersom hela historiken skickas med varje gång.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Token</h3>
+                    <p class="text-slate-600 leading-relaxed">Textbit på ungefär tre till fyra tecken. All prissättning och alla gränser räknas i tokens, så det är i den enheten en agents kostnad blir begriplig.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Grounding</h3>
+                    <p class="text-slate-600 leading-relaxed">Att förankra svaret i verkliga källor i stället för modellens minne. En agent som citerar var den hämtat uppgiften går att kontrollera; en som inte gör det måste litas på.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Finjustering (fine-tuning)</h3>
+                    <p class="text-slate-600 leading-relaxed">Att vidareträna en modell på egen data. Sällan rätt första åtgärd för agenter – bättre instruktioner och bättre verktyg löser nästan alltid problemet billigare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kvalitet" class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Kvalitet och drift</h2>
+            <div class="grid gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Eval (utvärdering)</h3>
+                    <p class="text-slate-600 leading-relaxed">En uppsättning testfall med känt rätt svar som körs vid varje ändring. Utan evals är varje justering en gissning, och det är det enskilt vanligaste skälet till att agenter aldrig lämnar piloten.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Hallucination</h3>
+                    <p class="text-slate-600 leading-relaxed">När modellen svarar med något som låter rimligt men inte stämmer. Farligare i en agent än i en chatt, eftersom agenten agerar på sitt eget felaktiga svar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Spärrar (guardrails)</h3>
+                    <p class="text-slate-600 leading-relaxed">Hårda gränser för vad agenten får göra – belopp, mottagare, antal åtgärder. Ska ligga i koden, inte i prompten: en instruktion är en önskan, en kontroll i verktyget är en gräns.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Human-in-the-loop</h3>
+                    <p class="text-slate-600 leading-relaxed">Att en människa godkänner innan agenten verkställer. Ger nästan hela tidsvinsten till en bråkdel av risken, och varje godkännande blir utvärderingsdata.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Spårbarhet (observability)</h3>
+                    <p class="text-slate-600 leading-relaxed">Loggning av varje verktygsanrop med indata, utdata och tidpunkt. Enda sättet att i efterhand svara på frågan &quot;varför gjorde den så?&quot; – och den frågan kommer.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Checkpointing</h3>
+                    <p class="text-slate-600 leading-relaxed">Att spara agentens tillstånd så att ett avbrutet flöde kan återupptas i stället för att börja om. Avgörande för längre flöden och för att kunna pausa för ett godkännande.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Idempotens</h3>
+                    <p class="text-slate-600 leading-relaxed">Att en åtgärd ger samma resultat om den råkar köras två gånger. Viktigt när agenter skriver till affärssystem, eftersom omförsök hör till normal drift.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Determinism</h3>
+                    <p class="text-slate-600 leading-relaxed">Att samma indata ger samma utdata varje gång. Agenter är av naturen inte deterministiska, vilket är precis därför utvärdering och loggning behövs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="risk" class="py-12 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Säkerhet och regelverk</h2>
+            <div class="grid gap-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Promptinjektion</h3>
+                    <p class="text-slate-600 leading-relaxed">Att någon gömmer instruktioner i innehåll agenten läser – ett mejl, en webbsida, ett dokument – för att få den att göra något annat än avsett. Den viktigaste nya sårbarheten när agenter får läsa extern text.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Verktygsförgiftning (tool poisoning)</h3>
+                    <p class="text-slate-600 leading-relaxed">Varianten där en manipulerad verktygsbeskrivning får agenten att använda verktyget fel. Skäl att veta var era MCP-servrar kommer ifrån.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Minsta möjliga behörighet</h3>
+                    <p class="text-slate-600 leading-relaxed">Att agenten bara får tillgång till exakt de system och poster den behöver. En agent med samma behörighet som en administratör är en administratör som kan luras.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">AI-akten (EU AI Act)</h3>
+                    <p class="text-slate-600 leading-relaxed">EU:s regelverk för AI. Huvuddelen av bestämmelserna tillämpas från augusti 2026. För agenter är riskklassning, mänsklig kontroll och dokumentation av besluten det som blir mest konkret.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">Biträdesavtal (DPA)</h3>
+                    <p class="text-slate-600 leading-relaxed">Avtalet som krävs när en leverantör behandlar personuppgifter åt er. Behövs för modelleverantören så snart agenten skickar personuppgifter till den – vilket den nästan alltid gör.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Behöver ni översätta en offert?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Har ni fått ett förslag fullt av ord som de här och vill veta vad det egentligen innebär – och vad det borde kosta – går det bra att skicka över det.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-ordlista" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Skicka över frågan
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

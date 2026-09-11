@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bygg din första AI-agent: 7 steg från uppgift till produktion | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Steg-för-steg-guide med kodexempel: välj rätt uppgift, ge agenten verktyg, bygg loopen, utvärdera med 20 testfall och sätt spärrar innan ni driftsätter.">
+    <link rel="canonical" href="https://aiverktygsladan.se/bygg-ai-agent.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Bygg din första AI-agent: 7 steg från uppgift till produktion">
+    <meta property="og:description" content="Steg-för-steg-guide med kodexempel: välj rätt uppgift, ge agenten verktyg, bygg loopen, utvärdera med 20 testfall och sätt spärrar innan ni driftsätter.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/bygg-ai-agent.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Bygg din första AI-agent",
+  "description": "Sju steg från vald uppgift till en AI-agent som kör i produktion, med utvärdering och spärrar på plats.",
+  "inLanguage": "sv-SE",
+  "totalTime": "P5D",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Välj en uppgift som går att utvärdera", "text": "Välj en uppgift som utförs minst tio gånger i veckan, där någon kan avgöra om resultatet är rätt, och där underlaget redan finns digitalt. Skriv ned uppgiften i en mening. Går det inte är den för bred."},
+    {"@type": "HowToStep", "position": 2, "name": "Skriv ned hur en människa gör det i dag", "text": "Följ en kollega genom uppgiften och skriv ned varje uppslag, varje bedömning och varje undantag. Den beskrivningen blir agentens instruktion och avslöjar vilka verktyg den behöver."},
+    {"@type": "HowToStep", "position": 3, "name": "Ge agenten verktyg i stället för kunskap", "text": "Bygg funktioner agenten kan anropa – hämta kund, sök i avtal, skapa ärende – i stället för att klistra in information i prompten. Verktyg hämtar färsk data, inklistrad text åldras."},
+    {"@type": "HowToStep", "position": 4, "name": "Bygg loopen", "text": "Skriv cykeln där modellen anropar verktyg, läser resultatet och fortsätter tills uppgiften är klar. Sätt ett tak för antal varv så att en felande agent stannar av sig själv."},
+    {"@type": "HowToStep", "position": 5, "name": "Bygg tjugo testfall innan ni bygger vidare", "text": "Samla tjugo verkliga fall med känt rätt svar, inklusive de knepiga. Kör dem vid varje ändring. Utan utvärdering vet ni inte om en ändring förbättrade eller försämrade agenten."},
+    {"@type": "HowToStep", "position": 6, "name": "Sätt spärrar och låt en människa godkänna", "text": "Börja på nivån där agenten förbereder och en människa godkänner. Sätt hårda gränser i koden för belopp, mottagare och antal åtgärder, och logga varje verktygsanrop."},
+    {"@type": "HowToStep", "position": 7, "name": "Driftsätt smalt och mät", "text": "Släpp på en avdelning eller en ärendetyp först. Mät andel godkända utan ändring, tid per ärende och kostnad per körning. Vidga först när siffrorna håller i några veckor."}
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Steg för steg · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Bygg din <span class="gradient-text">första AI-agent</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Sju steg från vald uppgift till något som kör på riktigt. Med kodexempel, de vanligaste felen, och den del nästan alla hoppar över – utvärderingen som avgör om ni någonsin når produktion.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-4 text-center">
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="text-3xl font-extrabold text-slate-900 mb-1">89 %</div>
+                <p class="text-sm text-slate-600">av agentpiloter når aldrig produktion</p>
+            </div>
+            <div class="bg-indigo-600 text-white p-6 rounded-2xl">
+                <div class="text-3xl font-extrabold mb-1">171 %</div>
+                <p class="text-sm text-indigo-100">ROI hos de 11 % som gör det</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                <div class="text-3xl font-extrabold text-slate-900 mb-1">21 %</div>
+                <p class="text-sm text-slate-600">har en mogen styrning på plats</p>
+            </div>
+        </div>
+        <p class="text-center text-sm text-slate-500 mt-4 max-w-2xl mx-auto">Skillnaden mellan de två grupperna är sällan teknisk skicklighet. Den ligger i steg 1, 5 och 6 nedan.</p>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto space-y-8">
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-indigo-600 text-white px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-indigo-200">Steg 1 &middot; Dag 1</span>
+                    <h2 class="text-2xl font-bold">Välj en uppgift som går att utvärdera</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Det här steget avgör projektet. En agent på fel uppgift blir aldrig bra hur skickligt den än byggs. Kraven är tre, och alla tre måste vara uppfyllda:</p>
+                    <ul class="space-y-3 text-slate-600 list-disc pl-5">
+                        <li><strong class="text-slate-900">Den utförs ofta.</strong> Minst tio gånger i veckan. Under det hinner ni aldrig samla nog med underlag för att veta om agenten fungerar.</li>
+                        <li><strong class="text-slate-900">Någon kan säga om resultatet är rätt.</strong> Finns ingen sådan person kan ni varken mäta eller förbättra.</li>
+                        <li><strong class="text-slate-900">Underlaget finns digitalt.</strong> Ligger svaret i huvudet på en kollega får agenten aldrig tag i det.</li>
+                    </ul>
+                    <p class="text-slate-600 mt-4">Testet: skriv uppgiften i <em>en</em> mening, utan &quot;och&quot;. Går det inte är den för bred. &quot;Klassificera inkommande supportärenden i rätt kö&quot; fungerar. &quot;Hantera kundsupport&quot; gör det inte.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-100 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Steg 2 &middot; Dag 1</span>
+                    <h2 class="text-2xl font-bold">Skriv ned hur en människa gör det i dag</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Sätt er bredvid någon som gör uppgiften och skriv ned allt: vilka system de öppnar, vad de tittar på, var de tvekar, vad de gör när något ser konstigt ut.</p>
+                    <p class="text-slate-600">Den beskrivningen är två saker samtidigt. Den blir agentens instruktion – i princip ordagrant. Och listan över system de öppnar är listan över verktyg agenten behöver i steg 3.</p>
+                    <p class="text-slate-600">Fånga särskilt undantagen. &quot;Om kunden har ramavtal gäller andra regler&quot; är exakt den sortens sak som får en agent att se briljant ut i demo och fela i produktion.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-100 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Steg 3 &middot; Dag 2</span>
+                    <h2 class="text-2xl font-bold">Ge agenten verktyg, inte kunskap</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Nybörjarmisstaget är att klistra in prislistor, rutiner och kundregister i prompten. Det fungerar i en demo och blir fel i samma stund som något ändras.</p>
+                    <p class="text-slate-600">Bygg i stället funktioner agenten kan anropa: <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">hamta_kund</code>, <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">sok_i_avtal</code>, <code class="bg-slate-100 px-2 py-0.5 rounded text-sm">skapa_arende</code>. Verktyg hämtar färsk data varje gång.</p>
+                    <p class="text-slate-600">Beskriv varje verktyg som om mottagaren är en ny kollega: vad det gör, när det ska användas, vad som händer om det misslyckas. Modellen väljer verktyg utifrån beskrivningen – en slarvig beskrivning ger en slarvig agent.</p>
+                    <p class="text-slate-600">Exponerar ni verktygen via <a href="/ai-agent-ramverk.html#mcp" class="text-indigo-600 font-semibold underline">MCP</a> kan de återanvändas av nästa agent ni bygger, oavsett ramverk.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-100 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Steg 4 &middot; Dag 2</span>
+                    <h2 class="text-2xl font-bold">Bygg loopen</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600 mb-5">Här är hela agenten, avskalad till det som faktiskt gör den till en agent. I produktion låter ni SDK:ns inbyggda loop sköta det här – men bygg den en gång för hand, så slutar agenter vara magi.</p>
+                    <div class="bg-slate-900 rounded-2xl p-6 overflow-x-auto">
+                        <pre class="text-sm text-slate-100 leading-relaxed"><code><span class="text-slate-500"># Agentloopen, avskalad. Det här är hela idén bakom en agent.</span>
+<span class="text-slate-500"># Produktionskod bör använda SDK:ns tool runner – men bygg den här en gång</span>
+<span class="text-slate-500"># för hand, annars förblir agenter magi i stället för teknik.</span>
+
+import anthropic
+
+client = anthropic.Anthropic()
+
+tools = [{
+    "name": "hamta_kund",
+    "description": "Hämtar kunduppgifter från CRM givet ett kundnummer.",
+    "input_schema": {
+        "type": "object",
+        "properties": {"kundnummer": {"type": "string"}},
+        "required": ["kundnummer"],
+        "additionalProperties": False,
+    },
+    "strict": True,
+}]
+
+messages = [{"role": "user", "content": "Sammanfatta ärendet för kund 4471."}]
+
+for _ in range(10):                      <span class="text-slate-500"># tak: en felande agent ska stanna själv</span>
+    response = client.messages.create(
+        model="claude-opus-5",
+        max_tokens=16000,
+        thinking={"type": "adaptive"},
+        tools=tools,
+        messages=messages,
+    )
+
+    if response.stop_reason == "end_turn":
+        break
+
+    messages.append({"role": "assistant", "content": response.content})
+
+    <span class="text-slate-500"># Alla verktygsresultat ska tillbaka i ETT user-meddelande.</span>
+    results = []
+    for block in response.content:
+        if block.type == "tool_use":
+            results.append({
+                "type": "tool_result",
+                "tool_use_id": block.id,
+                "content": kor_verktyg(block.name, block.input),
+            })
+    messages.append({"role": "user", "content": results})
+
+print(next(b.text for b in response.content if b.type == "text"))</code></pre>
+                    </div>
+                    <p class="text-slate-600 mt-5">Tre saker att lägga märke till. <strong class="text-slate-900">Taket på tio varv</strong> gör att en förvirrad agent stannar i stället för att bränna pengar. <strong class="text-slate-900">Alla verktygsresultat går tillbaka i ett enda meddelande</strong> – delar ni upp dem slutar modellen anropa verktyg parallellt. <strong class="text-slate-900">Modellen är en rad</strong>, enkel att byta när ni mätt att en annan är bättre.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border-2 border-amber-300 overflow-hidden">
+                <div class="bg-amber-400 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-900">Steg 5 &middot; Dag 3 &middot; Steget alla hoppar över</span>
+                    <h2 class="text-2xl font-bold text-amber-950">Bygg tjugo testfall innan ni bygger vidare</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Det här är steget som skiljer de 11 procenten från de 89. Utan det ändrar ni en formulering, tycker att det blev bättre, och har ingen aning om ni har rätt.</p>
+                    <p class="text-slate-600">Samla tjugo verkliga fall där ni vet vad rätt svar är. Ta med de tråkiga, de knepiga och minst tre där det korrekta svaret är &quot;det här klarar jag inte, lämna över&quot;. Kör alla tjugo vid varje ändring och skriv upp hur många som blev rätt.</p>
+                    <p class="text-slate-600">Tjugo räcker längre än man tror. Poängen är inte statistisk säkerhet, utan att ni omedelbart ser när en ändring gör saken sämre. Det räcker med ett vanligt testskript – ni behöver inget verktyg för det här.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-100 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Steg 6 &middot; Dag 4</span>
+                    <h2 class="text-2xl font-bold">Sätt spärrar och låt en människa godkänna</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Börja på <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 font-semibold underline">autonominivå 2</a>: agenten gör hela jobbet, en människa klickar godkänn. Ni får nästan hela tidsvinsten till en bråkdel av risken, och varje godkännande blir data till steg 5.</p>
+                    <p class="text-slate-600">Spärrarna ska ligga i <em>koden</em>, inte i prompten. En instruktion är en önskan; en kontroll i verktyget är en gräns:</p>
+                    <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                        <li>Belopp över en tröskel kräver godkännande – kontrollerat i verktyget.</li>
+                        <li>Mottagare utanför en godkänd lista går inte att skicka till.</li>
+                        <li>Tak för antal åtgärder per körning och per dygn.</li>
+                        <li>Varje verktygsanrop loggas med indata, utdata och tidpunkt.</li>
+                    </ul>
+                    <p class="text-slate-600 mt-4">Loggen är inte byråkrati. Den är det enda sättet att i efterhand svara på frågan &quot;varför gjorde den så?&quot; – och den frågan kommer.</p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="bg-slate-100 px-8 py-5">
+                    <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Steg 7 &middot; Dag 5 och framåt</span>
+                    <h2 class="text-2xl font-bold">Driftsätt smalt och mät</h2>
+                </div>
+                <div class="p-8 prose-block">
+                    <p class="text-slate-600">Släpp agenten på en avdelning, en ärendetyp eller en kundgrupp. Inte hela verksamheten. Fyra tal räcker för att veta om det går bra:</p>
+                    <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                        <li><strong class="text-slate-900">Andel godkända utan ändring.</strong> Trendar den uppåt fungerar agenten.</li>
+                        <li><strong class="text-slate-900">Tid per ärende</strong>, före och efter.</li>
+                        <li><strong class="text-slate-900">Kostnad per körning.</strong> Överraskar oftast – uppåt.</li>
+                        <li><strong class="text-slate-900">Andel överlämnade till människa.</strong> Ska finnas. Är den noll ljuger agenten om sin säkerhet.</li>
+                    </ul>
+                    <p class="text-slate-600 mt-4">Håller siffrorna i några veckor vidgar ni. Gör de inte det går ni tillbaka till steg 1 – oftast var uppgiften fel vald, inte agenten fel byggd.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8 text-white">De fem vanligaste felen</h2>
+            <div class="space-y-4">
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">1. Agenten gör för mycket</h3>
+                    <p class="text-slate-400 leading-relaxed">Ett brett uppdrag ger en agent som är medelmåttig på allt. Smalna av tills den gör en sak, bra.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">2. Kunskap i prompten i stället för i verktyg</h3>
+                    <p class="text-slate-400 leading-relaxed">Inklistrade prislistor och rutiner blir inaktuella utan att någon märker det. Verktyg hämtar färskt.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">3. Ingen utvärdering</h3>
+                    <p class="text-slate-400 leading-relaxed">Utan testfall blir varje ändring en gissning. Det här är det enskilt vanligaste skälet till att agenter aldrig lämnar piloten.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">4. Spärrar formulerade som önskemål</h3>
+                    <p class="text-slate-400 leading-relaxed">&quot;Skicka aldrig mejl utan godkännande&quot; i en prompt är inte en spärr. Det ska vara en kontroll i koden.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">5. Flera agenter direkt</h3>
+                    <p class="text-slate-400 leading-relaxed">Multiagentsystem mångdubblar felytan och gör felsökningen svår, eftersom felet uppstår mellan agenterna. En agent först.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Fastnat i något av stegen?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">De flesta kör fast på steg 1 eller steg 5 – fel vald uppgift, eller ingen utvärdering som visar om det blir bättre. Beskriv var ni står, så får ni ett konkret svar på vad som saknas.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=bygg-ai-agent" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

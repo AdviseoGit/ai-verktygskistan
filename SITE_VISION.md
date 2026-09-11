@@ -1,59 +1,75 @@
 # SITE_VISION.md — aiverktygsladan.se
 
 ## Vision
-Sveriges största och mest AKTUELLA AI-verktygskatalog och AI-nyhetskälla. När något händer inom AI ska det synas här SAMMA DAG — färskhet är vår konkurrensfördel. Katalogen växer varje dag tills den är nischens självklara go-to.
+Sveriges mest lättillgängliga och hjälpsamma källa för den som ska **implementera
+och använda AI-agenter**. Inte en katalog till. Målet är att en svensk
+beslutsfattare eller utvecklare ska kunna gå från "vi borde göra något med
+agenter" till en agent i produktion med hjälp av den här sajten — och få veta
+när svaret är att *inte* bygga en agent.
+
+## Positionen
+Det finns för många ramverk, för många val och för lite kunskap på svenska.
+Marknaden är full av jämförelser som listar tjugo alternativ och överlåter
+beslutet till läsaren. Vår position är den motsatta:
+
+> **Vi minskar antalet val.** Varje sida ska sluta i ett svar, inte i en lista.
+
+Tre bärande principer:
+1. **Ta ställning.** Ett beslutsträd som ger ett ramverk slår en tabell med tio.
+   Tabellen finns kvar, men som underlag för svaret — inte i stället för det.
+2. **Var ärlig om när man ska avstå.** Sidan som säger "bygg inte agent här" är
+   den som gör att någon återvänder. Den finns nästan ingen annanstans, eftersom
+   de flesta som skriver om agenter säljer agenter.
+3. **Skriv för svenska förhållanden.** GDPR, AI-akten, vad som går att driva
+   inom EU, och vad saker kostar i praktiken. Det är det internationella
+   innehållet inte skrivet för.
+
+## Varför pivoten (september 2026)
+Katalogpositionen mättes i sex månader och gav **0 klick** över fyra
+mätperioder i rad, trots stigande snittposition. Slutsatsen var inte att
+metoden skulle köras hårdare utan att positionen var fel: en svensk
+verktygskatalog konkurrerar med internationella sajter på en fråga besökaren
+redan löst med en sökmotor.
+
+Agent-implementation är en smalare fråga med sämre svar på marknaden, högre
+kommersiellt värde per besökare, och den matchar vad avsändaren faktiskt kan
+leverera. Hela katalogdelen (24 sidor, `tools.json`, stack-generatorn) togs
+bort och 301:ades in i agent-spåret.
+
+## Sajtens struktur
+| Spår | Sida | Roll |
+|---|---|---|
+| Förstå | `vad-ar-ai-agenter.html` | Pelarsida: definition, autonominivåer, när man ska avstå |
+| Välj | `ai-agent-ramverk.html` | Beslutsträd + ramverksjämförelse + MCP |
+| Bygg | `bygg-ai-agent.html` | Sju steg med kodexempel och de vanligaste felen |
+| Tillämpa | `ai-agent-anvandningsfall.html` | Tolv fall som når produktion, fyra fällor |
+| Slå upp | `ai-agent-ordlista.html` | 30 begrepp, FAQ-schema |
+| Konvertera | `bygga-ai-agent-hjalp.html` | Neutralt formulär för implementationsförfrågan |
+| Stöd | De fyra guiderna + kalkylator + rapport | Besluten runt omkring bygget |
 
 ## Milstolpar
-- [x] Daglig nyhetspipeline etablerad: varje pass börjar med nyhetssvep (web_search) → viktiga lanseringar publiceras/uppdateras samma pass
-- [x] Katalogen växer med 1–3 kvalitetsposter per pass
-- [x] gratis-ai-verktyg.html rebuilt to full on-brand design system (juni 2026)
-- [x] Hela sajten håller design-nordstjärnan (sammanhållet designsystem, mobil-först) (2026-06-20)
-- [x] Katalogen normaliserad till ett kanoniskt schema med validator (2026-07-25)
-- [x] Directory-filter för svenskt språkstöd, GDPR-status och pris (2026-07-25)
-- [x] AI-stackar per yrkesroll: 6 rollsidor + hubb (2026-07-25)
-- [x] "Veckans AI-verktyg"-nyhetsbrev med segmentering på roll (2026-07-25)
-- [x] Rensat designskuld/menybloat från dubbla `<nav>` och mobila menyer över tre nyckelsidor (2026-07-30)
-- [ ] #1 på Google för "AI verktyg"
+- [x] Pivot till AI-agenter genomförd, katalogen retirerad med 301 (2026-09-11)
+- [x] Fem nya kärnsidor med FAQ- och HowTo-schema (2026-09-11)
+- [x] Konverteringsvägen samlad på en mätbar sida med källspårning (2026-09-11)
+- [ ] Första indexerade klicket på en agent-term
+- [ ] Topp 10 på "ai agent" eller "bygga ai agent" på svenska
+- [ ] 10 kvalificerade implementationsförfrågningar
 
-## AKUT INNEHÅLLSSKULD
-- [x] Artikeln om Claude Opus 4.7 vs GPT-5.5 är UTDATERAD: Anthropic har lanserat Claude Opus 4.8 och den nya modellen Claude Fable 5. Uppdaterad.
-- [x] Granska övriga artiklar/poster för gamla modellnamn och versionsnummer — utdaterat är en bugg. Uppdaterat i verktygsdatabasen.
-- [x] index.html hero badge uppdaterad: "maj 2026" → "juni 2026"
+## Roadmap
+- [ ] **Mät innan mer byggs.** Begär indexering av de fem nya sidorna i GSC och
+      låt dem ligga i minst tre pass innan strukturen rörs igen. Pivoten är
+      hypotesen som testas — bygg inte en ny ovanpå den.
+- [ ] Djupsida per ramverk (`ai-agent-n8n.html`, `ai-agent-langgraph.html`) när
+      huvudsidan visar vilka termer som faktiskt får visningar.
+- [ ] En riktig genomgång av MCP på svenska — termen växer snabbt och har
+      nästan inget svenskt innehåll.
+- [ ] Kodexemplen i ett publikt repo som sidorna länkar till (länkvärde).
+- [ ] Instrumentera GA4-events: `agent_lead` finns på hjälpsidan, men
+      scrolldjup och klick från CTA-blocken saknas fortfarande.
+- [ ] Sätt `ADMIN_TOKEN` i Railway så leadexporten går att använda.
 
-## ROADMAP (nästa prioriteringar)
-- [x] Bygga en "Skapa med AI" sida för att fånga utbildnings-intent inom bild/video
-- [x] Konvertera "AI verktyg" och "AI program" från statiska artiklar till dynamiska katalogsidor (tools.js integration för att matcha sökintentionen)
-- [x] Utöka katalogen till 70+ verktyg
-- [x] Skapa en "Jämför"-funktion för verktyg så man kan se skillnaden mellan t.ex. ChatGPT och Claude side-by-side
-- [x] Fånga fler leads: en "GDPR-checklista för AI" lead magnet i PDF-format som skickas vid sign-up (klar på index, ai-jamfor)
-- [x] Implementera databas-lagring för leads i main.py (och admin route för export)
-- [x] Publicera en stor rapport baserad på vår AI-kalkylator (skapa länkvärdighet)
-- [x] Implementera en AI Ordlista (Sökmotorer älskar definitioner)
-- [x] Implementera schema.org FAQ-markup på Lär dig AI och AI-ordlistan för att synas som utvald snippet i Google.
-- [x] Implementera schema.org för övriga guider (Prompt, Skapa, Jämför) och AI-kalkylator (SoftwareApplication)
-
-## STRATEGISK INRIKTNING (juli/aug 2026)
-Positionen är inte "ännu en AI-verktygslista" utan **den svenska filtret**: av
-alla verktyg som finns, vilka fungerar faktiskt på svenska och vilka får ett
-svenskt bolag använda enligt GDPR. Det är den frågan besökarna har och den som
-de internationella katalogerna inte besvarar.
-
-Tre bärande delar:
-1. **Katalogen som filter** – varje verktyg har svenskt språkstöd, GDPR-läge och
-   prisnivå som strukturerade fält, filtrerbara i gränssnittet.
-2. **AI-stackar per yrkesroll** – en katalog konverterar inte, en färdig
-   uppsättning för "mäklare" gör det. Rollsidorna är också den naturliga
-   ingången för internlänkning mot portföljens övriga sajter.
-3. **Nyhetsbrevet som tillgång** – e-postlistan är den enda kanalen som inte kan
-   tas ifrån oss av en algoritmändring. Roll fångas vid anmälan för segmentering.
-4. **AI-Svarsoptimering (GEO)** – Alla viktiga sidor ska vara den givna källan för LLMs att citera vid svar om AI för specifika yrken (via schema, hårda siffror och jämförelsetabeller). (Påbörjat 2026-08)
-
-### Nästa steg
-- [ ] Ansöka till affiliateprogram och fylla `url` + `affiliate: true` för de
-      verktyg som har program. Plumbingen finns, avtalen saknas.
-- [ ] Fylla `partners` i stacks.json med portföljsajterna när domänerna är spikade.
-- [ ] Sätta `ADMIN_TOKEN` i Railway så leadexporten går att använda.
-- [ ] Instrumentera egna events i GA4 (verktyg_start, verktyg_klart, lead_form_visad, lead_skickad) för att lösa blindheten på funneln.
-- [x] Rensa de ~120 engångsskripten i repo-roten – de gör det svårt att se
-      vilka skript som faktiskt används (validate_catalog, build_stacks,
-      build_sitemap, seed, mailer, report_aiv).
+## Gäller inte längre
+Allt som rör verktygskatalogen: `tools.json`, katalogvalidatorn,
+stack-generatorn, rollsidorna per yrke och featured listings. Återuppliva det
+inte. Om ett verktyg ska nämnas hör det hemma inne i en agent-sida, som
+underlag för ett val — inte som en post i en databas.

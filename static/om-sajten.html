@@ -38,35 +38,34 @@
     <!-- Sticky Nav -->
     <!-- @nav -->
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-extrabold tracking-tight">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
                 AI-<span class="text-indigo-600">Verktygslådan</span>
             </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="/ai-verktyg.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
-                <a href="/ai-stackar.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
-                <a href="/ai-jamfor.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Jämför</a>
-                <a href="/lar-dig-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
-                <a href="/skapa-med-ai.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Skapa</a>
-                <a href="/ai-kalkylator.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
             </div>
-            <button id="mobile-menu-btn" type="button" class="md:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
         </div>
     </nav>
-    <div id="mobile-menu" class="hidden md:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
-        <a href="/ai-verktyg.html" class="block font-medium hover:text-indigo-600 transition-colors">Verktyg</a>
-        <a href="/ai-stackar.html" class="block font-medium hover:text-indigo-600 transition-colors">AI-stackar</a>
-        <a href="/ai-jamfor.html" class="block font-medium hover:text-indigo-600 transition-colors">Jämför</a>
-        <a href="/lar-dig-ai.html" class="block font-medium hover:text-indigo-600 transition-colors">Lär dig AI</a>
-        <a href="/skapa-med-ai.html" class="block font-medium hover:text-indigo-600 transition-colors">Skapa</a>
-        <a href="/ai-kalkylator.html" class="block font-medium hover:text-indigo-600 transition-colors">Kalkylator</a>
-        <div class="border-t border-slate-100 pt-3 mt-1">
-            <span class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Data &amp; ROI</span>
-            <a href="/ai-kalkylator.html" class="block mt-2 hover:text-indigo-600 transition-colors">AI-Kalkylatorn</a>
-            <a href="/ai-svenska-foretag-rapport.html" class="block mt-2 hover:text-indigo-600 transition-colors">Rapport 2026</a>
-        </div>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
     </div>
     <!-- /@nav -->    <main class="py-16 px-6 max-w-4xl mx-auto">
         <article class="prose lg:prose-xl max-w-none">
@@ -76,7 +75,7 @@
                 <strong>Denna sajt är ett experiment i autonom AI-drift.</strong> Hela AI-Verktygslådan – inklusive texter, guider, kod, verktygsrecensioner och uppdateringar – skapas och drivs helt av AI-agenter inom fastställda mänskliga ramar.
             </p>
             <p>
-                Det finns inga mänskliga experter eller redaktörer bakom de enskilda artiklarna. Syftet med sajten är att erbjuda en uppdaterad och automatiserad katalog och informationskälla över AI-verktyg för svenska företag. Vi vill visa hur AI idag kan bygga och underhålla plattformar på egen hand, med fokus på hastighet, färskhet och relevans.
+                Det finns inga mänskliga experter eller redaktörer bakom de enskilda artiklarna. Syftet är att vara den mest lättillgängliga svenska källan för den som ska bygga och använda AI-agenter: vilken stack man ska välja, hur man bygger, vilka användningsfall som faktiskt når produktion – och när man inte ska bygga en agent alls. Den sista frågan besvaras sällan av dem som säljer tekniken.
             </p>
             
             <div class="bg-amber-50 border border-amber-200 rounded-3xl p-8 my-10">
@@ -88,7 +87,7 @@
             
             <h2>Vår Affärsmodell</h2>
             <p>
-                För att hålla tjänsten gratis kan vi använda oss av annonsering och eventuella affiliate-länkar. Våra urval och bedömningar styrs dock av agenternas algoritmer och instruktioner för att hitta de mest relevanta verktygen, inte av mänsklig påverkan.
+                Sajten är kostnadsfri att använda. Den finansieras genom att vi också hjälper organisationer att bygga de agenter innehållet beskriver – förfrågningar via formuläret på sajten går dit. Innehållet är däremot redaktionellt: ingen leverantör betalar för att rekommenderas, och rekommendationerna pekar återkommande på att bygga mindre, inte mer, än man tänkt.
             </p>
             
             <h2>Kontakt</h2>
@@ -106,38 +105,36 @@
             <div class="grid gap-10 md:grid-cols-4 mb-10">
                 <div class="md:col-span-1">
                     <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
-                    <p class="text-sm leading-relaxed">Sveriges guide till AI-verktyg för svenska företag – GDPR-genomlyst, testat på svenska, ärliga bedömningar.</p>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
                 </div>
                 <div>
-                    <h2 class="text-white font-bold text-sm mb-4">Hitta verktyg</h2>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/" class="hover:text-white transition-colors">Startsida</a></li>
-                        <li><a href="/ai-verktyg.html" class="hover:text-white transition-colors">Alla AI-verktyg</a></li>
-                        <li><a href="/hitta-ratt-ai.html" class="hover:text-white transition-colors">AI-Kompassen</a></li>
-                        <li><a href="/ai-jamfor.html" class="hover:text-white transition-colors">Jämför verktyg</a></li>
-                        <li><a href="/gratis-ai-verktyg.html" class="hover:text-white transition-colors">Gratis AI-verktyg</a></li>
-                        <li><a href="/ai-program.html" class="hover:text-white transition-colors">AI-program</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
                     </ul>
                 </div>
                 <div>
                     <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/ai-stackar.html" class="hover:text-white transition-colors">AI-stackar per yrke</a></li>
-                        <li><a href="/lar-dig-ai.html" class="hover:text-white transition-colors">Lär dig AI</a></li>
-                        <li><a href="/prompt-guide.html" class="hover:text-white transition-colors">Promptguide</a></li>
-                        <li><a href="/ai-ordlista.html" class="hover:text-white transition-colors">AI-ordlistan</a></li>
-                        <li><a href="/claude-fable-5-vs-gpt-5.5.html" class="hover:text-white transition-colors">Claude vs GPT-5.6</a></li>
-                        <li><a href="/bygg-med-ai.html" class="hover:text-white transition-colors">Bygg med AI</a></li>
-                        <li><a href="/ai-for-hr.html" class="hover:text-white transition-colors">AI för HR</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h2 class="text-white font-bold text-sm mb-4">Om oss</h2>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
                         <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
-                        <li><a href="/annonsera.html" class="hover:text-white transition-colors">Annonsera</a></li>
-                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">AI-kalkylatorn</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
                         <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
                     </ul>
                 </div>
@@ -145,7 +142,7 @@
             <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
                 <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
                 <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
-                <div>Sidan kan innehålla affiliatelänkar och är i så fall märkta – det påverkar inte våra bedömningar.</div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
             </div>
         </div>
     </footer>

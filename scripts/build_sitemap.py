@@ -23,41 +23,29 @@ EXCLUDE = set()
 # Prioritet och uppdateringsfrekvens per sida. Sidor som saknas här får
 # standardvärdena längst ned.
 PRIORITY = {
-    "index": (1.0, "daily"),
-    "ai-verktyg": (0.9, "daily"),
-    "ai-stackar": (0.9, "weekly"),
-    "gratis-ai-verktyg": (0.9, "weekly"),
-    "hitta-ratt-ai": (0.8, "weekly"),
-    "ai-jamfor": (0.8, "weekly"),
-    "ai-kalkylator": (0.9, "monthly"),
-    "ai-program": (0.9, "weekly"),
-    "lar-dig-ai": (0.9, "monthly"),
-    "bygg-med-ai": (0.9, "monthly"),
-    "skapa-med-ai": (0.9, "monthly"),
-    "prompt-guide": (0.8, "monthly"),
-    "ai-ordlista": (0.8, "monthly"),
-    "claude-fable-5-vs-gpt-5.5": (0.9, "weekly"),
-    "ai-svenska-foretag-rapport": (0.8, "monthly"),
-    "ai-for-hr": (0.8, "monthly"),
-    "vad-ar-ai-verktyg": (0.7, "monthly"),
-    "nyhetsbrev": (0.7, "monthly"),
-    "annonsera": (0.6, "monthly"),
+    "index": (1.0, "weekly"),
+    "vad-ar-ai-agenter": (0.9, "monthly"),
+    "ai-agent-ramverk": (0.9, "weekly"),
+    "bygg-ai-agent": (0.9, "monthly"),
+    "ai-agent-anvandningsfall": (0.9, "monthly"),
+    "ai-agent-ordlista": (0.8, "monthly"),
+    "bygga-ai-agent-hjalp": (0.8, "monthly"),
+    "ai-guider-foretag": (0.7, "monthly"),
+    "ai-arkitektur-foretag": (0.7, "monthly"),
+    "ai-kostnader-tco": (0.7, "monthly"),
+    "ai-sakerhet-gdpr": (0.7, "monthly"),
+    "implementera-ai-guide": (0.7, "monthly"),
+    "ai-kalkylator": (0.7, "monthly"),
+    "ai-svenska-foretag-rapport": (0.6, "monthly"),
+    "nyhetsbrev": (0.5, "monthly"),
     "om-sajten": (0.4, "yearly"),
     "integritetspolicy": (0.3, "yearly"),
 }
 DEFAULT = (0.7, "monthly")
 
-# Sidor som genereras av build_stacks.py delar prioritet via prefix.
-PREFIX_PRIORITY = {"ai-stack-": (0.9, "weekly")}
-
 
 def rank(page):
-    if page in PRIORITY:
-        return PRIORITY[page]
-    for prefix, value in PREFIX_PRIORITY.items():
-        if page.startswith(prefix):
-            return value
-    return DEFAULT
+    return PRIORITY.get(page, DEFAULT)
 
 
 def build():

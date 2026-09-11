@@ -6,7 +6,7 @@
       "@id": "https://aiverktygsladan.se/#website",
       "url": "https://aiverktygsladan.se",
       "name": "AI-Verktygslådan",
-      "description": "Sveriges mest kompletta guide till AI-verktyg för företag – med fokus på GPT-5.6, Claude, GDPR-efterlevnad och svenska affärsprocesser.",
+      "description": "Sveriges mest lättillgängliga guide till att bygga och använda AI-agenter – stackval, steg-för-steg-guider och användningsfall för svenska organisationer.",
       "inLanguage": "sv-SE",
       "publisher": {
         "@type": "Organization",
@@ -19,34 +19,34 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Är ChatGPT GDPR-kompatibelt i Sverige?",
+          "name": "Vad är en AI-agent?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, om du använder en företagsplan. ChatGPT Teams och Enterprise omfattas av ett personuppgiftsbiträdesavtal (DPA) och tränar inte på er data. Alternativet är Azure OpenAI Service med EU-datalagring. Gratisversionen saknar DPA och bör inte matas med personuppgifter. Oavsett väg måste ni dokumentera ändamål och rättslig grund i behandlingsregistret – det är vad IMY efterfrågar vid tillsyn."
+            "text": "En AI-agent är ett program där en språkmodell får ett mål, tillgång till verktyg och rätt att köra flera steg i rad tills målet är nått. Skillnaden mot en chatbot är att agenten agerar i era system i stället för att bara svara med text. Skillnaden mot vanlig automation är att agenten själv avgör vilka steg som behövs, i stället för att följa ett flöde någon ritat i förväg."
           }
         },
         {
           "@type": "Question",
-          "name": "Vad kostar ChatGPT för svenska företag?",
+          "name": "Vilket ramverk ska man välja för AI-agenter?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ChatGPT Teams kostar 25 USD per användare och månad och inkluderar DPA. Microsoft Copilot 365 kostar 30 USD per användare och månad, vilket ofta blir billigare i praktiken om ni redan betalar för Microsoft 365. Bygger ni egen integration betalar ni per token via API:et i stället, vilket för de flesta mindre bolag landar under en licenskostnad."
+            "text": "Saknar ni utvecklare som ska förvalta lösningen är n8n oftast rätt – det kan självhostas inom EU och har fler än 400 färdiga integrationer. Ska agenten röra pengar, avtal eller personuppgifter är LangGraph den etablerade produktionsstandarden tack vare spårbarhet och återstart. Är ni redan bundna till en modelleverantör är leverantörens eget SDK snabbast. Ramverket är sällan det som avgör om projektet lyckas."
           }
         },
         {
           "@type": "Question",
-          "name": "Vilka svenska AI-lagar gäller från 2026?",
+          "name": "Varför misslyckas så många AI-agentprojekt?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "EU AI-akten (AI Act) trädde i kraft 2024 och tillämpas fullt ut från 2026. Högrisksystem kräver konformitetsbedömning. Förbjudna system (social scoring, subliminal manipulation) är olagliga från 2 februari 2025. Svenska myndigheter som IMY och Konsumentverket ansvarar för tillsyn."
+            "text": "Gartner räknar med att fler än 40 procent av agentprojekten läggs ned före utgången av 2027, och omkring 89 procent av piloterna når aldrig produktion. Orsaken är sällan teknisk: uppgiften var för brett formulerad, ingen kunde mäta om agenten blev bättre, underlaget fanns inte i digital form, eller spärrarna satt i en prompt i stället för i koden."
           }
         },
         {
           "@type": "Question",
-          "name": "Vilket AI-verktyg är bäst för svenska SME-företag?",
+          "name": "Får svenska företag använda AI-agenter enligt GDPR?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "För de flesta svenska SME är valet mellan ChatGPT Teams, Microsoft Copilot 365 och Claude. Alla tre skriver god svenska och har DPA på företagsplan. Kör ni redan Microsoft 365 är Copilot den minsta förändringen; behöver ni arbeta med långa dokument och avtal står sig Claude bäst. Börja med ett verktyg och lägg till automation först när grunden sitter."
+            "text": "Ja, men kraven skärps när agenten både läser personuppgifter och agerar på dem. Ni behöver rättslig grund, biträdesavtal med modelleverantören, kontroll på var behandlingen sker och dokumenterade beslutsvägar. Huvuddelen av EU:s AI-akt tillämpas från augusti 2026, vilket för agenter främst innebär krav på riskklassning, mänsklig kontroll och dokumentation."
           }
         }
       ]

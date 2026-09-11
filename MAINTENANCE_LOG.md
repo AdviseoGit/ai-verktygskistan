@@ -27,3 +27,13 @@
 - Implemented frontend `tools.js` to dynamically fetch and render database entries, effectively replacing hardcoded HTML.
 - Fulfills the roadmap goal of "Directory and educational hub. Build real database entries, not just SEO landing pages."
 
+
+## 2026-09-11 — Pivot till AI-agenter
+Sajten smalnades av från verktygskatalog till AI-agent-implementation efter
+0 klick över fyra mätperioder. 24 sidor borttagna och 301:ade via `REDIRECTS`
+i main.py; katalogmaskineriet (tools.json, tools.js, stacks.json,
+validate_catalog.py, build_stacks.py, add_tool.py, seed.py, /api/tools) borttaget.
+Fem nya kärnsidor plus en konverteringssida tillagda. `check_site.py` fick
+`check_redirects()` så att en omdirigering inte tyst kan börja peka på en 404.
+Affärsmodellstexterna på om-sajten och nyhetsbrev stämde inte längre med
+verkligheten (påstod affiliate och annonser) och är omskrivna.

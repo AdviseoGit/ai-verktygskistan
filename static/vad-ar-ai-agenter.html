@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vad är en AI-agent? Definition, autonominivåer och när du inte ska bygga en | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="En AI-agent är en språkmodell med mål, verktyg och rätt att agera i flera steg. Definitionen, skillnaden mot chatbot och automation, och när du bör avstå.">
+    <link rel="canonical" href="https://aiverktygsladan.se/vad-ar-ai-agenter.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Vad är en AI-agent? Definition, autonominivåer och när du inte ska bygga en">
+    <meta property="og:description" content="En AI-agent är en språkmodell med mål, verktyg och rätt att agera i flera steg. Definitionen, skillnaden mot chatbot och automation, och när du bör avstå.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/vad-ar-ai-agenter.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad är en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En AI-agent är ett program där en språkmodell får ett mål, tillgång till verktyg och rätt att köra flera steg i rad tills målet är nått. Skillnaden mot en chatbot är att agenten agerar i era system – den läser ett ärende, slår upp data, skriver ett svar och uppdaterar posten – i stället för att bara svara med text. Skillnaden mot vanlig automation är att agenten själv bestämmer vilka steg som behövs, i stället för att följa ett flöde någon ritat i förväg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är skillnaden mellan en AI-agent och en chatbot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En chatbot producerar text och lämnar över till en människa som utför arbetet. En AI-agent utför arbetet själv genom att anropa verktyg: API:er, databaser, affärssystem. En chatbot kan säga hur en faktura ska konteras; en agent konterar den. Det är också därför en agent kräver mer styrning – den kan göra fel som får konsekvenser i era system, inte bara i en chattruta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "När ska man inte bygga en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bygg inte agent när uppgiften alltid följer samma steg – då är ett vanligt skript billigare, snabbare och mer pålitligt. Bygg inte heller agent när ett fel är dyrt och svårt att upptäcka, när underlaget saknas i digital form, eller när ingen kan avgöra om svaret är rätt. Regeln är enkel: om ni kan rita flödet som ett flödesschema utan förgreningar som kräver omdöme, ska ni inte ha en agent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur mycket kostar det att bygga en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En första fungerande agent för en avgränsad uppgift byggs på dagar, inte månader, och modellkostnaden ligger typiskt på ett par hundra kronor i månaden vid låg volym. Den verkliga kostnaden ligger i att få den till produktion: integrationer mot era system, utvärderingar, behörigheter, loggning och förvaltning. Räkna med att bygget är en mindre del av totalen och att drift och förvaltning är en löpande post, inte en engångskostnad."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka autonominivåer finns för AI-agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fem praktiska nivåer: nivå 0 där modellen bara föreslår text, nivå 1 där den läser data men inte skriver, nivå 2 där den förbereder en åtgärd som en människa godkänner, nivå 3 där den utför åtgärder självständigt inom en avgränsad ram med loggning, och nivå 4 där den planerar och kör längre kedjor utan mellanliggande godkännande. De flesta agenter som fungerar i produktion ligger på nivå 2 och 3. Börja alltid en nivå lägre än ni tror behövs."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/vad-ar-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad är en agent</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-anvandningsfall.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+                <a href="/ai-guider-foretag.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Guider</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-anvandningsfall.html" class="block font-medium hover:text-indigo-600 transition-colors">Användningsfall</a>
+        <a href="/ai-guider-foretag.html" class="block font-medium hover:text-indigo-600 transition-colors">Guider</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Grunderna · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Vad är en <span class="gradient-text">AI-agent</span>?</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">En agent är en språkmodell som fått ett mål, verktyg och rätt att agera flera steg i rad. Här är definitionen, skillnaden mot chatbot och automation, de fem autonominivåerna – och de fall där ni inte ska bygga en agent alls.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Definitionen, kort</h2>
+            <p class="text-2xl font-bold leading-snug mb-4">En AI-agent är ett program där en språkmodell får ett <span class="text-indigo-600">mål</span>, tillgång till <span class="text-indigo-600">verktyg</span> och rätt att köra <span class="text-indigo-600">flera steg i rad</span> tills målet är nått.</p>
+            <p class="text-slate-600 leading-relaxed">Allt annat är detaljer. Om något av de tre saknas är det inte en agent: utan verktyg är det en chatbot, utan egna steg är det ett skript, utan mål är det en textruta.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-center">De fyra delarna varje agent består av</h2>
+            <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Oavsett vilket ramverk ni väljer bygger alla agenter på samma fyra delar. Känner ni igen dem blir varje ramverk lättare att läsa.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-hover">
+                    <div class="text-3xl mb-3" aria-hidden="true">&#129504;</div>
+                    <h3 class="text-xl font-bold mb-2">1. Modellen</h3>
+                    <p class="text-slate-600 leading-relaxed">Motorn som resonerar. Valet spelar mindre roll än ni tror – de flesta agenter fungerar likvärdigt på flera modeller. Byt modell sist när något inte funkar, inte först.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-hover">
+                    <div class="text-3xl mb-3" aria-hidden="true">&#128220;</div>
+                    <h3 class="text-xl font-bold mb-2">2. Instruktionen</h3>
+                    <p class="text-slate-600 leading-relaxed">Agentens arbetsbeskrivning: uppgiften, gränserna, vad den ska göra när den är osäker. Det här är den del som avgör mest och som nästan alla lägger minst tid på.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-hover">
+                    <div class="text-3xl mb-3" aria-hidden="true">&#128295;</div>
+                    <h3 class="text-xl font-bold mb-2">3. Verktygen</h3>
+                    <p class="text-slate-600 leading-relaxed">Funktionerna agenten får anropa: hämta kund, skapa ärende, skicka mejl. Ge agenten verktyg i stället för att klistra in kunskap i prompten – verktyg åldras inte.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 card-hover">
+                    <div class="text-3xl mb-3" aria-hidden="true">&#128260;</div>
+                    <h3 class="text-xl font-bold mb-2">4. Loopen</h3>
+                    <p class="text-slate-600 leading-relaxed">Cykeln tänk &rarr; anropa verktyg &rarr; läs resultat &rarr; tänk igen, tills uppgiften är klar eller ett stopptak nås. Loopen är det som gör en agent till en agent.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Agent, chatbot, automation eller workflow?</h2>
+            <p class="text-slate-600 mb-8 max-w-3xl">Orden används om vartannat i säljmaterial, vilket gör det svårt att veta vad man faktiskt köper eller bygger. Så här skiljer de sig i praktiken.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[720px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Typ</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Bestämmer stegen</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Agerar i era system</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Bäst när</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Chatbot</td>
+                            <td class="p-4 text-slate-600">Användaren</td>
+                            <td class="p-4 text-slate-600">Nej, producerar text</td>
+                            <td class="p-4 text-slate-600">Frågor och utkast där en människa gör jobbet</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold">Automation (RPA, skript)</td>
+                            <td class="p-4 text-slate-600">Utvecklaren, i förväg</td>
+                            <td class="p-4 text-slate-600">Ja, exakt som specificerat</td>
+                            <td class="p-4 text-slate-600">Uppgiften ser likadan ut varje gång</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">Workflow med AI-steg</td>
+                            <td class="p-4 text-slate-600">Utvecklaren, med AI i vissa rutor</td>
+                            <td class="p-4 text-slate-600">Ja, längs en fast bana</td>
+                            <td class="p-4 text-slate-600">Fast flöde men innehållet varierar</td>
+                        </tr>
+                        <tr class="bg-indigo-50/60">
+                            <td class="p-4 font-semibold text-indigo-900">AI-agent</td>
+                            <td class="p-4 text-slate-700">Modellen, vid varje körning</td>
+                            <td class="p-4 text-slate-700">Ja, via verktyg den väljer</td>
+                            <td class="p-4 text-slate-700">Vägen till målet varierar och kräver omdöme</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-sm text-slate-500 mt-6">Notera raden ovanför agenten. <strong>Workflow med AI-steg</strong> löser fler verkliga problem än agenter gör, är billigare att bygga och går sönder på ställen ni kan förutse. Börja där.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">De fem autonominivåerna</h2>
+            <p class="text-slate-600 mb-8">Autonomi är inte på eller av, utan en ratt ni vrider upp. Nästan varje misslyckat agentprojekt vi ser började en eller två nivåer för högt.</p>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-5 items-start">
+                    <div class="bg-slate-100 text-slate-700 font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">0</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Föreslår</h3>
+                        <p class="text-slate-600">Modellen skriver ett utkast. Människan gör allt arbete. Ingen risk, begränsad vinst.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-5 items-start">
+                    <div class="bg-slate-100 text-slate-700 font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">1</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Läser</h3>
+                        <p class="text-slate-600">Agenten får hämta data ur era system men inte ändra något. Här hör de flesta interna kunskapsagenter hemma.</p>
+                    </div>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-2xl border-2 border-indigo-200 flex gap-5 items-start">
+                    <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">2</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Förbereder &ndash; människa godkänner <span class="text-indigo-600 text-sm font-bold">&larr; börja här</span></h3>
+                        <p class="text-slate-600">Agenten gör hela jobbet men lämnar det som ett förslag att klicka igenom. Ni får nästan hela tidsvinsten till en bråkdel av risken, och godkännandena blir er utvärderingsdata.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-5 items-start">
+                    <div class="bg-slate-100 text-slate-700 font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">3</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Utför inom ram</h3>
+                        <p class="text-slate-600">Agenten agerar självständigt inom tydliga gränser: belopp under X, ärendetyper i en lista, alltid loggat och alltid möjligt att backa. Flytta hit först när nivå 2 gått rätt i flera veckor.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 flex gap-5 items-start">
+                    <div class="bg-slate-100 text-slate-700 font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">4</div>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1">Planerar fritt</h3>
+                        <p class="text-slate-600">Agenten bryter ned mål i egna deluppgifter över längre kedjor. Kräver mognad i loggning, utvärdering och behörigheter som få organisationer har på plats i dag.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">När ni <em>inte</em> ska bygga en agent</h2>
+            <p class="text-slate-400 mb-8">Den här listan sparar mer pengar än resten av sajten tillsammans. Gartner räknar med att fler än 40&nbsp;% av alla agentprojekt läggs ned före utgången av 2027 – de flesta för att de aldrig borde ha startat som agentprojekt.</p>
+            <div class="grid md:grid-cols-2 gap-5">
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">Stegen är alltid desamma</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Kan ni rita flödet utan förgreningar som kräver omdöme? Då är ett skript billigare, snabbare och går sönder på ett sätt ni kan felsöka.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">Fel är dyra och syns inte</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Om ett tyst fel kostar mer än hela tidsvinsten – utbetalningar, medicinska underlag, avtalsvillkor – ska människan sitta kvar i beslutet.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">Underlaget finns inte digitalt</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Ligger kunskapen i huvudet på två personer eller i en pärm löser ingen agent det. Datakvalitet uppges vara det största hindret av 52&nbsp;% av organisationerna.</p>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-2xl">
+                    <h3 class="font-bold text-white mb-2">Ingen kan avgöra om svaret är rätt</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Saknas en person som kan säga &quot;det där blev fel&quot; kan ni varken utvärdera eller förbättra agenten. Då bygger ni något ni aldrig får veta om det fungerar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8">Vanliga frågor</h2>
+            <div class="space-y-4">
+                <details class="bg-white rounded-2xl border border-slate-200 p-6" open>
+                    <summary class="font-bold text-lg cursor-pointer">Vad är skillnaden mellan en AI-agent och en chatbot?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">En chatbot producerar text och lämnar över till en människa som utför arbetet. En agent utför arbetet själv genom att anropa verktyg. En chatbot kan säga hur en faktura ska konteras; en agent konterar den. Därför kräver agenten också mer styrning – den kan göra fel som får konsekvenser i era system, inte bara i en chattruta.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold text-lg cursor-pointer">Hur mycket kostar det att bygga en AI-agent?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">En första fungerande agent för en avgränsad uppgift byggs på dagar, och modellkostnaden vid låg volym landar typiskt på ett par hundra kronor i månaden. Den verkliga kostnaden ligger i att nå produktion: integrationer, utvärderingar, behörigheter, loggning och förvaltning. Se <a href="/ai-kostnader-tco.html" class="text-indigo-600 font-semibold underline">guiden om TCO</a> för hela bilden.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold text-lg cursor-pointer">Behöver vi flera agenter som samarbetar?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Nästan aldrig i början. Multiagentsystem låter bra på konferens men mångdubblar antalet ställen där något kan gå fel, och de är svårare att felsöka eftersom felet uppstår mellan agenterna. Bygg en agent som gör en sak bra först. Dela upp när ni har ett konkret skäl, inte i förebyggande syfte.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold text-lg cursor-pointer">Får vi använda AI-agenter enligt GDPR och AI-akten?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Ja, men kraven skärps när agenten både läser personuppgifter och agerar på dem. Ni behöver rättslig grund, biträdesavtal med modelleverantören, koll på var data behandlas och dokumenterade beslutsvägar. Huvuddelen av AI-akten tillämpas från augusti 2026. Läs <a href="/ai-sakerhet-gdpr.html" class="text-indigo-600 font-semibold underline">guiden om säkerhet och GDPR</a>.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold text-lg cursor-pointer">Vilken modell ska agenten köra på?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Den frågan är mindre viktig än den känns. De flesta agenter fungerar likvärdigt på flera modeller, och alla stora leverantörer stödjer numera samma verktygsprotokoll. Bygg så att modellen är utbytbar, mät på era egna fall och byt när mätningen säger något – inte när en ny modell lanseras.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8 text-center">Nästa steg</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/ai-agent-ramverk.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold text-lg mb-2">Välj stack</h3>
+                    <p class="text-slate-600 text-sm mb-4">Ramverken jämförda, och ett beslutsträd som ger ett svar i stället för en lista.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Till jämförelsen <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/bygg-ai-agent.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold text-lg mb-2">Bygg den</h3>
+                    <p class="text-slate-600 text-sm mb-4">Sju steg från uppgift till något som körs, med kod och de vanligaste felen.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Till guiden <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-anvandningsfall.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold text-lg mb-2">Hitta ert fall</h3>
+                    <p class="text-slate-600 text-sm mb-4">Tolv användningsfall som når produktion – och fyra som nästan alltid fastnar.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Till listan <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Osäkra på om ert fall är ett agentfall?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv uppgiften ni funderar på, så får ni en rak bedömning av om den lämpar sig som agent, som workflow eller som vanligt skript – och vad den i så fall kräver.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=vad-ar-ai-agenter" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-4 mb-10">
+                <div class="md:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Guider</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-arkitektur-foretag.html" class="hover:text-white transition-colors">Bygga, köpa eller finjustera</a></li>
+                        <li><a href="/ai-kostnader-tco.html" class="hover:text-white transition-colors">Kostnad &amp; TCO</a></li>
+                        <li><a href="/ai-sakerhet-gdpr.html" class="hover:text-white transition-colors">Säkerhet &amp; GDPR</a></li>
+                        <li><a href="/implementera-ai-guide.html" class="hover:text-white transition-colors">Implementera AI: 5 steg</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport: AI i svenska företag</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>
