@@ -11,8 +11,13 @@
   är distribution utanför Google rätt nästa drag — inte fler sidor.
   Steg: [x] Pivotera sajten: 5 nya kärnsidor, 24 katalogsidor retirerade med 301
         [x] Konverteringsvägen samlad på en mätbar sida med källspårning per sida
-        [ ] Begära indexering av de fem nya sidorna i GSC
+        [x] Bygga ut klustret till 25 sidor med kursen som ryggrad
+        [ ] Begära indexering av samtliga nya sidor i GSC
         [ ] Mäta vilka agent-termer som får visningar innan fler sidor byggs
+
+  OBS: innehållsbygget är nu klart för den här kampanjen. Nästa pass ska MÄTA,
+  inte bygga fler sidor. Det finns 25 sidor att ranka med; problemet framåt är
+  auktoritet och indexering, inte innehållsvolym.
 
 ## AVSLUTADE
 2026-09-11 | Distribution av rapporten utanför Google skulle bryta stagnationen. | klick: 0 -> 0 | Avbruten till förmån för pivoten. Distributionen adresserade symptomet (ingen trafik) men inte orsaken (fel position). Taktiken kan återupptas om pivoten rankar men inte konverterar.

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP (Model Context Protocol) förklarat: så kopplar du agenten till era system | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Vad MCP är, hur en MCP-server ser ut i kod, valet mellan stdio och HTTP, och säkerhetsriskerna innan du kopplar in en server du inte själv skrivit.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-mcp.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="MCP (Model Context Protocol) förklarat: så kopplar du agenten till era system">
+    <meta property="og:description" content="Vad MCP är, hur en MCP-server ser ut i kod, valet mellan stdio och HTTP, och säkerhetsriskerna innan du kopplar in en server du inte själv skrivit.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-mcp.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad är MCP (Model Context Protocol)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP är en öppen standard för hur AI-agenter kopplas till verktyg och datakällor. En MCP-server är en JSON-RPC-process som exponerar tre saker till vilken MCP-klient som helst: verktyg som modellen kan anropa, resurser som den kan läsa, och promptmallar. Beskriv ert system en gång som en MCP-server, så kan alla MCP-kompatibla agenter använda det oavsett modell och ramverk. Anthropic donerade protokollet till Agentic AI Foundation under Linux Foundation i december 2025."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur bygger man en MCP-server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En MCP-server byggs med ett officiellt SDK i Python eller TypeScript och kräver i minsta form tre saker: en serverinstans, en eller flera verktygsfunktioner med JSON Schema för indata, och ett val av transport. Transporten är antingen stdio, när servern körs som en lokal process, eller streamable HTTP, när den ska nås över nätverk. Allt annat – paketering, OAuth, installationsfiler – är lager ovanpå de två. Lägg mest tid på verktygsbeskrivningarna och på att göra scheman strikta; det påverkar träffsäkerheten mer än något annat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Är MCP säkert att använda i företag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP i sig är ett protokoll och varken säkert eller osäkert. Riskerna ligger i vad ni kopplar in och med vilka behörigheter. En MCP-server ni inte skrivit själva kan innehålla verktygsbeskrivningar som manipulerar agenten, och en agent med bred behörighet gör bred skada om den luras. Praktiska regler: kör bara servrar ni själva byggt eller granskat, ge varje server minsta möjliga behörighet, logga varje verktygsanrop, och låt en människa godkänna åtgärder som rör pengar, avtal eller personuppgifter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är skillnaden mellan MCP och A2A?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MCP handlar om agent mot verktyg: hur en agent når era system, databaser och API:er. A2A, Googles Agent-to-Agent-protokoll, handlar om agent mot agent: hur två separata agenter utbyter uppgifter och resultat. De konkurrerar alltså inte utan löser olika problem. För de allra flesta organisationer är MCP det som behövs först, eftersom problemet nästan alltid är att få en agent att nå befintliga system – inte att få två agenter att prata med varandra."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Djupdykning · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">MCP: standarden som kopplar <span class="gradient-text">agenten till era system</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Model Context Protocol är det som gör att ni kan byta ramverk utan att bygga om integrationerna. Här är vad det är, hur en MCP-server ser ut i praktiken, och vad ni måste tänka på innan ni kopplar in en ni inte själva skrivit.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Kort version</h2>
+            <p class="text-xl font-bold leading-snug mb-4">En MCP-server beskriver era system <em>en gång</em>. Sedan kan vilken MCP-kompatibel agent som helst använda dem &ndash; oavsett modell och ramverk.</p>
+            <p class="text-slate-600 leading-relaxed">Det låter tråkigt. Det är det viktigaste beslutet ni fattar, eftersom det är integrationerna som kostar. Byter ni ramverk byter ni loopen; verktygen följer med.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Problemet MCP löser</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Före MCP såg verkligheten ut så här: ni byggde en integration mot ert affärssystem för agenten i OpenAI:s SDK. Sedan ville ni prova Claude, och fick skriva om den. Sedan ville någon bygga något i n8n, och fick skriva om den igen. Tre kopior av samma integration, alla med sin egen bugg.</p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-rose-50 border border-rose-200 rounded-2xl p-6">
+                    <h3 class="font-bold mb-3 text-rose-900">Utan MCP</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">Antal integrationer = antal system &times; antal ramverk. Fem system och tre ramverk blir femton integrationer att underhålla, och ett byte av ramverk innebär att bygga om allt.</p>
+                </div>
+                <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+                    <h3 class="font-bold mb-3 text-emerald-900">Med MCP</h3>
+                    <p class="text-slate-700 text-sm leading-relaxed">Antal integrationer = antal system. Fem system blir fem MCP-servrar, som alla ramverk kan använda. Ett byte av ramverk rör inte integrationerna.</p>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Det är hela poängen. Allt annat i det här dokumentet är detaljer kring den ekvationen.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">De tre sakerna en MCP-server exponerar</h2>
+            <p class="text-slate-600 mb-8">En MCP-server är i grunden en JSON-RPC-process. Den erbjuder tre sorters saker, och i praktiken använder de flesta bara den första.</p>
+            <div class="space-y-4">
+                <div class="bg-slate-50 p-7 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-xl font-bold mb-2">1. Verktyg (tools) <span class="text-sm font-bold text-indigo-600">&larr; det ni kommer använda</span></h3>
+                    <p class="text-slate-600 leading-relaxed">Funktioner agenten får anropa: <code class="bg-white px-2 py-0.5 rounded text-sm border border-slate-200">hamta_kund</code>, <code class="bg-white px-2 py-0.5 rounded text-sm border border-slate-200">skapa_arende</code>. Varje verktyg har ett JSON Schema för sina indata. Det är här nittio procent av värdet ligger.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">2. Resurser (resources)</h3>
+                    <p class="text-slate-600 leading-relaxed">Data agenten får läsa, adresserad med URI: ett dokument, en tabell, en logg. Skillnaden mot ett verktyg är att en resurs hämtas, inte utförs. Användbart, men de flesta klarar sig med ett läsande verktyg i stället.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">3. Promptmallar (prompts)</h3>
+                    <p class="text-slate-600 leading-relaxed">Återanvändbara instruktionsmallar som servern erbjuder klienten. Minst använda delen. Hoppa över den tills ni har ett konkret behov.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Så ser en MCP-server ut</h2>
+            <p class="text-slate-600 mb-6 leading-relaxed">Det här är inte ett utdrag &ndash; det är hela servern. Om ni trodde att MCP var ett stort åtagande är det här den nyttigaste bilden på sidan.</p>
+            <div class="bg-slate-900 rounded-2xl p-6 overflow-x-auto">
+                <pre class="text-sm text-slate-100 leading-relaxed"><code><span class="text-slate-500"># En komplett MCP-server. Det här är hela det minsta exemplet.</span>
+<span class="text-slate-500"># pip install mcp</span>
+
+from mcp.server.fastmcp import FastMCP
+
+mcp = FastMCP("affarssystem")
+
+
+@mcp.tool()
+def hamta_kund(kundnummer: str) -> dict:
+    """Hämtar kunduppgifter ur CRM.
+
+    Använd när användaren nämner ett kundnummer eller kundnamn.
+    Returnerar namn, org.nr, avtalsform och kontaktperson.
+    """
+    return crm.sla_upp(kundnummer)
+
+
+@mcp.tool()
+def skapa_arende(kundnummer: str, rubrik: str, beskrivning: str) -> str:
+    """Skapar ett nytt supportärende och returnerar ärendenumret.
+
+    Skapa ALDRIG ett ärende utan att först ha hämtat kunden med
+    hamta_kund. Vid osäkerhet om rubriken: fråga användaren i stället.
+    """
+    return arendesystem.skapa(kundnummer, rubrik, beskrivning)
+
+
+if __name__ == "__main__":
+    mcp.run()          <span class="text-slate-500"># stdio som standard</span></code></pre>
+            </div>
+            <div class="mt-8 bg-amber-50 border-2 border-amber-200 rounded-2xl p-7">
+                <h3 class="text-xl font-bold mb-3">Lägg tiden i docstringen, inte i koden</h3>
+                <p class="text-slate-700 leading-relaxed mb-3">Texten under varje funktion är inte dokumentation för er &ndash; det är instruktionen modellen läser när den avgör om verktyget ska användas. Lägg märke till vad de två exemplen ovan gör:</p>
+                <ul class="space-y-2 text-slate-700 list-disc pl-5">
+                    <li>De säger <strong>när</strong> verktyget ska användas, inte bara vad det gör.</li>
+                    <li>De säger vad som returneras, så agenten vet om den fått svaret.</li>
+                    <li>De säger vad agenten ska göra vid osäkerhet &ndash; fråga, inte gissa.</li>
+                    <li>De uttrycker ordningsberoenden (&quot;skapa aldrig ärende utan att först ha hämtat kunden&quot;).</li>
+                </ul>
+                <p class="text-slate-700 leading-relaxed mt-3">En slarvig beskrivning ger en agent som väljer fel verktyg, och det felet ser ut som att modellen är dum. Den är inte dum &ndash; den är dåligt instruerad.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Stdio eller HTTP?</h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">Det finns två transporter, och valet är enklare än det verkar.</p>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse min-w-[640px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Transport</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Använd när</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Att tänka på</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold">stdio</td>
+                            <td class="p-4 text-slate-600">Servern körs som en lokal process bredvid agenten</td>
+                            <td class="p-4 text-slate-600">Enklast. Ingen nätverkssäkerhet att tänka på, men skalar inte över flera maskiner.</td>
+                        </tr>
+                        <tr class="bg-slate-50/50">
+                            <td class="p-4 font-semibold">Streamable HTTP</td>
+                            <td class="p-4 text-slate-600">Servern ska nås över nätverk, av flera agenter eller från CI</td>
+                            <td class="p-4 text-slate-600">Kräver autentisering och behörighetskontroll. Specifikationen 2026-07-28 tog bort den statefulla handskakningen, så nya servrar kan byggas tillståndslösa &ndash; vilket är det som gör dem skalbara.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-slate-600 mt-6 leading-relaxed">Börja med stdio. Flytta till HTTP när ni faktiskt har flera konsumenter &ndash; och bygg då tillståndslöst från början, enligt den nyare specifikationen.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3 text-white">Säkerhet: det ni måste veta innan ni kopplar in något</h2>
+            <p class="text-slate-400 mb-8 leading-relaxed">Det finns fler än 9 400 publika MCP-servrar. Det är ekosystemets styrka och dess största risk samtidigt. MCP är ett protokoll &ndash; det är varken säkert eller osäkert i sig. Riskerna ligger i vad ni kopplar in och med vilka behörigheter.</p>
+            <div class="space-y-5">
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Verktygsförgiftning</h3>
+                    <p class="text-slate-400 leading-relaxed">Verktygsbeskrivningen är text som modellen litar på. En manipulerad beskrivning kan innehålla instruktioner som får agenten att göra något annat än avsett &ndash; och den texten syns inte i något gränssnitt. <strong class="text-slate-200">Motmedel:</strong> kör bara servrar ni själva byggt eller läst igenom.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Behörighet som smittar</h3>
+                    <p class="text-slate-400 leading-relaxed">En agent som når både er kunddatabas och ett verktyg som skickar mejl kan förmås att kombinera dem. Varje enskilt verktyg är ofarligt; kombinationen är det inte. <strong class="text-slate-200">Motmedel:</strong> minsta möjliga behörighet per server, och tänk igenom vad verktygen kan göra <em>tillsammans</em>.</p>
+                </div>
+                <div class="bg-slate-800 p-7 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="font-bold text-white text-lg mb-2">Servern som ändrar sig</h3>
+                    <p class="text-slate-400 leading-relaxed">En extern server kan ändra sina verktygsbeskrivningar efter att ni granskat dem. <strong class="text-slate-200">Motmedel:</strong> lås versioner, kör känsliga servrar själva, och logga vilka verktyg som faktiskt anropades vid varje körning.</p>
+                </div>
+            </div>
+            <p class="text-slate-400 mt-8 leading-relaxed">Grundregeln är densamma som för alla beroenden, men konsekvensen är större: ett vanligt bibliotek gör vad koden säger, en MCP-server påverkar vad agenten <em>bestämmer sig för</em> att göra. Läs vidare i <a href="/ai-agent-sakerhet.html" class="text-indigo-300 font-semibold underline">guiden om agentsäkerhet</a>.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">MCP, A2A och ACP &ndash; vad är vad?</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <p class="text-slate-600 leading-relaxed mb-4">De tre nämns ofta i samma andetag och löser olika problem.</p>
+                <ul class="space-y-4 text-slate-600">
+                    <li><strong class="text-slate-900">MCP &ndash; agent mot verktyg.</strong> Hur agenten når era system. Det här är det ni behöver först, eftersom problemet nästan alltid är att nå befintliga system.</li>
+                    <li><strong class="text-slate-900">A2A &ndash; agent mot agent.</strong> Googles protokoll för hur två separata agenter utbyter uppgifter. Relevant först när ni har flera agenter från olika leverantörer som ska samarbeta.</li>
+                    <li><strong class="text-slate-900">ACP &ndash; agent mot agent, REST-baserat.</strong> Alternativ från IBM och AGNTCY. Mindre spritt.</li>
+                </ul>
+                <p class="text-slate-600 leading-relaxed mt-5">Praktiskt råd: bry er om MCP nu. A2A när ni faktiskt har två agenter som behöver prata &ndash; och läs först <a href="/multiagent-system.html" class="text-indigo-600 font-semibold underline">varför ni antagligen inte ska ha två agenter</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Källor</h2>
+            <ul class="space-y-2 text-sm text-slate-600 list-disc pl-5">
+                <li>Specifikationen 2026-07-28, inklusive övergången till tillståndslösa servrar &ndash; <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">blog.modelcontextprotocol.io</a></li>
+                <li>Officiell guide för att bygga en MCP-server &ndash; <a href="https://modelcontextprotocol.io/docs/2026-07-28/develop/build-server" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">modelcontextprotocol.io</a></li>
+                <li>Adoptionssiffror och antal publika servrar &ndash; <a href="https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol" rel="nofollow noopener" target="_blank" class="text-indigo-600 underline">MCP Adoption Statistics 2026</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Ska era system nås av en agent?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv vilka system agenten behöver nå, så får ni ett konkret förslag på hur de bäst exponeras &ndash; vad som bör bli MCP-servrar, vad som kan lösas enklare, och vilka behörigheter som krävs.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-mcp" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

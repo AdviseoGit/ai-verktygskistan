@@ -264,7 +264,7 @@ REDIRECTS = {
     "ai-stackar": "/ai-agent-ramverk.html",
     "claude-fable-5-vs-gpt-5.5": "/ai-agent-ramverk.html",
     "vad-ar-ai-verktyg": "/vad-ar-ai-agenter.html",
-    "lar-dig-ai": "/vad-ar-ai-agenter.html",
+    "lar-dig-ai": "/lar-dig-ai-agenter.html",
     "ai-ordlista": "/ai-agent-ordlista.html",
     "bygg-med-ai": "/bygg-ai-agent.html",
     "prompt-guide": "/bygg-ai-agent.html",

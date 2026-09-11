@@ -1,24 +1,34 @@
 # AI-Verktygslådan
 
-Svensk kunskapsbank om AI-agenter: hur man väljer stack, bygger dem och tar
-dem till produktion. Innehållet är skrivet för svenska förhållanden, med vikt
-vid GDPR, EU AI-akten och vad som går att driva inom EU.
+Svensk kunskapsbank om AI-agenter: hur man väljer stack, bygger dem, kopplar
+dem till affärssystem och tar dem till produktion. Skriven för svenska
+förhållanden, med vikt vid GDPR, EU AI-akten och vad som går att driva inom EU.
+
+## Kurs
+- Lär dig AI-agenter, sex moduler, kostnadsfri: https://aiverktygsladan.se/lar-dig-ai-agenter.html
 
 ## Kärnsidor
 - Vad är en AI-agent (definition, autonominivåer, när man inte ska bygga en): https://aiverktygsladan.se/vad-ar-ai-agenter.html
 - Välj rätt agent-stack (ramverksjämförelse och beslutsträd): https://aiverktygsladan.se/ai-agent-ramverk.html
-- Bygg din första AI-agent (sju steg, med kodexempel): https://aiverktygsladan.se/bygg-ai-agent.html
+- Bygg din första AI-agent (sju steg, med kodexempel på agentloopen): https://aiverktygsladan.se/bygg-ai-agent.html
+- Bygg en AI-agent i n8n, utan kod: https://aiverktygsladan.se/ai-agent-n8n.html
+- Tre agenter byggda från början till slut: https://aiverktygsladan.se/ai-agent-exempel.html
 - Användningsfall som når produktion, och de som inte gör det: https://aiverktygsladan.se/ai-agent-anvandningsfall.html
-- Agent-ordlistan (MCP, RAG, evals, spärrar, promptinjektion): https://aiverktygsladan.se/ai-agent-ordlista.html
 
-## Guider
-- Bygga, köpa eller finjustera: https://aiverktygsladan.se/ai-arkitektur-foretag.html
-- Kostnad och TCO: https://aiverktygsladan.se/ai-kostnader-tco.html
-- Säkerhet och GDPR: https://aiverktygsladan.se/ai-sakerhet-gdpr.html
-- Implementera AI i fem steg: https://aiverktygsladan.se/implementera-ai-guide.html
+## Fördjupning
+- MCP (Model Context Protocol) förklarat, med kodexempel: https://aiverktygsladan.se/ai-agent-mcp.html
+- Säkerhet: promptinjektion, behörigheter, spärrar: https://aiverktygsladan.se/ai-agent-sakerhet.html
+- Multiagentsystem: när flera agenter behövs och när inte: https://aiverktygsladan.se/multiagent-system.html
+- Agent-ordlistan, 30 begrepp: https://aiverktygsladan.se/ai-agent-ordlista.html
+
+## Beslutsunderlag
+- Vad en AI-agent kostar, genomräknat per ärende: https://aiverktygsladan.se/ai-agent-kostnad.html
+- AI-agenter, GDPR och AI-akten: https://aiverktygsladan.se/ai-agent-gdpr.html
 - ROI-kalkylator: https://aiverktygsladan.se/ai-kalkylator.html
+- Guider om AI-införande brett: https://aiverktygsladan.se/ai-guider-foretag.html
 
 ## Om innehållet
 Rekommendationerna är redaktionella och bygger på vad som fungerar i
-produktion. Sidorna anger när en uppgift inte lämpar sig för en AI-agent –
-den bedömningen är lika viktig som rekommendationerna.
+produktion. Sidorna anger återkommande när en uppgift inte lämpar sig för en
+AI-agent – den bedömningen är lika viktig som rekommendationerna. Sifferuppgifter
+har källhänvisningar.

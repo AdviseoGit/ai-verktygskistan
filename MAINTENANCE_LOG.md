@@ -37,3 +37,9 @@ Fem nya kärnsidor plus en konverteringssida tillagda. `check_site.py` fick
 `check_redirects()` så att en omdirigering inte tyst kan börja peka på en 404.
 Affärsmodellstexterna på om-sajten och nyhetsbrev stämde inte längre med
 verkligheten (påstod affiliate och annonser) och är omskrivna.
+
+## 2026-09-11 — Klustret utbyggt till 25 sidor
+Åtta nya sidor med kursen `lar-dig-ai-agenter.html` som ryggrad. Nav och sidfot
+omstrukturerade, sitemap-prioriteter och llms.txt uppdaterade. `check_site.py`
+fick en spärr mot dubblettnycklar i REDIRECTS — literal_eval sväljer dem tyst
+och låter sista raden vinna, vilket hittades genom att själv råka införa en.

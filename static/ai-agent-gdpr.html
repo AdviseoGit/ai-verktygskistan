@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agenter, GDPR och AI-akten: vad som gäller från augusti 2026 | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Vad som skiljer en agent från ett AI-verktyg juridiskt, de sex GDPR-kraven som måste finnas, riskklasserna i AI-akten och genvägen som förenklar nästan allt.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-gdpr.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agenter, GDPR och AI-akten: vad som gäller från augusti 2026">
+    <meta property="og:description" content="Vad som skiljer en agent från ett AI-verktyg juridiskt, de sex GDPR-kraven som måste finnas, riskklasserna i AI-akten och genvägen som förenklar nästan allt.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-gdpr.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Får man använda AI-agenter enligt GDPR?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. GDPR förbjuder inte AI-agenter, men kraven blir mer konkreta när agenten både läser personuppgifter och agerar på dem. Ni behöver rättslig grund för behandlingen, biträdesavtal med modelleverantören, kontroll på var behandlingen sker geografiskt, en anteckning i behandlingsregistret som beskriver vad agenten faktiskt gör, och möjlighet att i efterhand redogöra för enskilda beslut. Det sista är det som oftast saknas, och det löses med loggning av varje verktygsanrop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad innebär EU:s AI-akt för AI-agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Huvuddelen av AI-akten tillämpas från augusti 2026. För de flesta agenter i företag handlar det praktiskt om fyra saker: klassificera agentens risknivå och dokumentera bedömningen, säkerställa mänsklig kontroll där besluten påverkar människor, informera berörda om att de interagerar med ett AI-system, och kunna visa hur systemet fungerar. Agenter som fattar beslut om anställning, kreditvärdighet eller tillgång till tjänster hamnar sannolikt i högriskkategorin och kräver betydligt mer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Är automatiserat beslutsfattande med AI-agent tillåtet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Artikel 22 i GDPR ger en rätt att inte bli föremål för beslut som enbart grundas på automatiserad behandling och som har rättsliga följder eller på liknande sätt i betydande grad påverkar den enskilde. Det innebär inte att agenter är förbjudna, men att en agent som ensam avgör sådana ärenden kräver särskilt stöd, information till den registrerade och en möjlighet till mänsklig prövning. Den praktiska lösningen är nästan alltid att låta en människa godkänna beslutet, vilket också är den autonominivå de flesta agenter bör ligga på ändå."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Regelverk · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">AI-agenter, <span class="gradient-text">GDPR och AI-akten</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Agenter skärper kraven jämfört med vanliga AI-verktyg, eftersom de både läser personuppgifter och agerar på dem. Här är vad som faktiskt gäller, vad som skiljer en agent från en chatt i juridisk mening, och vad ni behöver ha på plats.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-slate-100 border-l-4 border-slate-400 p-6 rounded-r-2xl">
+            <p class="text-slate-700 leading-relaxed text-sm"><strong>Detta är inte juridisk rådgivning.</strong> Sidan beskriver hur regelverket brukar tillämpas i praktiken och vad som normalt behöver finnas på plats. Beslut med rättsliga följder ska fattas tillsammans med jurist.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Vad som skiljer en agent från ett AI-verktyg</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">I juridisk mening är skillnaden inte teknisk utan handlar om vad systemet <em>gör</em>. En chatt producerar ett underlag som en människa använder. En agent utför behandlingen själv och verkställer resultatet. Det förskjuter tre saker:</p>
+            <div class="grid md:grid-cols-3 gap-5">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Omfattningen växer</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">En agent som arbetar sig igenom ett ärendeflöde behandlar personuppgifter i stor skala och systematiskt &ndash; två ord som i GDPR utlöser tyngre krav, bland annat på konsekvensbedömning.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Beslutet blir automatiserat</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">När ingen människa granskar närmar ni er artikel 22 om automatiserat beslutsfattande. Med en människa som godkänner är frågan sällan aktuell.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Spårbarheten krävs på riktigt</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ni måste kunna redogöra för vad som hände i ett enskilt ärende. För en chatt räcker en policy; för en agent krävs en logg över varje verktygsanrop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">GDPR: de sex sakerna som måste finnas</h2>
+            <p class="text-slate-600 mb-8">Ingen av dem är svår. De saknas ändå nästan alltid när någon byggt en agent utan att fråga.</p>
+            <div class="space-y-4">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">1. Rättslig grund</h3>
+                    <p class="text-slate-600 leading-relaxed">Oftast berättigat intresse eller fullgörande av avtal. Skriv ned vilken och varför. Att ni gjorde samma sak manuellt tidigare gör inte grunden självklar &ndash; men den brukar bära, eftersom ändamålet är oförändrat.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">2. Biträdesavtal med modelleverantören</h3>
+                    <p class="text-slate-600 leading-relaxed">Så snart agenten skickar personuppgifter till en modell &ndash; vilket den nästan alltid gör &ndash; är leverantören personuppgiftsbiträde. Kontrollera att avtalet finns, att data inte används för träning, och vad som gäller för lagring av anrop.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">3. Koll på var behandlingen sker</h3>
+                    <p class="text-slate-600 leading-relaxed">Ramverket kan köras i EU men modellen anropas ofta utanför. Flera leverantörer erbjuder EU-regioner eller möjlighet att styra var inferensen sker &ndash; ta reda på vad som gäller för er konfiguration, inte vad som står i marknadsföringen.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">4. Anteckning i behandlingsregistret</h3>
+                    <p class="text-slate-600 leading-relaxed">Beskriv vad agenten gör, vilka kategorier av uppgifter den rör, vilka mottagare som finns och hur länge loggarna sparas. Det är den här texten en tillsynsmyndighet börjar i.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">5. Konsekvensbedömning när det behövs</h3>
+                    <p class="text-slate-600 leading-relaxed">Storskalig systematisk behandling, känsliga uppgifter eller beslut som påverkar enskilda &rarr; gör en DPIA. En agent som betar av ett ärendeflöde träffar ofta minst ett av kriterierna.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold text-lg mb-2">6. Loggar som gör er svarsförmögna</h3>
+                    <p class="text-slate-600 leading-relaxed">Vid en begäran om registerutdrag, en rättelse eller en fråga om ett enskilt beslut måste ni kunna svara. Samtidigt är loggen i sig en personuppgiftsbehandling &ndash; sätt en gallringstid och håll den.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">AI-akten: vad som gäller från augusti 2026</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Huvuddelen av EU:s AI-akt tillämpas från augusti 2026. De flesta företagsagenter är inte högrisksystem, men alla omfattas av något. Börja med att placera er agent:</p>
+            <div class="overflow-x-auto mb-8">
+                <table class="w-full text-sm border-collapse min-w-[720px]">
+                    <thead>
+                        <tr class="bg-slate-50 text-left">
+                            <th class="p-4 font-bold border-b border-slate-200">Nivå</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Exempel på agent</th>
+                            <th class="p-4 font-bold border-b border-slate-200">Vad som krävs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold text-rose-700">Förbjuden</td>
+                            <td class="p-4 text-slate-600">Social poängsättning, manipulativa system</td>
+                            <td class="p-4 text-slate-600">Otillåtet sedan februari 2025.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 bg-slate-50/50">
+                            <td class="p-4 font-semibold text-amber-700">Hög risk</td>
+                            <td class="p-4 text-slate-600">Agent som sållar jobbansökningar, bedömer kreditvärdighet eller styr tillgång till tjänster</td>
+                            <td class="p-4 text-slate-600">Riskhanteringssystem, datastyrning, teknisk dokumentation, loggning, mänsklig kontroll, konformitetsbedömning. Betydande arbete &ndash; involvera jurist tidigt.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="p-4 font-semibold text-slate-700">Begränsad risk</td>
+                            <td class="p-4 text-slate-600">Agent som svarar kunder</td>
+                            <td class="p-4 text-slate-600">Informationsplikt: den som interagerar ska förstå att det är ett AI-system.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-semibold text-emerald-700">Minimal risk</td>
+                            <td class="p-4 text-slate-600">Intern agent som konterar fakturor eller sorterar ärenden</td>
+                            <td class="p-4 text-slate-600">Inga särskilda krav utöver GDPR. Här hamnar de flesta.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-7">
+                <h3 class="text-xl font-bold mb-3">Det som gäller alla nivåer</h3>
+                <p class="text-slate-700 leading-relaxed">Kravet på <strong>AI-kunnighet</strong> gäller oavsett riskklass: de som använder systemet ska ha tillräcklig kompetens för att förstå vad det gör och vad det inte gör. En agent som rullas ut utan att användarna fått veta hur den fungerar &ndash; och när den brukar ha fel &ndash; uppfyller inte det.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6 text-white">Den praktiska genvägen</h2>
+            <p class="text-slate-300 leading-relaxed mb-6">Nästan allt ovan blir enklare av ett enda arkitekturbeslut: <strong class="text-white">låt en människa godkänna</strong>.</p>
+            <ul class="space-y-3 text-slate-300 list-disc pl-5">
+                <li>Artikel 22 om automatiserat beslutsfattande blir sällan aktuell.</li>
+                <li>Kravet på mänsklig kontroll i AI-akten är uppfyllt av konstruktionen.</li>
+                <li>Godkännandena blir er logg, och samtidigt er <a href="/bygg-ai-agent.html" class="text-indigo-300 font-semibold underline">utvärderingsdata</a>.</li>
+                <li>Riskklassningen blir enklare att motivera.</li>
+            </ul>
+            <p class="text-slate-400 leading-relaxed mt-6">Det är samma nivå 2 som rekommenderas av rent tekniska skäl i <a href="/vad-ar-ai-agenter.html" class="text-indigo-300 font-semibold underline">grundguiden</a>. Att den också är den juridiskt enklaste vägen är ingen slump: regelverket är skrivet utifrån samma insikt som driften lär ut &ndash; system som agerar utan tillsyn gör fel som ingen upptäcker.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Osäkra på var er agent hamnar?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv vad agenten ska göra och vilka uppgifter den rör, så får ni en bedömning av riskklass, vad som behöver dokumenteras och var ni bör lägga godkännandesteget.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-gdpr" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

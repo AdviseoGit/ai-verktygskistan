@@ -185,6 +185,15 @@ def check_redirects(errors):
         errors.append("main.py: hittar ingen REDIRECTS-tabell")
         return
 
+    # literal_eval sväljer dubblettnycklar – sista vinner, tyst. Räkna dem i
+    # källan i stället, annars kan två rader för samma sida peka olika håll
+    # utan att någon märker vilken som gäller.
+    seen, keys = set(), [k.value for k in node.value.keys]
+    for key in keys:
+        if key in seen:
+            errors.append(f"REDIRECTS: {key} förekommer flera gånger")
+        seen.add(key)
+
     existing = {p.name for p in pages()}
     for source_page, target in sorted(mapping.items()):
         if f"{source_page}.html" in existing:

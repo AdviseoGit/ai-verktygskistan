@@ -37,20 +37,32 @@ leverera. Hela katalogdelen (24 sidor, `tools.json`, stack-generatorn) togs
 bort och 301:ades in i agent-spåret.
 
 ## Sajtens struktur
+Ryggraden är **kursen**, `lar-dig-ai-agenter.html`. Den gör sajten till ett
+ställe man *lär sig* på, inte bara slår upp på, och ger allt annat en ordning.
+
 | Spår | Sida | Roll |
 |---|---|---|
+| Lär | `lar-dig-ai-agenter.html` | Kurshubb i sex moduler, Course-schema. Primär ingång. |
 | Förstå | `vad-ar-ai-agenter.html` | Pelarsida: definition, autonominivåer, när man ska avstå |
-| Välj | `ai-agent-ramverk.html` | Beslutsträd + ramverksjämförelse + MCP |
-| Bygg | `bygg-ai-agent.html` | Sju steg med kodexempel och de vanligaste felen |
+| Välj | `ai-agent-ramverk.html` | Beslutsträd + ramverksjämförelse |
+| Bygg (kod) | `bygg-ai-agent.html` | Sju steg med kodexempel på agentloopen |
+| Bygg (utan kod) | `ai-agent-n8n.html` | Samma sak visuellt, för team utan utvecklare |
+| Koppla in | `ai-agent-mcp.html` | MCP med kodexempel, transportval och säkerhet |
+| Härda | `ai-agent-sakerhet.html` | Promptinjektion, behörigheter, spärrar, checklista |
 | Tillämpa | `ai-agent-anvandningsfall.html` | Tolv fall som når produktion, fyra fällor |
+| Visa | `ai-agent-exempel.html` | Tre agenter genomgångna, inkl. vad som gick fel först |
+| Arkitektur | `multiagent-system.html` | När flera agenter &ndash; och matematiken varför oftast inte |
+| Räkna | `ai-agent-kostnad.html` | Genomräknat per ärende, posterna som dominerar |
+| Regelverk | `ai-agent-gdpr.html` | GDPR + AI-akten specifikt för agenter |
 | Slå upp | `ai-agent-ordlista.html` | 30 begrepp, FAQ-schema |
-| Konvertera | `bygga-ai-agent-hjalp.html` | Neutralt formulär för implementationsförfrågan |
+| Konvertera | `bygga-ai-agent-hjalp.html` | Neutralt formulär, källspårning per sida |
 | Stöd | De fyra guiderna + kalkylator + rapport | Besluten runt omkring bygget |
 
 ## Milstolpar
 - [x] Pivot till AI-agenter genomförd, katalogen retirerad med 301 (2026-09-11)
 - [x] Fem nya kärnsidor med FAQ- och HowTo-schema (2026-09-11)
 - [x] Konverteringsvägen samlad på en mätbar sida med källspårning (2026-09-11)
+- [x] Klustret utbyggt till 25 sidor med kurs som ryggrad (2026-09-11)
 - [ ] Första indexerade klicket på en agent-term
 - [ ] Topp 10 på "ai agent" eller "bygga ai agent" på svenska
 - [ ] 10 kvalificerade implementationsförfrågningar
@@ -59,10 +71,10 @@ bort och 301:ades in i agent-spåret.
 - [ ] **Mät innan mer byggs.** Begär indexering av de fem nya sidorna i GSC och
       låt dem ligga i minst tre pass innan strukturen rörs igen. Pivoten är
       hypotesen som testas — bygg inte en ny ovanpå den.
-- [ ] Djupsida per ramverk (`ai-agent-n8n.html`, `ai-agent-langgraph.html`) när
-      huvudsidan visar vilka termer som faktiskt får visningar.
-- [ ] En riktig genomgång av MCP på svenska — termen växer snabbt och har
-      nästan inget svenskt innehåll.
+- [x] Djupsida för n8n — den visuella vägen in för team utan utvecklare.
+- [x] En riktig genomgång av MCP på svenska.
+- [ ] `ai-agent-langgraph.html` när ramverkssidan visar att termen får visningar.
+      Bygg den inte i förebyggande syfte.
 - [ ] Kodexemplen i ett publikt repo som sidorna länkar till (länkvärde).
 - [ ] Instrumentera GA4-events: `agent_lead` finns på hjälpsidan, men
       scrolldjup och klick från CTA-blocken saknas fortfarande.

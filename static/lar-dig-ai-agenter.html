@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lär dig AI-agenter: kostnadsfri kurs i sex moduler på svenska | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Strukturerad väg från grundbegrepp till agent i produktion: välj stack, bygg, koppla in system, utvärdera och driftsätt. Ingen registrering, cirka tolv timmar.">
+    <link rel="canonical" href="https://aiverktygsladan.se/lar-dig-ai-agenter.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Lär dig AI-agenter: kostnadsfri kurs i sex moduler på svenska">
+    <meta property="og:description" content="Strukturerad väg från grundbegrepp till agent i produktion: välj stack, bygg, koppla in system, utvärdera och driftsätt. Ingen registrering, cirka tolv timmar.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aiverktygsladan.se/lar-dig-ai-agenter.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Lär dig AI-agenter",
+  "description": "Kostnadsfri kurs i sex moduler om att bygga och driftsätta AI-agenter, skriven för svenska förhållanden. Från grundbegrepp till agent i produktion med utvärdering, spärrar och regelefterlevnad.",
+  "inLanguage": "sv-SE",
+  "isAccessibleForFree": true,
+  "provider": {
+    "@type": "Organization",
+    "name": "AI-Verktygslådan",
+    "url": "https://aiverktygsladan.se"
+  },
+  "educationalLevel": "Nybörjare till medelnivå",
+  "teaches": [
+    "Vad en AI-agent är och när den inte är rätt lösning",
+    "Välja ramverk och arkitektur för AI-agenter",
+    "Bygga en agent med verktyg och en agentloop",
+    "Koppla agenten till affärssystem via MCP",
+    "Utvärdera agenter med testfall och sätta spärrar",
+    "GDPR, AI-akten och kostnadskalkyl för agenter i drift"
+  ],
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT12H"
+  }
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Kostnadsfri kurs · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Lär dig <span class="gradient-text">AI-agenter</span> &ndash; sex moduler</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">En strukturerad väg från &quot;vi borde göra något med agenter&quot; till en agent som faktiskt kör i produktion. Ingen registrering, inget säljsamtal. Räkna med ungefär tolv timmar totalt, fördelat som ni vill.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-slate-900 text-slate-200 rounded-3xl p-8">
+            <h2 class="text-xl font-bold text-white mb-3">Vem kursen är för</h2>
+            <p class="leading-relaxed text-slate-300 mb-4">Den som ska fatta beslut om eller bygga en AI-agent i en svensk organisation. Ni behöver inte kunna programmera &ndash; modul 3 finns i två varianter, en med kod och en utan.</p>
+            <p class="leading-relaxed text-slate-300">Kursen tar ställning. Där det finns tio alternativ rekommenderar vi ett och förklarar varför, och där svaret är att inte bygga en agent står det. Det är avsiktligt: <strong class="text-white">fler än 40&nbsp;% av agentprojekten väntas läggas ned</strong>, och de flesta hade kunnat undvikas i modul 1.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Modulerna</h2>
+            <p class="text-slate-600 mb-10">Tänkta att tas i ordning, men fungerar var för sig om ni redan kan en del. Modulerna med markerad ram är de tre som avgör om projektet lyckas.</p>
+            <div class="space-y-6">
+                <div class="bg-white rounded-3xl border-2 border-indigo-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">1</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Grunderna</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">30 minuter</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">Vad en agent faktiskt är, hur den skiljer sig från chatbot och automation, de fem autonominivåerna – och de fyra fallen där ni inte ska bygga en agent alls.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du kan avgöra om något överhuvudtaget är ett agentfall, och förklara skillnaden för någon annan.</p>
+                        </div>
+                        <div><a href="/vad-ar-ai-agenter.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Vad är en AI-agent? <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">2</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Välj din stack</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">45 minuter</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">Ett beslutsträd med fyra frågor som ger ett ramverk. Tabellen med tio alternativ finns kvar som underlag, men beslutet fattas på fyra frågor.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du har valt ramverk och kan motivera valet för någon som ifrågasätter det.</p>
+                        </div>
+                        <div><a href="/ai-agent-ramverk.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Välj rätt agent-stack <span aria-hidden="true">&rarr;</span></a><a href="/ai-agent-n8n.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Utan utvecklare? Läs n8n-guiden <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border-2 border-indigo-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">3</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Bygg din första agent</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">En eftermiddag</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">Sju steg från vald uppgift till något som kör. Med kodexempel på agentloopen – eller flödet i n8n om ni bygger utan kod.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du har en agent som utför en avgränsad uppgift och lämnar ett förslag till godkännande.</p>
+                        </div>
+                        <div><a href="/bygg-ai-agent.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Bygg din första AI-agent <span aria-hidden="true">&rarr;</span></a><a href="/ai-agent-n8n.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Samma sak i n8n <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">4</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Koppla in era system</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">2 timmar</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">MCP är standarden som gör att era integrationer överlever ett byte av ramverk. Så ser en MCP-server ut, och så undviker ni fallgroparna.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du kan exponera ett av era system som ett verktyg vilken agent som helst kan använda.</p>
+                        </div>
+                        <div><a href="/ai-agent-mcp.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">MCP förklarat <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border-2 border-indigo-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">5</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Gör den pålitlig</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">2 timmar</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">Steget som skiljer de 11 procent som når produktion från de 89 som inte gör det: utvärderingar, spärrar i koden, och skydd mot promptinjektion.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du vet om en ändring gör agenten bättre eller sämre, och den kan inte luras att göra något du inte tänkt.</p>
+                        </div>
+                        <div><a href="/ai-agent-sakerhet.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Säkerhet för AI-agenter <span aria-hidden="true">&rarr;</span></a><a href="/bygg-ai-agent.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Utvärdering: steg 5 i byggguiden <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4 px-8 py-5 bg-slate-50 border-b border-slate-200">
+                        <div class="bg-indigo-600 text-white font-extrabold w-12 h-12 rounded-xl flex items-center justify-center shrink-0">6</div>
+                        <div class="flex-grow">
+                            <h3 class="text-2xl font-bold">Ta den i drift</h3>
+                        </div>
+                        <span class="text-sm font-semibold text-slate-500 shrink-0">2 timmar</span>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-slate-600 leading-relaxed mb-4">Vad agenten kostar när den körs tusen gånger i månaden, vad GDPR och AI-akten kräver, och vad förvaltningen faktiskt innebär.</p>
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-5">
+                            <p class="text-sm text-slate-700"><strong class="text-emerald-800">Efter modulen:</strong> Du kan räkna hem projektet ärligt och svara på frågor från både ekonomi och jurist.</p>
+                        </div>
+                        <div><a href="/ai-agent-kostnad.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">Vad en AI-agent kostar <span aria-hidden="true">&rarr;</span></a><a href="/ai-agent-gdpr.html" class="inline-flex items-center gap-2 font-bold text-indigo-600 text-sm mr-6">GDPR och AI-akten <span aria-hidden="true">&rarr;</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Fördjupning</h2>
+            <p class="text-slate-600 mb-8">När grunden sitter.</p>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <a href="/ai-agent-anvandningsfall.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold mb-2">Användningsfall</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">Tolv fall som når produktion och fyra som fastnar.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-exempel.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold mb-2">Tre agenter i detalj</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">Hela bygget från uppgift till drift, tre gånger.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/multiagent-system.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold mb-2">Multiagentsystem</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">När flera agenter behövs &ndash; och varför oftast inte.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Läs <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+                <a href="/ai-agent-ordlista.html" class="group bg-slate-50 p-6 rounded-2xl border border-slate-200 card-hover">
+                    <h3 class="font-bold mb-2">Ordlistan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">30 begrepp att slå upp när något skaver.</p>
+                    <span class="text-indigo-600 font-bold text-sm">Slå upp <span class="group-hover:translate-x-1 inline-block transition-transform" aria-hidden="true">&rarr;</span></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Vanliga frågor om kursen</h2>
+            <div class="space-y-4">
+                <details class="bg-white rounded-2xl border border-slate-200 p-6" open>
+                    <summary class="font-bold cursor-pointer">Kostar den något? Måste jag registrera mig?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Nej på båda. Allt innehåll ligger öppet. Vill ni få veta när nya moduler tillkommer finns <a href="/nyhetsbrev.html" class="text-indigo-600 font-semibold underline">nyhetsbrevet</a>, men det är frivilligt.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Behöver jag kunna programmera?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Nej. Modul 3 finns i två varianter &ndash; en med kod och en visuell i n8n. Modul 4 om MCP är den mest tekniska; den kan hoppas över av den som bygger visuellt, men läs säkerhetsavsnittet i den ändå.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Vilken modell och vilket verktyg lär jag mig?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Kursen är medvetet inte byggd kring ett enda verktyg. Mönstren &ndash; loopen, verktygen, utvärderingarna, spärrarna &ndash; är desamma oavsett ramverk och överlever modellgenerationer. Modul 2 hjälper er välja, och valet går att ändra.</p>
+                </details>
+                <details class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Hur aktuellt är innehållet?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Sidorna anger när de senast uppdaterades och sifferuppgifter har källhänvisningar. Området rör sig snabbt &ndash; kontrollera alltid versionsspecifika detaljer mot leverantörens egen dokumentation innan ni binder upp er.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Kommit halvvägs och kört fast?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">De flesta fastnar i modul 1 eller modul 5 &ndash; fel vald uppgift, eller ingen utvärdering som visar om det blir bättre. Beskriv var ni står, så får ni ett konkret svar på vad som saknas.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=lar-dig-ai-agenter" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

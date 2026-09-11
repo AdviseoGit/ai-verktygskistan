@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bygg en AI-agent i n8n: steg-för-steg utan kod | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Praktisk guide till n8n:s AI Agent-nod: verktyg som undernoder, rätt val av minne, godkännandesteg och spärrar i flödet. Plus när n8n inte räcker.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-n8n.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Bygg en AI-agent i n8n: steg-för-steg utan kod">
+    <meta property="og:description" content="Praktisk guide till n8n:s AI Agent-nod: verktyg som undernoder, rätt val av minne, godkännandesteg och spärrar i flödet. Plus när n8n inte räcker.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-n8n.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Bygg en AI-agent i n8n utan kod",
+  "description": "Steg-för-steg-guide för att bygga en AI-agent i n8n med AI Agent-noden, verktyg som undernoder, minne och mänskligt godkännande.",
+  "inLanguage": "sv-SE",
+  "totalTime": "PT4H",
+  "step": [
+    {"@type": "HowToStep", "position": 1, "name": "Sätt upp n8n", "text": "Kör n8n själv med Docker-avbilden docker.n8n.io/n8nio/n8n, eller använd molnversionen. Självhostat ger full kontroll över var data behandlas, vilket är skälet många svenska organisationer väljer n8n framför alternativen."},
+    {"@type": "HowToStep", "position": 2, "name": "Lägg in AI Agent-noden", "text": "AI Agent-noden är en klusternod: den är navet och de olika förmågorna kopplas in som undernoder. Anslut först en chattmodell som undernod. Modellen kan bytas senare utan att resten av flödet rörs."},
+    {"@type": "HowToStep", "position": 3, "name": "Bygg verktygen som undernoder", "text": "Varje verktyg är antingen en HTTP Request-nod mot ett API eller ett eget underflöde. Ge varje verktyg en beskrivning som säger när det ska användas, inte bara vad det gör – beskrivningen är det modellen läser när den väljer."},
+    {"@type": "HowToStep", "position": 4, "name": "Välj minne medvetet", "text": "Window Buffer Memory håller de senaste meddelandena och räcker för de flesta fall. Summary Memory håller en rullande sammanfattning. För produktion, använd PostgreSQL-minne så att tillståndet överlever omstarter. Motorhead Memory är avvecklat sedan februari 2026 och ska inte användas."},
+    {"@type": "HowToStep", "position": 5, "name": "Lägg in godkännandesteget", "text": "Låt agenten producera ett förslag och skicka det till en människa för godkännande innan något verkställs, till exempel via Slack eller e-post med en godkänn-länk. Först när flödet gått rätt i flera veckor kan godkännandet tas bort för de enklaste ärendetyperna."},
+    {"@type": "HowToStep", "position": 6, "name": "Testa med verkliga fall och sätt spärrar", "text": "Kör tjugo verkliga ärenden med känt rätt svar genom flödet och räkna hur många som blev rätt. Lägg in villkorsnoder som stoppar körningen vid belopp över tröskel eller mottagare utanför en godkänd lista – spärrarna ska ligga i flödet, inte i instruktionen."}
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Praktiskt, utan kod · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Bygg en AI-agent i <span class="gradient-text">n8n</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">n8n är den realistiska vägen för organisationer utan utvecklare som ska förvalta lösningen. Det utvecklas av ett tyskt bolag, går att köra på egen server inom EU, och har färdiga kopplingar till de system ni redan använder.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto grid sm:grid-cols-3 gap-4">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                <div class="text-2xl mb-1" aria-hidden="true">&#127465;&#127466;</div>
+                <p class="text-sm text-slate-600">Tyskt bolag, går att självhosta inom EU</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                <div class="text-2xl mb-1" aria-hidden="true">&#128268;</div>
+                <p class="text-sm text-slate-600">Fler än 400 färdiga integrationer</p>
+            </div>
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 text-center">
+                <div class="text-2xl mb-1" aria-hidden="true">&#128064;</div>
+                <p class="text-sm text-slate-600">Flödet syns &ndash; du ser vad agenten gjorde</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Modellen ni behöver förstå först</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">n8n:s <strong>AI Agent-nod</strong> är en så kallad klusternod. Den är navet, och förmågorna hängs på som undernoder. Har ni den bilden klar blir resten självklart:</p>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <div class="space-y-4">
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-indigo-600 text-white font-bold w-32 shrink-0 text-center py-2 rounded-xl text-sm">AI Agent</div>
+                        <p class="text-slate-600 pt-1.5">Navet. Kör loopen: tänk &rarr; välj verktyg &rarr; läs resultat &rarr; tänk igen.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-200 text-slate-700 font-bold w-32 shrink-0 text-center py-2 rounded-xl text-sm">Chattmodell</div>
+                        <p class="text-slate-600 pt-1.5">Undernod. Motorn. Bytbar utan att något annat rörs &ndash; prototypa billigt, byt upp sedan.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-200 text-slate-700 font-bold w-32 shrink-0 text-center py-2 rounded-xl text-sm">Verktyg</div>
+                        <p class="text-slate-600 pt-1.5">Undernoder. Antingen en HTTP-anropsnod mot ett API, eller ett eget underflöde.</p>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                        <div class="bg-slate-200 text-slate-700 font-bold w-32 shrink-0 text-center py-2 rounded-xl text-sm">Minne</div>
+                        <p class="text-slate-600 pt-1.5">Undernod. Håller kontexten mellan meddelanden i en konversation.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Det är samma fyra delar som i <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 font-semibold underline">varje agent</a>, bara ritade i stället för kodade. Under huven bygger noden på samma primitiver som kodramverken.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8">Sex steg</h2>
+            <div class="space-y-5">
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">1.</span> Sätt upp n8n</h3>
+                    <p class="text-slate-600 leading-relaxed">Molnversionen går snabbast att prova. Ska agenten röra personuppgifter: kör själv, med Docker-avbilden <code class="bg-white px-2 py-0.5 rounded text-sm border border-slate-200">docker.n8n.io/n8nio/n8n</code>, på en server hos en europeisk leverantör. Det är hela skälet att många svenska organisationer väljer n8n &ndash; flödesmotorn kan ligga hos er.</p>
+                    <p class="text-slate-600 leading-relaxed mt-3 text-sm"><strong>Observera:</strong> att motorn körs hos er betyder inte att allt gör det. Språkmodellen anropas normalt som extern tjänst, och det är där <a href="/ai-agent-gdpr.html" class="text-indigo-600 font-semibold underline">biträdesavtalet</a> behövs. Vill ni ha allt lokalt kan en lokalt körd modell kopplas in i stället &ndash; till priset av lägre kvalitet.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">2.</span> Lägg in AI Agent-noden och en modell</h3>
+                    <p class="text-slate-600 leading-relaxed">Koppla en chattmodell som undernod. Prototypa gärna mot en snabb och billig modell &ndash; ni kan byta senare utan att röra verktyg, minne eller flöde. Bara undernoden ändras.</p>
+                    <p class="text-slate-600 leading-relaxed mt-3">Skriv systeminstruktionen som en arbetsbeskrivning: uppgiften, gränserna, och vad agenten ska göra när den är osäker. Det är den enskilt mest avgörande texten i hela flödet.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">3.</span> Bygg verktygen</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Två sätt, och båda fungerar:</p>
+                    <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                        <li><strong>HTTP Request-nod</strong> mot ett API &ndash; snabbast när systemet har ett sådant.</li>
+                        <li><strong>Eget underflöde</strong> &ndash; när verktyget behöver flera steg, till exempel slå upp, formatera och returnera.</li>
+                    </ul>
+                    <p class="text-slate-600 leading-relaxed mt-3">Lägg tiden på <strong>beskrivningen</strong> av varje verktyg. Den ska säga när verktyget ska användas, vad det returnerar och vad agenten ska göra vid tvekan. Ett vanligt och verkningsfullt trick är att också nämna verktyget i systeminstruktionen: &quot;använd <em>hamta_kund</em> innan du klassificerar&quot;.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">4.</span> Välj minne medvetet</h3>
+                    <div class="overflow-x-auto mt-3">
+                        <table class="w-full text-sm border-collapse min-w-[480px]">
+                            <thead><tr class="bg-white text-left"><th class="p-3 font-bold border-b border-slate-200">Typ</th><th class="p-3 font-bold border-b border-slate-200">Använd när</th></tr></thead>
+                            <tbody>
+                                <tr class="border-b border-slate-200"><td class="p-3 font-semibold">Window Buffer</td><td class="p-3 text-slate-600">De senaste N meddelandena räcker. Duger för de flesta fall.</td></tr>
+                                <tr class="border-b border-slate-200"><td class="p-3 font-semibold">Summary</td><td class="p-3 text-slate-600">Långa konversationer där en rullande sammanfattning behövs.</td></tr>
+                                <tr><td class="p-3 font-semibold">PostgreSQL</td><td class="p-3 text-slate-600"><strong>Produktion.</strong> Tillståndet överlever omstarter och går att granska.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mt-3 text-sm"><strong>Undvik Motorhead Memory</strong> &ndash; projektet underhålls inte längre och avvecklades i n8n i februari 2026. Dyker det upp i en äldre guide: hoppa över det.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl border-2 border-indigo-300 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">5.</span> Lägg in godkännandesteget</h3>
+                    <p class="text-slate-600 leading-relaxed">Låt agenten producera ett <em>förslag</em> och skicka det vidare till en människa &ndash; i Slack, Teams eller ett mejl med en godkänn-länk. Först när åtgärden godkänts körs den verkställande noden.</p>
+                    <p class="text-slate-600 leading-relaxed mt-3">Det här är det steg som gör att ni vågar släppa på agenten alls, och godkännandena blir samtidigt er utvärderingsdata. Ta bort det först när flödet gått rätt i flera veckor, och då bara för de enklaste ärendetyperna.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 p-7">
+                    <h3 class="text-xl font-bold mb-2"><span class="text-indigo-600">6.</span> Testa på riktigt och sätt spärrar</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Kör tjugo verkliga ärenden där ni vet vad rätt svar är och räkna hur många som blev rätt. Gör om det vid varje ändring. Utan den siffran gissar ni.</p>
+                    <p class="text-slate-600 leading-relaxed">Lägg spärrarna som villkorsnoder <em>i flödet</em>, inte som meningar i instruktionen: belopp över tröskel stoppar körningen, mottagare utanför godkänd lista går inte igenom, tak för antal åtgärder per körning. Se <a href="/ai-agent-sakerhet.html" class="text-indigo-600 font-semibold underline">säkerhetsguiden</a> för hela resonemanget.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">När n8n inte räcker</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Ärlighet är mer värt än att sälja in ett verktyg. Fyra lägen där ni bör titta på ett kodramverk i stället:</p>
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Ni behöver riktiga tester</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Utvärderingar som körs automatiskt vid varje ändring är svårare att få till i ett visuellt flöde än i kod.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Flödet måste kunna återupptas</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Långa processer som ska pausa, överleva ett avbrott och fortsätta där de var är det kodramverk som <a href="/ai-agent-ramverk.html" class="text-indigo-600 font-semibold underline">LangGraph</a> är byggda för.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Revisionskrav på detaljnivå</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ska varje beslut kunna rekonstrueras exakt flera år senare behöver ni mer kontroll över vad som loggas och hur.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Versionshantering i team</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Flera personer som ändrar samma flöde samtidigt hanteras bättre av kod i ett git-arkiv.</p>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mt-6">Ett fullt rimligt upplägg är att bygga prototypen i n8n för att bevisa värdet, och flytta den till kod när den ska härdas. Att börja visuellt är inte ett misstag att rätta &ndash; det är ofta den snabbaste vägen till att veta om fallet bär.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha flödet byggt?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv uppgiften och vilka system den rör, så får ni tillbaka ett förslag på hur flödet bör se ut &ndash; vilka verktyg som behövs, var godkännandesteget hör hemma och vad som krävs för att ta det till produktion.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-n8n" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

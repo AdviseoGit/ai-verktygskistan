@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiagentsystem: när flera AI-agenter behövs och när de ställer till det | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="De tre skälen som motiverar flera agenter, mönstren som fungerar, och matematiken bakom varför multiagentsystem imponerar i demo men fallerar i drift.">
+    <link rel="canonical" href="https://aiverktygsladan.se/multiagent-system.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Multiagentsystem: när flera AI-agenter behövs och när de ställer till det">
+    <meta property="og:description" content="De tre skälen som motiverar flera agenter, mönstren som fungerar, och matematiken bakom varför multiagentsystem imponerar i demo men fallerar i drift.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/multiagent-system.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "När behöver man flera AI-agenter i stället för en?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nästan aldrig i början. Tre skäl håller: uppgiften kräver olika behörigheter som inte bör ligga i samma agent, delarna måste kunna köras parallellt för att hinna klart i tid, eller en delmängd av arbetet fyller kontextfönstret med läsning som resten inte behöver. Skäl som inte håller är att det låter modernt, att uppgiften känns stor, eller att ett ramverk gör det enkelt. Varje ny agent lägger till ett gränssnitt där något kan gå fel, och felet uppstår mellan agenterna där det är svårast att felsöka."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilka mönster finns för multiagentsystem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tre mönster täcker det mesta. Supervisor: en huvudagent delar ut deluppgifter till underagenter och sätter ihop resultatet – vanligast och lättast att felsöka. Handoff: agenten lämnar över hela uppgiften till en mer specialiserad agent och lämnar konversationen, vilket passar dirigering. Pipeline: agenterna körs i fast ordning där varje steg förädlar föregående, vilket egentligen är ett workflow och ofta det rätta svaret. Börja med supervisor om ni måste dela upp, och håll antalet underagenter så lågt som möjligt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför misslyckas multiagentsystem oftare än enskilda agenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Felen multipliceras i stället för att adderas. Med fem steg som vart och ett är korrekt i nittio procent av fallen blir helheten korrekt i knappt sextio procent. Dessutom uppstår felen mellan agenterna, i överlämningarna, där varken loggar eller utvärderingar normalt tittar. Till det kommer att kostnaden och svarstiden växer med antalet agenter, eftersom varje överlämning innebär att kontext skickas vidare på nytt."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Arkitektur · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Multiagentsystem: <span class="gradient-text">när flera agenter</span> &ndash; och när inte</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Flera samarbetande agenter är det som demonstreras på konferenser och det som oftast fastnar i verkligheten. Här är de tre mönster som fungerar, matematiken bakom varför de går sönder, och testet för om ni faktiskt behöver mer än en.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-amber-50 border-2 border-amber-200 rounded-3xl p-8">
+            <h2 class="text-xl font-bold mb-3">Svaret i en mening</h2>
+            <p class="text-slate-700 leading-relaxed">Om ni inte redan har <em>en</em> agent i produktion med utvärderingar på plats, ska ni inte bygga flera. Multiagent är en optimering av något som fungerar &ndash; inte en väg till att få något att fungera.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Matematiken ingen räknar på</h2>
+            <p class="text-slate-600 leading-relaxed mb-6">Det här är det mest användbara på sidan. Fel i en kedja adderas inte &ndash; de multipliceras.</p>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 mb-6">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[520px]">
+                        <thead>
+                            <tr class="bg-slate-50 text-left">
+                                <th class="p-4 font-bold border-b border-slate-200">Antal steg</th>
+                                <th class="p-4 font-bold border-b border-slate-200">Vart och ett rätt 95 %</th>
+                                <th class="p-4 font-bold border-b border-slate-200">Vart och ett rätt 90 %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100"><td class="p-4 font-semibold">1</td><td class="p-4 text-emerald-700 font-semibold">95 %</td><td class="p-4 text-emerald-700 font-semibold">90 %</td></tr>
+                            <tr class="border-b border-slate-100 bg-slate-50/50"><td class="p-4 font-semibold">3</td><td class="p-4 text-emerald-700 font-semibold">86 %</td><td class="p-4 text-amber-700 font-semibold">73 %</td></tr>
+                            <tr class="border-b border-slate-100"><td class="p-4 font-semibold">5</td><td class="p-4 text-amber-700 font-semibold">77 %</td><td class="p-4 text-rose-700 font-semibold">59 %</td></tr>
+                            <tr><td class="p-4 font-semibold">10</td><td class="p-4 text-rose-700 font-semibold">60 %</td><td class="p-4 text-rose-700 font-semibold">35 %</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed">Fem agenter som var och en gör rätt i nio fall av tio ger ett system som gör rätt i knappt sex fall av tio. Det är därför demon imponerar &ndash; en körning &ndash; och produktionen inte gör det, över tusen körningar.</p>
+            <p class="text-slate-600 leading-relaxed mt-4">Slutsatsen är inte att aldrig dela upp. Den är att <strong>varje extra agent måste betala för sig</strong>, och att priset är högre än det ser ut.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">De tre skäl som håller</h2>
+            <p class="text-slate-600 mb-8">Om inget av de här stämmer: bygg en agent.</p>
+            <div class="space-y-5">
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold mb-2">1. Behörigheterna ska inte blandas</h3>
+                    <p class="text-slate-600 leading-relaxed">En agent som läser känsliga personuppgifter och en som skickar mejl externt bör inte vara samma agent, av precis det skäl som beskrivs i <a href="/ai-agent-sakerhet.html" class="text-indigo-600 font-semibold underline">säkerhetsguiden</a>. Här är uppdelningen ett skydd, inte en optimering &ndash; och det är det starkaste skälet av de tre.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold mb-2">2. Arbetet måste ske parallellt</h3>
+                    <p class="text-slate-600 leading-relaxed">Ska tjugo dokument granskas och svaret levereras inom en minut går det inte i sekvens. Här är flera agenter samma sak som flera trådar &ndash; en prestandafråga med ett tydligt mätbart skäl.</p>
+                </div>
+                <div class="bg-slate-50 p-7 rounded-2xl border-l-4 border-emerald-500">
+                    <h3 class="text-xl font-bold mb-2">3. En deluppgift dränker kontexten</h3>
+                    <p class="text-slate-600 leading-relaxed">Om ett moment kräver att hundra sidor läses för att producera tre rader slutsats, ska det momentet ligga i en egen agent som lämnar tillbaka slutsatsen. Annars fyller läsningen huvudagentens kontextfönster och försämrar allt annat den gör.</p>
+                </div>
+            </div>
+            <h2 class="text-3xl font-extrabold mb-6 mt-12">Och de skäl som inte håller</h2>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="bg-rose-50 border border-rose-200 p-5 rounded-2xl"><p class="text-slate-700 text-sm leading-relaxed"><strong>&quot;Uppgiften är stor.&quot;</strong> Stora uppgifter smalnas av, de delas inte upp på agenter.</p></div>
+                <div class="bg-rose-50 border border-rose-200 p-5 rounded-2xl"><p class="text-slate-700 text-sm leading-relaxed"><strong>&quot;Ramverket gör det enkelt.&quot;</strong> Att det är enkelt att bygga säger inget om att det är enkelt att förvalta.</p></div>
+                <div class="bg-rose-50 border border-rose-200 p-5 rounded-2xl"><p class="text-slate-700 text-sm leading-relaxed"><strong>&quot;En agent per avdelning.&quot;</strong> Organisationsschemat är inte en systemarkitektur.</p></div>
+                <div class="bg-rose-50 border border-rose-200 p-5 rounded-2xl"><p class="text-slate-700 text-sm leading-relaxed"><strong>&quot;Specialisering ger kvalitet.&quot;</strong> Ibland. Men en väl instruerad agent med bra verktyg slår oftast fem halvbra.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">De tre mönstren</h2>
+            <p class="text-slate-600 mb-8 leading-relaxed">Om ni har ett skäl som håller: så här ser uppdelningarna ut som faktiskt fungerar.</p>
+            <div class="space-y-5">
+                <div class="bg-white p-7 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-xl font-bold mb-2">Supervisor <span class="text-sm font-bold text-indigo-600">&larr; börja här</span></h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">En huvudagent äger uppgiften, delar ut delar till underagenter och sätter ihop resultatet. Underagenterna vet inget om varandra.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm"><strong>Varför det fungerar:</strong> det finns en plats där helheten ägs, vilket gör systemet felsökbart. <strong>Fallgrop:</strong> huvudagentens kontext växer med antalet svar den ska väga samman &ndash; låt underagenterna lämna slutsatser, inte råmaterial.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Handoff</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Agenten avgör att uppgiften hör hemma någon annanstans och lämnar över hela konversationen till en specialiserad agent. Den första agenten är sedan ur bilden.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm"><strong>Varför det fungerar:</strong> passar dirigering &ndash; en förstalinjeagent som lämnar över till rätt specialist. <strong>Fallgrop:</strong> överlämningen tappar lätt kontext, och ingen äger helheten efteråt.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">Pipeline</h3>
+                    <p class="text-slate-600 leading-relaxed mb-3">Agenterna körs i fast ordning, varje steg förädlar föregående: extrahera &rarr; validera &rarr; sammanställa.</p>
+                    <p class="text-slate-600 leading-relaxed text-sm"><strong>Varför det fungerar:</strong> förutsägbart och lätt att mäta per steg. <strong>Men:</strong> om ordningen är fast är det egentligen inte ett multiagentsystem utan ett <em>workflow med AI-steg</em> &ndash; och det är oftast rätt svar. Billigare, snabbare och går sönder på ställen ni kan förutse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-slate-900 text-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6 text-white">Testet</h2>
+            <p class="text-slate-300 leading-relaxed mb-6">Innan ni delar upp, svara på fyra frågor. Är svaret nej på någon &ndash; bygg en agent.</p>
+            <ul class="space-y-4 text-slate-300">
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">1.</span> Har vi redan en agent i produktion med utvärderingar som visar att den fungerar?</li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">2.</span> Kan vi peka på behörighet, parallellitet eller kontextmängd som skälet &ndash; inte på att uppgiften känns stor?</li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">3.</span> Vet vi hur vi mäter varje överlämning separat, så att ett fel går att lokalisera?</li>
+                <li class="flex gap-4"><span class="text-indigo-400 font-bold shrink-0">4.</span> Har vi räknat på vad den samlade träffsäkerheten blir enligt tabellen ovan &ndash; och accepterar vi den?</li>
+            </ul>
+            <p class="text-slate-400 leading-relaxed mt-8">Fråga fyra fäller de flesta förslag, och det är meningen. Den flyttar diskussionen från &quot;vad vore häftigt&quot; till &quot;vad kommer det här att göra rätt i nio fall av tio&quot;.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Är ert fall ett multiagentfall?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv uppgiften och hur ni tänkt dela upp den, så får ni tillbaka en bedömning av om uppdelningen bär &ndash; eller om samma sak löses bättre med en agent och några fler verktyg.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=multiagent-system" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

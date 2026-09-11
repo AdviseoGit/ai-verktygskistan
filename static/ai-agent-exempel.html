@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agent exempel: tre agenter byggda från början till slut | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Tre konkreta AI-agenter i detalj: uppgift, verktyg, instruktion, spärrar och mätning – plus vad som gick fel först i varje. Det som sällan skrivs ned.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-exempel.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agent exempel: tre agenter byggda från början till slut">
+    <meta property="og:description" content="Tre konkreta AI-agenter i detalj: uppgift, verktyg, instruktion, spärrar och mätning – plus vad som gick fel först i varje. Det som sällan skrivs ned.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-exempel.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan du ge ett konkret exempel på en AI-agent i ett företag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ett vanligt och väl fungerande exempel är triagering av supportärenden. Agenten läser ett inkommande ärende, slår upp kunden i CRM, söker efter liknande lösta ärenden, föreslår kategori, prioritet och kö, och lämnar förslaget till en handläggare som godkänner med ett klick. Den har tre verktyg, kör typiskt tre varv i loopen och kostar i storleksordningen tjugo öre per ärende. Godkännandena blir samtidigt utvärderingsdata som visar om agenten blir bättre över tid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur många verktyg behöver en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Färre än man tror. De agenter som fungerar i produktion har typiskt två till fyra verktyg. Fler verktyg innebär fler beskrivningar modellen måste väga mot varandra, vilket ökar risken att den väljer fel, och varje verktyg lägger till tokens i varje anrop. Behöver agenten tio verktyg är uppgiften nästan alltid för brett formulerad och bör smalnas av innan något byggs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur lång tid tar det att bygga en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För en avgränsad uppgift där systemen har API:er tar en första fungerande version dagar snarare än månader. Att ta den till produktion tar däremot typiskt en till tre veckor till, och den tiden går nästan helt till integrationer, utvärderingar och spärrar – inte till agentlogiken. Saknas API:er, eller ligger underlaget ostrukturerat, är datajobbet det egentliga projektet och tidsuppskattningen en annan."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Genomgångar · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Tre AI-agenter, <span class="gradient-text">byggda från början till slut</span></h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Inte skärmdumpar och löften. Uppgiften, verktygen, den faktiska instruktionen, spärrarna, hur de mäts – och vad som gick fel först. Det sista är det som sällan skrivs ned och som sparar mest tid.</p>
+    </header>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden mb-10">
+                <div class="bg-indigo-600 px-8 py-6">
+                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Agent 1</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Autonominivå 2</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">n8n</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Triagering av supportärenden</h3>
+                </div>
+                <div class="p-8">
+                    <h4 class="font-bold text-lg mb-2">Uppgiften</h4>
+                    <p class="text-slate-600 leading-relaxed mb-6">Ett ärende kommer in via mejl eller formulär. Agenten ska läsa det, förstå vem kunden är, hitta liknande lösta ärenden, och föreslå kategori, prioritet och kö. En handläggare godkänner med ett klick.</p>
+
+                    <h4 class="font-bold text-lg mb-2">Verktygen</h4>
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-sm border-collapse min-w-[440px]">
+                            <thead><tr class="bg-slate-50 text-left"><th class="p-3 font-bold border-b border-slate-200">Verktyg</th><th class="p-3 font-bold border-b border-slate-200">Vad det gör</th></tr></thead>
+                            <tbody><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">hamta_kund</td><td class="p-3 text-slate-600">Slår upp kund i CRM på e-post eller kundnummer. Returnerar avtalsform och servicenivå.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">sok_liknande_arenden</td><td class="p-3 text-slate-600">Söker i lösta ärenden efter liknande fall. Returnerar tre träffar med hur de löstes.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">foresla_triagering</td><td class="p-3 text-slate-600">Lämnar förslaget till godkännande. Skapar inget själv.</td></tr></tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="font-bold text-lg mb-2">Instruktionen, i sammandrag</h4>
+                    <div class="bg-slate-50 border-l-4 border-slate-300 p-5 rounded-r-xl mb-6">
+                        <p class="text-slate-700 leading-relaxed text-sm italic">Du triagerar inkommande supportärenden. Hämta alltid kunden först &ndash; servicenivån avgör prioriteten. Sök sedan efter liknande lösta ärenden; hittar du ett nästan identiskt, föreslå samma kö. Är ärendet otydligt eller rör flera saker: föreslå kategorin &quot;kräver manuell bedömning&quot; i stället för att gissa. Gissa aldrig prioritet utan att ha sett avtalsformen.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 mb-6">
+                        <div>
+                            <h4 class="font-bold mb-2">Spärrarna</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Agenten har inget verktyg som skriver till ärendesystemet &ndash; den kan bara föreslå. Det är den starkaste spärren som finns: den är arkitektonisk, inte en regel som kan pratas bort.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Så mäts den</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Andel förslag som godkänns utan ändring. Började på 61 %, låg efter tre veckors instruktionsjusteringar på 88 %. Tjugo sparade testärenden körs vid varje ändring.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6">
+                        <h4 class="font-bold mb-2">Vad som gick fel först</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed">Agenten satte hög prioritet på nästan allt, eftersom arga formuleringar tolkades som brådska. Lösningen var inte en bättre modell utan att göra servicenivån till ett obligatoriskt underlag: prioritet får bara härledas ur avtalet, inte ur tonläget. Det är ett typiskt fall &ndash; problemet såg ut som modellkvalitet men var en saknad regel i instruktionen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden mb-10">
+                <div class="bg-slate-800 px-8 py-6">
+                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Agent 2</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Autonominivå 2</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Kodramverk</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Förslag till kontering av leverantörsfakturor</h3>
+                </div>
+                <div class="p-8">
+                    <h4 class="font-bold text-lg mb-2">Uppgiften</h4>
+                    <p class="text-slate-600 leading-relaxed mb-6">En faktura kommer in. Agenten ska läsa den, identifiera leverantören, titta på hur liknande fakturor konterats historiskt, och föreslå konto, kostnadsställe och momskod. En ekonom godkänner.</p>
+
+                    <h4 class="font-bold text-lg mb-2">Verktygen</h4>
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-sm border-collapse min-w-[440px]">
+                            <thead><tr class="bg-slate-50 text-left"><th class="p-3 font-bold border-b border-slate-200">Verktyg</th><th class="p-3 font-bold border-b border-slate-200">Vad det gör</th></tr></thead>
+                            <tbody><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">las_faktura</td><td class="p-3 text-slate-600">Hämtar strukturerad data ur fakturan: leverantör, belopp, radtexter, org.nr.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">historik_leverantor</td><td class="p-3 text-slate-600">Returnerar de tio senaste konteringarna för samma leverantör.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">kontoplan_sok</td><td class="p-3 text-slate-600">Slår upp konton på beskrivning, så agenten inte behöver kontoplanen i prompten.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">foresla_kontering</td><td class="p-3 text-slate-600">Lämnar förslaget för godkännande.</td></tr></tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="font-bold text-lg mb-2">Instruktionen, i sammandrag</h4>
+                    <div class="bg-slate-50 border-l-4 border-slate-300 p-5 rounded-r-xl mb-6">
+                        <p class="text-slate-700 leading-relaxed text-sm italic">Du föreslår kontering av leverantörsfakturor. Titta alltid på historiken för leverantören först &ndash; om de tio senaste konterats likadant och fakturan liknar dem, föreslå samma. Avviker fakturan från mönstret, säg det uttryckligen i motiveringen. Föreslå aldrig ett konto du inte slagit upp i kontoplanen. Är du osäker på momskoden: markera fakturan för manuell hantering.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 mb-6">
+                        <div>
+                            <h4 class="font-bold mb-2">Spärrarna</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Tak för belopp: fakturor över en tröskel går direkt till manuell hantering utan att agenten ens får föreslå. Dessutom får agenten aldrig bokföra &ndash; bara föreslå.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Så mäts den</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Andel förslag som godkänns utan ändring, uppdelat på leverantörer agenten sett förut och nya. Skillnaden mellan de två talen visar hur mycket av värdet som kommer ur historiken.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6">
+                        <h4 class="font-bold mb-2">Vad som gick fel först</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed">Den första versionen hade hela kontoplanen inklistrad i instruktionen. Det fungerade tills kontoplanen ändrades, och då fortsatte agenten föreslå ett konto som inte längre fanns &ndash; tyst, i veckor. Att byta den inklistrade texten mot verktyget kontoplan_sok löste det permanent. Regeln är generell: ge agenten verktyg, inte kunskap.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden mb-10">
+                <div class="bg-emerald-700 px-8 py-6">
+                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Agent 3</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Autonominivå 1</span>
+                        <span class="bg-white/25 text-white text-xs font-bold px-3 py-1 rounded-full">Kodramverk</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Extrahering av villkor ur avtal</h3>
+                </div>
+                <div class="p-8">
+                    <h4 class="font-bold text-lg mb-2">Uppgiften</h4>
+                    <p class="text-slate-600 leading-relaxed mb-6">En bunt leverantörsavtal ska gås igenom. Agenten ska plocka ut uppsägningstid, indexklausul, ansvarsbegränsning och förlängningsvillkor till en strukturerad tabell, med sidhänvisning för varje uppgift.</p>
+
+                    <h4 class="font-bold text-lg mb-2">Verktygen</h4>
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-sm border-collapse min-w-[440px]">
+                            <thead><tr class="bg-slate-50 text-left"><th class="p-3 font-bold border-b border-slate-200">Verktyg</th><th class="p-3 font-bold border-b border-slate-200">Vad det gör</th></tr></thead>
+                            <tbody><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">hamta_avtal</td><td class="p-3 text-slate-600">Hämtar avtalstexten sidindelad, så att hänvisningar blir möjliga.</td></tr><tr class="border-b border-slate-100"><td class="p-3 font-mono text-xs">skriv_rad</td><td class="p-3 text-slate-600">Skriver en rad till resultattabellen med värde, källcitat och sidnummer.</td></tr></tbody>
+                        </table>
+                    </div>
+
+                    <h4 class="font-bold text-lg mb-2">Instruktionen, i sammandrag</h4>
+                    <div class="bg-slate-50 border-l-4 border-slate-300 p-5 rounded-r-xl mb-6">
+                        <p class="text-slate-700 leading-relaxed text-sm italic">Du extraherar villkor ur leverantörsavtal. För varje villkor ska du ange värdet, det exakta citatet det bygger på, och sidnumret. Hittar du inte villkoret: skriv &quot;saknas&quot; &ndash; härled det aldrig från vad som är brukligt. Är formuleringen tvetydig: skriv &quot;oklart&quot; och ta med citatet ändå, så att en jurist kan bedöma.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-5 mb-6">
+                        <div>
+                            <h4 class="font-bold mb-2">Spärrarna</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">Agenten är läsande. Den skriver bara till sin egen resultattabell, aldrig till något system. Autonominivå 1 räcker helt för det här fallet, vilket gör hela riskbilden liten.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold mb-2">Så mäts den</h4>
+                            <p class="text-slate-600 text-sm leading-relaxed">En jurist granskade femtio slumpvis valda rader. Mäter två saker separat: hur ofta värdet är rätt, och hur ofta citatet faktiskt stödjer värdet. Det andra talet är det viktiga &ndash; det fångar när agenten har rätt av fel skäl.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-6">
+                        <h4 class="font-bold mb-2">Vad som gick fel först</h4>
+                        <p class="text-slate-700 text-sm leading-relaxed">Agenten fyllde i rimliga värden för villkor som inte stod i avtalet &ndash; tre månaders uppsägningstid när inget angavs, för att det är vanligt. Alla värden såg korrekta ut vid en snabb genomläsning. Kravet på ordagrant citat med sidnummer gjorde felet omedelbart synligt, eftersom citatet då saknades. Det är det billigaste sättet vi känner till att fånga just den sortens fel.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Mönstren i alla tre</h2>
+            <p class="text-slate-600 mb-8">Exemplen är olika. Det som gör dem framgångsrika är detsamma.</p>
+            <div class="grid sm:grid-cols-2 gap-5">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Två till fyra verktyg</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ingen av dem har tio. Fler verktyg betyder fler beskrivningar att väga mot varandra och större risk att agenten väljer fel. Behöver ni tio är uppgiften för bred.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Agenten kan inte verkställa</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">I samtliga fall saknas verktyget som skulle göra verklig skada. Det är arkitektur, inte en regel &ndash; och därför kan det inte pratas bort av text agenten läser.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Instruktionen säger vad man gör vid tvekan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Alla tre har en uttrycklig utväg: &quot;kräver manuell bedömning&quot;, &quot;markera för manuell hantering&quot;, &quot;skriv oklart&quot;. En agent utan utväg gissar, och gissningar ser ut som svar.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-2">Mätningen var bestämd i förväg</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Var och en har ett tal som avgör om den blir bättre. Utan det tal är varje ändring en gissning, och det är den vanligaste orsaken till att agenter aldrig lämnar piloten.</p>
+                </div>
+            </div>
+            <div class="mt-8 bg-indigo-50 border-2 border-indigo-200 rounded-2xl p-7">
+                <h3 class="text-xl font-bold mb-3">Och det viktigaste mönstret</h3>
+                <p class="text-slate-700 leading-relaxed">I alla tre fall såg det första felet ut som att modellen var för dum. I inget av fallen var det så. Det var en saknad regel, en inklistrad sanning som blivit gammal, och ett saknat krav på källhänvisning. <strong>Byt inte modell när agenten gör fel &ndash; läs vad den faktiskt gjorde.</strong> Det är vad loggen finns till för.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Bygg ett eget</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Samma sju steg gäller för alla tre exemplen ovan. Börja med att välja en uppgift som går att utvärdera &ndash; det är steg 1 och det viktigaste.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/bygg-ai-agent.html" class="inline-flex items-center justify-center gap-2 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all">Till stegguiden <span aria-hidden="true">&rarr;</span></a>
+                <a href="/ai-agent-anvandningsfall.html" class="inline-flex items-center justify-center gap-2 bg-white text-slate-900 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold hover:border-indigo-400 transition-all">Fler användningsfall</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha er egen genomgång?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv arbetsmomentet ni har i åtanke, så får ni tillbaka samma sak som ovan för ert fall: vilka verktyg som behövs, hur instruktionen bör se ut, var spärrarna hör hemma och hur ni mäter.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-exempel" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Beskriv ert läge
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

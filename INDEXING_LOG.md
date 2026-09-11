@@ -22,3 +22,12 @@ https://aiverktygsladan.se/ai-svenska-foretag-rapport.html | URL is unknown to G
 2026-09-11 | https://aiverktygsladan.se/ai-agent-ordlista.html | NY | FAQPage-schema, 30 begrepp. Begär indexering i GSC.
 2026-09-11 | https://aiverktygsladan.se/bygga-ai-agent-hjalp.html | NY | Konverteringssida. Begär indexering i GSC.
 2026-09-11 | https://aiverktygsladan.se/ | Omskriven för agent-positionen, ny lastmod.
+2026-09-11 | UTBYGGNAD: klustret utökat från 17 till 25 sidor. Begär indexering för samtliga nedan.
+2026-09-11 | https://aiverktygsladan.se/lar-dig-ai-agenter.html | NY | Kurshubb, Course-schema. Primär ingång, högsta prioritet i sitemap.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-mcp.html | NY | FAQPage-schema, kodexempel.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-sakerhet.html | NY | FAQPage-schema.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-n8n.html | NY | HowTo-schema, 6 steg.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-exempel.html | NY | FAQPage-schema, tre genomgångar.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-kostnad.html | NY | FAQPage-schema, räkneexempel.
+2026-09-11 | https://aiverktygsladan.se/ai-agent-gdpr.html | NY | FAQPage-schema.
+2026-09-11 | https://aiverktygsladan.se/multiagent-system.html | NY | FAQPage-schema.

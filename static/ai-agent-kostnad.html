@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vad kostar en AI-agent? Genomräknat exempel per ärende | AI-Verktygslådan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Fullständig kalkyl: tokens per ärende, kronor per körning, och posterna som faktiskt dominerar. Plus de fyra sätten att sänka kostnaden i rätt ordning.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-agent-kostnad.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Vad kostar en AI-agent? Genomräknat exempel per ärende">
+    <meta property="og:description" content="Fullständig kalkyl: tokens per ärende, kronor per körning, och posterna som faktiskt dominerar. Plus de fyra sätten att sänka kostnaden i rätt ordning.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-agent-kostnad.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad kostar det att köra en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Själva modellkostnaden är nästan alltid försumbar. En agent som klassificerar och dirigerar ett supportärende drar i storleksordningen 7 000 tokens in och 700 ut per ärende, vilket på en mellanklassmodell landar kring 20–25 öre. Tusen ärenden i månaden blir ett par hundralappar. Den verkliga kostnaden ligger i bygget, i den mänskliga granskningen under inkörningen, och i förvaltningen – utvärderingar som måste underhållas, integrationer som går sönder och loggar som ska sparas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad kostar det att bygga en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En första fungerande agent för en avgränsad uppgift byggs typiskt på en till tre veckor för en person som gjort det förut, förutsatt att systemen den ska nå har API:er. Det mesta av tiden går inte till agentlogiken utan till integrationerna och till att bygga utvärderingarna. Saknas API:er, eller ligger underlaget i dokument som inte är strukturerade, växer det snabbt – och då är datajobbet det egentliga projektet, inte agenten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur sänker man kostnaden för en AI-agent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "I ordning efter effekt: smalna av uppgiften så agenten behöver färre varv i loopen, aktivera promptcachning så den stabila delen av instruktionen inte betalas om vid varje anrop, korta ned det agenten läser genom att låta verktygen returnera slutsatser i stället för råmaterial, och pröva en billigare modell mot era egna utvärderingar innan ni antar att den största behövs. Byt modell sist, inte först – det är sällan där kostnaden sitter."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-exempel.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Exempel</a>
+                <a href="/ai-agent-sakerhet.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+                <a href="/ai-agent-ordlista.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp att bygga</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter (kurs)</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n (utan kod)</a>
+        <a href="/ai-agent-exempel.html" class="block font-medium hover:text-indigo-600 transition-colors">Tre agenter i detalj</a>
+        <a href="/ai-agent-mcp.html" class="block font-medium hover:text-indigo-600 transition-colors">MCP</a>
+        <a href="/ai-agent-sakerhet.html" class="block font-medium hover:text-indigo-600 transition-colors">Säkerhet</a>
+        <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
+    </div>
+    <!-- /@nav -->
+
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Ekonomi · Uppdaterad September 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Vad en <span class="gradient-text">AI-agent kostar</span> &ndash; genomräknat</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Frågan ställs ofta och besvaras nästan aldrig med siffror. Här är ett fullständigt räkneexempel per ärende, de poster som faktiskt dominerar kalkylen, och de fyra sätten att sänka kostnaden i rätt ordning.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200 p-8 shadow-sm">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Kortversionen</h2>
+            <p class="text-2xl font-bold leading-snug mb-4">Modellkostnaden är nästan aldrig problemet. Den mänskliga granskningen och förvaltningen är det.</p>
+            <p class="text-slate-600 leading-relaxed">De flesta kalkyler vi ser räknar noggrant på tokens och utelämnar de två posterna som är tio gånger större. Resultatet är en budget som ser billig ut och en verklighet som inte gör det.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Räkneexemplet</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">En agent som läser ett inkommande supportärende, slår upp kunden, klassificerar ärendet och lägger det i rätt kö. Tre varv i loopen. Så här räknar man.</p>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 mb-6">
+                <h3 class="font-bold text-lg mb-4">Steg 1: tokens per ärende</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">Det som förvånar de flesta är att <strong>hela historiken skickas med i varje varv</strong>. Ett trevarvsärende betalar alltså för instruktionen tre gånger.</p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[480px]">
+                        <thead>
+                            <tr class="bg-slate-50 text-left">
+                                <th class="p-3 font-bold border-b border-slate-200">Varv</th>
+                                <th class="p-3 font-bold border-b border-slate-200">In</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Ut</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Vad som händer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100"><td class="p-3">1</td><td class="p-3">2 000</td><td class="p-3">200</td><td class="p-3 text-slate-600">Instruktion + ärendetext &rarr; anropar hamta_kund</td></tr>
+                            <tr class="border-b border-slate-100 bg-slate-50/50"><td class="p-3">2</td><td class="p-3">2 500</td><td class="p-3">200</td><td class="p-3 text-slate-600">Allt ovan + kunddata &rarr; anropar sok_liknande</td></tr>
+                            <tr class="border-b border-slate-100"><td class="p-3">3</td><td class="p-3">3 000</td><td class="p-3">300</td><td class="p-3 text-slate-600">Allt ovan + träffar &rarr; klassificerar och svarar</td></tr>
+                            <tr class="bg-indigo-50/60 font-bold"><td class="p-3">Totalt</td><td class="p-3">7 500</td><td class="p-3">700</td><td class="p-3"></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 mb-6">
+                <h3 class="font-bold text-lg mb-4">Steg 2: kronor per ärende</h3>
+                <p class="text-slate-600 leading-relaxed mb-4">Med en mellanklassmodell i häradet 2 USD per miljon tokens in och 10 USD ut, och en dollarkurs runt 11 kronor:</p>
+                <ul class="space-y-2 text-slate-600 mb-4">
+                    <li>In: 7 500 &times; 2 USD / 1 000 000 = <strong>0,015 USD</strong></li>
+                    <li>Ut: 700 &times; 10 USD / 1 000 000 = <strong>0,007 USD</strong></li>
+                    <li>Summa: 0,022 USD &asymp; <strong class="text-indigo-600">24 öre per ärende</strong></li>
+                </ul>
+                <div class="bg-slate-50 rounded-2xl p-5">
+                    <p class="text-slate-700 leading-relaxed"><strong>1 000 ärenden i månaden &asymp; 240 kr.</strong> Det är hela modellkostnaden. Med promptcachning aktiverad, så att den stabila delen av instruktionen inte betalas om vid varje anrop, sjunker den ytterligare betydligt.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-slate-200 rounded-3xl p-8">
+                <h3 class="font-bold text-lg mb-4 text-white">Steg 3: posterna som faktiskt kostar</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[520px]">
+                        <thead>
+                            <tr class="text-left border-b border-slate-700">
+                                <th class="p-3 font-bold text-white">Post</th>
+                                <th class="p-3 font-bold text-white">Storleksordning</th>
+                                <th class="p-3 font-bold text-white">Kommentar</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-400">
+                            <tr class="border-b border-slate-800"><td class="p-3 font-semibold text-slate-200">Modellkostnad</td><td class="p-3">240 kr/mån</td><td class="p-3">Försumbar. Sluta optimera den först.</td></tr>
+                            <tr class="border-b border-slate-800"><td class="p-3 font-semibold text-slate-200">Bygget</td><td class="p-3">1&ndash;3 veckor</td><td class="p-3">Mest integrationer och utvärderingar, minst agentlogik.</td></tr>
+                            <tr class="border-b border-slate-800"><td class="p-3 font-semibold text-slate-200">Mänsklig granskning</td><td class="p-3">10&ndash;30 s per ärende</td><td class="p-3">Den stora posten under inkörningen. 1 000 ärenden &times; 20 s &asymp; 5,5 timmar i månaden.</td></tr>
+                            <tr class="border-b border-slate-800"><td class="p-3 font-semibold text-slate-200">Förvaltning</td><td class="p-3">2&ndash;8 h/mån</td><td class="p-3">Utvärderingar som ska underhållas, integrationer som går sönder, modeller som byts ut.</td></tr>
+                            <tr><td class="p-3 font-semibold text-slate-200">Drift och loggning</td><td class="p-3">Låg</td><td class="p-3">Men loggarna växer och har gallringskrav enligt <a href="/ai-agent-gdpr.html" class="text-indigo-300 underline">GDPR</a>.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-slate-400 leading-relaxed mt-5">Det är den tredje raden som avgör kalkylen. Går granskningen från 20 sekunder till 5 &ndash; för att agenten blivit bra nog att man skummar i stället för att kontrollera &ndash; sparar ni mer än hela modellkostnaden mångfalt om.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Sänk kostnaden i den här ordningen</h2>
+            <p class="text-slate-600 mb-8">De flesta börjar i fel ände och byter modell först. Det är nästan alltid det minst verkningsfulla.</p>
+            <div class="space-y-4">
+                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-lg mb-2">1. Smalna av uppgiften</h3>
+                    <p class="text-slate-600 leading-relaxed">Färre varv i loopen sänker kostnaden kvadratiskt, eftersom varje varv både lägger till tokens och betalar om för historiken. En agent som klarar sig på två varv i stället för fem är inte 60 procent billigare &ndash; den är mer än så.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-lg mb-2">2. Slå på promptcachning</h3>
+                    <p class="text-slate-600 leading-relaxed">Den stabila delen &ndash; systeminstruktion, verktygsdefinitioner &ndash; är identisk vid varje anrop. Cachas den betalar ni en bråkdel för den delen. Kräver att det stabila ligger <em>först</em> och att inget varierande smyger in före cachegränsen, till exempel en tidsstämpel.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="font-bold text-lg mb-2">3. Låt verktygen returnera slutsatser</h3>
+                    <p class="text-slate-600 leading-relaxed">Ett verktyg som returnerar hela kundposten på 3 000 tokens när agenten behöver avtalsformen kostar 3 000 tokens i varje efterföljande varv. Returnera det som behövs, inte allt som finns.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border-l-4 border-slate-400">
+                    <h3 class="font-bold text-lg mb-2">4. Pröva en mindre modell &ndash; sist</h3>
+                    <p class="text-slate-600 leading-relaxed">Kör era <a href="/bygg-ai-agent.html" class="text-indigo-600 font-semibold underline">tjugo testfall</a> mot en billigare modell och jämför. Ofta räcker den. Men gör det här sist: en billigare modell som behöver fler varv eller misslyckas oftare är inte billigare, den flyttar bara kostnaden till granskningen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-6">Räkna hem det, ärligt</h2>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8">
+                <p class="text-slate-600 leading-relaxed mb-4">Det cirkulerar en siffra på <strong>171 % avkastning</strong> för agenter i produktion. Den gäller de omkring 11 procent av piloterna som faktiskt kom dit &ndash; alltså en grupp som redan överlevt ett hårt urval. Att budgetera efter den innan ni vet om ni tillhör dem är att budgetera efter lotterivinsten.</p>
+                <p class="text-slate-600 leading-relaxed mb-4">Räkna så här i stället:</p>
+                <ul class="space-y-2 text-slate-600 list-disc pl-5">
+                    <li>Vad kostar uppgiften i dag, i timmar gånger timkostnad?</li>
+                    <li>Vad kostar det att ta den till <a href="/vad-ar-ai-agenter.html" class="text-indigo-600 font-semibold underline">nivå 2</a> med utvärderingar på plats?</li>
+                    <li>Hur mycket av dagens tid försvinner realistiskt &ndash; inklusive den granskning som tillkommer?</li>
+                    <li>Vad kostar förvaltningen per år?</li>
+                </ul>
+                <p class="text-slate-600 leading-relaxed mt-4">Är svaret inte uppenbart positivt: välj ett annat fall. <a href="/ai-kalkylator.html" class="text-indigo-600 font-semibold underline">ROI-kalkylatorn</a> ger en grov första bild, och <a href="/ai-kostnader-tco.html" class="text-indigo-600 font-semibold underline">TCO-guiden</a> tar hela investeringsperspektivet.</p>
+            </div>
+            <p class="text-xs text-slate-500 mt-6">Priserna ovan är indikativa och avser september 2026. Modellpriser ändras ofta och skiljer sig mellan leverantörer och plattformar &ndash; kontrollera alltid mot leverantörens aktuella prislista innan ni budgeterar.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Vill ni ha kalkylen gjord på ert fall?</h2>
+            <p class="text-slate-600 text-lg mb-8 leading-relaxed">Beskriv arbetsmomentet, volymen och vilka system som är inblandade, så får ni tillbaka en uppskattning av både bygget och den löpande kostnaden &ndash; och en ärlig bedömning av om det räknar hem.</p>
+            <a href="/bygga-ai-agent-hjalp.html?fran=ai-agent-kostnad" class="inline-flex items-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                Få en kostnadsbild
+                <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Kostnadsfritt och utan åtagande. Vi svarar med en bedömning, inte en säljpresentation.</p>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -13,6 +13,36 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aiverktygsladan.se/ai-agent-exempel.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/ai-agent-gdpr.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/ai-agent-kostnad.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/ai-agent-mcp.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/ai-agent-n8n.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiverktygsladan.se/ai-agent-ordlista.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
@@ -25,10 +55,16 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aiverktygsladan.se/ai-agent-sakerhet.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aiverktygsladan.se/ai-arkitektur-foretag.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aiverktygsladan.se/ai-guider-foretag.html</loc>
@@ -46,13 +82,13 @@
     <loc>https://aiverktygsladan.se/ai-kostnader-tco.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aiverktygsladan.se/ai-sakerhet-gdpr.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aiverktygsladan.se/ai-svenska-foretag-rapport.html</loc>
@@ -76,13 +112,25 @@
     <loc>https://aiverktygsladan.se/implementera-ai-guide.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://aiverktygsladan.se/integritetspolicy.html</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/lar-dig-ai-agenter.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://aiverktygsladan.se/multiagent-system.html</loc>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://aiverktygsladan.se/nyhetsbrev.html</loc>
