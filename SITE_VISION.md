@@ -76,6 +76,9 @@ ställe man *lär sig* på, inte bara slår upp på, och ger allt annat en ordni
 - [x] Konverteringsvägen samlad på en mätbar sida med källspårning (2026-09-11)
 - [x] Klustret utbyggt till 25 sidor med kurs som ryggrad (2026-09-11)
 - [x] Situationsspår: vägvalsguide + fyra profilsidor (2026-09-11)
+- [x] OpenClaw-genomgång (2026-09-11)
+- [x] Teknisk SEO/AEO-grund: schema-graf med datum, brödsmulor, delningsbilder,
+      egen CSS i stället för CDN, kortsvar på varje sida (2026-09-12)
 - [ ] Första indexerade klicket på en agent-term
 - [ ] Topp 10 på "ai agent" eller "bygga ai agent" på svenska
 - [ ] 10 kvalificerade implementationsförfrågningar
@@ -91,6 +94,8 @@ ställe man *lär sig* på, inte bara slår upp på, och ger allt annat en ordni
 - [ ] Kodexemplen i ett publikt repo som sidorna länkar till (länkvärde).
 - [ ] Instrumentera GA4-events: `agent_lead` finns på hjälpsidan, men
       scrolldjup och klick från CTA-blocken saknas fortfarande.
+- [ ] Mät Core Web Vitals i fält när trafiken kommer. Tailwind-CDN:t är borta,
+      men Google Fonts laddas fortfarande render-blockerande.
 - [ ] Sätt `ADMIN_TOKEN` i Railway så leadexporten går att använda.
 
 ## Gäller inte längre

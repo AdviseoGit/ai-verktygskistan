@@ -5,3 +5,6 @@ tools.db
 
 # Lokal utvecklingsdatabas – produktionen kör Postgres via DATABASE_URL
 ai_data.db
+
+# npx-cache om tailwind byggs lokalt
+node_modules/

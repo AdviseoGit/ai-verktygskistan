@@ -120,12 +120,49 @@ på `bygg-ai-agent.html` eller i ramverkstabellen på `ai-agent-ramverk.html`:
 ```bash
 make check    # kontrollera utan att skriva något (samma som CI kör)
 make build    # bygg allt från källorna och kontrollera
+make css      # bygg om Tailwind-CSS:en – kräver nätverk
+make og       # rendera om delningsbilderna – kräver playwright
 make serve    # kör lokalt på http://127.0.0.1:8000
 ```
+
+**`make css` och `make og` ingår medvetet inte i `make build`.** De kräver
+nätverk respektive webbläsare och kan inte köras i CI. Två regler följer:
+
+* Lägger du till nya Tailwind-klasser i en sida **måste** du köra `make css`,
+  annars finns klasserna inte i den byggda CSS:en och sidan ser trasig ut i
+  produktion. `make check` fångar att filen finns, men inte att den är komplett.
+* Lägger du till en ny sida måste du köra `make og`, annars saknas dess
+  delningsbild. Den kontrollen fångas av `make check`.
 
 **Kör `make check` innan du pushar.** Den fångar det som annars upptäcks först
 i produktion: brutna länkar, saknad canonical, dubblerade titlar, tom sitemap,
 ogiltig JSON, obalanserad markup och sidor som hamnat ur synk med mallarna.
+
+#### SEO-tekniken injiceras, den skrivs inte för hand
+
+`scripts/seo.py` äger regionerna `<!-- @seo -->` i `<head>` och
+`<!-- @breadcrumbs -->` efter navigationen. Den genererar og:image,
+Twitter-kort, hreflang och ett schema.org-graf med Organization, WebSite,
+WebPage, BreadcrumbList och Article/TechArticle. **Redigera aldrig innehållet
+mellan de markörerna** – det skrivs över vid nästa bygge.
+
+`datePublished` och `dateModified` hämtas **ur git-historiken**, inte ur en
+handskriven lista. Det betyder två saker: datumen kan inte bli osanna, och CI
+måste checka ut med full historik (`fetch-depth: 0`), annars faller skriptet
+tillbaka på filens mtime och `make check` går sönder.
+
+Bakgrunden: före september 2026 saknade samtliga 31 sidor og:image,
+Twitter-kort, brödsmulor och datum i strukturerad data. Varje delning i
+LinkedIn eller Slack blev en tom grå ruta, och sökmotorer hade ingen
+färskhetssignal alls att gå på.
+
+#### Sajten bygger sin egen CSS
+
+Sidorna laddade tidigare `cdn.tailwindcss.com`, som kompilerar CSS i
+webbläsaren vid varje sidvisning – render-blockerande och dåligt för Core Web
+Vitals. CSS:en byggs nu till `static/css/site.css` med `make css`. En bieffekt
+värd att känna till: sajten går numera att rendera lokalt utan nätverk, vilket
+gör det möjligt att faktiskt se sina ändringar.
 
 #### Nav och sidfot ligger i templates/, inte i sidorna
 

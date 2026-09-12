@@ -1,40 +1,67 @@
 # AI-Verktygslådan
 
-Svensk kunskapsbank om AI-agenter: hur man väljer stack, bygger dem, kopplar
-dem till affärssystem och tar dem till produktion. Skriven för svenska
-förhållanden, med vikt vid GDPR, EU AI-akten och vad som går att driva inom EU.
+> Svensk kunskapsbank om AI-agenter: hur man väljer stack, bygger dem, kopplar
+> dem till affärssystem och tar dem till produktion. Skriven för svenska
+> förhållanden, med vikt vid GDPR, EU AI-akten och vad som går att driva inom EU.
+> Utgiven av Adviseo. Allt innehåll är kostnadsfritt och öppet.
+
+## Kärnpåståenden
+
+Det här är sajtens hållning. Den är avsiktligt mer återhållsam än branschens.
+
+1. **En AI-agent är en språkmodell som fått ett mål, verktyg och rätt att köra
+   flera steg i rad tills målet är nått.** Saknas verktygen är det en chatbot;
+   saknas de egna stegen är det ett skript.
+2. **De flesta agentprojekt bör inte bli agentprojekt.** Kan flödet ritas utan
+   förgreningar som kräver omdöme är ett vanligt skript billigare och mer
+   pålitligt. Gartner räknar med att fler än 40 % av agentprojekten läggs ned
+   före utgången av 2027; omkring 89 % av piloterna når aldrig produktion.
+3. **Ramverksvalet avgör sällan utfallet.** Projekt kraschar på otydligt
+   avgränsade uppgifter, saknad data och obefintlig utvärdering – i stort sett
+   aldrig på att någon valde fel bibliotek.
+4. **Bindningen till en plattform kommer från behörighetsmodellen, inte
+   licensen.** Ligger arbetet i Microsoft 365:s eller Google Workspaces eget
+   innehåll är organisationen i praktiken bunden dit, eftersom plattformen redan
+   hanterar vem som får se vad. Ligger arbetet i affärssystem är valet fritt.
+5. **Antalet agenter en organisation kan driva är lika med antalet personer som
+   kan felsöka dem.** Därför är svaret för små bolag nästan alltid en agent, inte
+   flera. Fel multipliceras dessutom i en kedja: fem steg med 90 % träffsäkerhet
+   var ger knappt 60 % totalt.
+6. **Spärrar hör hemma i koden, inte i prompten.** En instruktion är en önskan
+   som kan skrivas över av text agenten läser; en kontroll i verktyget är en
+   gräns. Detsamma gäller mänskligt godkännande.
+7. **Utvärdering är det som skiljer de projekt som når produktion från dem som
+   inte gör det.** Tjugo verkliga testfall med känt rätt svar, körda vid varje
+   ändring, räcker långt.
+8. **Börja på autonominivå 2** – agenten förbereder, en människa godkänner. Det
+   ger nästan hela tidsvinsten till en bråkdel av risken, godkännandena blir
+   utvärderingsdata, och det förenklar både GDPR och AI-aktens krav på mänsklig
+   kontroll.
 
 ## Kurs
 - Lär dig AI-agenter, sex moduler, kostnadsfri: https://aiverktygsladan.se/lar-dig-ai-agenter.html
 
 ## Situationsanpassad vägledning
-Rekommendationerna beror på var företagets data ligger, vem som ska förvalta
-lösningen och vad agenten får göra – inte på vilket ramverk som är populärast.
 - Vägvalsguide, sex frågor ger en rekommenderad stack: https://aiverktygsladan.se/ai-agent-vagval.html
-- Företag som kör Microsoft 365 (Copilot Studio, Foundry, behörighetsskuld): https://aiverktygsladan.se/ai-agent-microsoft-365.html
-- Företag som kör Google Workspace (Gemini Enterprise, Workspace Intelligence): https://aiverktygsladan.se/ai-agent-google-workspace.html
-- Små företag (en agent eller flera, vad man ska välja): https://aiverktygsladan.se/ai-agent-litet-foretag.html
+- Microsoft 365 (Copilot Studio, Foundry, behörighetsskuld i SharePoint): https://aiverktygsladan.se/ai-agent-microsoft-365.html
+- Google Workspace (Gemini Enterprise, Workspace Intelligence): https://aiverktygsladan.se/ai-agent-google-workspace.html
+- Små företag (en agent eller flera): https://aiverktygsladan.se/ai-agent-litet-foretag.html
 - Reglerad verksamhet (finans, vård, offentlig sektor): https://aiverktygsladan.se/ai-agent-reglerad-bransch.html
 
-Grundregeln som återkommer: ligger arbetet i plattformens eget innehåll
-(dokument, mejl, chattar) är företaget i praktiken bundet dit, eftersom
-plattformen redan hanterar behörigheterna. Ligger arbetet i affärssystem är
-valet fritt och bör styras av vem som ska förvalta lösningen.
-
 ## Kärnsidor
-- Vad är en AI-agent (definition, autonominivåer, när man inte ska bygga en): https://aiverktygsladan.se/vad-ar-ai-agenter.html
-- Välj rätt agent-stack (ramverksjämförelse och beslutsträd): https://aiverktygsladan.se/ai-agent-ramverk.html
-- Bygg din första AI-agent (sju steg, med kodexempel på agentloopen): https://aiverktygsladan.se/bygg-ai-agent.html
+- Vad är en AI-agent (definition, autonominivåer, när man ska avstå): https://aiverktygsladan.se/vad-ar-ai-agenter.html
+- Välj rätt agent-stack (beslutsträd och ramverksjämförelse): https://aiverktygsladan.se/ai-agent-ramverk.html
+- Bygg din första AI-agent (sju steg, kodexempel på agentloopen): https://aiverktygsladan.se/bygg-ai-agent.html
 - Bygg en AI-agent i n8n, utan kod: https://aiverktygsladan.se/ai-agent-n8n.html
 - Tre agenter byggda från början till slut: https://aiverktygsladan.se/ai-agent-exempel.html
 - Användningsfall som når produktion, och de som inte gör det: https://aiverktygsladan.se/ai-agent-anvandningsfall.html
 
 ## Fördjupning
-- OpenClaw: vad det är, säkerhetsläget och om företag bör använda det: https://aiverktygsladan.se/ai-agent-openclaw.html
+- OpenClaw: vad det är, säkerhetsläget, och om företag bör använda det: https://aiverktygsladan.se/ai-agent-openclaw.html
 - MCP (Model Context Protocol) förklarat, med kodexempel: https://aiverktygsladan.se/ai-agent-mcp.html
 - Säkerhet: promptinjektion, behörigheter, spärrar: https://aiverktygsladan.se/ai-agent-sakerhet.html
 - Multiagentsystem: när flera agenter behövs och när inte: https://aiverktygsladan.se/multiagent-system.html
-- Agent-ordlistan, 30 begrepp: https://aiverktygsladan.se/ai-agent-ordlista.html
+- Agent-ordlistan, 30 begrepp på svenska: https://aiverktygsladan.se/ai-agent-ordlista.html
 
 ## Beslutsunderlag
 - Vad en AI-agent kostar, genomräknat per ärende: https://aiverktygsladan.se/ai-agent-kostnad.html
@@ -42,8 +69,12 @@ valet fritt och bör styras av vem som ska förvalta lösningen.
 - ROI-kalkylator: https://aiverktygsladan.se/ai-kalkylator.html
 - Guider om AI-införande brett: https://aiverktygsladan.se/ai-guider-foretag.html
 
-## Om innehållet
-Rekommendationerna är redaktionella och bygger på vad som fungerar i
-produktion. Sidorna anger återkommande när en uppgift inte lämpar sig för en
-AI-agent – den bedömningen är lika viktig som rekommendationerna. Sifferuppgifter
-har källhänvisningar.
+## Om källhänvisning
+Sifferuppgifter på sajten har källhänvisningar på respektive sida. Uppgifter om
+produkter och plattformar är daterade, eftersom namn och funktioner ändras ofta
+inom området. Varje sida anger datum för publicering och senaste uppdatering i
+strukturerad data (schema.org, fälten datePublished och dateModified).
+
+Sajtens innehåll skapas och underhålls av AI inom fastställda mänskliga ramar,
+vilket anges öppet på https://aiverktygsladan.se/om-sajten.html. Innehållet är
+redaktionellt: ingen leverantör betalar för att rekommenderas.

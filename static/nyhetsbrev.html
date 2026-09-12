@@ -21,7 +21,7 @@
     <meta property="og:locale" content="sv_SE">
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/site.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -30,6 +30,93 @@
         .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
     </style>
+    <!-- @seo -->
+    <meta property="og:site_name" content="AI-Verktygslådan">
+    <meta property="og:image" content="https://aiverktygsladan.se/static/og/nyhetsbrev.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Veckans AI-verktyg – nyhetsbrev för svenska företag">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Veckans AI-verktyg – nyhetsbrev för svenska företag">
+    <meta name="twitter:description" content="Ett granskat AI-verktyg i veckan, med pris, svenskt språkstöd och GDPR-läge. Gratis nyhetsbrev för svenska företag och entreprenörer.">
+    <meta name="twitter:image" content="https://aiverktygsladan.se/static/og/nyhetsbrev.jpg">
+    <link rel="alternate" hreflang="sv-SE" href="https://aiverktygsladan.se/nyhetsbrev.html">
+    <link rel="alternate" hreflang="x-default" href="https://aiverktygsladan.se/nyhetsbrev.html">
+    <meta name="article:published_time" content="2026-07-25">
+    <meta name="article:modified_time" content="2026-09-12">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aiverktygsladan.se/#organization",
+      "name": "Adviseo",
+      "url": "https://aiverktygsladan.se",
+      "description": "Driver AI-Verktygslådan, en svensk kunskapsbank om att bygga och driftsätta AI-agenter.",
+      "knowsAbout": [
+        "AI-agenter",
+        "Agentic AI",
+        "Model Context Protocol",
+        "LangGraph",
+        "n8n",
+        "OpenClaw",
+        "Microsoft Copilot Studio",
+        "Retrieval-Augmented Generation",
+        "Promptinjektion",
+        "EU AI Act",
+        "GDPR",
+        "AI-implementation"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aiverktygsladan.se/#website",
+      "url": "https://aiverktygsladan.se",
+      "name": "AI-Verktygslådan",
+      "description": "Sveriges mest lättillgängliga guide till att bygga och använda AI-agenter.",
+      "inLanguage": "sv-SE",
+      "publisher": {
+        "@id": "https://aiverktygsladan.se/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aiverktygsladan.se/nyhetsbrev.html#webpage",
+      "url": "https://aiverktygsladan.se/nyhetsbrev.html",
+      "name": "Veckans AI-verktyg – nyhetsbrev för svenska företag",
+      "description": "Ett granskat AI-verktyg i veckan, med pris, svenskt språkstöd och GDPR-läge. Gratis nyhetsbrev för svenska företag och entreprenörer.",
+      "inLanguage": "sv-SE",
+      "isPartOf": {
+        "@id": "https://aiverktygsladan.se/#website"
+      },
+      "datePublished": "2026-07-25",
+      "dateModified": "2026-09-12",
+      "breadcrumb": {
+        "@id": "https://aiverktygsladan.se/nyhetsbrev.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aiverktygsladan.se/nyhetsbrev.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hem",
+          "item": "https://aiverktygsladan.se/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Veckans AI-verktyg – nyhetsbrev för svenska företag"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+    <!-- /@seo -->
 </head>
 <body class="bg-slate-50 text-slate-900">
 
@@ -71,7 +158,14 @@
         <a href="/ai-agent-ordlista.html" class="block font-medium hover:text-indigo-600 transition-colors">Ordlista</a>
         <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp att bygga →</a>
     </div>
-    <!-- /@nav -->    <header class="py-20 px-6 max-w-3xl mx-auto text-center">
+    <!-- /@nav -->
+    <!-- @breadcrumbs -->
+    <nav aria-label="Brödsmulor" class="max-w-7xl mx-auto px-6 pt-6 text-sm text-slate-500 flex flex-wrap gap-2 items-center">
+        <a href="/" class="hover:text-indigo-600 transition-colors">Hem</a>
+        <span class="text-slate-300" aria-hidden="true">/</span>
+        <span class="text-slate-700">Veckans AI-verktyg – nyhetsbrev för svenska företag</span>
+    </nav>
+    <!-- /@breadcrumbs -->    <header class="py-20 px-6 max-w-3xl mx-auto text-center">
         <div class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
             <span class="w-2 h-2 bg-indigo-500 rounded-full animate-pulse"></span>
             Varje torsdag · Gratis

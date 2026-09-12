@@ -16,6 +16,7 @@ en gång har gått sönder i produktion utan att någon märkte det:
 * **JSON-validitet** – schema.json och sidornas JSON-LD läses av sökmotorer.
 * **Varumärkesnamn** – sajten hette fel namn i förhållande till domänen.
 * **Omdirigeringar** – REDIRECTS i main.py pekade på sidor som tagits bort.
+* **Tillgångar** – delningsbilder som saknades på disk, och CSS som inte byggts.
 """
 import json
 import pathlib
@@ -206,6 +207,35 @@ def check_redirects(errors):
                           f"som inte finns")
 
 
+def check_assets(errors, warnings):
+    """Kontrollerar att det SEO-blocket pekar på faktiskt finns.
+
+    og:image byggs av scripts/build_og.py och CSS:en av `make css`. Inget av
+    dem körs i CI, så utan den här kontrollen kan en delning peka på en 404
+    eller en sida sakna sina stilar utan att något syns förrän i produktion.
+    """
+    css = STATIC / "css" / "site.css"
+    if not css.exists():
+        errors.append("static/css/site.css saknas – kör `make css`")
+    elif css.stat().st_size < 10_000:
+        errors.append(f"static/css/site.css är bara {css.stat().st_size} byte "
+                      f"– byggdes den mot rätt sidor? Kör `make css`")
+
+    for p in pages():
+        s = p.read_text(encoding="utf-8")
+        if "cdn.tailwindcss.com" in s:
+            errors.append(f"{p.name}: laddar fortfarande Tailwind från CDN "
+                          f"(render-blockerande) – kör `python3 scripts/seo.py`")
+        m = re.search(r'<meta property="og:image" content="[^"]*?(/static/og/[^"]+)"', s)
+        if not m:
+            errors.append(f"{p.name}: saknar og:image")
+        elif not pathlib.Path(m.group(1).lstrip("/")).exists():
+            errors.append(f"{p.name}: og:image pekar på {m.group(1)} "
+                          f"som inte finns – kör `make og`")
+        if "dateModified" not in s:
+            errors.append(f"{p.name}: saknar dateModified i schemat")
+
+
 def check_robots(errors):
     path = STATIC / "robots.txt"
     if not path.exists():
@@ -230,6 +260,7 @@ def main():
     check_json(errors)
     check_brand(errors)
     check_redirects(errors)
+    check_assets(errors, warnings)
     check_robots(errors)
 
     for w in warnings:

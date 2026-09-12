@@ -65,3 +65,27 @@ operationsbot, nej som produktionsagent i verksamheten. Säkerhetsavsnittet
 bygger på publicerade CVE:er och exponeringsmätningar från 2026 med källor.
 Siffrorna är ögonblicksbilder från början av 2026 och 2.0 kom i augusti —
 det står i texten, men kontrollera vid uppdatering.
+
+## 2026-09-12 — Teknisk SEO och AEO
+Revisionen visade sex luckor som fanns på samtliga 31 sidor: og:image,
+Twitter-kort, BreadcrumbList, datePublished, dateModified och Article-entitet.
+Organization fanns på två sidor av 31.
+
+Åtgärdat som ett byggsteg (`scripts/seo.py`), inte som 31 handredigeringar.
+Datumen hämtas ur git-historiken så att de inte kan bli osanna — därför kräver
+CI numera `fetch-depth: 0`.
+
+Tailwind flyttades från cdn.tailwindcss.com till en byggd `static/css/site.css`
+(26 kB minifierad). CDN:t kompilerade CSS i webbläsaren vid varje sidvisning,
+vilket är render-blockerande. Bieffekt: sajten går nu att rendera lokalt utan
+nätverk, vilket gjorde det möjligt att visuellt granska den för första gången.
+
+31 delningsbilder renderade som JPEG (~55 kB styck). PNG gav 140 kB styck utan
+synlig skillnad.
+
+AEO: extraherbart kortsvar högst upp på varje innehållssida, och llms.txt
+skrevs om till att innehålla sajtens faktiska kärnpåståenden i stället för bara
+en länklista.
+
+Kontrollerna i check_site.py utökades med check_assets() — verifierat att den
+fångar både saknad delningsbild och obyggd CSS.
