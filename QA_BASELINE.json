@@ -1,7 +1,15 @@
 {
   "site": "https://aiverktygsladan.se",
   "pages_crawled": 51,
-  "dead_internal_links": [],
+  "dead_internal_links": [
+    {
+      "url": "https://aiverktygsladan.se/cdn-cgi/l/email-protection",
+      "status": 404,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-sakerhet.html"
+      ]
+    }
+  ],
   "dead_assets": [],
   "dead_external_links": [
     {
@@ -41,7 +49,12 @@
       ]
     }
   ],
-  "error_pages": [],
+  "error_pages": [
+    {
+      "url": "https://aiverktygsladan.se/cdn-cgi/l/email-protection",
+      "status": 404
+    }
+  ],
   "structural_issues": [
     {
       "url": "https://aiverktygsladan.se/ai-guider-foretag.html",
