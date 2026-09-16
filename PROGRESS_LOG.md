@@ -1,3 +1,4 @@
+2026-09-16 | INDEXERING | Bekräftade indexering | klick 0 -> 10 | nästa: Mäta vilka termer som får visningar
 2026-09-09 | DISTRIBUTION | Lade till delningssektion på ai-svenska-foretag-rapport för LinkedIn | klick 0 -> 25 | nästa: Hitta 3 relevanta svenska LinkedIn-grupper för distribution
 2026-09-02 | KONVERTERING & LEADS | Länkat in B2B-rapport och leadflow från nyckelsidor | klick 0 -> 50 | nästa: Driva extern trafik till B2B-rapporten
 2026-08-26 | KONVERTERING & LEADS | Lade till B2B-leadformulär på AI Svenska Företag Rapport | klick 1 -> 50 | nästa: Länka konverterande sidor från toppsidor
