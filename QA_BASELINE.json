@@ -1,4 +1,60 @@
 {
-  "hard_findings": [],
-  "count": 0
+  "site": "https://aiverktygsladan.se",
+  "pages_crawled": 51,
+  "dead_internal_links": [],
+  "dead_assets": [],
+  "dead_external_links": [
+    {
+      "url": "https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol",
+      "status": 403,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-mcp.html",
+        "https://aiverktygsladan.se/ai-agent-ramverk.html"
+      ]
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/microsoft365copilotblog/mitigate-oversharing-to-govern-microsoft-365-copilot-and-agents/4448744",
+      "status": 400,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-microsoft-365.html"
+      ]
+    },
+    {
+      "url": "https://www.mintmcp.com/blog/secure-openclaw-enterprise",
+      "status": 403,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-openclaw.html"
+      ]
+    },
+    {
+      "url": "https://langfuse.com/blog/2025-03-19-ai-agent-comparison",
+      "status": 403,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-ramverk.html"
+      ]
+    },
+    {
+      "url": "https://www.forbes.com/sites/robertszczerba/2026/07/07/why-40-of-agentic-ai-projects-may-be-canceled-by-2027/",
+      "status": 403,
+      "referenced_by": [
+        "https://aiverktygsladan.se/ai-agent-ramverk.html"
+      ]
+    }
+  ],
+  "error_pages": [],
+  "structural_issues": [
+    {
+      "url": "https://aiverktygsladan.se/ai-guider-foretag.html",
+      "issues": [
+        "duplicate content links: {'https://aiverktygsladan.se/ai-guider-foretag.html': 3}"
+      ]
+    },
+    {
+      "url": "https://aiverktygsladan.se/implementera-ai-guide.html",
+      "issues": [
+        "duplicate content links: {'https://aiverktygsladan.se/implementera-ai-guide.html': 3}"
+      ]
+    }
+  ],
+  "missing_footer_or_nav": []
 }
