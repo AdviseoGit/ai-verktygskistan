@@ -65,6 +65,7 @@ PARENT = {
     "ai-sakerhet-gdpr": ("Guider", "/ai-guider-foretag.html"),
     "implementera-ai-guide": ("Guider", "/ai-guider-foretag.html"),
     "ai-kalkylator": ("Guider", "/ai-guider-foretag.html"),
+    "ai-agent-kostnad-smabolag": ("Guider", "/ai-guider-foretag.html"),
 }
 
 # Sidor som är verktyg eller formella dokument, inte artiklar.

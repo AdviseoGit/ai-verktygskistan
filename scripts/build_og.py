@@ -73,7 +73,7 @@ def bygg(sidor):
     from playwright.sync_api import sync_playwright
     UT.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as pw:
-        webblasare = pw.chromium.launch(executable_path="/opt/pw-browsers/chromium")
+        webblasare = pw.chromium.launch()
         flik = webblasare.new_page(viewport={"width": 1200, "height": 630})
         for sida in sidor:
             html = sida.read_text(encoding="utf-8")
