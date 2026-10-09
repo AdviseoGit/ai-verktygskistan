@@ -274,3 +274,6 @@ Sajten har en konverteringsväg, inte flera:
 
 Annonsförsäljning och affiliate-märkning i katalogen är borttaget tillsammans
 med katalogen. Det redaktionella innehållet är inte till salu.
+
+## Kontaktadress
+- Publik kontaktadress på sajten är **info@aiverktygsladan.se** (vidarebefordras till ägaren via Cloudflare Email Routing). Skriv aldrig ut simon@adviseo.se på sidor som besökare ser; den används bara för interna notiser (t.ex. LEAD_NOTIFY_EMAIL).
