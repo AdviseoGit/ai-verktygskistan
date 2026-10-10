@@ -68,6 +68,7 @@ Det här är sajtens hållning. Den är avsiktligt mer återhållsam än bransch
 - AI-agenter, GDPR och AI-akten: https://aiverktygsladan.se/ai-agent-gdpr.html
 - ROI-kalkylator: https://aiverktygsladan.se/ai-kalkylator.html
 - Guider om AI-införande brett: https://aiverktygsladan.se/ai-guider-foretag.html
+- AI-agent för kontraktsgranskning på advokatbyrå (plattformar, due diligence, kalkyl): https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html
 
 ## Om källhänvisning
 Sifferuppgifter på sajten har källhänvisningar på respektive sida. Uppgifter om

@@ -1,3 +1,4 @@
+2026-10-10 | NYTT INNEHÅLL | Skapade ai-kontraktsgranskning-advokatbyra.html (AI-plattformar för jurister, due diligence, räkneexempel 100 h × 30-40 % × 1 800 kr, FAQPage-schema, formulär mot /api/lead/b2b) + internlänkar från index, reglerad-bransch, gdpr, bygga-hjalp, sitemap, llms.txt | SEO för "AI-plattformar för jurister" och "kontraktsgranskning due diligence" | nästa: Mäta indexering och klick för juristermsökning
 2026-09-16 | INDEXERING | Bekräftade indexering | klick 0 -> 10 | nästa: Mäta vilka termer som får visningar
 2026-09-09 | DISTRIBUTION | Lade till delningssektion på ai-svenska-foretag-rapport för LinkedIn | klick 0 -> 25 | nästa: Hitta 3 relevanta svenska LinkedIn-grupper för distribution
 2026-09-02 | KONVERTERING & LEADS | Länkat in B2B-rapport och leadflow från nyckelsidor | klick 0 -> 50 | nästa: Driva extern trafik till B2B-rapporten

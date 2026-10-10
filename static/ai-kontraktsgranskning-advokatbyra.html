@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0VZV9RE3PN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0VZV9RE3PN');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl | AI-Verktygslådan</title>
+    <link rel="stylesheet" href="/static/css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- SEO -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning? En agent förgranskar mot checklista och flaggar avvikelser – juristen beslutar alltid.">
+    <link rel="canonical" href="https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html">
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl">
+    <meta property="og:description" content="Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning? En agent förgranskar mot checklista och flaggar avvikelser – juristen beslutar alltid.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html">
+    <meta property="og:locale" content="sv_SE">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vilka AI-plattformar för jurister hjälper till att snabba upp kontraktsgranskning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De plattformar som i dag visar tydligast nytta för advokatbyråer är Harvey (byggt ovanpå Claude, fokus på juridisk granskning och due diligence), Luminance (LLM-baserat, stark på klausulextraktion och avvikelseflaggning mot klausulbibliotek) och Spellbook (integrerat i Word, nära advokatens arbetsflöde). Gemensamt för alla tre: de förgranskar mot en mall eller ett klausulbibliotek och presenterar avvikelserna för juristen – de fattar inga beslut. En mer flexibel lösning är att bygga en agent med Claude Opus 4 eller liknande direkt mot era egna mallar och checklistor, vilket ger full kontroll men kräver mer implementationsarbete. Oavsett plattform är det förgranskningen som är agentens uppgift – den juridiska bedömningen tillhör alltid juristen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilken programvara för kontraktsgranskning är bäst för due diligence?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För due diligence-förgranskning av ett dataroom handlar valet om volym och integrationsbehov. Harvey och Luminance är beprövade för just due diligence och hanterar stora dokumentvolymer med strukturerade avvikelserapporter. För byråer som vill använda egna mallar och checklistor fungerar en skräddarsydd agent med ett LLM och ett klausulbibliotek väl. Oavsett val är agentens uppgift att leverera en strukturerad flagglista – den kvalificerade juridiska bedömningen och ansvaret stannar hos juristen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan en AI-agent ersätta juristen vid kontraktsgranskning?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. En AI-agent ska förganska – läsa dokument mot en checklista eller ett klausulbibliotek och flagga avvikelser. Juristen granskar flaggningarna, bedömer rättsläget, väger mot klientens intressen och fattar beslut. Agenten tar bort de repetitiva läsningarna; juristen tillför omdömet och ansvarar för rådet. Denna rollfördelning är inte bara lämplig – den måste vara konstruktionsmässigt säkerställd, inte bara en instruktion."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur hanteras advokatsekretess och GDPR när en AI-agent läser kontrakt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kontraktsdata innehåller ofta personuppgifter och kan vara advokatsekretessbelagd. Det kräver ett personuppgiftsbiträdesavtal med modelleverantören, EU-region för inferens, ingen träning på data och strukturerad loggning med definierad gallringstid. Kontrollera att leverantörens avtal täcker er faktiska konfiguration – marknadsföringen stämmer inte alltid med det faktiska dataflödet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad kostar en förstudie för AI-agent för kontraktsgranskning på advokatbyrå?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI-Verktygslådan (drivet av Adviseo AI) erbjuder en skriftlig förstudie för 15 000 kr exklusive moms. Den innehåller en bedömning av om en agent passar er byrås arbetsflöde och volym, vilken stack som lämpar sig och vad som konkret krävs för att nå produktion. Inte bygget – bara underlaget ni behöver för att fatta ett välgrundat beslut. Levereras skriftligt inom fem arbetsdagar, betalning efter leverans."
+      }
+    }
+  ]
+}
+    </script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(99,102,241,0.12); }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .prose-block p { margin-bottom: 1rem; line-height: 1.75; }
+        .prose-block ul { margin-bottom: 1rem; }
+    </style>
+    <!-- @seo -->
+    <meta property="og:site_name" content="AI-Verktygslådan">
+    <meta property="og:image" content="https://aiverktygsladan.se/static/og/ai-kontraktsgranskning-advokatbyra.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl">
+    <meta name="twitter:description" content="Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning? En agent förgranskar mot checklista och flaggar avvikelser – juristen beslutar alltid.">
+    <meta name="twitter:image" content="https://aiverktygsladan.se/static/og/ai-kontraktsgranskning-advokatbyra.jpg">
+    <link rel="alternate" hreflang="sv-SE" href="https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html">
+    <link rel="alternate" hreflang="x-default" href="https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html">
+    <meta name="article:published_time" content="2026-10-10">
+    <meta name="article:modified_time" content="2026-10-10">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://aiverktygsladan.se/#organization",
+      "name": "Adviseo",
+      "url": "https://aiverktygsladan.se",
+      "description": "Driver AI-Verktygslådan, en svensk kunskapsbank om att bygga och driftsätta AI-agenter.",
+      "knowsAbout": [
+        "AI-agenter",
+        "Agentic AI",
+        "Model Context Protocol",
+        "LangGraph",
+        "n8n",
+        "OpenClaw",
+        "Microsoft Copilot Studio",
+        "Retrieval-Augmented Generation",
+        "Promptinjektion",
+        "EU AI Act",
+        "GDPR",
+        "AI-implementation"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://aiverktygsladan.se/#website",
+      "url": "https://aiverktygsladan.se",
+      "name": "AI-Verktygslådan",
+      "description": "Sveriges mest lättillgängliga guide till att bygga och använda AI-agenter.",
+      "inLanguage": "sv-SE",
+      "publisher": {
+        "@id": "https://aiverktygsladan.se/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#webpage",
+      "url": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html",
+      "name": "AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl",
+      "description": "Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning? En agent förgranskar mot checklista och flaggar avvikelser – juristen beslutar alltid.",
+      "inLanguage": "sv-SE",
+      "isPartOf": {
+        "@id": "https://aiverktygsladan.se/#website"
+      },
+      "datePublished": "2026-10-10",
+      "dateModified": "2026-10-10",
+      "breadcrumb": {
+        "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hem",
+          "item": "https://aiverktygsladan.se/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl"
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#article",
+      "isPartOf": {
+        "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://aiverktygsladan.se/ai-kontraktsgranskning-advokatbyra.html#webpage"
+      },
+      "headline": "AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl",
+      "description": "Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning? En agent förgranskar mot checklista och flaggar avvikelser – juristen beslutar alltid.",
+      "inLanguage": "sv-SE",
+      "datePublished": "2026-10-10",
+      "dateModified": "2026-10-10",
+      "wordCount": 2736,
+      "author": {
+        "@id": "https://aiverktygsladan.se/#organization"
+      },
+      "publisher": {
+        "@id": "https://aiverktygsladan.se/#organization"
+      },
+      "image": "https://aiverktygsladan.se/static/og/ai-kontraktsgranskning-advokatbyra.jpg"
+    }
+  ]
+}
+    </script>
+    <!-- /@seo -->
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- @nav -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center gap-4">
+            <a href="/" class="text-xl font-extrabold tracking-tight shrink-0">
+                AI-<span class="text-indigo-600">Verktygslådan</span>
+            </a>
+            <div class="hidden lg:flex space-x-6 items-center">
+                <a href="/lar-dig-ai-agenter.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Lär dig</a>
+                <a href="/ai-agent-ramverk.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+                <a href="/bygg-ai-agent.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Bygg</a>
+                <a href="/ai-agent-vagval.html" class="text-sm font-medium hover:text-indigo-600 transition-colors">Vad passar oss?</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="/bygga-ai-agent-hjalp.html" class="hidden sm:inline-flex bg-indigo-600 text-white text-sm font-bold px-5 py-2.5 rounded-xl hover:bg-indigo-700 transition-colors">Få hjälp</a>
+                <button id="mobile-menu-btn" type="button" class="lg:hidden text-slate-600 focus:outline-none" aria-label="Öppna meny" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden flex-col space-y-3 py-4 px-6 bg-white border-b border-slate-200">
+        <a href="/lar-dig-ai-agenter.html" class="block font-bold text-indigo-600">Lär dig AI-agenter</a>
+        <a href="/ai-agent-vagval.html" class="block font-bold text-indigo-600">Vad passar oss?</a>
+        <a href="/vad-ar-ai-agenter.html" class="block font-medium hover:text-indigo-600 transition-colors">Vad är en AI-agent</a>
+        <a href="/ai-agent-ramverk.html" class="block font-medium hover:text-indigo-600 transition-colors">Välj stack</a>
+        <a href="/bygg-ai-agent.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg din första agent</a>
+        <a href="/ai-agent-n8n.html" class="block font-medium hover:text-indigo-600 transition-colors">Bygg i n8n</a>
+        <a href="/ai-agent-openclaw.html" class="block font-medium hover:text-indigo-600 transition-colors">OpenClaw</a>
+        <a href="/bygga-ai-agent-hjalp.html" class="block font-bold text-indigo-600">Få hjälp →</a>
+    </div>
+    <!-- /@nav -->
+    <!-- @breadcrumbs -->
+    <nav aria-label="Brödsmulor" class="max-w-7xl mx-auto px-6 pt-6 text-sm text-slate-500 flex flex-wrap gap-2 items-center">
+        <a href="/" class="hover:text-indigo-600 transition-colors">Hem</a>
+        <span class="text-slate-300" aria-hidden="true">/</span>
+        <span class="text-slate-700">AI-agent för kontraktsgranskning på advokatbyrå – plattformar och kalkyl</span>
+    </nav>
+    <!-- /@breadcrumbs -->
+
+    <header class="py-20 px-6 max-w-4xl mx-auto text-center fade-in">
+        <div class="inline-block bg-indigo-50 text-indigo-700 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6">Advokatbyrå 5&ndash;50 anst. &middot; Oktober 2026</div>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight leading-tight">AI-agent för <span class="gradient-text">kontraktsgranskning</span> på advokatbyrå</h1>
+        <p class="text-xl text-slate-600 leading-relaxed">Vilka AI-plattformar för jurister snabbar upp kontraktsgranskning &ndash; och vilken programvara passar bäst för due diligence? Svaret är: en agent som förgranskar mot er checklista och flaggar avvikelser. Juristen bedömer, beslutar och ansvarar. Agenten tar bort de repetitiva läsningarna; den ersätter inte juristens omdöme.</p>
+    </header>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl border-2 border-indigo-200 p-8 not-prose">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-indigo-600 mb-3">Kort svar</h2>
+            <p class="text-xl font-bold leading-snug mb-4 text-slate-900">En AI-agent lämpar sig utmärkt för förgranskning av kontrakt mot er mall eller playbook. Den flaggar avvikelser, extraherar klausuler och sammanfattar. Juristen fattar alla beslut. Det är den enda rollfördelning som fungerar i praktiken &ndash; och den enda som är juridiskt och etiskt försvarbar.</p>
+            <p class="text-slate-600 leading-relaxed">De plattformar som i dag visar tydligast nytta: Harvey, Luminance och Spellbook. Alla tre förgranskar, ingen beslutar. En skräddarsydd agent mot era egna mallar är ett alternativ som ger mer kontroll men kräver mer implementationsarbete.</p>
+        </div>
+    </section>
+
+    <section class="px-6 pb-4">
+        <div class="max-w-3xl mx-auto bg-slate-100 border-l-4 border-slate-400 p-6 rounded-r-2xl">
+            <p class="text-slate-700 leading-relaxed text-sm"><strong>Detta är inte juridisk rådgivning.</strong> Sidan beskriver hur AI-agenter fungerar i kontraktsgranskning och vad som krävs för att använda dem ansvarsfullt. Beslut om klientuppdrag, sekretess och regelefterlevnad fattas av ansvarig jurist.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Vad en AI-agent kan göra</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Fem uppgifter som fungerar i produktion för advokatbyråer och andra juridiska team.</p>
+            <div class="space-y-4">
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">1. Klausulextraktion</h3>
+                    <p class="text-slate-600 leading-relaxed">Agenten läser ett kontrakt och extraherar specificerade klausuler &ndash; ansvarsbegränsning, force majeure, uppsägningstid, sekretess &ndash; till en strukturerad rapport. Uppgiften är väldefinierad, volymen hög nog, och resultatet är lätt att verifiera. Det är det bästa utgångsläget för ett agentprojekt.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">2. Avvikelse mot mall eller playbook</h3>
+                    <p class="text-slate-600 leading-relaxed">Agenten jämför ett mottaget kontrakt mot er standardmall eller förhandlingsplaybook och flaggar varje avvikelse med hänvisning till vilken klausul som berörs. Juristen ser omedelbart vad som avviker och var förhandlingen bör fokusera. Agenten vet inte <em>varför</em> en avvikelse spelar roll &ndash; det avgör juristen.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">3. Sammanfattning av kontrakt</h3>
+                    <p class="text-slate-600 leading-relaxed">En strukturerad sammanfattning av parternas skyldigheter, kritiska datum, tvistlösningsklausuler och riskpunkter. Användbar som första orientering i ett nytt avtal eller som underlag för klientkommunikation. Sammanfattningen ersätter inte granskningen &ndash; den gör granskningen snabbare.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">4. Due diligence-förgranskning av dataroom</h3>
+                    <p class="text-slate-600 leading-relaxed">Vid en företagstransaktion kan ett dataroom innehålla hundratals avtal. Agenten betar av dessa mot en due diligence-checklista och producerar en strukturerad flagglista: vilka dokument som saknar klausul X, vilka som avviker från standard Y, vilka som kräver juristgranskning och vilka som kan bockas av. Juristen lägger sin tid på flaggningarna, inte på att läsa avtal som stämmer.</p>
+                </div>
+                <div class="bg-white p-7 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-bold mb-2">5. Versionsjämförelse</h3>
+                    <p class="text-slate-600 leading-relaxed">Agenten jämför en ny version av ett kontrakt mot föregående version och markerar alla ändringar med kontext &ndash; inte bara den rödmarkerade diffvyn utan en läsbar sammanfattning av vad som faktiskt förändrats och vad det innebär för riskbilden. Sparar tid i långa förhandlingsprocesser med många versioner.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Vad agenten inte kan &ndash; och inte ska &ndash; göra</h2>
+            <p class="text-slate-600 leading-relaxed mb-8">Lika viktig som listan ovan. En agent som används utanför sitt kompetensområde är inte bara ineffektiv &ndash; den är en risk.</p>
+            <div class="grid md:grid-cols-2 gap-5 mb-8">
+                <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-3 text-rose-900">Agenten ska inte</h3>
+                    <ul class="space-y-2 text-slate-700 text-sm list-disc pl-5">
+                        <li>Bedöma rättsläget &ndash; vad en klausul <em>innebär</em> juridiskt avgörs av juristen, inte av en språkmodell</li>
+                        <li>Ta ansvar för ett råd &ndash; ansvaret för klientrelationen och rådet tillhör juristen</li>
+                        <li>Fatta beslut om att godkänna eller avfärda ett avtal</li>
+                        <li>Hantera konfidentiella uppgifter utan personuppgiftsbiträdesavtal och EU-region på plats</li>
+                        <li>Arbeta utan mänsklig kontroll &ndash; en jurist ska godkänna utfallet</li>
+                    </ul>
+                </div>
+                <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-7">
+                    <h3 class="text-xl font-bold mb-3 text-amber-900">Teknisk varning: hallucinerade hänvisningar</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-3">Språkmodeller kan generera paragrafnummer, domar och lagstiftning som inte existerar eller inte stämmer. Det är ett känt problem som inte är löst. Agenten ska inte användas för att hitta rättsliga stöd &ndash; den ska flagga avvikelser mot era egna mallar och checklistor, inte referera till externt rättsmaterial.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Verifiera alltid eventuella hänvisningar manuellt. Bygg er agent så att den aldrig uppmanas att hänvisa till lagar eller prejudikat &ndash; ta bort det från uppgiftsbeskrivningen.</p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-slate-200 rounded-3xl p-8">
+                <h3 class="text-xl font-bold mb-4 text-white">När du ska avstå</h3>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <span class="text-rose-400 font-bold shrink-0">&#9632;</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Volymen är för låg</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">Granskar byrån färre än tio avtal i månaden av samma typ räknar ett agentprojekt sannolikt inte hem. Manuell hantering är billigare och mer flexibel vid liten volym.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-rose-400 font-bold shrink-0">&#9632;</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Er mall eller checklista är inte nedskriven</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">En agent som förgranskar mot "vad vi brukar titta på" fungerar inte. Förgranskning kräver att byrån formulerar sin playbook explicit. Om den inte finns &ndash; skriv den först. Det arbetet är värdefullt oavsett om agenten byggs.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="amber-400 font-bold shrink-0 text-amber-400">&#9632;</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Kontrakten är för heterogena</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">En agent som granskar kommersiella hyresavtal fungerar inte lika bra för M&amp;A-dokumentation. Börja med en avgränsad avtalstyp &ndash; ett use case, en checklista.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-amber-400 font-bold shrink-0">&#9632;</span>
+                        <div>
+                            <p class="font-semibold text-white mb-1">Ingen i byrån kan förvalta lösningen</p>
+                            <p class="text-slate-400 text-sm leading-relaxed">En agent som ingen förstår slutar fungera nästa gång en integration ändras eller modellen byts ut. Antingen utbildar ni en person att äga den, eller räknar ni in löpande konsultstöd i kalkylen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Sekretess och GDPR</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">Kontraktsdata innehåller nästan alltid personuppgifter och kan vara advokatsekretessbelagd. Det kräver ett <strong>personuppgiftsbiträdesavtal</strong> med modelleverantören, inferens i <strong>EU-region</strong>, ingen träning på er data och loggning med definierad gallringstid &ndash; loggen är i sig en personuppgiftsbehandling.</p>
+            <p class="text-slate-600 leading-relaxed">Kontrollera att leverantörens avtal täcker er faktiska konfiguration. Läs mer om GDPR-kraven för agenter på <a href="/ai-agent-gdpr.html" class="text-indigo-600 font-semibold underline">GDPR &amp; AI-akten</a>.</p>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-3">Räkneexempel: vad sparar förgranskning?</h2>
+            <p class="text-slate-600 leading-relaxed mb-3">Det här är ett räkneexempel med antaganden &ndash; inte en lovad besparing. Byt in era egna siffror i steg 1 och se vad som gäller just er byrå.</p>
+            <div class="bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 mb-8 text-sm text-amber-800 font-semibold">Antaganden nedan är markerade med kursiv. Kontrollera dem mot er faktiska situation.</div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 mb-6">
+                <h3 class="font-bold text-lg mb-4">Steg 1: Grunddata</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[480px]">
+                        <thead>
+                            <tr class="bg-slate-50 text-left">
+                                <th class="p-3 font-bold border-b border-slate-200">Parameter</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Exempelvärde</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Er siffra</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-3">Antal avtal som granskas per månad</td>
+                                <td class="p-3 font-semibold">40 avtal</td>
+                                <td class="p-3 text-slate-400">___</td>
+                            </tr>
+                            <tr class="border-b border-slate-100 bg-slate-50/50">
+                                <td class="p-3">Genomsnittlig granskningstid per avtal</td>
+                                <td class="p-3 font-semibold">2,5 h</td>
+                                <td class="p-3 text-slate-400">___</td>
+                            </tr>
+                            <tr class="bg-indigo-50/60 font-bold">
+                                <td class="p-3">Total granskningstid per månad</td>
+                                <td class="p-3">40 &times; 2,5 = <strong>100 h/månad</strong></td>
+                                <td class="p-3 text-slate-400">___</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 mb-6">
+                <h3 class="font-bold text-lg mb-4">Steg 2: Hur mycket sparar förgranskning?</h3>
+                <p class="text-slate-600 leading-relaxed mb-4"><em>Antagande: förgranskning mot checklista minskar juristens granskningstid per avtal med 30&ndash;40&nbsp;%. Det är en erfarenhetsbild, inte en garanterad siffra. Resultatet beror på avtalets komplexitet, hur väl er checklista är definierad och hur mycket tid juristen i dag lägger på mekaniska läsningar kontra faktisk bedömning.</em></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[480px]">
+                        <thead>
+                            <tr class="bg-slate-50 text-left">
+                                <th class="p-3 font-bold border-b border-slate-200">Scenario</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Besparing</th>
+                                <th class="p-3 font-bold border-b border-slate-200">Frigjord tid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-100">
+                                <td class="p-3">Lägre än förväntat (30&nbsp;%)</td>
+                                <td class="p-3">100 h &times; 0,30</td>
+                                <td class="p-3 font-semibold">30 h/månad</td>
+                            </tr>
+                            <tr class="bg-indigo-50/60">
+                                <td class="p-3">Högre än förväntat (40&nbsp;%)</td>
+                                <td class="p-3">100 h &times; 0,40</td>
+                                <td class="p-3 font-semibold">40 h/månad</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-slate-900 text-slate-200 rounded-3xl p-8 mb-6">
+                <h3 class="font-bold text-lg mb-4 text-white">Steg 3: Vad är frigjord tid värd?</h3>
+                <p class="text-slate-400 leading-relaxed mb-4"><em>Antagande: debiterbart timpris 1&nbsp;800 kr. Byt in er faktiska siffra.</em></p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse min-w-[520px]">
+                        <thead>
+                            <tr class="text-left border-b border-slate-700">
+                                <th class="p-3 font-bold text-white">Scenario</th>
+                                <th class="p-3 font-bold text-white">Frigjord tid</th>
+                                <th class="p-3 font-bold text-white">Timpris</th>
+                                <th class="p-3 font-bold text-white">Potentiellt värde</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-400">
+                            <tr class="border-b border-slate-800">
+                                <td class="p-3">30&nbsp;%</td>
+                                <td class="p-3">30 h</td>
+                                <td class="p-3">1&nbsp;800 kr</td>
+                                <td class="p-3 font-semibold text-slate-200">54&nbsp;000 kr/mån</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3">40&nbsp;%</td>
+                                <td class="p-3">40 h</td>
+                                <td class="p-3">1&nbsp;800 kr</td>
+                                <td class="p-3 font-semibold text-slate-200">72&nbsp;000 kr/mån</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-slate-400 leading-relaxed mt-5 text-sm">Med exemplets siffror: 54&nbsp;000&ndash;72&nbsp;000 kr i potentiellt omfördelad eller debiterbar tid per månad, jämfört med en förstudie på 15&nbsp;000 kr. Men notera: detta är ett räkneexempel. Den faktiska besparingen beror på er volym, er avtalsmix och hur väldefinierad er checklista är.</p>
+            </div>
+
+            <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
+                <p class="text-indigo-800 leading-relaxed"><strong>Räkna med era egna siffror:</strong> Antal avtal &times; genomsnittstid = total granskningstid. Multiplicera med 30&ndash;40&nbsp;% och sedan med ert timpris. Är den siffran klart positiv jämfört med vad en förstudie och ett bygge kostar? Då är det värt att gå vidare. Är den oklar &ndash; välj ett enklare fall eller en lägre autonominivå först.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-indigo-50 border border-indigo-200 rounded-3xl p-8 md:p-10">
+                <h2 class="text-2xl font-extrabold text-indigo-900 mb-4">Förstudie: passar en agent er byrå?</h2>
+                <p class="text-slate-600 leading-relaxed mb-4">AI-Verktygslådan drivs av <strong>Adviseo AI</strong>. Vi erbjuder en skriftlig förstudie för 15&nbsp;000 kr exkl. moms: en bedömning av om en kontraktsgranskning&shy;agent passar er byrås arbetsflöde och volym, vilken stack som lämpar sig och vad som konkret krävs för att nå produktion. Inte bygget &ndash; bara underlaget ni behöver för att fatta ett välgrundat beslut.</p>
+                <div class="bg-white rounded-2xl border border-indigo-200 p-6 mb-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-bold text-indigo-900">Skriftlig bedömning</span>
+                        <span class="text-2xl font-extrabold text-indigo-700">15&nbsp;000 kr</span>
+                    </div>
+                    <ul class="space-y-2 text-sm text-slate-700">
+                        <li class="flex gap-2"><span class="text-indigo-500 shrink-0 mt-0.5" aria-hidden="true">&#9679;</span><span><strong>Passar som agent?</strong> &ndash; Tydlig rekommendation: agent, annan lösning, eller inte just nu &ndash; med motivering.</span></li>
+                        <li class="flex gap-2"><span class="text-indigo-500 shrink-0 mt-0.5" aria-hidden="true">&#9679;</span><span><strong>Vilken stack?</strong> &ndash; Harvey, Luminance, Spellbook eller skräddarsydd lösning &ndash; anpassat till er situation och era systemgränser.</span></li>
+                        <li class="flex gap-2"><span class="text-indigo-500 shrink-0 mt-0.5" aria-hidden="true">&#9679;</span><span><strong>Vad kräver produktion?</strong> &ndash; GDPR, sekretess, loggning, mänsklig kontroll &ndash; det som förbises i en pilot.</span></li>
+                    </ul>
+                    <p class="text-xs text-indigo-700 mt-4">Levereras skriftligt inom fem arbetsdagar. Betalning sker efter leverans.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="/bygga-ai-agent-hjalp.html?fran=advokatbyra" class="inline-flex items-center justify-center gap-3 bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-200 hover:-translate-y-0.5">
+                        Berätta om er byrå
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-16 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-2xl font-extrabold mb-6">Eller skicka in direkt här</h2>
+            <form id="agent-form" class="grid sm:grid-cols-2 gap-5 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-name">Namn</label>
+                    <input id="f-name" name="name" autocomplete="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-email">E-post</label>
+                    <input id="f-email" name="email" type="email" autocomplete="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-company">Byrå</label>
+                    <input id="f-company" name="company" autocomplete="organization" required class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-1.5" for="f-role">Din roll</label>
+                    <input id="f-role" name="role" autocomplete="organization-title" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-semibold mb-1.5" for="f-employees">Antal anställda</label>
+                    <select id="f-employees" name="employees" class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                        <option value="1-9">1&ndash;9</option>
+                        <option value="10-49">10&ndash;49</option>
+                        <option value="50-199">50&ndash;199</option>
+                        <option value="200+">200+</option>
+                    </select>
+                </div>
+                <div class="sm:col-span-2">
+                    <label class="block text-sm font-semibold mb-1.5" for="f-need">Beskriv er situation</label>
+                    <textarea id="f-need" name="need" rows="5" placeholder="Hur många avtal granskar ni per månad, vilken typ, vilka system används och vad är er primära fråga? Ju konkretare, desto bättre svar." class="w-full px-4 py-3 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                </div>
+                <div class="sm:col-span-2">
+                    <button id="form-submit" type="submit" class="w-full bg-indigo-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-60">Skicka in</button>
+                    <p id="form-status" class="text-sm text-slate-500 mt-4 text-center"></p>
+                    <p class="text-xs text-slate-400 mt-3 text-center">Fast pris 15&nbsp;000 kr, faktureras efter leverans. Vi använder uppgifterna för att besvara din förfrågan och inget annat &ndash; se <a href="/integritetspolicy.html" class="underline">integritetspolicyn</a>. AI-Verktygslådan drivs av Adviseo AI.</p>
+                </div>
+            </form>
+            <div id="form-success" class="hidden bg-white p-10 rounded-3xl border-2 border-emerald-200 text-center">
+                <div class="text-4xl mb-4" aria-hidden="true">&#9989;</div>
+                <h2 class="text-2xl font-extrabold mb-3">Tack &ndash; förfrågan är inne</h2>
+                <p class="text-slate-600 leading-relaxed">Vi hör av oss inom ett par arbetsdagar med en bedömning. Under tiden kan <a href="/ai-agent-reglerad-bransch.html" class="text-indigo-600 font-semibold underline">guiden om reglerad verksamhet</a> vara ett bra komplement.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 bg-white border-y border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-extrabold mb-8">Vanliga frågor</h2>
+            <div class="space-y-4">
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6" open>
+                    <summary class="font-bold cursor-pointer">Vilka AI-plattformar för jurister används i dag?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Harvey (byggt ovanpå Claude, fokus på juridisk granskning och due diligence), Luminance (LLM-baserat, stark på klausulextraktion och flaggning mot klausulbibliotek) och Spellbook (integrerat i Word, nära juristens arbetsflöde) är de tre som i dag visar tydligast nytta för advokatbyråer. Gemensamt: de förgranskar, de beslutar inte. En skräddarsydd agent mot era egna mallar är ett alternativ som ger mer kontroll men kräver mer implementationsarbete.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Är AI-kontraktsgranskning juridiskt säker?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Det beror på hur ni konstruerar lösningen. En agent som förgranskar mot er checklista och presenterar flaggningar för en jurist som sedan fattar alla beslut &ndash; den lösningen är juridiskt hanterbar. En agent som ensam avgör om ett avtal kan godkännas är inte det. Skillnaden är inte teknisk utan konstruktionsmässig: se till att agenten aldrig kan verkställa utan mänskligt godkännande.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Hur hanteras advokatsekretessen när ett AI-system läser kontrakt?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Advokatsekretessen är ett advokaträttsligt och etiskt ansvar, inte ett tekniskt. Det tekniska kravet är att kontraktsdata behandlas med personuppgiftsbiträdesavtal, EU-region, ingen träning på data och loggning med gallringstid. Det är advokatens ansvar att säkerställa att ett sådant avtal finns på plats med AI-leverantören innan ett uppdrag tas in i systemet. Läs mer om <a href="/ai-agent-gdpr.html" class="text-indigo-600 font-semibold underline">GDPR-kraven för agenter</a>.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Kan en advokatbyrå med 5–10 anställda ha råd med en AI-agent?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">Det beror på volymen. Granskar byrån färre än tio avtal i månaden av samma typ är ett agentprojekt sannolikt inte lönsamt. Är volymen högre och avtalen tillräckligt homogena &ndash; som standardiserade leverantörsavtal, hyresavtal eller nyttjanderättsavtal &ndash; kan en agent ge tydlig nytta. En färdig plattform som Harvey eller Spellbook kan vara ett lägre inträde än ett skräddarsyddat bygge för en liten byrå.</p>
+                </details>
+                <details class="bg-slate-50 rounded-2xl border border-slate-200 p-6">
+                    <summary class="font-bold cursor-pointer">Vad ingår i förstudiepriset på 15 000 kr?</summary>
+                    <p class="text-slate-600 mt-3 leading-relaxed">En skriftlig bedömning &ndash; levererad inom fem arbetsdagar &ndash; av om en agent passar er byrås arbetsflöde och volym, vilken plattform eller stack som lämpar sig för er situation, och vad som konkret krävs för att nå produktion: GDPR, sekretess, mänsklig kontroll, loggning. Inte bygget. Betalning sker efter att ni fått bedömningen i handen.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- @footer -->
+    <footer class="bg-slate-900 text-slate-400 py-14 px-6 mt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6 mb-10">
+                <div class="lg:col-span-1">
+                    <div class="text-white font-extrabold text-xl mb-3">AI-<span class="text-indigo-400">Verktygslådan</span></div>
+                    <p class="text-sm leading-relaxed">Sveriges mest lättillgängliga guide till att bygga, driftsätta och förvalta AI-agenter. Konkreta val i stället för fler alternativ.</p>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Kom igång</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/lar-dig-ai-agenter.html" class="hover:text-white transition-colors">Kursen i sex moduler</a></li>
+                        <li><a href="/ai-agent-vagval.html" class="hover:text-white transition-colors">Vad passar oss? (guide)</a></li>
+                        <li><a href="/vad-ar-ai-agenter.html" class="hover:text-white transition-colors">Vad är en AI-agent?</a></li>
+                        <li><a href="/ai-agent-ramverk.html" class="hover:text-white transition-colors">Välj rätt agent-stack</a></li>
+                        <li><a href="/bygg-ai-agent.html" class="hover:text-white transition-colors">Bygg din första agent</a></li>
+                        <li><a href="/ai-agent-n8n.html" class="hover:text-white transition-colors">Bygg i n8n, utan kod</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Er situation</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-microsoft-365.html" class="hover:text-white transition-colors">Vi kör Microsoft 365</a></li>
+                        <li><a href="/ai-agent-google-workspace.html" class="hover:text-white transition-colors">Vi kör Google Workspace</a></li>
+                        <li><a href="/ai-agent-litet-foretag.html" class="hover:text-white transition-colors">Vi är ett litet bolag</a></li>
+                        <li><a href="/ai-agent-reglerad-bransch.html" class="hover:text-white transition-colors">Vi är reglerade</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Fördjupning</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-openclaw.html" class="hover:text-white transition-colors">OpenClaw</a></li>
+                        <li><a href="/ai-agent-mcp.html" class="hover:text-white transition-colors">MCP förklarat</a></li>
+                        <li><a href="/ai-agent-sakerhet.html" class="hover:text-white transition-colors">Säkerhet &amp; promptinjektion</a></li>
+                        <li><a href="/multiagent-system.html" class="hover:text-white transition-colors">Multiagentsystem</a></li>
+                        <li><a href="/ai-agent-exempel.html" class="hover:text-white transition-colors">Tre agenter i detalj</a></li>
+                        <li><a href="/ai-agent-anvandningsfall.html" class="hover:text-white transition-colors">Användningsfall</a></li>
+                        <li><a href="/ai-agent-ordlista.html" class="hover:text-white transition-colors">Agent-ordlistan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Beslutsunderlag</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/ai-agent-kostnad.html" class="hover:text-white transition-colors">Vad en agent kostar</a></li>
+                        <li><a href="/ai-agent-kostnad-smabolag.html" class="hover:text-white transition-colors">Kostnad för litet bolag</a></li>
+                        <li><a href="/ai-agent-gdpr.html" class="hover:text-white transition-colors">GDPR &amp; AI-akten</a></li>
+                        <li><a href="/ai-kalkylator.html" class="hover:text-white transition-colors">ROI-kalkylatorn</a></li>
+                        <li><a href="/ai-guider-foretag.html" class="hover:text-white transition-colors">Alla guider</a></li>
+                        <li><a href="/ai-svenska-foretag-rapport.html" class="hover:text-white transition-colors">Rapport 2026</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="text-white font-bold text-sm mb-4">Om</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bygga-ai-agent-hjalp.html" class="hover:text-white transition-colors">Få hjälp att bygga</a></li>
+                        <li><a href="/nyhetsbrev.html" class="hover:text-white transition-colors">Nyhetsbrev</a></li>
+                        <li><a href="/om-sajten.html" class="hover:text-white transition-colors">Om sajten</a></li>
+                        <li><a href="/integritetspolicy.html" class="hover:text-white transition-colors">Integritetspolicy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col md:flex-row justify-between gap-4 text-xs">
+                <div>© 2026 Adviseo · Alla rättigheter förbehållna</div>
+                <div>Denna sajt skapas och drivs helt av AI · <a href="/om-sajten.html" class="underline hover:text-white">Om sajten</a></div>
+                <div>Vi rekommenderar utifrån vad som fungerar i produktion, inte utifrån vem som betalar.</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /@footer -->
+
+    <script>
+        var mb = document.getElementById("mobile-menu-btn");
+        if (mb) {
+            mb.addEventListener("click", function () {
+                var menu = document.getElementById("mobile-menu");
+                menu.classList.toggle("hidden");
+                mb.setAttribute("aria-expanded", menu.classList.contains("hidden") ? "false" : "true");
+            });
+        }
+    </script>
+
+    <script>
+        (function () {
+            var form = document.getElementById('agent-form');
+            if (!form) return;
+            var status = document.getElementById('form-status');
+            var submit = document.getElementById('form-submit');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                submit.disabled = true;
+                submit.textContent = 'Skickar...';
+                status.className = 'text-sm text-slate-500 mt-4 text-center';
+                status.textContent = '';
+
+                fetch('/api/lead/b2b', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('f-name').value,
+                        email: document.getElementById('f-email').value,
+                        company: document.getElementById('f-company').value,
+                        role: document.getElementById('f-role').value,
+                        employees: document.getElementById('f-employees').value,
+                        need: document.getElementById('f-need').value,
+                        source: 'agent_hjalp:advokatbyra'
+                    })
+                }).then(function (r) {
+                    if (!r.ok) throw new Error('status ' + r.status);
+                    form.classList.add('hidden');
+                    document.getElementById('form-success').classList.remove('hidden');
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'agent_lead', { source: 'advokatbyra' });
+                    }
+                }).catch(function () {
+                    submit.disabled = false;
+                    submit.textContent = 'Skicka in';
+                    status.className = 'text-sm text-rose-600 mt-4 text-center font-semibold';
+                    status.textContent = 'Något gick fel. Försök igen, eller mejla oss direkt.';
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
