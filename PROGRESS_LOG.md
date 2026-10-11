@@ -194,3 +194,4 @@ efterhand. Nu hoppar den över sidor som finns och kräver --force för att skri
 Allt körs med `make check` och `make build`, och CI kör samma kontroller på
 varje push och pull request.
 2026-09-30 | TRAFIK & DISTRIBUTION | Begärt trafikhjälp för agent-pivoten | Agentkurshubben | nästa: Optimera agent-sidor för termerna de börjar ranka på
+2026-10-11 | SEO & INDEXERING | Tre dubbletter 301:ade (vad-kostar-en-ai-agent, ai-kostnader-tco, ai-sakerhet-gdpr) och /static/*.html 301:as till kanonisk URL; GSC visade 2 av 33 sidor indexerade | Kostnad + GDPR | nästa: Begär indexering av kärnsidorna i GSC

@@ -20,8 +20,6 @@
     "menu-bloat|https://aiverktygsladan.se/ai-arkitektur-foretag.html",
     "menu-bloat|https://aiverktygsladan.se/ai-guider-foretag.html",
     "menu-bloat|https://aiverktygsladan.se/ai-kalkylator.html",
-    "menu-bloat|https://aiverktygsladan.se/ai-kostnader-tco.html",
-    "menu-bloat|https://aiverktygsladan.se/ai-sakerhet-gdpr.html",
     "menu-bloat|https://aiverktygsladan.se/ai-svenska-foretag-rapport.html",
     "menu-bloat|https://aiverktygsladan.se/bygg-ai-agent.html",
     "menu-bloat|https://aiverktygsladan.se/bygga-ai-agent-hjalp.html",
@@ -52,5 +50,5 @@
     "menu-bloat|https://aiverktygsladan.se/om-sajten.html",
     "menu-bloat|https://aiverktygsladan.se/vad-ar-ai-agenter.html"
   ],
-  "count": 51
+  "count": 49
 }

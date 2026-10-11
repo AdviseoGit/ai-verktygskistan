@@ -248,6 +248,14 @@ async def get_calc_data(db: Session = Depends(get_db), _=Depends(require_admin))
              "industry": r.industry, "saved_value": r.saved_value,
              "created_at": r.created_at} for r in rows]
 
+# Sidorna ligger i static/ och nåddes därför även som /static/<sida>.html med
+# 200 – Google indexerade de adresserna som dubbletter. Den här routen måste
+# ligga före mounten för att vinna över den.
+@app.get("/static/{page_name}.html")
+async def redirect_static_html(page_name: str):
+    target = "/" if page_name == "index" else REDIRECTS.get(page_name, f"/{page_name}.html")
+    return RedirectResponse(target, status_code=301)
+
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Sidor som togs bort när sajten smalnade av till AI-agenter (september 2026).
@@ -277,6 +285,11 @@ REDIRECTS = {
     "ai-stack-ekonomi": "/ai-agent-anvandningsfall.html",
     "ai-stack-jurist": "/ai-agent-anvandningsfall.html",
     "annonsera": "/bygga-ai-agent-hjalp.html",
+    # Oktober 2026: dubbletter som konkurrerade med agent-sidorna om samma
+    # sökfrågor och låg kvar som "Upptäckt – inte indexerad" i GSC.
+    "vad-kostar-en-ai-agent": "/ai-agent-kostnad-smabolag.html",
+    "ai-kostnader-tco": "/ai-agent-kostnad.html",
+    "ai-sakerhet-gdpr": "/ai-agent-gdpr.html",
 }
 
 

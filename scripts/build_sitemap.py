@@ -46,8 +46,6 @@ PRIORITY = {
     "bygga-ai-agent-hjalp": (0.8, "monthly"),
     "ai-guider-foretag": (0.7, "monthly"),
     "ai-arkitektur-foretag": (0.6, "monthly"),
-    "ai-kostnader-tco": (0.6, "monthly"),
-    "ai-sakerhet-gdpr": (0.6, "monthly"),
     "implementera-ai-guide": (0.6, "monthly"),
     "ai-kalkylator": (0.7, "monthly"),
     "ai-svenska-foretag-rapport": (0.6, "monthly"),

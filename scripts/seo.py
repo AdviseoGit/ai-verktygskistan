@@ -61,8 +61,6 @@ PARENT = {
     "ai-agent-kostnad": ("Guider", "/ai-guider-foretag.html"),
     "ai-agent-gdpr": ("Guider", "/ai-guider-foretag.html"),
     "ai-arkitektur-foretag": ("Guider", "/ai-guider-foretag.html"),
-    "ai-kostnader-tco": ("Guider", "/ai-guider-foretag.html"),
-    "ai-sakerhet-gdpr": ("Guider", "/ai-guider-foretag.html"),
     "implementera-ai-guide": ("Guider", "/ai-guider-foretag.html"),
     "ai-kalkylator": ("Guider", "/ai-guider-foretag.html"),
     "ai-agent-kostnad-smabolag": ("Guider", "/ai-guider-foretag.html"),
